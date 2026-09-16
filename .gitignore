@@ -6,3 +6,5 @@
 .DS_Store
 .venv/
 __pycache__/
+# Local brand reference; never commit or publish
+EnzRossi-Brand-Guidelines.html

@@ -1,0 +1,623 @@
+@font-face {
+  font-family: Montserrat;
+  src: url("assets/fonts/Montserrat.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("assets/fonts/JetBrainsMono.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+}
+:root {
+  color-scheme: dark;
+  --ink: #212934;
+  --surface: #000000;
+  --paper: #fcfcfe;
+  --muted: #e7e9f1;
+  --blue: #0256ff;
+  --line: #595f7a;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+}
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--paper);
+  line-height: 1.6;
+}
+a {
+  color: inherit;
+  text-underline-offset: 5px;
+}
+a:hover {
+  color: inherit;
+  text-decoration-thickness: 2px;
+}
+button,
+a,
+summary {
+  -webkit-tap-highlight-color: transparent;
+}
+button:focus-visible,
+a:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 5px;
+}
+button {
+  font: inherit;
+  cursor: pointer;
+}
+p {
+  margin: 0 0 1.2rem;
+}
+h1,
+h2,
+h3 {
+  line-height: 1.07;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+h3 {
+  font-size: 1.65rem;
+}
+.wrap {
+  max-width: 1240px;
+  margin: auto;
+  padding-inline: 40px;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding-block: 27px;
+  border-bottom: 1px solid var(--line);
+}
+.brand {
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+.brand-logo {
+  display: block;
+  width: 155px;
+  height: auto;
+}
+.brand-sub {
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 0.875rem;
+  letter-spacing: 0;
+  margin-left: 12px;
+}
+nav {
+  display: flex;
+  gap: 28px;
+  font-size: 0.875rem;
+}
+nav a {
+  text-decoration: none;
+}
+.hero {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 70px;
+  padding-block: 90px;
+}
+.eyebrow,
+.number {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  font-weight: 500;
+}
+.eyebrow {
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+h1 {
+  font-size: clamp(3.4rem, 6vw, 5.3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+h1 span {
+  color: var(--paper);
+}
+.intro {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin-top: 30px;
+  max-width: 500px;
+}
+.hero-copy {
+  color: var(--muted);
+  max-width: 500px;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 25px;
+  margin-block: 30px;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 13px 19px;
+  font-size: 0.95rem;
+  font-weight: 650;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+.primary {
+  background: var(--blue);
+  color: var(--paper);
+}
+.primary:hover {
+  background: #0041c3;
+  color: var(--paper);
+}
+.text-link {
+  font-size: 0.9rem;
+}
+.meta {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8rem;
+  color: var(--muted);
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.memo {
+  align-self: center;
+  background: var(--paper);
+  color: var(--ink);
+  padding: 27px 30px;
+  border-radius: 8px;
+  transform: none;
+}
+.memo-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font:
+    0.75rem "JetBrains Mono",
+    monospace;
+  border-bottom: 1px solid #a9b3bd;
+  padding-bottom: 18px;
+}
+.memo-label {
+  font-size: 0.8rem;
+  color: #536174;
+  margin: 20px 0 10px;
+}
+.memo h2 {
+  font-size: 2.4rem;
+}
+.memo dl {
+  margin: 23px 0;
+}
+.memo dl div {
+  display: grid;
+  grid-template-columns: 105px 1fr;
+  gap: 15px;
+  padding: 12px 0;
+  border-bottom: 1px solid #d5dbe2;
+  font-size: 0.85rem;
+}
+.memo dt {
+  font-weight: 700;
+}
+.memo dd {
+  margin: 0;
+}
+.memo-foot {
+  font:
+    0.75rem "JetBrains Mono",
+    monospace;
+  margin: 0;
+  color: #526073;
+}
+.explain {
+  background: var(--surface);
+  border-block: 1px solid var(--line);
+  padding-block: 50px;
+}
+.explain-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 90px;
+}
+.explain h2 {
+  font-size: 2rem;
+}
+.explain p {
+  color: var(--muted);
+}
+.explain a {
+  font-size: 0.9rem;
+}
+.section {
+  padding-block: 85px;
+}
+.section-heading {
+  max-width: 720px;
+  margin-bottom: 42px;
+}
+.section-heading h2 {
+  margin-bottom: 20px;
+}
+.section-heading > p:last-child {
+  color: var(--muted);
+}
+.skills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--line);
+}
+.skill {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.skill + .skill {
+  border-left: 1px solid var(--line);
+}
+.number {
+  color: var(--muted);
+  display: block;
+  margin-bottom: 30px;
+}
+.skill h3 {
+  margin-bottom: 20px;
+}
+.skill > p {
+  color: var(--muted);
+  min-height: 52px;
+}
+.skill ul {
+  padding-left: 18px;
+  font-size: 0.9rem;
+  margin: 0 0 25px;
+}
+.skill li {
+  padding-left: 4px;
+  margin-bottom: 9px;
+}
+.skill li::marker {
+  color: var(--muted);
+}
+.skill details {
+  font-size: 0.85rem;
+  border-top: 1px solid var(--line);
+  padding-block: 17px;
+  margin-top: auto;
+}
+.skill details p {
+  margin: 15px 0 0;
+  color: var(--muted);
+}
+summary {
+  cursor: pointer;
+}
+.skill > a {
+  font-size: 0.9rem;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.install {
+  background: var(--paper);
+  color: var(--ink);
+  padding-block: 75px;
+  color-scheme: light;
+}
+.install-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 85px;
+}
+.install .eyebrow {
+  color: var(--muted);
+}
+.install h2 {
+  margin-bottom: 25px;
+}
+.install a:hover {
+  color: #0041c3;
+}
+.install a:focus-visible,
+.install button:focus-visible,
+.install summary:focus-visible {
+  outline-color: var(--blue);
+}
+.install p {
+  color: #465266;
+}
+.install code {
+  overflow-wrap: anywhere;
+}
+.small {
+  font-size: 0.85rem;
+}
+.steps {
+  min-width: 0;
+}
+.step-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 13px;
+}
+.step-head h3 {
+  font-size: 1rem;
+  letter-spacing: 0;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.step-head h3 span {
+  border: 1px solid #b3bcc8;
+  width: 27px;
+  height: 27px;
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+  font-size: 0.8rem;
+}
+pre {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 20px;
+  font-size: 0.8rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  margin: 0 0 24px;
+  line-height: 1.7;
+}
+code {
+  font-family:
+    "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+.copy {
+  border: 0;
+  background: transparent;
+  color: #384657;
+  font-size: 0.8rem;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  padding: 6px;
+}
+.platform {
+  border: 1px solid #c3cbd5;
+  margin-bottom: 12px;
+  padding: 14px 17px;
+  font-size: 0.9rem;
+}
+.platform pre {
+  margin: 10px 0 0;
+}
+.platform .copy {
+  margin-top: 10px;
+}
+.steps > .step-head:not(:first-child) {
+  margin-top: 25px;
+}
+#copy-status {
+  min-height: 1.3rem;
+  margin: 0;
+}
+.evidence {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 100px;
+}
+.evidence h2 {
+  margin-bottom: 25px;
+}
+.evidence p {
+  color: var(--muted);
+}
+.secondary {
+  border-color: var(--line);
+}
+.evidence-note {
+  padding: 30px;
+  border-left: 2px solid var(--blue);
+  align-self: center;
+}
+.evidence-note h3 {
+  font-size: 2rem;
+  margin-bottom: 22px;
+}
+.evidence-note a {
+  font-size: 0.9rem;
+}
+footer {
+  border-top: 1px solid var(--line);
+  padding-block: 40px;
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  color: var(--muted);
+}
+footer p {
+  margin: 10px 0;
+  max-width: 620px;
+}
+.about-title {
+  font-size: 1.25rem;
+  margin-top: 28px;
+  color: var(--paper);
+}
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+.skip {
+  position: absolute;
+  left: 20px;
+  top: -100px;
+  background: var(--blue);
+  color: var(--ink);
+  padding: 10px;
+  z-index: 2;
+}
+.skip:focus {
+  top: 10px;
+}
+@media (max-width: 1000px) {
+  .wrap {
+    padding-inline: 28px;
+  }
+  .hero {
+    gap: 35px;
+  }
+  .memo {
+    padding: 22px;
+  }
+  .memo h2 {
+    font-size: 2rem;
+  }
+  .memo dl div {
+    grid-template-columns: 90px 1fr;
+  }
+  .skill {
+    padding: 22px;
+  }
+  .install-grid {
+    gap: 40px;
+  }
+  .evidence {
+    gap: 40px;
+  }
+}
+@media (max-width: 760px) {
+  .wrap {
+    padding-inline: 22px;
+  }
+  .nav {
+    padding-block: 20px;
+  }
+  .brand-sub {
+    display: none;
+  }
+  nav {
+    gap: 15px;
+  }
+  .brand {
+    font-size: 1.1rem;
+  }
+  .brand-logo {
+    display: block;
+    width: 155px;
+    height: auto;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    padding-block: 55px;
+    gap: 45px;
+  }
+  .hero-copy,
+  .intro {
+    max-width: none;
+  }
+  .memo {
+    transform: none;
+    max-width: 520px;
+    box-shadow: none;
+  }
+  .explain-grid,
+  .install-grid,
+  .evidence {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .explain-grid h2 br {
+    display: none;
+  }
+  .section {
+    padding-block: 55px;
+  }
+  .skills {
+    grid-template-columns: 1fr;
+  }
+  .skill {
+    padding: 27px;
+  }
+  .skill + .skill {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+  .skill > p {
+    min-height: 0;
+  }
+  .skill h3 br {
+    display: none;
+  }
+  .number {
+    margin-bottom: 20px;
+  }
+  .install {
+    padding-block: 50px;
+  }
+  .evidence-note {
+    margin-top: 10px;
+  }
+  footer {
+    flex-direction: column;
+    gap: 25px;
+  }
+  .actions {
+    gap: 20px;
+  }
+  h1 {
+    font-size: clamp(3rem, 11vw, 4.5rem);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media (max-width: 400px) {
+  .brand-logo {
+    width: 120px;
+  }
+  nav {
+    gap: 12px;
+  }
+  .nav {
+    gap: 16px;
+  }
+  nav a {
+    font-size: 0.8rem;
+  }
+}

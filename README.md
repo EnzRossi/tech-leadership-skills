@@ -1,6 +1,10 @@
 # EnzRossi Tech Leadership Skills
 
+![EnzRossi Tech Leadership Skills: a blue origami rocket with a paper checklist anchored to a desk](site/assets/social-preview.png)
+
 Open-source Agent Skills for technology leaders making software, delivery, resourcing, and AI decisions.
+
+[Explore the project website and installation guide](https://enzrossi.github.io/tech-leadership-skills/).
 
 Three workflows for turning incomplete evidence into a decision memo: whether an AI initiative deserves investment, whether a project needs intervention, and how to obtain an engineering capability.
 
