@@ -1,84 +1,29 @@
-# Project Health Assessment: [project name]
+# Project health decision: [name]
 
-Prepared [date] for [audience] · Decision at stake: [continue / intervene / re-plan / escalate / stop]
+[Decision maker] · [Evidence as of date, if known]
 
-> Collapse any section with nothing substantive to a single line. Deliver the result, not a description of the method.
+## Recommendation
 
-## Overall
+**Health: [Green / Amber / Red / Not assessable] · Confidence: [High / Medium / Low, with reason]**
 
-**Health: [Red / Amber / Green]** · **Confidence: [High / Medium / Low]**
+[First 100 words: decision, problem/commitment, decisive evidence and next step. Aim for 250–600 words for a full memo; 100–250 for a narrow or thin-evidence question. No minimum length. Remove drafting instructions and empty sections.]
 
-One paragraph: the state of the project, the reason for the rating, and the reason for the confidence level. What would raise confidence: [one artifact, one conversation].
+## Findings that change the decision
 
-## Three findings that matter most
-
-1. **[Finding]** — FACT / INFERENCE. [Evidence and citation.]
-2. **[Finding]** — FACT / INFERENCE. [Evidence and citation.]
-3. **[Finding]** — FACT / INFERENCE. [Evidence and citation.]
-
-## Evidence base
-
-| Artifact | Date | Author / vantage point | Freshness |
-|---|---|---|---|
-
-Dimensions with no evidence: [list]. These are rated Unknown below.
-
-## Dimension ratings
-
-| Cluster | Dimension | Rating | Evidence (type and citation) |
-|---|---|---|---|
-| Purpose | Outcome clarity | | |
-| Purpose | Success metrics | | |
-| Purpose | Product uncertainty | | |
-| Plan | Scope stability | | |
-| Plan | Milestone progress | | |
-| Plan | Critical path | | |
-| Plan | Internal dependencies | | |
-| Plan | External dependencies | | |
-| People | Team capacity | | |
-| People | Skill gaps | | |
-| People | Decision latency | | |
-| People | Stakeholder alignment | | |
-| Quality | Shipped quality | | |
-| Quality | Testing | | |
-| Quality | Technical risk | | |
-| Readiness | Operational readiness | | |
-| Readiness | User and adoption readiness | | |
-
-## Important changes since the last review or baseline
-
-[Dates moved, scope changed, people changed, risks appeared or vanished. FACT with citations, or "no baseline available".]
-
-## Top risks
-
-| Risk | Evidence | Currently mitigated? | Owner |
-|---|---|---|---|
-
-## Root causes and hypotheses
-
-**Root cause** (two or more independent sources): [statement, evidence].
-
-**Hypotheses** (single source): [statement, what would confirm it].
-
-## Assumptions made in this assessment
-
-- ASSUMPTION: [...]
-
-## Missing information
-
-| Unknown | Why it matters | Where to get it |
+| Evidence and source | Implication for the commitment | Confidence / competing explanation |
 |---|---|---|
 
-## Decisions leadership needs to make
+[At most three decisive findings. Historical vs current target explicit.]
 
-| Decision | Options and consequences | Needed by |
+## This week
+
+| Action or leadership decision | Proposed owner / needed by | Evidence or outcome produced |
 |---|---|---|
 
-## Next seven days
+[At most five actions. State one tempting intervention not justified, if relevant.]
 
-| Action | Owner | Due | Evidence it produces |
-|---|---|---|---|
+## What could change the recommendation
 
-## What should not be changed right now
+[Strongest counterargument; up to three missing facts, why each matters and how to obtain it. Distinguish proposed assumptions from reported/observed facts.]
 
-- [Thing] — [why the evidence does not justify changing it].
+<!-- Optional appendix: evidence ledger, detailed readiness or option comparison only if decision-relevant or requested. -->
