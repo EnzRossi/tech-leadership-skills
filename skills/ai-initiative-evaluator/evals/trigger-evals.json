@@ -1,0 +1,20 @@
+[
+  {"query": "Our head of customer support wants to put an LLM in front of our ticket queue to draft replies. We get ~2,500 tickets/week, 12 agents. Is this worth funding and what would a sensible first step be?", "should_trigger": true},
+  {"query": "board is pushing us to 'do something with AI'. the only concrete idea so far is a chatbot on the website. we're a b2b manufacturer. thoughts on whether that's a good use of money?", "should_trigger": true},
+  {"query": "A vendor pitched us an AI tool that predicts which of our SaaS customers will churn. We have 3 years of usage and billing data. How do I evaluate whether this is actually a good idea vs hype?", "should_trigger": true},
+  {"query": "My data team built a demo that uses GPT to categorize supplier invoices. Finance loves it. Before I put budget behind it, help me think through whether it should go to a pilot or whether we should kill it.", "should_trigger": true},
+  {"query": "We have 6 AI ideas from different departments and budget for maybe 2. Help me assess them so I can decide which deserve a prototype and which are not worth it.", "should_trigger": true},
+  {"query": "Should we use machine learning to forecast warehouse inventory or is a simple statistical model good enough? Ops thinks AI would be more accurate but nobody has checked.", "should_trigger": true},
+  {"query": "We piloted an AI meeting summarizer with 30 people for 2 months, feedback is positive. CEO wants it company-wide. What am I missing before I sign off?", "should_trigger": true},
+  {"query": "Legal wants an AI agent to review NDAs automatically and flag risky clauses. I'm nervous about the error cost. How should I frame the go/no-go?", "should_trigger": true},
+  {"query": "Write a system prompt for a customer support chatbot that answers questions about our return policy and escalates angry customers.", "should_trigger": false},
+  {"query": "Compare OpenAI, Anthropic and Gemini models for a document extraction task. Which one should we pick and what does pricing look like?", "should_trigger": false},
+  {"query": "Our AI document-processing project has been in development for 8 months and keeps slipping. Here are the sprint reports. Is it in trouble?", "should_trigger": false},
+  {"query": "We've decided to build an internal RAG assistant. Should we hire two ML engineers or bring in a consultancy to build it for us?", "should_trigger": false},
+  {"query": "Help me set up an evaluation harness for our LLM app using golden datasets and LLM-as-judge scoring in Python.", "should_trigger": false},
+  {"query": "Draft an AI acceptable-use policy for employees covering ChatGPT and Copilot usage.", "should_trigger": false},
+  {"query": "How does retrieval-augmented generation work and when does fine-tuning make more sense?", "should_trigger": false},
+  {"query": "Estimate the inference cost for running a 70B model on 10 million tokens a day on AWS vs a managed API.", "should_trigger": false},
+  {"query": "We need to decide whether to build our own analytics dashboard product or buy Looker. No AI involved. What's the right call?", "should_trigger": false},
+  {"query": "Put together a 12-month AI roadmap slide for the board summarizing the 3 initiatives we've already approved.", "should_trigger": false}
+]

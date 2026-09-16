@@ -1,0 +1,73 @@
+{
+  "skill_name": "ai-initiative-evaluator",
+  "evals": [
+    {
+      "id": 1,
+      "name": "claims-triage-normal-case",
+      "prompt": "I'm CTO at a mid-size insurance company (about 900 employees). Our claims team wants to use an LLM to triage incoming claims emails and attachments: read them, extract the key fields, classify severity, and route to the right adjuster queue. Today 14 people do this manually, roughly 3,000 claims a week, and it takes about 6 minutes each. We have 4 years of historical claims with the final adjuster assignments and outcomes in our claims system. Data is on-prem and contains personal health information. The head of claims is enthusiastic; the adjusters haven't been consulted yet. Board is asking for our AI strategy next month. Is this worth doing and what should we do next?",
+      "expected_output": "An evaluation memo following the output template. It should restate the problem in business terms with the supplied numbers, run the 'is AI the right tool' test (unstructured email input and human-judgment routing make AI plausible, while noting that field extraction from structured attachments may be partly deterministic), classify it as augmentation with routing decisions reviewed rather than full automation initially, set cost of being wrong at medium-to-high given misrouted severe claims and PHI, and note insurance and health data as regulatory concerns. Data readiness should be rated at least Adequate given four years of labeled outcomes, but the memo should ask for a sample and confirm rights to use PHI for this purpose. Evaluation readiness should be judged feasible (historical assignments provide labels; adjuster agreement should be measured). User desirability should be Unknown because adjusters were not consulted. The recommendation should be Prototype (or Research plus Prototype) on historical data with a stopping rule, not 'proceed to production' and not 'buy' without evaluation, with explicit approval points for PHI use and any automated routing. It should propose measurable success criteria against the human baseline and separate the board's strategy request from this decision.",
+      "files": [],
+      "assertions": [
+        "A technology-neutral statement of the business problem exists, using the supplied volume and time figures, separate from the discussion of the LLM solution",
+        "The output explicitly considers whether deterministic or simpler approaches could handle part of the task (such as extraction from structured attachments or rules for routing)",
+        "The initiative is classified as augmentation or human-reviewed routing rather than fully automated routing for the initial stage",
+        "Cost of being wrong is assessed as at least medium, with misrouted severe claims and personal health information cited",
+        "Regulatory or privacy obligations related to health data or insurance decisions are identified as a risk or approval point",
+        "User desirability is rated Unknown or Weak because adjusters were not consulted, and a specific step to consult them is proposed",
+        "Data readiness discussion asks for a data sample or confirms rights to use the data for this purpose rather than rating it Strong on description alone",
+        "Evaluation readiness is addressed, using the historical adjuster assignments as potential labels and proposing to measure adjuster agreement or a baseline",
+        "The recommendation is Prototype or Research further, not Proceed toward production and not an unconditional Buy",
+        "A next experiment is defined with a baseline, a measurable threshold, a duration, and a stop rule",
+        "Human approval points are listed, including use of personal health data and any automated routing without review",
+        "No cost figures, accuracy figures, or vendor prices are invented"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "board-pressure-vague-request",
+      "prompt": "Our board keeps asking what we're doing with AI. The CEO wants me to come back with 'an AI initiative' by end of month. One idea floating around is an AI chatbot on our website. We're a B2B industrial equipment manufacturer, 200 people, sales cycle is 6-9 months and mostly relationship-driven. What do you think, should we do the chatbot?",
+      "expected_output": "The skill should recognize that there is no defined business problem and should say so as the primary finding. It should ask what problem the chatbot would solve and for whom, note that a technology-first initiative driven by board pressure is a known failure pattern, and recommend Research further (identify the actual problems, e.g. in sales support, service documentation, quoting, or after-sales) rather than committing to the chatbot. It should not fabricate volumes or value. It may offer a short way to respond to the board (a structured evaluation process is itself an AI initiative) without pretending the chatbot has been evaluated. If it assesses the chatbot idea at all, business value and user desirability should be Unknown or Weak given the relationship-driven sales cycle.",
+      "files": [],
+      "assertions": [
+        "The output identifies the absence of a defined business problem as the central issue before evaluating the chatbot",
+        "The output asks or lists specific questions about who has what problem, how often, and what it costs",
+        "Technology-first or pressure-driven framing is named as a risk or failure pattern",
+        "The recommendation is Research further (or equivalent), not Prototype, Pilot, Build, or Buy of the chatbot",
+        "If the chatbot is assessed, business value and user desirability are rated Unknown or Weak, citing the relationship-driven, long sales cycle",
+        "No volumes, cost savings, or revenue figures are invented",
+        "The output offers a way to respond to the board that does not overstate what has been evaluated"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "deterministic-alternative-do-not-use-ai",
+      "prompt": "Our finance ops team wants to use generative AI to reconcile daily payment settlement files against our ledger. About 40k transactions a day come in from 3 payment providers as CSVs, and today a team of 3 matches them with Excel and flags exceptions. They've seen a demo where an LLM 'understands' the files and finds mismatches. Every unmatched transaction has to be resolved before books close. Should I fund this?",
+      "expected_output": "The correct recommendation is Do not use AI for the core reconciliation. The skill should identify that matching structured CSV transactions to ledger entries is a deterministic problem with exact answers, that the value of the task is predictability and auditability, that the cost of being wrong is high (financial close, audit), and that a rules-based reconciliation engine or an existing reconciliation product would solve most of it. It may allow a narrow AI role for suggesting resolutions to genuinely ambiguous exceptions, with human review. It should treat the demo as not being feasibility evidence, and should recommend a concrete next step for the deterministic path (e.g. define matching rules with the team, evaluate reconciliation tools, measure the exception rate) with success criteria.",
+      "files": [],
+      "assertions": [
+        "The recommendation for the core reconciliation task is Do not use AI (or equivalent), with a deterministic or off-the-shelf reconciliation approach recommended instead",
+        "The output explains that structured transaction matching has exact answers and that predictability and auditability are the task's value",
+        "Cost of being wrong is assessed as high, referencing financial close, audit, or ledger integrity",
+        "The vendor demo is explicitly not treated as evidence of feasibility",
+        "No AI is placed in the transaction-matching path itself; any AI role proposed is confined to assisting humans with ambiguous exceptions, schema mapping, or rule discovery, with a human approving the result",
+        "A concrete next step for the non-AI path is defined with measurable success criteria",
+        "No transaction error rates, cost savings, or tool prices are invented"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "successful-pilot-proceed-with-conditions",
+      "prompt": "We ran a 3-month pilot of an AI code review assistant with 2 of our 9 engineering teams (about 22 devs). Results: the teams say it catches real issues, PR review turnaround dropped from a median of 19 hours to 11 hours on those teams, and a survey showed 80% want to keep it. We tracked no change in production incidents. Cost was about $40/dev/month. Security reviewed the vendor and is OK with it as long as no customer data is in the repos (it isn't). VP Eng wants to roll it out to all 9 teams. Anything I'm missing before I approve?",
+      "expected_output": "The skill should recommend Proceed toward production (staged rollout) since the pilot met criteria, while flagging what the pilot did not establish: whether review turnaround improved because of the tool or for other reasons (no control group described), whether review quality changed (no defect-escape or rework measure), and whether the two pilot teams are representative of the other seven. It should propose rollout conditions: a staged rollout with the same measures, a measure of review quality, a periodic re-evaluation when the vendor updates the model, a named owner, and a stop or rollback rule. It should use the supplied cost figure only as given and not extrapolate beyond straightforward arithmetic on supplied numbers. It should not reopen the whole evaluation from scratch or recommend re-running the pilot.",
+      "files": [],
+      "assertions": [
+        "The recommendation is Proceed toward production or a staged rollout, not to re-run the pilot or stop",
+        "The output notes the absence of a control group or comparison and that the turnaround improvement is therefore an inference rather than proven causation",
+        "The output identifies that review quality or defect escape was not measured and proposes a measure",
+        "The output questions whether the two pilot teams are representative of the remaining seven",
+        "Rollout conditions include a named owner and a rule for re-evaluation when the vendor changes the model, or a stop or rollback rule",
+        "The cost figure is used only as supplied or by straightforward arithmetic on supplied numbers, with no additional cost assumptions invented"
+      ]
+    }
+  ]
+}
