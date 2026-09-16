@@ -1,0 +1,71 @@
+{
+  "skill_name": "build-buy-hire-augment",
+  "evals": [
+    {
+      "id": 1,
+      "name": "payments-platform-mixed-capability",
+      "prompt": "I'm CTO of a 120-person marketplace startup. We need to add seller payouts in 14 countries by end of Q1 (about 5 months) because two large enterprise sellers signed on the condition. Today we only pay out in the US via a single processor. Our platform team is 6 engineers, fully loaded on a reliability program the board asked for. We have never hired a payments specialist; our last two senior hires took 4 and 6 months. Compliance says seller banking data must stay within our own systems. Options on the table: hire a payments team, use a payout provider like a global payments platform, or bring in an agency that has done marketplace payouts before. What should we do?",
+      "expected_output": "A sourcing memo that decomposes the capability: multi-country payout rails and compliance/KYC are commodity and mature (buy a provider), while payout scheduling, seller-facing experience, ledger integration, and reconciliation with the marketplace's own data model are differentiating or entangled (build internally, possibly with time-bounded help). It should apply knockouts: hiring alone cannot meet a 5-month date given 4-6 month hiring history; the compliance constraint on banking data must be checked against any provider's and any agency's data access, and may knock out or constrain agency access to banking data. It should apply the neutrality rule explicitly: an agency or augmentation is only justified if the platform team's capacity cannot be freed, and if used must have an end date, an internal owner, and knowledge transfer. It should recommend a hybrid, list alternatives and why they lost, list cost drivers without inventing figures, describe exit at 6 and 18 months for the provider and any external help, and state conditions that would change the recommendation (e.g. if the reliability program can be paused, if the enterprise deals lapse). Hiring and contract decisions are reserved for the leader.",
+      "files": [],
+      "assertions": [
+        "The capability is decomposed into at least two components with different sourcing answers, distinguishing commodity payout rails or compliance from differentiating integration or seller experience",
+        "A payout provider (buy) is recommended for the commodity component, with the compliance constraint about banking data explicitly checked against it",
+        "Hiring alone is ruled out or deprioritized as the route to the 5-month date, citing the company's own 4-6 month hiring history",
+        "If an agency or staff augmentation is recommended for any component, the output states which of the neutrality conditions hold, an end date or duration cap, an internal owner, and a knowledge-transfer plan",
+        "The compliance requirement that banking data stay in-house is applied as a constraint on external parties' data access",
+        "Alternatives considered are listed with the reason each lost",
+        "Cost drivers are listed without inventing salaries, rates, or provider fees",
+        "An exit strategy is described for the provider and for any external help",
+        "Conditions under which the recommendation would change are stated",
+        "Hiring and contract signing are explicitly reserved as decisions for the leader"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "vague-ask-more-capacity",
+      "prompt": "we need more engineering capacity. team is 15, everyone's stretched, roadmap keeps slipping. thinking about a nearshore team of 5-6 devs from an agency. good idea?",
+      "expected_output": "The skill should not endorse the nearshore team on this evidence. It should note that 'more capacity' is not a capability and ask what the capacity is for (which components, how long, differentiating or not), whether the slipping is caused by capacity or by something else (priorities, decision latency, quality), and who would direct and review external developers. It should rate most dimensions Unknown, present the question set needed, and offer a conditional view: if the demand is bounded and the work is reviewable by an internal lead, augmentation with an end date can fit; if the work is ongoing core product work, hiring or fixing prioritization is more likely right; a 'wait/validate' step (define the work first) may be recommended. It should point out the management overhead of a 5-6 person external team on a stretched 15-person team.",
+      "files": [],
+      "assertions": [
+        "The output does not endorse the nearshore team on the evidence given and asks what the capacity is for",
+        "The output questions whether slipping is caused by capacity rather than prioritization, decision latency, or quality",
+        "The output identifies who would direct, review, and receive knowledge from external developers as a requirement, noting the load on the stretched team",
+        "Most dimensions are rated Unknown or the output states the information still needed",
+        "The output gives conditions under which augmentation would fit (bounded duration, reviewable work, internal lead) and conditions under which hiring or reprioritization is more likely right",
+        "No headcount costs, rates, or productivity gains are invented"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "core-capability-do-not-outsource",
+      "prompt": "We're a 40-person fintech. Our pricing and risk engine is the reason customers choose us. It was built by our founding engineer who's now CTO and has no time. We want to rebuild it on a modern stack over the next 12-18 months and keep evolving it weekly after that. An engineering services firm we've worked with before has offered a fixed-price rebuild with a team of 4. Compliance is fine with it. Their price is attractive and they know our codebase. Should we take it?",
+      "expected_output": "The correct recommendation is not to outsource the rebuild as a fixed-price project. The skill should identify the engine as core differentiation with an ongoing duration and continuous iteration, deep proprietary domain knowledge, and a knowledge-retention requirement, which knocks out a project-based partner as the sole option and argues for hiring and building internally with the CTO's knowledge transferred to in-house engineers. It may allow a bounded role for the services firm (e.g. augmentation paired with new hires, or the firm helping with the commodity parts such as infrastructure or migration tooling) with a hard end date and knowledge transfer. It should say plainly that an attractive price and familiarity are not sufficient reasons. It should describe the transition (hire first, pair, CTO time carved out) and the conditions that would change the recommendation (e.g. inability to hire within a set period).",
+      "files": [],
+      "assertions": [
+        "The recommendation is not to accept the fixed-price outsourced rebuild as the sole approach",
+        "The engine is identified as core differentiation with ongoing duration, continuous iteration, and a knowledge-retention requirement",
+        "The project-based partner is knocked out or ruled out as the sole option because of the core, ongoing, must-stay-in-house characteristics",
+        "Hiring and building internally is recommended for the differentiating core, with knowledge transfer from the CTO addressed",
+        "If any role for the services firm is proposed, it is bounded with an end date, internal owner, and knowledge transfer, or limited to commodity components",
+        "The output states that an attractive price and codebase familiarity are not sufficient reasons on their own",
+        "Conditions under which the recommendation would change are stated, such as failure to hire within a period"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "commodity-stop-building-internally",
+      "prompt": "Our platform team has spent about 9 months building an internal feature-flag and experimentation system. It works but two engineers are basically full-time on it now (bugs, new SDKs, dashboards). Product wants more experimentation features. The team is proud of it and argues that buying would lock us in. Should we keep building it or buy a product?",
+      "expected_output": "The correct recommendation is to buy a mature product for the commodity feature-flag and experimentation capability and redirect the two engineers, unless a specific, evidenced differentiating requirement exists. The skill should classify feature flags and experimentation as commodity with mature products, note the ongoing maintenance cost (two engineers) and the opportunity cost, address the lock-in argument directly (the internal system also has lock-in; compare switching cost against unique value; check data export and SDK portability), and recommend a transition strategy (evaluate products against the team's actual requirements, migrate flags, sunset the internal system with a date). It should note the human dimension of the team's pride as a change-management issue for the leader, without making the staffing decision. It should describe conditions that would change the recommendation (e.g. a genuinely unique experimentation need no product supports, or restricted data).",
+      "files": [],
+      "assertions": [
+        "The recommendation is to buy a product for the feature-flag and experimentation capability, with the internal build sunset or scoped down, unless a specific differentiating requirement is evidenced",
+        "The capability is classified as commodity with a mature product market",
+        "The ongoing maintenance cost of two full-time engineers and the opportunity cost of their time is identified",
+        "The lock-in argument is addressed directly, noting that the internal system also creates lock-in and framing the question as switching cost versus unique value",
+        "A transition strategy is described, including evaluating products against actual requirements and a sunset plan for the internal system",
+        "Conditions that would change the recommendation are stated",
+        "No product prices or engineer salaries are invented"
+      ]
+    }
+  ]
+}

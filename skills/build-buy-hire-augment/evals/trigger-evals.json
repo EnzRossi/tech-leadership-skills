@@ -1,0 +1,20 @@
+[
+  {"query": "We need to add multi-country payouts in 5 months. Options: hire a payments team, use a payout provider, or an agency that's done this before. Platform team is maxed out. What should we do?", "should_trigger": true},
+  {"query": "should we keep building our internal feature flag system or just buy launchdarkly-type product? two engineers are basically full time on it now", "should_trigger": true},
+  {"query": "CEO wants to bring in a nearshore dev shop to speed up our roadmap. We're 15 engineers, all stretched. I'm not sure outsourcing is the answer. Help me think it through.", "should_trigger": true},
+  {"query": "Our founding engineer built our core pricing engine and has no time to rebuild it. A services firm offered a fixed-price rebuild. Should we take it or hire?", "should_trigger": true},
+  {"query": "We need a data engineering capability we don't have: pipelines, warehouse, dbt, the works. Hire 2 FTEs, contractors for a year, or a consultancy to stand it up and hand over? Budget is opex only.", "should_trigger": true},
+  {"query": "I have a 9-month integration project with a partner's API and nobody free. Contractors vs staff aug vs pushing the roadmap? What matters in that decision?", "should_trigger": true},
+  {"query": "Do we need a full-time security engineer or is a fractional/consultant arrangement enough for a 60-person B2B SaaS pre-SOC2?", "should_trigger": true},
+  {"query": "Our vendor for customer messaging keeps raising prices. Some engineers want to build our own. How do I decide whether to build, switch vendors, or negotiate?", "should_trigger": true},
+  {"query": "Compare Stripe Connect vs Adyen for marketplace payouts: fees, country coverage, KYC handling.", "should_trigger": false},
+  {"query": "Write a job description for a senior payments engineer and suggest an interview loop.", "should_trigger": false},
+  {"query": "Our outsourced mobile project is 3 months in and the agency reports look too rosy. Is it on track?", "should_trigger": false},
+  {"query": "Is it worth using an LLM to auto-classify our support tickets or should we stick with rules? Not sure AI is the right tool.", "should_trigger": false},
+  {"query": "Help me negotiate the MSA and SOW terms with a staffing agency — what clauses should I push back on?", "should_trigger": false},
+  {"query": "How should I structure my platform team vs stream-aligned teams as we grow from 30 to 60 engineers?", "should_trigger": false},
+  {"query": "What's a reasonable day rate for a senior contractor in Portugal vs Poland vs Argentina right now?", "should_trigger": false},
+  {"query": "Draft an onboarding plan for the three contractors starting next Monday on the billing team.", "should_trigger": false},
+  {"query": "Explain the difference between staff augmentation, managed services, and outsourcing.", "should_trigger": false},
+  {"query": "We've decided to buy a CRM. Help me write the RFP and evaluation criteria for vendors.", "should_trigger": false}
+]
