@@ -5,28 +5,20 @@ on:
     branches: [main]
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
-
-      # Official Agent Skills reference validator (agentskills.io).
-      # It is not published on PyPI, so install it from the specification repository.
-      - name: Install skills-ref
-        run: pip install "git+https://github.com/agentskills/agentskills.git#subdirectory=skills-ref"
-
-      - name: Validate each skill against the Agent Skills specification
-        run: |
-          set -e
-          for d in skills/*/; do
-            echo "== $d"
-            skills-ref validate "$d"
-          done
-
-      - name: Repository conventions (files, evals, trigger tests, references)
-        run: python scripts/validate_skills.py
+          python-version: '3.12'
+      - name: Install pinned validation dependencies
+        run: python -m pip install -r scripts/requirements-validation.txt
+      - name: Specification and repository conventions (not model evals)
+        run: python scripts/validate_skills.py --require-reference
+      - name: Validator regression tests
+        run: python -m unittest discover -s scripts -p 'test_*.py'
