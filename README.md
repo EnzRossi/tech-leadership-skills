@@ -1,6 +1,6 @@
 # EnzRossi Tech Leadership Skills
 
-![EnzRossi Tech Leadership Skills — AI investment, software delivery, engineering capacity](site/assets/social-preview.png)
+![EnzRossi Tech Leadership Skills: a blue origami rocket with a paper checklist anchored to a desk](site/assets/social-preview.png)
 
 Open-source Agent Skills for technology leaders making software, delivery, resourcing, and AI decisions.
 
