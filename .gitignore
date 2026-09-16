@@ -1,0 +1,8 @@
+# Eval workspaces are generated locally and are not part of the repository
+*-workspace/
+# Trigger-test scaffolding created by skill-creator scripts
+.claude/commands/
+# OS and editor files
+.DS_Store
+.venv/
+__pycache__/
