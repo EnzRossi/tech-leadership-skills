@@ -1,94 +1,30 @@
-# Sourcing Recommendation: [capability]
+# Sourcing decision: [name]
 
-Prepared [date] for [decision maker / forum] · Requested by [who] · Decision needed by [date or "flexible"]
-
-> Collapse any section with nothing substantive to a single line. Deliver the result, not a description of the method.
+[Decision maker] · [Evidence as of date, if known]
 
 ## Recommendation
 
-| Component | Differentiation | Recommended model | One-line reasoning |
-|---|---|---|---|
+**Confidence: [High / Medium / Low, with reason]**
 
-**Confidence: [High / Medium / Low]** — one line on why.
+[First 100 words: decision, problem/commitment, decisive evidence and next step. Aim for 250–600 words for a full memo; 100–250 for a narrow or thin-evidence question. No minimum length. Remove drafting instructions and empty sections.]
 
-Two or three sentences a leader can repeat in a meeting: what to do, why, and the first step.
+## Why this choice
 
-## The capability and the decision
-
-- Capability as an outcome: [...]
-- What the organization stops doing or fails to do without it: [...]
-- Timeline and consequence of missing it: [FACT / ASSUMPTION]
-- Expected duration of the need: [...]
-
-## Dimension assessment
-
-| Dimension | Component A | Component B | Evidence type |
-|---|---|---|---|
-| Differentiation | | | |
-| Maturity of the problem | | | |
-| Domain knowledge required | | | |
-| Integration depth | | | |
-| Urgency | | | |
-| Duration | | | |
-| Iteration frequency | | | |
-| Requirement uncertainty | | | |
-| Internal skills | | | |
-| Internal capacity | | | |
-| Talent availability | | | |
-| Capacity to manage the option | | | |
-| Security and compliance | | | |
-| Knowledge retention requirement | | | |
-| Reversibility and lock-in | | | |
-| Budget shape | | | |
-
-## Options removed and why
-
-| Option | Component | Knockout reason |
+| Component (only if split helps) | Solution + delivery route + long-term owner | Decisive evidence |
 |---|---|---|
 
-## Alternatives considered
+[Address the requester's preferred option directly. Compare strongest competing option and status quo; state trade-offs and verified exclusions.]
 
-| Alternative | Why it lost |
-|---|---|
+## Cost, transition and exit
 
-## Trade-offs of the recommendation
+[Common comparison scope/horizon; known figures and dominant unknown drivers; receiver capacity; acceptance and exit/review trigger. Include hybrid interface ownership if needed.]
 
-- Gains: [...]
-- Gives up: [...]
-- Neutrality check (if an external firm is recommended): which of the four conditions hold, the end date, the receiving owner, the knowledge-transfer plan.
+## Next action
 
-## Cost drivers
+[Proposed owner, evidence needed and human decision.]
 
-| Option | Driver | Number available? | Who can supply it |
-|---|---|---|---|
+## What could change the recommendation
 
-## Risks
+[Strongest counterargument; up to three missing facts, why each matters and how to obtain it. Distinguish proposed assumptions from reported/observed facts.]
 
-| Risk | Affected option | Mitigation | Owner |
-|---|---|---|---|
-
-## Transition strategy
-
-[How the organization gets from today to the recommended model. Owners, sequence, dates where known.]
-
-## Exit strategy
-
-| Option | Exit at 6 months | Exit at 18 months | What must be true for a clean exit |
-|---|---|---|---|
-
-## Conditions that would change this recommendation
-
-- If [condition], then [change].
-
-## Assumptions
-
-- ASSUMPTION: [...]
-
-## Information still needed
-
-| Item | Why it matters | Who has it |
-|---|---|---|
-
-## Decisions reserved for leadership
-
-- [Hiring, contracts, budget commitments: the option set and the information needed for each]
+<!-- Optional appendix: evidence ledger, detailed readiness or option comparison only if decision-relevant or requested. -->
