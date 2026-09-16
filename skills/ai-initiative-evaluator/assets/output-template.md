@@ -1,91 +1,27 @@
-# AI Initiative Evaluation: [initiative name]
+# AI initiative decision: [name]
 
-Prepared [date] for [decision maker / forum] · Requested by [who] · Origin of the idea: [vendor pitch / internal team / executive request / other]
+[Decision maker] · [Evidence as of date, if known]
 
-> Collapse any section with nothing substantive to a single line. Deliver the result, not a description of the method.
+## Recommendation
 
-## Executive recommendation
+**Confidence: [High / Medium / Low, with reason]**
 
-**Recommendation: [Do not use AI / Research further / Prototype / Run a controlled pilot / Proceed toward production]** [+ sourcing lean: Buy / Build internally / External engineering partner, if applicable]
+[First 100 words: decision, problem/commitment, decisive evidence and next step. Aim for 250–600 words for a full memo; 100–250 for a narrow or thin-evidence question. No minimum length. Remove drafting instructions and empty sections.]
 
-**Confidence: [High / Medium / Low]** — one line on why.
+## Decisive evidence
 
-Three sentences: the problem, what drives the recommendation, and the next step with its cost and duration.
+[Two or three source-linked observations/reports and the inference they support. Include the strongest non-AI alternative and why it wins or loses.]
 
-## The problem, stated without the technology
+## Good enough for the next stage
 
-- Who has it: [...]
-- What they cannot do, or do slowly or badly, today: [...]
-- How often and at what cost: [FACT / ASSUMPTION / UNKNOWN, with figures only where supplied]
-- Outcome that would count as success: [measurable statement, or UNKNOWN if the requester could not state one]
+[Evaluation contract: baseline, representative and held-out cases, judging, costly errors and thresholds with rationale/status. For rollout include exposure, review capacity, cost/latency and fallback. If no AI is justified, give the simpler next step instead.]
 
-## Is AI the right tool?
+## Next commitment
 
-Strongest non-AI alternative: [...]
-Verdict: [AI is the wrong tool / right shape but the alternative is the baseline / right tool] — reasoning in two or three sentences.
+[One action; proposed owner; bounded effort; advance and stop/rework conditions; human decision needed.]
 
-## Classification
+## What could change the recommendation
 
-| | Finding |
-|---|---|
-| Automate or augment | |
-| Cost of being wrong | [Low / Medium / High] · Error asymmetry: [which error is worse and why] · Regulated category: [yes/no, which] |
-| Shape of the AI | [Single call with context / Fixed workflow / Agent] · [Generative / Predictive] |
+[Strongest counterargument; up to three missing facts, why each matters and how to obtain it. Distinguish proposed assumptions from reported/observed facts.]
 
-## Assessment
-
-| Dimension | Rating | Evidence (FACT / INFERENCE / ASSUMPTION) | What would resolve an Unknown |
-|---|---|---|---|
-| Business value | | | |
-| Strategic fit | | | |
-| User desirability | | | |
-| Technical feasibility | | | |
-| Data readiness | | | |
-| Evaluation readiness | | | |
-| Operational readiness | | | |
-| Risk and compliance | | | |
-
-## Risk assessment
-
-| Risk | Likelihood / impact (qualitative) | Mitigation | Owner |
-|---|---|---|---|
-
-## Biggest unknowns
-
-1. [...]
-2. [...]
-3. [...]
-
-## Questions that must be answered before the next stage
-
-| Question | Who can answer | By when |
-|---|---|---|
-
-## Recommended next experiment
-
-| Element | Definition |
-|---|---|
-| Question it answers | |
-| Method | |
-| Baseline | |
-| Measures and thresholds | |
-| Duration and budget | [only figures the sponsor supplied or must supply] |
-| Stop rule | |
-| Owner / approver | |
-
-## Measurable success criteria
-
-- [Metric, threshold, measurement method, when measured]
-
-## Lifecycle cost drivers to estimate
-
-- [Inference at volume · monitoring · re-evaluation on model change · human review time · integration · data access and rights · compliance · training · decommissioning]
-
-## Human approval points
-
-| Decision | Approver | Information needed |
-|---|---|---|
-
-## Assumptions made in this evaluation
-
-- ASSUMPTION: [...]
+<!-- Optional appendix: evidence ledger, detailed readiness or option comparison only if decision-relevant or requested. -->
