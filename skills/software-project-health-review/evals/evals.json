@@ -1,0 +1,75 @@
+{
+  "skill_name": "software-project-health-review",
+  "evals": [
+    {
+      "id": 1,
+      "name": "portal-rebuild-with-artifacts",
+      "prompt": "I'm the CTO. Our customer portal rebuild has been reported green for three months straight but the launch date just moved six weeks and Sales is nervous. Attached are the Jira export and the steering notes plus a Slack digest from the eng channel. Tell me how healthy this project actually is and what I should do this week. Steering committee is Thursday.",
+      "expected_output": "A health assessment following the output template. Overall health should be Red or Amber (not Green), with confidence stated. It should identify from the Jira data the SSO tickets carried across seven sprints, the payments epic with most work not started, scope added by Sales (four 'scope-added' issues), the unassigned production environment and monitoring tasks, and a reopened multi-currency bug. From the notes it should identify that the status stayed Green while the date slipped and scope grew, that the SSO risk has had the same owner and mitigation for three reports, that the webhook decision has been stalled for weeks, and that the team does not know what 'launch' means. It should distinguish facts from inferences, list unknowns (no PRD, no baseline, no test evidence for several Done items), name leadership decisions (define launch scope, own the vendor escalation, decide on the mock IdP), give at most five actions for the next seven days, and list things not to change.",
+      "files": [
+        "evals/files/jira-export.csv",
+        "evals/files/steering-notes.md"
+      ],
+      "assertions": [
+        "Overall health is rated Red or Amber, not Green, and a separate confidence level is stated",
+        "The assessment notes that the steering status remained Green while the launch date moved from 15 October to 30 November and scope was added",
+        "The SSO vendor sandbox dependency is identified as unresolved across multiple sprints and multiple steering reports with an unchanged owner and mitigation",
+        "The stalled payment webhook design decision is identified as a decision-latency problem",
+        "Scope added after the plan (live chat, knowledge base, bulk download, dashboard personalization, or the 'scope-added' label) is identified as scope instability",
+        "Missing operational readiness is identified: production environment, monitoring, or load testing are unassigned and not started",
+        "Claims are explicitly labeled as fact, inference, assumption, or unknown (or equivalent explicit separation)",
+        "The output lists information that is missing, such as the original brief or success metrics, test evidence for Done items, or team allocation",
+        "The output names decisions leadership must make, including defining what 'launch' means or owning the vendor escalation",
+        "The output contains no more than five actions for the next seven days, each with an owner",
+        "The output includes a list of things that should not be changed right now",
+        "Every count, story-point total, and date in the output matches the supplied CSV and notes (or is derivable from them by counting), and no velocity, completion percentage, or headcount appears that cannot be derived from the inputs"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "vendor-project-thin-evidence",
+      "prompt": "We outsourced our mobile app rewrite to an agency 5 months ago. Their weekly report says 78% complete and everything is on track for a Nov 1 release. My head of product says the demos feel thin and she's only seen the onboarding flow and settings screens. I don't have access to their tracker. Is this project in trouble? What should I be asking for?",
+      "expected_output": "The skill should not pretend to know the project's status. It should treat the 78% figure and 'on track' as the agency's claims (not facts), note that a demo covering only onboarding and settings after five months is a signal worth checking but not proof of trouble, rate most dimensions Unknown, give an overall assessment with Low confidence, and focus its recommendations on the specific evidence to request from the agency (tracker access or export, the plan with original dates, definition of 78%, test evidence, demo of the riskiest features, release plan) within seven days. It should include a decision boundary about contract changes and should not recommend replacing or adding to the agency based on this evidence.",
+      "files": [],
+      "assertions": [
+        "The 78% completion figure is treated as the agency's claim rather than as a fact about the project",
+        "Most dimensions are rated Unknown (or the output explicitly says the evidence does not support rating them)",
+        "Confidence in the assessment is stated as Low",
+        "The output lists specific evidence to request from the agency, including tracker access or export and how 78% is calculated",
+        "The output recommends demonstrating the riskiest or most complex features rather than only the flows already shown",
+        "The output does not recommend terminating, replacing, or adding a second vendor based on the evidence given",
+        "Any contract or vendor-relationship change is framed as a leadership decision requiring more evidence"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "over-reaction-do-not-intervene",
+      "prompt": "Our data platform migration slipped by two weeks (planned end of Sept, now mid-Oct). The team told me why: the source system's export API rate-limited us and they built a batching workaround, which is now done and tested. Everything else is on the original plan, all 6 milestones before this were hit on time, QA is embedded, and the business stakeholders signed off on the new date. My CEO wants me to bring in a consultant to 'get it back on track' and add two contractors. Should I?",
+      "expected_output": "The correct recommendation is not to intervene structurally. The skill should rate the project Green or Amber with reasonable confidence given the track record (six milestones on time, root cause identified and resolved, stakeholders aligned on the new date), explain that adding people or a consultant to a project two weeks late with a resolved cause is likely to slow it down (onboarding cost), and place the consultant and contractor question firmly in the 'do not change' list. It should still list what evidence would confirm the assessment (e.g., the workaround's test evidence, remaining critical path) and note remaining risks such as further unknown source-system constraints. It should not invent metrics.",
+      "files": [],
+      "assertions": [
+        "The recommendation is not to add contractors or a consultant at this time",
+        "The output explains that adding people to a late project has an onboarding or coordination cost that is unlikely to recover two weeks",
+        "Overall health is Green or Amber, and the six milestones hit on time and the resolved root cause are cited as evidence",
+        "The output distinguishes what is known from the team's account (facts or reported facts) from the assessor's inferences",
+        "The output identifies at least one remaining risk or unknown, such as further source-system constraints or the remaining critical path",
+        "The output includes the consultant and contractors in the list of things not to change, or an equivalent explicit statement"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "exec-update-request",
+      "prompt": "need to give the exec team a 10 min update on the warehouse management system project tomorrow. here's what I have: 3 of 5 phases done, phase 4 (inventory sync) started 3 weeks late because the ERP team was busy, the ERP team still hasn't assigned anyone to phase 5 integration, our QA lead left last month and hasn't been replaced, budget is 15% under because we haven't spent the contractor line yet. what do I say",
+      "expected_output": "The skill should produce a health assessment usable as the basis for the update rather than just a slide script. It should identify the ERP team dependency as the critical-path risk (phase 4 already late because of it; phase 5 unstaffed), flag the QA lead departure as a quality and capacity risk, and point out that the budget underspend is a symptom of unspent contractor capacity rather than good news. It should recommend the exec team be asked for a decision (securing ERP team commitment) rather than just informed, keep unknowns explicit (no dates, no scope info given), and avoid inventing a completion percentage or a new end date.",
+      "files": [],
+      "assertions": [
+        "The ERP team dependency is identified as the critical-path or top risk, covering both the late phase 4 and the unstaffed phase 5",
+        "The QA lead departure is identified as a quality or capacity risk rather than omitted",
+        "The budget underspend is interpreted as unspent capacity or delayed work rather than presented as positive",
+        "The output recommends asking the exec team for a specific decision or commitment regarding the ERP team's staffing",
+        "No new end date or completion percentage is invented",
+        "Unknowns are listed explicitly, such as the remaining timeline, the scope of phases 4 and 5, or the QA replacement plan"
+      ]
+    }
+  ]
+}

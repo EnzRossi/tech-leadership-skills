@@ -1,0 +1,33 @@
+Issue key,Summary,Issue Type,Status,Priority,Assignee,Created,Updated,Resolved,Sprint,Story Points,Epic,Labels,Linked PR
+CP-101,Customer portal login via SSO,Story,In Progress,Highest,,2026-05-04,2026-08-01,,Sprint 3;Sprint 4;Sprint 5;Sprint 6;Sprint 7;Sprint 8;Sprint 9,8,SSO,blocked-vendor,
+CP-102,SSO vendor sandbox provisioning,Task,In Progress,Highest,Priya N,2026-05-04,2026-07-28,,Sprint 3;Sprint 4;Sprint 5;Sprint 6;Sprint 7;Sprint 8;Sprint 9,3,SSO,blocked-vendor,
+CP-103,Map SSO claims to portal roles,Story,To Do,High,,2026-05-11,2026-05-11,,Sprint 5;Sprint 6;Sprint 7;Sprint 8;Sprint 9,5,SSO,,
+CP-110,Invoice list view,Story,Done,High,Marcus L,2026-05-04,2026-06-02,2026-06-02,Sprint 3;Sprint 4,5,Invoices,,PR-412
+CP-111,Invoice detail view,Story,Done,High,Marcus L,2026-05-04,2026-06-16,2026-06-16,Sprint 4;Sprint 5,5,Invoices,,PR-431
+CP-112,Invoice PDF download,Story,Done,Medium,Marcus L,2026-05-18,2026-06-30,2026-06-30,Sprint 5;Sprint 6,3,Invoices,,PR-455
+CP-113,Invoice search and filters,Story,Done,Medium,Sofia R,2026-06-01,2026-07-14,2026-07-14,Sprint 6;Sprint 7,5,Invoices,,
+CP-114,Invoice export to CSV,Story,Done,Low,Sofia R,2026-06-15,2026-07-28,2026-07-28,Sprint 7;Sprint 8,3,Invoices,,
+CP-115,Bulk invoice download,Story,To Do,Low,,2026-08-04,2026-08-04,,Sprint 9,5,Invoices,scope-added,
+CP-120,Payment method management,Story,In Progress,Highest,Diego F,2026-05-11,2026-06-20,,Sprint 4;Sprint 5;Sprint 6;Sprint 7;Sprint 8;Sprint 9,13,Payments,,
+CP-121,Pay invoice by card,Story,To Do,Highest,,2026-05-11,2026-05-11,,Sprint 6;Sprint 7;Sprint 8;Sprint 9,13,Payments,,
+CP-122,Payment provider webhook handling,Task,To Do,High,,2026-05-11,2026-05-11,,Sprint 7;Sprint 8;Sprint 9,8,Payments,,
+CP-123,Payment failure retry UX,Story,To Do,Medium,,2026-07-06,2026-07-06,,Sprint 9,5,Payments,scope-added,
+CP-130,Support ticket submission form,Story,Done,High,Sofia R,2026-05-18,2026-06-16,2026-06-16,Sprint 4;Sprint 5,5,Support,,PR-433
+CP-131,Ticket status tracking,Story,Done,Medium,Sofia R,2026-06-01,2026-07-01,2026-07-01,Sprint 5;Sprint 6,5,Support,,PR-460
+CP-132,Attachments on tickets,Story,Done,Medium,Priya N,2026-06-15,2026-07-28,2026-07-28,Sprint 7;Sprint 8,3,Support,,
+CP-133,Live chat integration,Story,To Do,Medium,,2026-07-20,2026-07-20,,Sprint 9,8,Support,scope-added,
+CP-134,Knowledge base search,Story,To Do,Medium,,2026-08-04,2026-08-04,,Sprint 9,8,Support,scope-added,
+CP-140,Portal dashboard home,Story,Done,High,Diego F,2026-05-04,2026-05-19,2026-05-19,Sprint 3,5,Dashboard,,PR-398
+CP-141,Usage charts,Story,Done,Medium,Diego F,2026-05-18,2026-06-16,2026-06-16,Sprint 4;Sprint 5,8,Dashboard,,PR-430
+CP-142,Notification center,Story,In Progress,Medium,Marcus L,2026-07-06,2026-08-05,,Sprint 8;Sprint 9,5,Dashboard,,
+CP-143,Dashboard personalization,Story,To Do,Low,,2026-08-11,2026-08-11,,Sprint 9,8,Dashboard,scope-added,
+CP-150,Set up staging environment,Task,Done,High,Priya N,2026-05-04,2026-05-25,2026-05-25,Sprint 3,3,Platform,,
+CP-151,CI pipeline for portal,Task,Done,High,Priya N,2026-05-04,2026-05-25,2026-05-25,Sprint 3,3,Platform,,PR-390
+CP-152,Production environment provisioning,Task,To Do,High,,2026-05-04,2026-05-04,,Sprint 8;Sprint 9,5,Platform,,
+CP-153,Monitoring and alerting,Task,To Do,Medium,,2026-05-04,2026-05-04,,,5,Platform,,
+CP-154,Load testing,Task,To Do,Medium,,2026-06-01,2026-06-01,,,5,Platform,,
+CP-160,Bug: invoice totals wrong for multi-currency,Bug,Reopened,High,Marcus L,2026-07-10,2026-08-06,,Sprint 8;Sprint 9,3,Invoices,,
+CP-161,Bug: PDF download times out over 200 lines,Bug,To Do,Medium,,2026-07-22,2026-07-22,,Sprint 9,2,Invoices,,
+CP-162,Bug: ticket attachments fail over 10MB,Bug,To Do,Medium,,2026-08-03,2026-08-03,,Sprint 9,2,Support,,
+CP-163,Bug: dashboard charts blank for new tenants,Bug,Done,High,Diego F,2026-07-15,2026-07-29,2026-07-29,Sprint 8,2,Dashboard,,
+CP-164,Bug: session expires during payment flow,Bug,To Do,High,,2026-08-10,2026-08-10,,Sprint 9,3,Payments,,

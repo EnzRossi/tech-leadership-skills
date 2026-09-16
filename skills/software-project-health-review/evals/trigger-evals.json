@@ -1,0 +1,20 @@
+[
+  {"query": "Here's the Jira export and the last 3 sprint reviews for the checkout redesign. Leadership thinks it's fine, I'm not sure. Can you tell me what's really going on with this project?", "should_trigger": true},
+  {"query": "our platform migration has been 'two weeks away' for two months. i have the plan, the risk register and a bunch of meeting notes. is this thing in trouble or am i being paranoid", "should_trigger": true},
+  {"query": "I have a steering committee on Thursday for the ERP integration program. Attached are the PMO status decks (all green) and the engineering team's retro notes (not so green). Help me figure out the actual status and what decisions I need to bring.", "should_trigger": true},
+  {"query": "We outsourced a mobile app rebuild to an agency. Their weekly reports say 80% done but the demos look thin. What should I be asking for to know if this is on track?", "should_trigger": true},
+  {"query": "New VP Eng here, inherited a 14-month data warehouse project. I've got Linear exports, a Notion roadmap, and Slack channel summaries. Give me an honest health assessment before I meet the sponsor.", "should_trigger": true},
+  {"query": "Pre-launch review: we go live with the new billing system in 3 weeks. Here's the release plan, QA summary and the open bug list. What are the biggest risks and what shouldn't we touch?", "should_trigger": true},
+  {"query": "The CEO wants to add three contractors to our late payments project to 'catch up'. Here's the milestone plan and sprint data. Is the project actually late enough to justify that, and would it help?", "should_trigger": true},
+  {"query": "board wants a one-slide RAG status for our 4 biggest engineering initiatives. i have sprint metrics and PM updates for each. help me rate them honestly rather than just copying the PM's colour", "should_trigger": true},
+  {"query": "Can you help me write a Jira JQL query to find all issues in the Payments epic that haven't been updated in 14 days?", "should_trigger": false},
+  {"query": "We're deciding whether to build an LLM assistant for our support team or keep using canned responses. Is AI worth it here?", "should_trigger": false},
+  {"query": "Should we hire two more backend engineers or bring in a nearshore team for the next 9 months? We have a big integration project coming.", "should_trigger": false},
+  {"query": "What are DORA metrics and how should we set up dashboards to track deployment frequency and lead time across our 12 teams?", "should_trigger": false},
+  {"query": "My team seems burned out and morale is low after the reorg. How do I run a team health check-in and what questions should I ask in 1:1s?", "should_trigger": false},
+  {"query": "Write a project status report template our PMs can fill in every week with RAG status, risks and milestones.", "should_trigger": false},
+  {"query": "Our sprint retrospectives are getting stale. Suggest some retro formats and how to get quieter engineers to speak up.", "should_trigger": false},
+  {"query": "Estimate how long it will take to migrate our monolith to microservices. We have about 400k lines of Java and a team of 8.", "should_trigger": false},
+  {"query": "Help me draft the project charter and RACI for a new customer data platform initiative we're kicking off next quarter.", "should_trigger": false},
+  {"query": "Run a post-mortem on the outage we had on Tuesday. Here's the incident timeline and the on-call notes.", "should_trigger": false}
+]
