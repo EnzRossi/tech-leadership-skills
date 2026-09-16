@@ -468,6 +468,11 @@ footer p {
   margin: 10px 0;
   max-width: 620px;
 }
+.about-title {
+  font-size: 1.25rem;
+  margin-top: 28px;
+  color: var(--paper);
+}
 .footer-links {
   display: flex;
   flex-direction: column;
