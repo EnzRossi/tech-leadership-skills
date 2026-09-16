@@ -1,27 +1,19 @@
-# [Decision or initiative name] — [Artifact type]
+# [Decision memo]
 
-Prepared: [date] · For: [audience] · Confidence: [High / Medium / Low, with one line on why]
+[Decision / audience] · [Evidence as of date]
 
 ## Recommendation
 
-One paragraph a busy executive can act on.
+[First 100 words: recommendation, decisive evidence, confidence and next step. Aim for 250–600 words; 100–250 may suffice for a narrow question. No minimum length.]
 
-## Evidence
+## Why
 
-| Claim | Type (Fact / Inference / Assumption / Unknown) | Source |
-|---|---|---|
+[Two or three findings with source and inference distinguished. Strongest alternative and trade-off.]
 
-## Analysis
+## Next commitment
 
-Sections matching the skill's decision dimensions.
+[Proposed owner, action, evidence produced and human decision needed. No invented dates or prices.]
 
-## Risks and unknowns
+## What would change the recommendation
 
-## Decisions needed from leadership
-
-## Next actions
-
-| Action | Owner | By when | Evidence it will produce |
-|---|---|---|---|
-
-## What would change this recommendation
+[Up to three decisive unknowns and a discriminating check. Optional evidence appendix only when useful.]

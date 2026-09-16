@@ -1,85 +1,44 @@
 # Contributing
 
-Thank you for helping technology leaders make better decisions. This guide explains what we accept, how a skill is structured, and how we check quality.
+Improve a real technology decision workflow. Read [principles](docs/principles.md) and [landscape](docs/landscape.md) first. A specific failure case is more valuable than another generic leadership framework.
 
-## What we are looking for
+## Scope and structure
 
-Skills that encode a repeatable decision workflow for people who lead software, delivery, engineering organizations, or AI initiatives. Good candidates share three traits:
+We accept software delivery, AI adoption, project health, sourcing and adjacent technology leadership decisions. Generic executive personas and legal, financial, HR-policy, marketing or medical advisory skills are out of scope.
 
-1. A technology leader faces the decision repeatedly and it has real stakes.
-2. A strong model would not reliably handle it well without structure, evidence discipline, or domain judgment.
-3. The output is an artifact someone can take into a meeting.
+Copy `templates/skill-template/` for a new skill. Each skill needs:
 
-Read [docs/principles.md](docs/principles.md) before you start. Check [docs/landscape.md](docs/landscape.md) so you do not rebuild something another collection already does well.
+- `SKILL.md`: standard frontmatter, narrow trigger description, focused procedure and reference-loading instructions.
+- `references/methodology.md` and `references/sources.md`: decision criteria, limitations, worked example and attribution.
+- `assets/output-template.md`: concise decision artifact with optional depth.
+- `evals/evals.json`: realistic scenarios and behavioral assertions.
+- `evals/trigger-evals.json`: positive requests and nearby requests that should not activate it.
 
-Out of scope: legal, financial, tax, HR-policy, marketing, and medical expertise; generic prompt collections; skills that only restate common knowledge.
+The validator checks minimum fixture structure, not whether the tests are good. Keep frontmatter within the [format specification](https://agentskills.io/specification). Descriptions should identify decision intent and nearby exclusions, not just keywords. Keep SKILL.md below 500 lines; shorter is usually better.
 
-## Skill structure
+## Evaluate the change
 
-Every skill follows the [Agent Skills specification](https://agentskills.io/specification):
+Use [Agent Skills evaluation guidance](https://agentskills.io/skill-creation/evaluating-skills) or a recorded version of [Anthropic skill-creator](https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md). Our fixtures use `assertions`; adapt to `expectations` if your runner requires it.
 
-```
-skills/<skill-name>/
-  SKILL.md                    # required: frontmatter + workflow (under 500 lines)
-  references/
-    methodology.md            # the detailed method, loaded when the workflow says so
-    sources.md                # required: attributed research behind the method
-  assets/
-    output-template.md        # the artifact the skill produces
-  evals/
-    evals.json                # required: >= 3 scenario evals with assertions
-    trigger-evals.json        # required: >= 5 should-trigger and >= 5 should-not-trigger prompts
-```
+1. Add cases for normal, messy, missing and contradictory evidence, preferred-answer pressure, a legitimate proceed decision, and a stop/wait decision. Include no-AI and no-external-provider outcomes where relevant, plus a positive outside-help case for sourcing neutrality.
+2. Freeze prompts and grading criteria before running. Use separate fresh contexts for revised, previous and no-skill arms, with the same model/settings/tools and input data. Hide expected outputs and grades from response generators. Give all arms the same user task; do not make only one arm see the needed artifacts.
+3. Grade behavior against evidence. A defensible alternative recommendation can pass; do not force the author's preferred option. Record serious invented facts, unsupported certainty and consequential boundary failures separately from counts of passing assertions. Check calculations and output length programmatically.
+4. Inspect outputs with a technology leader. Where possible blind labels and randomize order. Repeated paired trials are needed to quantify variability. Keep a fresh held-out set; do not tune the description or workflow on it and still call it held-out.
+5. Commit sanitized prompts, exact outputs, evidence-backed grades, revision/model/harness settings and limitations. Record missing token/time data as missing, not estimated. Update [eval-results.md](docs/eval-results.md); do not claim deployment readiness from a few development cases.
 
-Start from `templates/skill-template/`, which contains annotated versions of each file.
+For activation tests, install the skill in the target client and observe the actual load/invocation trace. Validate instrumentation with an explicit-invocation positive control. Zero observed activations can be a harness failure **or** a real routing failure; investigate before assigning cause. Fixture validation and description-only classification do not measure triggering.
 
-### Frontmatter
-
-Only the fields defined by the specification are allowed: `name`, `description`, `license`, `compatibility`, `metadata`, `allowed-tools`. The `name` must match the directory name, be lowercase, and use hyphens. The `description` is the routing mechanism: write it from the user's point of view, list the situations that should activate the skill, include near-miss situations that should not, and keep it under 1024 characters. See the [description guidance](https://agentskills.io/skill-creation/optimizing-descriptions).
-
-### SKILL.md body
-
-SKILL.md is the workflow and routing layer. Put the intake questions, the ordered steps, the evidence rules, the decision structure, and pointers to reference files there. Put the long methodology, research, and examples in `references/`. Tell the agent when to load each reference file.
-
-Every instruction must change behavior. Before submitting, go through the file line by line and remove anything a capable model would do anyway.
-
-### Sources
-
-`references/sources.md` lists the primary and authoritative sources that informed the method, each with a link, the author or publisher, and one or two lines on what concept it contributed. Attribute named frameworks to their owners. Label EnzRossi's own synthesis as such. Do not paste long passages from sources.
-
-## Evaluation
-
-We do not merge skills on the strength of their prose. Each skill needs:
-
-**Scenario evals** in `evals/evals.json` following the [agentskills.io eval format](https://agentskills.io/skill-creation/evaluating-skills): at least a normal case, an ambiguous or incomplete-information case, and a case where the right answer is to not proceed. Prompts should read like something a real CTO, VP of Engineering, product leader, or founder would type. Assertions describe expected behavior, not exact wording.
-
-**Trigger evals** in `evals/trigger-evals.json`: an array of `{"query": "...", "should_trigger": true|false}`. Negative cases should be near misses that share vocabulary with the skill but need something else.
-
-**With-skill versus without-skill comparison**: run the scenario evals both ways in clean contexts, and record what the skill changed in `docs/eval-results.md`. If the skill does not measurably improve the output, it is not ready.
-
-Anthropic's `skill-creator` skill automates much of this loop in Claude Code, and the agentskills.io evaluation guide describes the same process for other agents.
-
-## Validation
-
-Run before opening a pull request:
+## Validate locally
 
 ```bash
-pip install "git+https://github.com/agentskills/agentskills.git#subdirectory=skills-ref"
+python3 -m venv .venv
+.venv/bin/pip install -r scripts/requirements-validation.txt
+.venv/bin/python scripts/validate_skills.py --require-reference
+.venv/bin/python -m unittest discover -s scripts -p 'test_*.py'
 ```
 
-```bash
-python scripts/validate_skills.py
-```
-
-The first command installs the official reference validator. The script runs it on every skill and then checks the repository's own conventions: required files, reference paths, eval JSON validity, and trigger-test coverage. CI runs the same checks on every pull request.
+The official validator revision is pinned in `scripts/requirements-validation.txt`. Update deliberately after reviewing its changes. Local checks validate YAML, file references, fixture types and trigger coverage; CI uses the same commands. Neither invokes models. Remote source links require a separate review; local Markdown file destinations are checked automatically (heading anchors are not).
 
 ## Pull requests
 
-- One skill or one focused improvement per pull request.
-- Explain what decision the skill supports and why a model needs it.
-- Include the eval results you observed.
-- Keep the tone practical. No marketing language about EnzRossi or anyone else.
-
-## License
-
-By contributing you agree that your contribution is licensed under the Apache License 2.0, the same license as the repository. We chose Apache-2.0 because it is permissive enough for companies to adopt, adapt, and redistribute skills internally, and it carries an explicit patent grant, which matters to corporate legal teams more than the difference between MIT and Apache does to individuals.
+Explain the decision failure, the changed behavior and validation. Include relevant results and remaining uncertainty, not just a pass-rate headline. Keep the change focused. Do not submit confidential client data or unsanitized transcripts. By contributing, you agree your contribution uses the repository's [Apache-2.0 license](LICENSE).

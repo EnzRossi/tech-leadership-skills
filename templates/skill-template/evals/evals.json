@@ -9,7 +9,7 @@
       "files": [],
       "assertions": [
         "The output follows the structure of assets/output-template.md",
-        "Every claim is labeled as fact, inference, assumption, or unknown"
+        "Decisive claims are grounded in supplied evidence, with inference and unknowns distinguished"
       ]
     },
     {
@@ -19,7 +19,7 @@
       "expected_output": "The skill states what is missing, proceeds on labeled assumptions, and does not invent data.",
       "files": [],
       "assertions": [
-        "No numbers or statuses appear that were not present in the prompt",
+        "No numbers or statuses are presented as measured facts without evidence; derived quantities and proposals are distinguished",
         "The output lists the specific information still needed"
       ]
     },
