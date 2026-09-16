@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Recommends configuration/reuse rather than fabricating a custom build need",
+      "passed": true,
+      "evidence": "Recommends enabling the existing licensed workflow; no unmet requirement supports a custom build."
+    },
+    {
+      "text": "Recognizes displaced launch capacity as a cost",
+      "passed": true,
+      "evidence": "Explicitly includes delaying the fully allocated launch team as opportunity cost."
+    },
+    {
+      "text": "Gives a narrow next step and avoids unsupported implementation pricing",
+      "passed": true,
+      "evidence": "Next step is finance-owner half-day enablement and requirements verification; distinguishes supplied zero subscription increment from labor and avoids invented custom implementation prices."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 3,
+    "pass_rate": 1.0
+  },
+  "claims": [],
+  "eval_feedback": {
+    "suggestions": [],
+    "overall": "Final-output-only grading; no execution trace or timing evidence available. No substantive output errors found."
+  }
+}

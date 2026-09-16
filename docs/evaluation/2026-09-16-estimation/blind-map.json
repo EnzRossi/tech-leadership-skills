@@ -1,0 +1,26 @@
+{
+  "case-1-A": {
+    "eval_id": 1,
+    "arm": "without_skill"
+  },
+  "case-1-B": {
+    "eval_id": 1,
+    "arm": "with_skill"
+  },
+  "case-2-A": {
+    "eval_id": 2,
+    "arm": "with_skill"
+  },
+  "case-2-B": {
+    "eval_id": 2,
+    "arm": "without_skill"
+  },
+  "case-3-A": {
+    "eval_id": 3,
+    "arm": "without_skill"
+  },
+  "case-3-B": {
+    "eval_id": 3,
+    "arm": "with_skill"
+  }
+}

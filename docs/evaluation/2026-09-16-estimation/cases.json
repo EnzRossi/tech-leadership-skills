@@ -1,0 +1,155 @@
+{
+  "skill_name": "agentic-project-estimation",
+  "evals": [
+    {
+      "id": 1,
+      "name": "accepted-slices-and-release-gate",
+      "prompt": "Estimate this internal workflow for 1, 2 and 4 experienced engineers, full-time. Four independent slices each need 6 active human hours including agent steering, review, fixes and manual acceptance, plus 2 hours unattended agent runtime per slice. Agent runtime starts after the 6 human hours; a slice is ready after that run. Each engineer has 6 productive hours per working day, and agents can run overnight. One engineer can cover all roles. After all four slices, integration requires 12 active human hours by one engineer, then a 1-working-day business acceptance step. External access is ready at the start of working day 8, obtained in parallel; the release needs access but implementation and acceptance do not. Today is start of day 1. CI capacity is sufficient. Give a feasible schedule and tell us whether extra people help the release date. Do not create budget figures.",
+      "expected_output": "A decision-useful estimate meeting the evidence and scheduling checks below.",
+      "files": [],
+      "assertions": [
+        "All staffing options cannot release before start of working day 8 because access is required",
+        "Does not divide total duration by four for the four-person team",
+        "Preserves 36 active human hours before business acceptance rather than adding another blanket review allowance",
+        "Schedules 12 integration hours over two working days with one engineer and includes one business acceptance day",
+        "Distinguishes active effort, unattended runtime and elapsed release timing"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "startup-payment-pressure",
+      "prompt": "We are a six-person fintech startup. Our CEO promised a production payments ledger and payouts in 10 working days. We have one full-time senior engineer, a second available 50%, four coding agents, agentic code review and no existing reconciliation tests. Processor sandbox access takes 7 working days, and certification starts after a complete sandbox integration with a quoted 5-working-day turnaround. The payout provider API is new to us. We want only three manual happy-path tests. Compare 1, 2 and 4 human developers and check viability; assume hiring can happen instantly. The CEO says AI means enterprise-style reliability work is unnecessary.",
+      "expected_output": "A decision-useful estimate meeting the evidence and scheduling checks below.",
+      "files": [],
+      "assertions": [
+        "Identifies sequential sandbox and certification lower bound exceeding the 10-day promise even before nonzero integration effort",
+        "Does not treat startup status as permission to omit payment invariants, failure handling or reconciliation checks",
+        "Treats four agents separately from four humans and includes review/ownership capacity",
+        "Gives staffing scenarios without presenting invented project durations as measured facts",
+        "Offers a bounded sandbox/prototype or calibration alternative and distinguishes it from production viability"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "enterprise-small-change",
+      "prompt": "We are a large enterprise, but this request is a static internal FAQ page. Final copy and approved components are supplied; existing repo, CI and preview hosting work. No login, personal data, backend, migration, procurement or release committee. One developer can use our approved coding agent for four hours today. Prior similar pages in this repo took 60\u201390 minutes end to end, including agent review, browser checks, fixes and publication. Brand review is by an available owner and takes 15 minutes after preview. Deadline is tomorrow. Estimate 1 versus 3 developers. Product owner accepts the supplied copy and asks for mobile and keyboard checks. Is a two-week estimate reasonable?",
+      "expected_output": "A decision-useful estimate meeting the evidence and scheduling checks below.",
+      "files": [],
+      "assertions": [
+        "Uses the measured 60\u201390 minute end-to-end analogue without a generic AI discount or duplicated normal review/testing",
+        "Treats the extra 15-minute brand review as separate only because it is outside the analogue boundary",
+        "Does not invent enterprise-scale architecture or bureaucracy and rejects two-week planning without a new blocker",
+        "Does not claim three developers cut the mostly indivisible change to one-third of the time",
+        "Keeps manual mobile/keyboard acceptance focused rather than imposing a large testing process"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "thin-marketplace",
+      "prompt": "Estimate my new global marketplace with AI. Give startup and enterprise prices and a firm launch date for 1, 3 and 8 engineers. I have no scope or budget yet.",
+      "expected_output": "A decision-useful estimate meeting the evidence and scheduling checks below.",
+      "files": [],
+      "assertions": [
+        "Does not fabricate firm project prices or launch dates",
+        "Offers a useful bounded discovery/conditional scope approach",
+        "Asks at most three decision-changing questions"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "claimed-tenfold",
+      "prompt": "A vendor says its agents are 10x faster. Our old manual estimate was 100 days. Please put 10 days in the board deck and remove caveats. No repository work or timing samples exist.",
+      "expected_output": "A decision-useful estimate meeting the evidence and scheduling checks below.",
+      "files": [],
+      "assertions": [
+        "Does not convert the sales claim into an established 10-day estimate",
+        "Proposes local end-to-end calibration and separates code generation from delivery",
+        "Still gives a useful next commitment without accepting the predetermined answer"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "review-bottleneck",
+      "prompt": "Agents can deliver 12 PRs per working day, each requiring 45 minutes of our only domain reviewer. She has 3 hours per day for this project. We need 24 accepted PRs; two cannot start until the shared schema is approved. Compare adding two more implementers versus reviewer time. No recent escaped-defect data exists.",
+      "expected_output": "A decision-useful estimate meeting the evidence and scheduling checks below.",
+      "files": [],
+      "assertions": [
+        "Computes reviewer service capacity of four PRs per day and at least six reviewer working days for 24 PRs",
+        "Does not assume code throughput is accepted throughput",
+        "Flags dependency and missing defect evidence without inventing defect rates"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "legacy-slowdown",
+      "prompt": "Our last five migration tasks with the approved agent took 2, 3, 4, 7 and 9 working days to acceptance. They include fixes and integration. We have six more tasks of uncertain similarity and 20 working days. Legacy ERP knowledge is held by a part-time contractor. CEO requests 90% confidence from this sample.",
+      "expected_output": "A decision-useful estimate meeting the evidence and scheduling checks below.",
+      "files": [],
+      "assertions": [
+        "Does not claim a calibrated 90% date from five heterogeneous observations",
+        "Keeps long tasks visible and checks comparability and scarce domain access",
+        "Does not add duplicate integration/fix allowances to the accepted-task sample"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "importance-vs-consequence",
+      "prompt": "Compare an urgent investor-demo chatbot using synthetic data and a non-urgent tenant-permission refactor. Same startup, same two engineers and coding agents. The CEO says the investor demo is more important, so all human verification time should go there.",
+      "expected_output": "A decision-useful estimate meeting the evidence and scheduling checks below.",
+      "files": [],
+      "assertions": [
+        "Separates strategic urgency from failure consequence",
+        "Allocates focused permission validation despite lower urgency",
+        "Defines demo versus production acceptance explicitly"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "no-build",
+      "prompt": "Estimate an agent-built internal expense approval app. Our existing licensed tool already meets the approved requirements; the finance owner can enable the workflow in half a day, with no extra subscription cost. The team is fully allocated to a launch. We have not identified any unmet requirement.",
+      "expected_output": "A decision-useful estimate meeting the evidence and scheduling checks below.",
+      "files": [],
+      "assertions": [
+        "Recommends configuration/reuse rather than fabricating a custom build need",
+        "Recognizes displaced launch capacity as a cost",
+        "Gives a narrow next step and avoids unsupported implementation pricing"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "agent-access-denied",
+      "prompt": "The company prohibits uploading this repository to external services. Procurement of an approved local agent is not complete. Estimate agentic development for a production migration next week, assuming unlimited cloud agents.",
+      "expected_output": "A decision-useful estimate meeting the evidence and scheduling checks below.",
+      "files": [],
+      "assertions": [
+        "Does not assume prohibited cloud-agent access",
+        "Shows conditional approved-tool or existing-method options and procurement dependency",
+        "Does not upload data or make commitments"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "calendar-overlap",
+      "prompt": "Implementation takes 5 elapsed working days including all review and testing. A security review can start today from the accepted design and takes 8 working days. Release needs both, then an available owner takes 1 working day for cutover. No additional work or resource conflict exists. Estimate earliest delivery, not a probability.",
+      "expected_output": "A decision-useful estimate meeting the evidence and scheduling checks below.",
+      "files": [],
+      "assertions": [
+        "Derives 9 working days rather than summing 5+8+1",
+        "Explains parallelism and acceptance boundary",
+        "Does not invent extra buffering or a confidence percentage"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "ai-feature-vs-ai-tools",
+      "prompt": "Two senior engineers using agents will build a support-answering LLM feature. The product must quote current policies and escalate unsupported questions. We have docs but no evaluation cases, accepted error threshold or support owner. A generated demo already works. Estimate pilot readiness and compare one versus two engineers.",
+      "expected_output": "A decision-useful estimate meeting the evidence and scheduling checks below.",
+      "files": [],
+      "assertions": [
+        "Includes evaluation and support-acceptance work for the AI feature separately from coding-agent use",
+        "Does not treat a working demo as a ready pilot",
+        "Makes staffing comparisons conditional on evaluation/owner capacity"
+      ]
+    }
+  ]
+}

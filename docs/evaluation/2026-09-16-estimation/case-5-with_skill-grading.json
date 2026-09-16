@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Does not convert the sales claim into an established 10-day estimate",
+      "passed": true,
+      "evidence": "Calls ten days an unvalidated hypothesis and supplies board wording that explicitly retains uncertainty."
+    },
+    {
+      "text": "Proposes local end-to-end calibration and separates code generation from delivery",
+      "passed": true,
+      "evidence": "Calibrates a representative risky slice through implementation, review, fixes, integration and acceptance; measures human effort, unattended runtime and start-to-accepted elapsed time separately."
+    },
+    {
+      "text": "Still gives a useful next commitment without accepting the predetermined answer",
+      "passed": true,
+      "evidence": "Provides usable board wording and a labeled 1\u20132-day discovery allocation, expressly not a promise of project or slice completion."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 3,
+    "pass_rate": 1.0
+  },
+  "claims": [],
+  "eval_feedback": {
+    "suggestions": [],
+    "overall": "Final-output-only grading; no execution trace or timing evidence available. No substantive output errors found."
+  }
+}

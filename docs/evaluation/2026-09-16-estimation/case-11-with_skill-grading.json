@@ -1,0 +1,37 @@
+{
+  "expectations": [
+    {
+      "text": "Derives 9 working days rather than summing 5+8+1",
+      "passed": true,
+      "evidence": "Explicit max(5, 8) + 1 = 9 working days; cutover completes end of working day 9."
+    },
+    {
+      "text": "Explains parallelism and acceptance boundary",
+      "passed": true,
+      "evidence": "Implementation and design-based security review start together; cutover waits for both. Security review is the binding path."
+    },
+    {
+      "text": "Does not invent extra buffering or a confidence percentage",
+      "passed": true,
+      "evidence": "Rejects extra allowance because review/testing are included; states deterministic earliest schedule rather than percentile, without contingency."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 3,
+    "pass_rate": 1.0
+  },
+  "claims": [
+    {
+      "claim": "Earliest delivery is nine elapsed working days.",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Two unconstrained concurrent predecessors complete after max(5,8)=8 elapsed days; subsequent one-day cutover gives 9."
+    }
+  ],
+  "eval_feedback": {
+    "suggestions": [],
+    "overall": "Final-output-only grading; no execution trace or timing evidence available. No substantive output errors found."
+  }
+}

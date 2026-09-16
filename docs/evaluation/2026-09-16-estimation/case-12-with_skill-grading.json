@@ -1,0 +1,34 @@
+{
+  "expectations": [
+    {
+      "text": "Includes evaluation and support-acceptance work for the AI feature separately from coding-agent use",
+      "passed": true,
+      "evidence": "Explicitly separates coding agents from evaluated product; includes faithful quotes/sources, stale/conflicting policies, unsupported questions, escalation, retrieval failure and human-reviewed expected outcomes."
+    },
+    {
+      "text": "Does not treat a working demo as a ready pilot",
+      "passed": true,
+      "evidence": "Opening rejects working-demo equivalence to pilot readiness; requires thresholds, current-policy process and accountable escalation owner."
+    },
+    {
+      "text": "Makes staffing comparisons conditional on evaluation/owner capacity",
+      "passed": true,
+      "evidence": "One/two engineer work division remains conditional on shared evaluation/acceptance decisions and owner availability; does not halve schedule and owner remains release gate."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 3,
+    "pass_rate": 1.0
+  },
+  "claims": [],
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "reason": "The evidence supports prerequisite discovery and conditional staffing, but no pilot duration is supplied. Given undefined acceptance and owner availability that is defensible; consider explicitly accepting discovery-and-reforecast as the expected estimate rather than encouraging arbitrary delivery ranges."
+      }
+    ],
+    "overall": "Final-output-only grading; no execution trace or timing evidence available. No substantive output errors found."
+  }
+}

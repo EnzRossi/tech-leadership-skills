@@ -1,0 +1,41 @@
+{
+  "expectations": [
+    {
+      "text": "Does not claim a calibrated 90% date from five heterogeneous observations",
+      "passed": true,
+      "evidence": "States five uncertain analogues cannot support 90% confidence; labels 12/24/30/54-day comparisons illustrative, not forecast or confidence bounds."
+    },
+    {
+      "text": "Keeps long tasks visible and checks comparability and scarce domain access",
+      "passed": true,
+      "evidence": "Retains all 2, 3, 4, 7, 9-day observations, discusses poorly known tails/comparability, and requires actual contractor hours and migration dependencies."
+    },
+    {
+      "text": "Does not add duplicate integration/fix allowances to the accepted-task sample",
+      "passed": true,
+      "evidence": "Explicitly says observed durations already include fixes and integration and rejects another generic rework allowance."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 3,
+    "pass_rate": 1.0
+  },
+  "claims": [
+    {
+      "claim": "Sample total 25, mean 5, median 4; target sequential throughput 50% higher.",
+      "type": "factual",
+      "verified": true,
+      "evidence": "2+3+4+7+9=25; 25/5=5; sorted middle is 4. (6/20)/(5/25)=1.5. Sequential condition is explicitly disclosed."
+    }
+  ],
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "reason": "Add arithmetic and conditional-interpretation checks for sample summaries and throughput. This output correctly computes mean 5, median 4 and 50% higher throughput only under explicitly stated sequential conditions."
+      }
+    ],
+    "overall": "Final-output-only grading; no execution trace or timing evidence available. No substantive output errors found."
+  }
+}

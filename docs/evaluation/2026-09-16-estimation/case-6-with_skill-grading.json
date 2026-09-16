@@ -1,0 +1,41 @@
+{
+  "expectations": [
+    {
+      "text": "Computes reviewer service capacity of four PRs per day and at least six reviewer working days for 24 PRs",
+      "passed": true,
+      "evidence": "Correctly derives 3 / 0.75 = 4 PRs/day; 24 * 0.75 = 18 review hours; 18 / 3 = 6 reviewer working days."
+    },
+    {
+      "text": "Does not assume code throughput is accepted throughput",
+      "passed": true,
+      "evidence": "Separates 12 generated PRs/day from four accepted PRs/day and labels the computed times lower bounds rather than finish promises."
+    },
+    {
+      "text": "Flags dependency and missing defect evidence without inventing defect rates",
+      "passed": true,
+      "evidence": "Discusses two PRs blocked by schema approval, possible shared reviewer demand, and says absent escaped-defect history cannot establish quality. No defect rate invented."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 3,
+    "pass_rate": 1.0
+  },
+  "claims": [
+    {
+      "claim": "Review-only floors are six, three and two days under 3, 6 and 9 qualified reviewer-hours/day.",
+      "type": "factual",
+      "verified": true,
+      "evidence": "18 total reviewer-hours divided by 3/6/9 yields 6/3/2 days; throughput 4/8/12 PRs/day. These are aggregate floors, not discrete arrival-aware schedules."
+    }
+  ],
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "reason": "Add a check that review-only lower bounds are not presented as achievable end-to-end dates: first arrival, schema release and rework can extend duration. This output correctly discloses the distinction."
+      }
+    ],
+    "overall": "Final-output-only grading; no execution trace or timing evidence available. No substantive output errors found."
+  }
+}
