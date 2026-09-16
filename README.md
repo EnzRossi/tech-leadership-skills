@@ -6,7 +6,7 @@ Open-source Agent Skills for technology leaders making software, delivery, resou
 
 [Explore the project website and installation guide](https://enzrossi.github.io/tech-leadership-skills/).
 
-Three workflows for turning incomplete evidence into a decision memo: whether an AI initiative deserves investment, whether a project needs intervention, and how to obtain an engineering capability.
+Four workflows for turning incomplete evidence into a decision memo: whether an AI initiative deserves investment, whether a project needs intervention, how to obtain an engineering capability, and when an agent-assisted project can realistically ship.
 
 [![Validate skills](https://github.com/EnzRossi/tech-leadership-skills/actions/workflows/validate-skills.yml/badge.svg)](https://github.com/EnzRossi/tech-leadership-skills/actions/workflows/validate-skills.yml)
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
@@ -20,8 +20,9 @@ For CTOs, VPs and Directors of Engineering, technical founders, Product leaders 
 | [AI Initiative Evaluator](skills/ai-initiative-evaluator/SKILL.md) | A demo, executive mandate or pilot needs an investment decision | Compare the strongest non-AI alternative; test data and evaluation readiness; define evidence needed for prototype, pilot or rollout |
 | [Software Project Health Review](skills/software-project-health-review/SKILL.md) | Status reports and delivery evidence disagree | Trace threats to a dated commitment; distinguish missing evidence from poor health; identify the intervention that can affect delivery |
 | [Build / Buy / Hire / Augment](skills/build-buy-hire-augment/SKILL.md) | A capability needs a sourcing decision | Separate solution from delivery and long-term ownership; compare internal, product, partner and hybrid options on the same terms |
+| [Agentic Project Estimation](skills/agentic-project-estimation/SKILL.md) | A software estimate needs to reflect coding agents, team capacity and company constraints | Compare staffing scenarios using accepted work, review/testing effort and release dependencies; assess deadline and project viability |
 
-Default output: a short memo, usually 250–600 words, with 100–250 often enough for a narrow question, with the recommendation first and deeper evidence only when useful. These workflows can conclude that no AI, no intervention, or no outside help is warranted. They can also support proceeding when evidence justifies it.
+Default output: a short memo, usually 250–600 words (350–700 for an estimation comparison), with 100–250 often enough for a narrow question, with the recommendation first and deeper evidence only when useful. These workflows can conclude that no AI, no intervention, or no outside help is warranted. They can also support proceeding when evidence justifies it.
 
 ## What is an Agent Skill?
 
@@ -31,7 +32,7 @@ These skills supply review procedures and evidence checks. They do not establish
 
 ## Install and try one
 
-Clone the repository and copy a complete skill folder, including references and assets. The following examples install only the AI evaluator; substitute either other skill name as needed. Check for an existing folder before copying an update.
+Clone the repository and copy a complete skill folder, including references and assets. The following examples install only the AI evaluator; substitute another skill name as needed. Check for an existing folder before copying an update.
 
 ```bash
 git clone https://github.com/EnzRossi/tech-leadership-skills.git
@@ -62,6 +63,8 @@ For a shared project, use its `.agents/skills/` (Codex) or `.claude/skills/` (Cl
 > Use software-project-health-review on this tracker export and three steering reports. Status stayed green while launch moved. Assess the commitment as of these records and identify the decisions for Thursday.
 
 > We need multi-country payouts in five months. Our team is occupied, hiring takes four to six months, and banking data has access constraints. Use build-buy-hire-augment to compare buying rails, internal integration and outside expertise.
+
+> Use agentic-project-estimation to estimate this customer portal for one, two and four engineers using coding agents. We have an existing platform, one part-time reviewer and a fixed security-review window. Compare accepted delivery dates, not just coding effort.
 
 The [scenario fixtures](skills/software-project-health-review/evals/files/steering-notes.md) are fictional. Use material permitted in your agent environment; the skills do not require uploading it to another service.
 

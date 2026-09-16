@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Separates strategic urgency from failure consequence",
+      "passed": true,
+      "evidence": "Distinguishes urgent investor demonstration from cross-tenant disclosure consequences in permission changes."
+    },
+    {
+      "text": "Allocates focused permission validation despite lower urgency",
+      "passed": true,
+      "evidence": "Reserves qualified review of authorization, cross-tenant denial, role boundaries and regression evidence; if both engineers are reassigned, defer refactor release."
+    },
+    {
+      "text": "Defines demo versus production acceptance explicitly",
+      "passed": true,
+      "evidence": "Demo acceptance is limited supported synthetic-data flow, main/unsupported paths and presentation failures; permission release requires access expectations and isolation evidence."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 3,
+    "pass_rate": 1.0
+  },
+  "claims": [],
+  "eval_feedback": {
+    "suggestions": [],
+    "overall": "Final-output-only grading; no execution trace or timing evidence available. No substantive output errors found."
+  }
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Estimate this MVP for one versus three developers using coding agents.",
+    "should_trigger": true
+  },
+  {
+    "query": "Can our agent-assisted team meet this enterprise release date?",
+    "should_trigger": true
+  },
+  {
+    "query": "Our AI-generated project estimate assumes hand coding. Re-estimate accepted delivery.",
+    "should_trigger": true
+  },
+  {
+    "query": "What changes in the delivery timeline between a startup prototype and production at a bank?",
+    "should_trigger": true
+  },
+  {
+    "query": "Estimate implementation, agentic review and manual acceptance for this software project.",
+    "should_trigger": true
+  },
+  {
+    "query": "How much human capacity do four coding agents need for this project?",
+    "should_trigger": true
+  },
+  {
+    "query": "Is this project viable within our budget and six-week deadline?",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare a two-person and four-person team for this agent-built migration.",
+    "should_trigger": true
+  },
+  {
+    "query": "Give conditional project timelines based on review capacity and release gates.",
+    "should_trigger": true
+  },
+  {
+    "query": "Use agentic-project-estimation to challenge this software estimate.",
+    "should_trigger": true
+  },
+  {
+    "query": "Estimate the token price for one API call.",
+    "should_trigger": false
+  },
+  {
+    "query": "Review this code diff for bugs.",
+    "should_trigger": false
+  },
+  {
+    "query": "Why did our project miss its last three milestones?",
+    "should_trigger": false
+  },
+  {
+    "query": "Should we invest in an AI customer service initiative at all?",
+    "should_trigger": false
+  },
+  {
+    "query": "Should we hire internally or use an outsourcing partner?",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a project status update from these notes.",
+    "should_trigger": false
+  },
+  {
+    "query": "Generate a GitHub repository cover image.",
+    "should_trigger": false
+  },
+  {
+    "query": "Predict how many seconds your next tool call will take.",
+    "should_trigger": false
+  },
+  {
+    "query": "Estimate the market value of this company.",
+    "should_trigger": false
+  },
+  {
+    "query": "Implement this static FAQ page now.",
+    "should_trigger": false
+  }
+]

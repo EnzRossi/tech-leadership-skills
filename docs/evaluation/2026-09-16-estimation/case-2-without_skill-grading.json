@@ -1,0 +1,55 @@
+{
+  "expectations": [
+    {
+      "text": "Identifies sequential sandbox and certification lower bound exceeding the 10-day promise even before nonzero integration effort",
+      "passed": true,
+      "evidence": "States at least 12 working days even pretending integration takes no time, with real dependency chain longer."
+    },
+    {
+      "text": "Does not treat startup status as permission to omit payment invariants, failure handling or reconciliation checks",
+      "passed": true,
+      "evidence": "Requires automated ledger balance/reconciliation, idempotency, retry/failure tests, authorization, traceability and safe recovery; rejects three manual happy paths."
+    },
+    {
+      "text": "Treats four agents separately from four humans and includes review/ownership capacity",
+      "passed": false,
+      "evidence": "Human staffing rows and the 1.5-FTE correction are clear, and throughput assumptions mention shared review dependencies. However the four coding agents are never accounted for as a resource, and no human review/ownership capacity for their output is specified. Generic statements that agents help and agent review is not independent correctness evidence do not satisfy the complete assertion."
+    },
+    {
+      "text": "Gives staffing scenarios without presenting invented project durations as measured facts",
+      "passed": true,
+      "evidence": "Explicitly labels 18\u201330 effort days and throughput assumptions as judgment estimates with low confidence, not measured delivery rates; includes 1/2/4 full-time and actual staffing scenarios."
+    },
+    {
+      "text": "Offers a bounded sandbox/prototype or calibration alternative and distinguishes it from production viability",
+      "passed": true,
+      "evidence": "Offers a limited day-10 sandbox milestone conditional on access/integration, plus 1\u20132 days validating contracts, prerequisites and invariants; separates this from production."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 1,
+    "total": 5,
+    "pass_rate": 0.8
+  },
+  "claims": [
+    {
+      "claim": "Displayed illustrative schedule ranges follow its stated formula.",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Independent ceiling arithmetic reproduces 24\u201337 (1), 20\u201327 (2), 18\u201322 (4), and 21\u201331 (actual 1.5 nominal FTE with assumed throughput 1.3). Correct arithmetic does not validate invented effort or throughput inputs."
+    }
+  ],
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "reason": "Merely labeling numbers judgment estimates lets arbitrary effort and throughput assumptions pass. The 8\u201312/10\u201318 effort ranges and 1.6/2.4 throughput factors are internally coherent but unsupported by supplied evidence, so their 18\u201337-day forecasts should not be treated as decision-grade commitments."
+      },
+      {
+        "assertion": "Treats four agents separately from four humans and includes review/ownership capacity",
+        "reason": "This compound assertion has an ambiguous threshold: nominal human staffing and generic review language could earn a loose pass even without accounting for four agents or naming constrained human review ownership. Split resource distinction and reviewer/owner capacity into separate checks."
+      }
+    ],
+    "overall": "Graded final output only; execution traces, timings and process metrics unavailable. No substantive arithmetic errors found. See specific evidence-boundary concerns."
+  }
+}

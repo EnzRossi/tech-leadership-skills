@@ -2,9 +2,11 @@
 
 Development review, 2026-09-16. These results are evidence about the recorded cases, not a claim that the skills consistently outperform a strong model or are validated in real organizations.
 
+The later [Agentic Project Estimation evaluation](evaluation/2026-09-16-estimation/README.md) is recorded separately. The three-skill results below remain unchanged.
+
 ## What ran
 
-The suite now contains 28 scenarios (AI 9, health 9, sourcing 10) and 60 trigger queries (20 per skill). All 28 scenarios were executed with the revised workflows. Six were also executed with the original skills and without explicitly loading a skill. Response generators did not receive assertions or expected outputs. A fresh grader saw randomly named copies of the 18 comparison outputs, their prompts and their assertions, without configuration labels.
+The initial suite contained 28 scenarios (AI 9, health 9, sourcing 10) and 60 trigger queries (20 per skill). All 28 scenarios were executed with the revised workflows. Six were also executed with the original skills and without explicitly loading a skill. Response generators did not receive assertions or expected outputs. A fresh grader saw randomly named copies of the 18 comparison outputs, their prompts and their assertions, without configuration labels.
 
 Each configuration used a separate Codex desktop subagent with no parent conversation history. Cases within each configuration shared that agent's context; they were not six independently reset sessions. Agents inherited the same parent model setting. The interface did not expose an exact model build, sampling parameters, per-run tokens or timings. Host skill descriptions may still have been visible to the baseline; “without skill” means instructed not to load skill bodies, not a proven metadata-free environment. Full tool traces are not retained. These limitations prevent exact replication and strong causal claims.
 

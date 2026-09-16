@@ -1,0 +1,44 @@
+{
+  "expectations": [
+    {
+      "text": "Identifies sequential sandbox and certification lower bound exceeding the 10-day promise even before nonzero integration effort",
+      "passed": true,
+      "evidence": "Derives Production duration \u2265 7 + I + 5 = 12 + I working days with I > 0, explicitly sequencing certification after integration."
+    },
+    {
+      "text": "Does not treat startup status as permission to omit payment invariants, failure handling or reconciliation checks",
+      "passed": true,
+      "evidence": "Requires balanced postings, reconciliation, idempotency, retries, partial failure and accountable human review, rejecting three happy paths as sufficient."
+    },
+    {
+      "text": "Treats four agents separately from four humans and includes review/ownership capacity",
+      "passed": true,
+      "evidence": "States four agents are not four additional human FTE; senior owns review/acceptance and agent streams are limited by owner capacity. Actual staffing is separately shown as 1.5 FTE."
+    },
+    {
+      "text": "Gives staffing scenarios without presenting invented project durations as measured facts",
+      "passed": true,
+      "evidence": "Uses staffing capacity ceilings and symbolic integration durations, explicitly stating insufficient evidence for a defensible total effort range."
+    },
+    {
+      "text": "Offers a bounded sandbox/prototype or calibration alternative and distinguishes it from production viability",
+      "passed": true,
+      "evidence": "Proposes a labeled 1\u20132 senior engineer-day discovery timebox and a mocked day-10 demonstration distinct from certified production; representative slice measurement informs reforecast."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  },
+  "claims": [],
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "reason": "The timing lower bound decisively rejects the promise, but the scenario assertion also permits arbitrary labeled ranges. To distinguish actionable estimates from invented precision, require derived task evidence or a symbolic bound/calibration plan when scope and throughput are absent."
+      }
+    ],
+    "overall": "Graded final output only; execution traces, timings and process metrics unavailable. No substantive arithmetic errors found. See specific evidence-boundary concerns."
+  }
+}

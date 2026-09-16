@@ -1,0 +1,34 @@
+{
+  "expectations": [
+    {
+      "text": "Does not fabricate firm project prices or launch dates",
+      "passed": true,
+      "evidence": "Rejects firm launch/date and company-type pricing without scope; says no numeric build duration or price is justified."
+    },
+    {
+      "text": "Offers a useful bounded discovery/conditional scope approach",
+      "passed": true,
+      "evidence": "Proposes a labeled two-day discovery allocation, scoped initial market/journey, reuse assessment, accepted scope and representative slice; staffing scenarios remain conditional."
+    },
+    {
+      "text": "Asks at most three decision-changing questions",
+      "passed": true,
+      "evidence": "Closing requests three decision themes: smallest launch journey/geography, AI purpose, and acceptance/operation ownership. No additional question list."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 3,
+    "pass_rate": 1.0
+  },
+  "claims": [],
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "reason": "No material gap found. Question-count criterion should count decision themes consistently: journey/geography and acceptance/operation each bundle related details."
+      }
+    ],
+    "overall": "Final-output-only grading; no execution trace or timing evidence available. No substantive output errors found."
+  }
+}

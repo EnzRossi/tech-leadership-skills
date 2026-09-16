@@ -1,0 +1,51 @@
+{
+  "expectations": [
+    {
+      "text": "Uses the measured 60\u201390 minute end-to-end analogue without a generic AI discount or duplicated normal review/testing",
+      "passed": true,
+      "evidence": "Uses reported 60\u201390 minutes including agent review, browser checks, fixes and publication; explicitly rejects generic AI speedup and duplicate review/rework allowances."
+    },
+    {
+      "text": "Treats the extra 15-minute brand review as separate only because it is outside the analogue boundary",
+      "passed": true,
+      "evidence": "Adds separately stated 15-minute brand review for 75\u2013105 minutes, and explicitly avoids adding it if already inside historical measurements."
+    },
+    {
+      "text": "Does not invent enterprise-scale architecture or bureaucracy and rejects two-week planning without a new blocker",
+      "passed": true,
+      "evidence": "States two weeks unsupported and enterprise status adds no duration absent a concrete missing task or gate."
+    },
+    {
+      "text": "Does not claim three developers cut the mostly indivisible change to one-third of the time",
+      "passed": true,
+      "evidence": "Three developers have approximately the same 75\u2013105 minutes, with handoffs possibly consuming savings."
+    },
+    {
+      "text": "Keeps manual mobile/keyboard acceptance focused rather than imposing a large testing process",
+      "passed": true,
+      "evidence": "Focused mobile layout and keyboard navigation/focus checks; new component accessibility defects would be estimated specifically rather than imposing a large test process."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  },
+  "claims": [
+    {
+      "claim": "Historical delivery plus separate brand review gives 75\u2013105 minutes.",
+      "type": "factual",
+      "verified": true,
+      "evidence": "60+15=75 and 90+15=105. A conditionally adds 15 minutes for checks outside historical scope; B assumes comparable checks are included."
+    }
+  ],
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "reason": "Separate elapsed time from active effort and reservation capacity in an additional check. This answer conservatively reserves 105 developer minutes plus 15 owner minutes despite a 90-minute upper historical delivery duration; it discloses this as reservation rather than claiming measured active effort, but the staffing table could be clearer."
+      }
+    ],
+    "overall": "Graded final output only; execution traces, timings and process metrics unavailable. No substantive arithmetic errors found. See specific evidence-boundary concerns."
+  }
+}

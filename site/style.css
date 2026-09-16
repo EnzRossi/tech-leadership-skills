@@ -273,7 +273,7 @@ h1 span {
 }
 .skills {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   border: 1px solid var(--line);
 }
 .skill {
@@ -281,8 +281,11 @@ h1 span {
   display: flex;
   flex-direction: column;
 }
-.skill + .skill {
+.skill:nth-child(even) {
   border-left: 1px solid var(--line);
+}
+.skill:nth-child(n + 3) {
+  border-top: 1px solid var(--line);
 }
 .number {
   color: var(--muted);
@@ -570,6 +573,9 @@ footer p {
   }
   .skill {
     padding: 27px;
+  }
+  .skill:nth-child(even) {
+    border-left: 0;
   }
   .skill + .skill {
     border-left: 0;

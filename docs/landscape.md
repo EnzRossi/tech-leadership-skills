@@ -32,3 +32,7 @@ Generic management advice, executive personas, universal scorecards and arbitrar
 - [OpenAI skill-creator](https://github.com/openai/skills/blob/main/skills/.system/skill-creator/SKILL.md): concise procedural knowledge, explicit reference-loading conditions and appropriate degrees of freedom. Optional client UI metadata is not a cross-client requirement.
 - [Anthropic doc-coauthoring](https://github.com/anthropics/skills/blob/main/skills/doc-coauthoring/SKILL.md): fresh-reader testing is a useful example of validating whether an artifact answers its reader's questions.
 - [OpenAI Notion research documentation](https://github.com/openai/plugins/blob/main/plugins/notion/skills/notion-research-documentation/SKILL.md): source IDs, gaps, citations and routing to focused references illustrate that evidence synthesis is already established practice.
+
+## Agentic estimation addition
+
+[ZhangHanDong/agent-estimation](https://github.com/ZhangHanDong/agent-estimation) already addresses human-time anchoring using agent tool-call rounds. The new workflow focuses on accepted project delivery: human attention, calibrated agent execution, verification, resource constraints and organizational gates. It does not adopt fixed minutes-per-round or company/AI multipliers. See the [research and limitations](../skills/agentic-project-estimation/references/sources.md). Prospective forecast accuracy remains unmeasured.

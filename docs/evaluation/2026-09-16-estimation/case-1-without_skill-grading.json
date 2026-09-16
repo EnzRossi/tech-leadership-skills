@@ -1,0 +1,47 @@
+{
+  "expectations": [
+    {
+      "text": "All staffing options cannot release before start of working day 8 because access is required",
+      "passed": true,
+      "evidence": "Opening states release on working day 8 for all teams because access is controlling; table agrees. Start-of-day release is consistent with the explicit zero additional release duration assumption."
+    },
+    {
+      "text": "Does not divide total duration by four for the four-person team",
+      "passed": true,
+      "evidence": "Four engineers complete slices day 1, integration days 2\u20133, acceptance day 4, release day 8; no linear division of total duration."
+    },
+    {
+      "text": "Preserves 36 active human hours before business acceptance rather than adding another blanket review allowance",
+      "passed": true,
+      "evidence": "Explicitly computes 4 \u00d7 6 + 12 = 36 productive hours, with no extra review allowance."
+    },
+    {
+      "text": "Schedules 12 integration hours over two working days with one engineer and includes one business acceptance day",
+      "passed": true,
+      "evidence": "All rows assign integration to one engineer for two days, followed by one business acceptance day."
+    },
+    {
+      "text": "Distinguishes active effort, unattended runtime and elapsed release timing",
+      "passed": true,
+      "evidence": "Separates 36 human hours, 8 aggregate unattended runtime hours, and release day 8, explaining overnight overlap."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  },
+  "claims": [
+    {
+      "claim": "36 human hours, 8 aggregate agent hours; release day 8 in all scenarios and 0/2/3 full spare days.",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Independent arithmetic: 4*6+12=36; 4*2=8. Overnight runs yield final slice readiness days 5/3/2, integration completion days 6/4/3, acceptance completion days 7/5/4, access start day 8. Spare full days 0/2/3."
+    }
+  ],
+  "eval_feedback": {
+    "suggestions": [],
+    "overall": "Graded final output only; execution traces, timings and process metrics unavailable. No substantive arithmetic errors found. Assertions are substantive and the supplied deterministic schedule is feasible."
+  }
+}

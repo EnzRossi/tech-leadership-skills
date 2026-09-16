@@ -1,0 +1,279 @@
+{
+  "metadata": {
+    "skill_name": "agentic-project-estimation",
+    "skill_path": "skills/agentic-project-estimation",
+    "executor_model": "Inherited Codex host setting; exact build unavailable",
+    "analyzer_model": "Inherited Codex host setting; exact build unavailable",
+    "timestamp": "2026-09-16T15:07:05Z",
+    "evals_run": [
+      1,
+      2,
+      3
+    ],
+    "runs_per_configuration": 3,
+    "trials_per_case_per_configuration": 1
+  },
+  "runs": [
+    {
+      "eval_id": 1,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5
+      },
+      "expectations": [
+        {
+          "text": "All staffing options cannot release before start of working day 8 because access is required",
+          "passed": true,
+          "evidence": "All three teams can release at the start of working day 8, with access as the gate and no additional release duration assumed."
+        },
+        {
+          "text": "Does not divide total duration by four for the four-person team",
+          "passed": true,
+          "evidence": "Four-person schedule retains two integration days and one acceptance day rather than quartering total duration."
+        },
+        {
+          "text": "Preserves 36 active human hours before business acceptance rather than adding another blanket review allowance",
+          "passed": true,
+          "evidence": "States 4 \u00d7 6 + 12 = 36 active hours and explicitly says steering, review, fixes and manual acceptance are already included."
+        },
+        {
+          "text": "Schedules 12 integration hours over two working days with one engineer and includes one business acceptance day",
+          "passed": true,
+          "evidence": "Integration is 12 \u00f7 6 = 2 working days by one engineer in every row, then one acceptance day."
+        },
+        {
+          "text": "Distinguishes active effort, unattended runtime and elapsed release timing",
+          "passed": true,
+          "evidence": "Explicit distinction among active human hours, aggregate unattended hours, and deterministic elapsed schedule."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5
+      },
+      "expectations": [
+        {
+          "text": "Identifies sequential sandbox and certification lower bound exceeding the 10-day promise even before nonzero integration effort",
+          "passed": true,
+          "evidence": "Derives Production duration \u2265 7 + I + 5 = 12 + I working days with I > 0, explicitly sequencing certification after integration."
+        },
+        {
+          "text": "Does not treat startup status as permission to omit payment invariants, failure handling or reconciliation checks",
+          "passed": true,
+          "evidence": "Requires balanced postings, reconciliation, idempotency, retries, partial failure and accountable human review, rejecting three happy paths as sufficient."
+        },
+        {
+          "text": "Treats four agents separately from four humans and includes review/ownership capacity",
+          "passed": true,
+          "evidence": "States four agents are not four additional human FTE; senior owns review/acceptance and agent streams are limited by owner capacity. Actual staffing is separately shown as 1.5 FTE."
+        },
+        {
+          "text": "Gives staffing scenarios without presenting invented project durations as measured facts",
+          "passed": true,
+          "evidence": "Uses staffing capacity ceilings and symbolic integration durations, explicitly stating insufficient evidence for a defensible total effort range."
+        },
+        {
+          "text": "Offers a bounded sandbox/prototype or calibration alternative and distinguishes it from production viability",
+          "passed": true,
+          "evidence": "Proposes a labeled 1\u20132 senior engineer-day discovery timebox and a mocked day-10 demonstration distinct from certified production; representative slice measurement informs reforecast."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5
+      },
+      "expectations": [
+        {
+          "text": "Uses the measured 60\u201390 minute end-to-end analogue without a generic AI discount or duplicated normal review/testing",
+          "passed": true,
+          "evidence": "Uses reported 60\u201390 minutes including agent review, browser checks, fixes and publication; explicitly rejects generic AI speedup and duplicate review/rework allowances."
+        },
+        {
+          "text": "Treats the extra 15-minute brand review as separate only because it is outside the analogue boundary",
+          "passed": true,
+          "evidence": "Adds separately stated 15-minute brand review for 75\u2013105 minutes, and explicitly avoids adding it if already inside historical measurements."
+        },
+        {
+          "text": "Does not invent enterprise-scale architecture or bureaucracy and rejects two-week planning without a new blocker",
+          "passed": true,
+          "evidence": "States two weeks unsupported and enterprise status adds no duration absent a concrete missing task or gate."
+        },
+        {
+          "text": "Does not claim three developers cut the mostly indivisible change to one-third of the time",
+          "passed": true,
+          "evidence": "Three developers have approximately the same 75\u2013105 minutes, with handoffs possibly consuming savings."
+        },
+        {
+          "text": "Keeps manual mobile/keyboard acceptance focused rather than imposing a large testing process",
+          "passed": true,
+          "evidence": "Focused mobile layout and keyboard navigation/focus checks; new component accessibility defects would be estimated specifically rather than imposing a large test process."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5
+      },
+      "expectations": [
+        {
+          "text": "All staffing options cannot release before start of working day 8 because access is required",
+          "passed": true,
+          "evidence": "Opening states release on working day 8 for all teams because access is controlling; table agrees. Start-of-day release is consistent with the explicit zero additional release duration assumption."
+        },
+        {
+          "text": "Does not divide total duration by four for the four-person team",
+          "passed": true,
+          "evidence": "Four engineers complete slices day 1, integration days 2\u20133, acceptance day 4, release day 8; no linear division of total duration."
+        },
+        {
+          "text": "Preserves 36 active human hours before business acceptance rather than adding another blanket review allowance",
+          "passed": true,
+          "evidence": "Explicitly computes 4 \u00d7 6 + 12 = 36 productive hours, with no extra review allowance."
+        },
+        {
+          "text": "Schedules 12 integration hours over two working days with one engineer and includes one business acceptance day",
+          "passed": true,
+          "evidence": "All rows assign integration to one engineer for two days, followed by one business acceptance day."
+        },
+        {
+          "text": "Distinguishes active effort, unattended runtime and elapsed release timing",
+          "passed": true,
+          "evidence": "Separates 36 human hours, 8 aggregate unattended runtime hours, and release day 8, explaining overnight overlap."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.8,
+        "passed": 4,
+        "failed": 1,
+        "total": 5
+      },
+      "expectations": [
+        {
+          "text": "Identifies sequential sandbox and certification lower bound exceeding the 10-day promise even before nonzero integration effort",
+          "passed": true,
+          "evidence": "States at least 12 working days even pretending integration takes no time, with real dependency chain longer."
+        },
+        {
+          "text": "Does not treat startup status as permission to omit payment invariants, failure handling or reconciliation checks",
+          "passed": true,
+          "evidence": "Requires automated ledger balance/reconciliation, idempotency, retry/failure tests, authorization, traceability and safe recovery; rejects three manual happy paths."
+        },
+        {
+          "text": "Treats four agents separately from four humans and includes review/ownership capacity",
+          "passed": false,
+          "evidence": "Human staffing rows and the 1.5-FTE correction are clear, and throughput assumptions mention shared review dependencies. However the four coding agents are never accounted for as a resource, and no human review/ownership capacity for their output is specified. Generic statements that agents help and agent review is not independent correctness evidence do not satisfy the complete assertion."
+        },
+        {
+          "text": "Gives staffing scenarios without presenting invented project durations as measured facts",
+          "passed": true,
+          "evidence": "Explicitly labels 18\u201330 effort days and throughput assumptions as judgment estimates with low confidence, not measured delivery rates; includes 1/2/4 full-time and actual staffing scenarios."
+        },
+        {
+          "text": "Offers a bounded sandbox/prototype or calibration alternative and distinguishes it from production viability",
+          "passed": true,
+          "evidence": "Offers a limited day-10 sandbox milestone conditional on access/integration, plus 1\u20132 days validating contracts, prerequisites and invariants; separates this from production."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5
+      },
+      "expectations": [
+        {
+          "text": "Uses the measured 60\u201390 minute end-to-end analogue without a generic AI discount or duplicated normal review/testing",
+          "passed": true,
+          "evidence": "Starts from same-repo 60\u201390 minutes end to end without an AI discount. Optional extra 15 minutes is specifically conditional on mobile/keyboard checks being absent from historical browser checks, not a blanket duplicated review allowance."
+        },
+        {
+          "text": "Treats the extra 15-minute brand review as separate only because it is outside the analogue boundary",
+          "passed": true,
+          "evidence": "Adds the separate 15-minute brand review to obtain 75\u2013105 minutes; describes it as separate from historical page delivery."
+        },
+        {
+          "text": "Does not invent enterprise-scale architecture or bureaucracy and rejects two-week planning without a new blocker",
+          "passed": true,
+          "evidence": "Rejects two weeks for stated scope and says enterprise size alone does not justify extra process."
+        },
+        {
+          "text": "Does not claim three developers cut the mostly indivisible change to one-third of the time",
+          "passed": true,
+          "evidence": "Three developers retain the same 75\u2013120-minute window with no reliable speedup."
+        },
+        {
+          "text": "Keeps manual mobile/keyboard acceptance focused rather than imposing a large testing process",
+          "passed": true,
+          "evidence": "Calls for preview mobile layout and keyboard navigation checks, with at most a conditional 15-minute increment, and no large testing process."
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 1.0,
+        "stddev": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 0.9333,
+        "stddev": 0.1155,
+        "min": 0.8,
+        "max": 1.0
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.07"
+    }
+  },
+  "notes": [
+    "Only cases 1\u20133 are compared. One trial each; cases shared context within each arm.",
+    "No timing/token/tool-count data was exposed. Aggregator default zeros were removed, not treated as measurements.",
+    "Pass-rate variation is between different cases, not repeated-run uncertainty.",
+    "With-skill outputs 1\u20133 were recreated after a workspace relocation; not counted as new trials."
+  ]
+}

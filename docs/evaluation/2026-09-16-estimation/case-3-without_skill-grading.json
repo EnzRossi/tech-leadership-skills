@@ -1,0 +1,51 @@
+{
+  "expectations": [
+    {
+      "text": "Uses the measured 60\u201390 minute end-to-end analogue without a generic AI discount or duplicated normal review/testing",
+      "passed": true,
+      "evidence": "Starts from same-repo 60\u201390 minutes end to end without an AI discount. Optional extra 15 minutes is specifically conditional on mobile/keyboard checks being absent from historical browser checks, not a blanket duplicated review allowance."
+    },
+    {
+      "text": "Treats the extra 15-minute brand review as separate only because it is outside the analogue boundary",
+      "passed": true,
+      "evidence": "Adds the separate 15-minute brand review to obtain 75\u2013105 minutes; describes it as separate from historical page delivery."
+    },
+    {
+      "text": "Does not invent enterprise-scale architecture or bureaucracy and rejects two-week planning without a new blocker",
+      "passed": true,
+      "evidence": "Rejects two weeks for stated scope and says enterprise size alone does not justify extra process."
+    },
+    {
+      "text": "Does not claim three developers cut the mostly indivisible change to one-third of the time",
+      "passed": true,
+      "evidence": "Three developers retain the same 75\u2013120-minute window with no reliable speedup."
+    },
+    {
+      "text": "Keeps manual mobile/keyboard acceptance focused rather than imposing a large testing process",
+      "passed": true,
+      "evidence": "Calls for preview mobile layout and keyboard navigation checks, with at most a conditional 15-minute increment, and no large testing process."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  },
+  "claims": [
+    {
+      "claim": "Historical delivery plus separate brand review gives 75\u2013105 minutes.",
+      "type": "factual",
+      "verified": true,
+      "evidence": "60+15=75 and 90+15=105. A conditionally adds 15 minutes for checks outside historical scope; B assumes comparable checks are included."
+    }
+  ],
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "reason": "The prompt does not explicitly establish whether historical browser checks included mobile and keyboard checks. Conditional incremental time for genuinely new checks should not automatically fail the no-double-counting assertion; clarify the analogue boundary in the prompt."
+      }
+    ],
+    "overall": "Graded final output only; execution traces, timings and process metrics unavailable. No substantive arithmetic errors found. See specific evidence-boundary concerns."
+  }
+}
