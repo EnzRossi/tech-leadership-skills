@@ -1,0 +1,38 @@
+{
+  "skill_name": "skill-template",
+  "evals": [
+    {
+      "id": 1,
+      "name": "normal-case",
+      "prompt": "A realistic prompt a technology leader would type, with enough context to work from.",
+      "expected_output": "What a good result looks like, described in terms of behavior and content rather than exact wording.",
+      "files": [],
+      "assertions": [
+        "The output follows the structure of assets/output-template.md",
+        "Every claim is labeled as fact, inference, assumption, or unknown"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "incomplete-information",
+      "prompt": "A prompt with missing or ambiguous inputs.",
+      "expected_output": "The skill states what is missing, proceeds on labeled assumptions, and does not invent data.",
+      "files": [],
+      "assertions": [
+        "No numbers or statuses appear that were not present in the prompt",
+        "The output lists the specific information still needed"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "do-not-proceed",
+      "prompt": "A prompt where the correct recommendation is to stop, wait, or choose a simpler option.",
+      "expected_output": "The skill recommends against proceeding and explains what would change the recommendation.",
+      "files": [],
+      "assertions": [
+        "The recommendation is not to proceed as requested",
+        "The output states conditions under which the recommendation would change"
+      ]
+    }
+  ]
+}

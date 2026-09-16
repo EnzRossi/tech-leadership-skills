@@ -1,0 +1,12 @@
+[
+  {"query": "A realistic request that should activate this skill, with specific context.", "should_trigger": true},
+  {"query": "A casual, lowercase phrasing of the same intent.", "should_trigger": true},
+  {"query": "A request that never names the skill's domain but clearly needs it.", "should_trigger": true},
+  {"query": "An uncommon but valid use case.", "should_trigger": true},
+  {"query": "A case where this skill competes with a neighboring skill and should win.", "should_trigger": true},
+  {"query": "A near miss: shares vocabulary with the skill but needs something else.", "should_trigger": false},
+  {"query": "A request for the underlying concept explained, not a decision made.", "should_trigger": false},
+  {"query": "A request that belongs to a neighboring skill in this repository.", "should_trigger": false},
+  {"query": "An implementation task, not a leadership decision.", "should_trigger": false},
+  {"query": "A request in an adjacent domain this repository does not cover.", "should_trigger": false}
+]
