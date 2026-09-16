@@ -1,0 +1,226 @@
+{
+  "heldout_with/ai-initiative-evaluator-101.md": {
+    "expectations": [
+      {
+        "text": "Calculates current monthly handling cost as $21,600 and, conditional on genuine 50% time savings, gross monthly capacity value as $10,800 and net recurring value before other costs as $4,800; does not label capacity savings guaranteed cash savings.",
+        "passed": false,
+        "evidence": "Calculates 480 hours/month, $21,600 current cost and $10,800 capacity value, explicitly distinguishing capacity from cash. Gives correct first-year residual and 7.5-month payback, but never states the requested $4,800 net recurring monthly value."
+      },
+      {
+        "text": "Identifies selection bias and exclusion of missing-document claims in the 80-case demo, and does not treat 94% agreement with historical decisions as validated live accuracy or correctness.",
+        "passed": true,
+        "evidence": "Identifies operations-selected 80 claims excluding missing documents, estimates 720 missing-document live claims, and says selection bias and revised final decisions make this neither representative performance nor reliable ground truth."
+      },
+      {
+        "text": "Proposes an evaluation that includes missing-document cases and measures total adjuster review/correction time plus approval and denial errors separately, retaining human decision authority during the experiment.",
+        "passed": true,
+        "evidence": "Requires natural missing-document prevalence and inspection changes; measures total handling, follow-up, inspection, review and correction time; separately reports incorrect approvals and denials; keeps outputs in shadow mode and an adjuster approving every decision."
+      },
+      {
+        "text": "Makes any larger investment conditional on measured results and compares the structured-form alternative or a combined approach without assuming its adoption or declaring AI categorically required or unsuitable.",
+        "passed": true,
+        "evidence": "Advance only if representative held-out results meet tolerances and measured net value covers complete costs. Compares structured intake against existing handling and assistance, explicitly calling adoption and avoided work unknown."
+      }
+    ],
+    "summary": {
+      "passed": 3,
+      "failed": 1,
+      "total": 4
+    },
+    "word_count": 560,
+    "additional_concerns": {
+      "factual_inventions": [],
+      "poor_reasoning": [],
+      "unnecessary_verbosity": [],
+      "ambiguous_criteria": [
+        "The economics assertion is failed only for omission of explicit $4,800/month net recurring value. Correct 7.5-month implementation recovery and $21,600 first-year residual imply that value, so a rubric accepting implicit calculation could reasonably pass it."
+      ]
+    }
+  },
+  "heldout_without/ai-initiative-evaluator-101.md": {
+    "expectations": [
+      {
+        "text": "Calculates current monthly handling cost as $21,600 and, conditional on genuine 50% time savings, gross monthly capacity value as $10,800 and net recurring value before other costs as $4,800; does not label capacity savings guaranteed cash savings.",
+        "passed": true,
+        "evidence": "Explicitly calculates $21,600 current monthly cost, $10,800 conditional monthly capacity value and $4,800 after service fees; labels these capacity values rather than guaranteed cash savings."
+      },
+      {
+        "text": "Identifies selection bias and exclusion of missing-document claims in the 80-case demo, and does not treat 94% agreement with historical decisions as validated live accuracy or correctness.",
+        "passed": true,
+        "evidence": "Says the selected demo omitted 30% missing-document claims and may compare intake recommendations against decisions incorporating later inspections; explicitly rejects it as decision-grade evidence."
+      },
+      {
+        "text": "Proposes an evaluation that includes missing-document cases and measures total adjuster review/correction time plus approval and denial errors separately, retaining human decision authority during the experiment.",
+        "passed": true,
+        "evidence": "Samples normal operations preserving missing-document cases; measures total human review, correction, escalation and rework; records false approvals and false denials separately; retains adjuster responsibility for every actual decision."
+      },
+      {
+        "text": "Makes any larger investment conditional on measured results and compares the structured-form alternative or a combined approach without assuming its adoption or declaring AI categorically required or unsuitable.",
+        "passed": true,
+        "evidence": "Conditions commitment on representative holdout, acceptable errors and measured savings supporting full costs. Tests a structured intake prototype, measures small-dealer completion, and allows combination only if incremental value is demonstrated."
+      }
+    ],
+    "summary": {
+      "passed": 4,
+      "failed": 0,
+      "total": 4
+    },
+    "word_count": 635,
+    "additional_concerns": {
+      "factual_inventions": [],
+      "poor_reasoning": [
+        "The sentence saying cash savings require reduced overtime/hiring/staffing costs \u201cor valuable redeployment\u201d conflates monetizable capacity benefit with cash savings: redeployment alone need not reduce cash expenditure. The surrounding capacity caveat still satisfies the assertion."
+      ],
+      "unnecessary_verbosity": [],
+      "ambiguous_criteria": []
+    }
+  },
+  "heldout_with/software-project-health-review-101.md": {
+    "expectations": [
+      {
+        "text": "Distinguishes 92% ticket closure from release readiness and rejects extrapolating mixed, unsized ticket throughput into a reliable completion forecast.",
+        "passed": true,
+        "evidence": "States closure percentage is not release completion and ticket counts without sizes, dependencies or acceptance evidence cannot forecast completion; explicitly forbids extrapolating nine closures per week."
+      },
+      {
+        "text": "Calculates that unmatched transactions are 0.3% by count but 8% by value, and does not assume the $4.8 million is a realized loss or a tolerable discrepancy.",
+        "passed": true,
+        "evidence": "Shows 600/200,000 unmatched alongside 99.7% reconciled, and $4.8m/$60m = 8%. Says unmatched value is not proven loss and unknown causes prevent a defensible correctness decision."
+      },
+      {
+        "text": "Treats production ingestion, demonstrated partial-posting recovery, reconciliation cause analysis, and finance acceptance as unresolved release evidence rather than accepting a local recovery claim or rehearsal percentage as sufficient.",
+        "passed": true,
+        "evidence": "Requires ingestion evidence, classification and tracing of the full $4.8m, recorded production-like partial-posting recovery, and finance acceptance; rejects local recovery as production evidence."
+      },
+      {
+        "text": "Addresses the ten-day extension decision and two-day finance window with explicit near-term owners or decision gates; presents extension or cutover as conditional on evidence rather than claiming either date outcome is certain.",
+        "passed": true,
+        "evidence": "Names sponsor/commercial owner to decide this week and request within ten days; finance lead/sponsor reserve the two days and appoint a delegate. Date and fallback depend on readiness gates and a credible remaining plan."
+      }
+    ],
+    "summary": {
+      "passed": 4,
+      "failed": 0,
+      "total": 4
+    },
+    "word_count": 659,
+    "additional_concerns": {
+      "factual_inventions": [],
+      "poor_reasoning": [],
+      "unnecessary_verbosity": [],
+      "ambiguous_criteria": [
+        "Does not print \u201c0.3%\u201d literally; 600/200,000 and 99.7% reconciled express the equivalent count result. Passed to avoid penalizing equivalent presentation. Amber versus Red is a defensible classification because the date remains conditional and readiness is explicitly unproven."
+      ]
+    }
+  },
+  "heldout_without/software-project-health-review-101.md": {
+    "expectations": [
+      {
+        "text": "Distinguishes 92% ticket closure from release readiness and rejects extrapolating mixed, unsized ticket throughput into a reliable completion forecast.",
+        "passed": true,
+        "evidence": "Distinguishes tickets closed from readiness and says eighteen closures do not establish a burn rate because twelve were documentation/UI and sizes are not comparable."
+      },
+      {
+        "text": "Calculates that unmatched transactions are 0.3% by count but 8% by value, and does not assume the $4.8 million is a realized loss or a tolerable discrepancy.",
+        "passed": true,
+        "evidence": "Reports 99.7% matched and 600 unmatched, with $4.8m/$60m = 8% unresolved value. Explicitly says unmatched does not necessarily mean loss or incorrect posting and demands cause classification."
+      },
+      {
+        "text": "Treats production ingestion, demonstrated partial-posting recovery, reconciliation cause analysis, and finance acceptance as unresolved release evidence rather than accepting a local recovery claim or rehearsal percentage as sufficient.",
+        "passed": true,
+        "evidence": "Requires production-like ingestion, material discrepancy dispositions, recorded recovery drill and written finance acceptance. Explicitly rejects local demonstration as sufficient."
+      },
+      {
+        "text": "Addresses the ten-day extension decision and two-day finance window with explicit near-term owners or decision gates; presents extension or cutover as conditional on evidence rather than claiming either date outcome is certain.",
+        "passed": true,
+        "evidence": "Names a commercial owner today and requires extension action before ten days, prepares classification and acceptance for the finance window, requests a delegate, and sets evidence review this week plus conditional final go/no-go gates."
+      }
+    ],
+    "summary": {
+      "passed": 4,
+      "failed": 0,
+      "total": 4
+    },
+    "word_count": 599,
+    "additional_concerns": {
+      "factual_inventions": [],
+      "poor_reasoning": [],
+      "unnecessary_verbosity": [],
+      "ambiguous_criteria": [
+        "Does not print \u201c0.3%\u201d literally; the 99.7% matched complement with 600 unmatched expresses that result. Passed as equivalent presentation rather than requiring a particular numeric wording."
+      ]
+    }
+  },
+  "heldout_with/build-buy-hire-augment-101.md": {
+    "expectations": [
+      {
+        "text": "Calculates effective internal delivery capacity as one engineer-week per calendar week and the estimated build duration as 24 weeks under current allocation; does not assume two engineers make it a 12-week plan.",
+        "passed": true,
+        "evidence": "Two engineers at 50% available provide one engineer-week weekly; 24 engineer-weeks implies 24 calendar weeks. Notes twelve weeks at full allocation would require parallelisable work and displaced maintenance."
+      },
+      {
+        "text": "Recognizes that the vendor's $160,000 first-year stated fees exclude the unproven proprietary-rule integration, while the agency's $210,000 quote excludes specified operating costs; does not present either as complete total cost of ownership.",
+        "passed": true,
+        "evidence": "Gives $160,000 commercial quoted cost before integration, migration, oversight/support and $210,000 agency price before omitted costs. Explicitly says residual budget is not an estimate of remaining cost; seeks comparable ongoing budgets."
+      },
+      {
+        "text": "Makes vendor suitability contingent on demonstrating the proprietary routing rule through the API and makes any agency option contingent on credible operational handover and maintenance ownership.",
+        "passed": true,
+        "evidence": "Conditions commercial commitment on representative end-to-end API proof and complete cost/delivery envelope. Agency requires funded handover, including receiving engineer independently changing, deploying and recovering the system."
+      },
+      {
+        "text": "Addresses hiring's four-month lead time and the six-week operational bridge, including its $18,000 cost and unknown error risk, without claiming the bridge alone makes the 24-week internal build meet a 20-week extended deadline.",
+        "passed": true,
+        "evidence": "States four-month recruitment plus onboarding misses opening; $18,000 bridge reaches week 20 with unknown error rates and explicitly does not close the 24-week build estimate."
+      }
+    ],
+    "summary": {
+      "passed": 4,
+      "failed": 0,
+      "total": 4
+    },
+    "word_count": 654,
+    "additional_concerns": {
+      "factual_inventions": [],
+      "poor_reasoning": [],
+      "unnecessary_verbosity": [],
+      "ambiguous_criteria": []
+    }
+  },
+  "heldout_without/build-buy-hire-augment-101.md": {
+    "expectations": [
+      {
+        "text": "Calculates effective internal delivery capacity as one engineer-week per calendar week and the estimated build duration as 24 weeks under current allocation; does not assume two engineers make it a 12-week plan.",
+        "passed": true,
+        "evidence": "Table states one engineer-week per week available and approximately 24 calendar weeks, compared against week 14 opening and week 20 bridge deadline."
+      },
+      {
+        "text": "Recognizes that the vendor's $160,000 first-year stated fees exclude the unproven proprietary-rule integration, while the agency's $210,000 quote excludes specified operating costs; does not present either as complete total cost of ownership.",
+        "passed": true,
+        "evidence": "Lists $160,000 before custom integration/internal effort and $210,000 excluding hosting/maintenance; says neither headline quote is a complete budget and also compares three-year baselines with missing operating costs."
+      },
+      {
+        "text": "Makes vendor suitability contingent on demonstrating the proprietary routing rule through the API and makes any agency option contingent on credible operational handover and maintenance ownership.",
+        "passed": true,
+        "evidence": "Product selection requires proprietary flow demonstration, supported delivery and full cost fit. Agency selection requires credible supported delivery, explicit handover package and ongoing support responsibilities."
+      },
+      {
+        "text": "Addresses hiring's four-month lead time and the six-week operational bridge, including its $18,000 cost and unknown error risk, without claiming the bridge alone makes the 24-week internal build meet a 20-week extended deadline.",
+        "passed": true,
+        "evidence": "Identifies four months recruiting plus onboarding as unable to solve the deadline; bridge is six weeks/$18,000 with unmeasured errors. Explicitly compares internal 24 weeks with extended 20 weeks and avoids assuming bridge solves the gap."
+      }
+    ],
+    "summary": {
+      "passed": 4,
+      "failed": 0,
+      "total": 4
+    },
+    "word_count": 729,
+    "additional_concerns": {
+      "factual_inventions": [],
+      "poor_reasoning": [],
+      "unnecessary_verbosity": [],
+      "ambiguous_criteria": []
+    }
+  }
+}

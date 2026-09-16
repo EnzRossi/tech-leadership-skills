@@ -1,65 +1,68 @@
 # Evaluation results
 
-This file records what we measured when building the first three skills. It exists so that readers can judge for themselves whether the skills add value over a strong model working alone, and so that contributors have a baseline to beat.
+Development review, 2026-09-16. These results are evidence about the recorded cases, not a claim that the skills consistently outperform a strong model or are validated in real organizations.
 
-Method summary. For each skill we took two scenarios from `evals/evals.json` (the normal case and the "do not proceed" case), ran each in a clean context twice, once with the skill loaded and once with no skill, using the same model (Claude, September 2026, via Claude Code subagents). An independent grader agent then scored both outputs against the same assertions, with the burden of proof on the assertion, and wrote a qualitative comparison. Trigger tests were run separately with `claude -p` against the skill descriptions. Eval workspaces are not committed; the summary below is what we kept.
+## What ran
 
-## Iteration 1: with skill versus without skill
+The suite now contains 28 scenarios (AI 9, health 9, sourcing 10) and 60 trigger queries (20 per skill). All 28 scenarios were executed with the revised workflows. Six were also executed with the original skills and without explicitly loading a skill. Response generators did not receive assertions or expected outputs. A fresh grader saw randomly named copies of the 18 comparison outputs, their prompts and their assertions, without configuration labels.
 
-| Skill | Scenario | With skill | Without skill | Output size (with / without) |
-|---|---|---|---|---|
-| ai-initiative-evaluator | Claims triage (normal case) | 12/12 | 9/12 | 32k / 13k chars |
-| ai-initiative-evaluator | Settlement reconciliation (do not use AI) | 7/7 | 5/7 | 24k / 13k chars |
-| software-project-health-review | Portal rebuild with Jira export and notes | 12/12 | 9/12 | 29k / 15k chars |
-| software-project-health-review | Two-week slip, CEO wants contractors | 6/6 | 5/6 | 19k / 10k chars |
-| build-buy-hire-augment | Multi-country payouts in five months | 10/10 | 7/10 | 29k / 13k chars |
-| build-buy-hire-augment | Core pricing engine, fixed-price offer | 7/7 | 6/7 | 27k / 13k chars |
+Each configuration used a separate Codex desktop subagent with no parent conversation history. Cases within each configuration shared that agent's context; they were not six independently reset sessions. Agents inherited the same parent model setting. The interface did not expose an exact model build, sampling parameters, per-run tokens or timings. Host skill descriptions may still have been visible to the baseline; “without skill” means instructed not to load skill bodies, not a proven metadata-free environment. Full tool traces are not retained. These limitations prevent exact replication and strong causal claims.
 
-Token use with the skill was roughly 1.3 to 1.5 times the baseline, and wall-clock time roughly 1.5 to 2.8 times, driven mostly by the longer output.
+The main comparison is a development set: the revised methodology contains worked examples related to some cases. The original skill baseline is commit `8b2cdfe`; instruction contents and hashes for the revised run are retained in [revision inputs](evaluation/2026-09-16/revision-inputs.json). Later independent held-out cases are recorded separately; they were not used to tune the skills.
 
-### What the skills changed
+## Six-case comparison
 
-The graders' comparisons converged on the same findings across all six pairs.
+Raw grades from the frozen comparison contract, including a 700-word check:
 
-**Where the skill added value**
+| Case | Revised | Original | No explicit skill | Words: revised / original / baseline |
+|---|---:|---:|---:|---:|
+| AI: claims triage | 12/13 | 11/13 | 9/13 | 626 / 1015 / 562 |
+| AI: contaminated bank-change test | 6/6 | 3/6 | 4/6 | 623 / 731 / 376 |
+| Health: portal artifacts | 11/14 | 11/14 | 11/14 | 761 / 1428 / 850 |
+| Health: thin but positive evidence | 4/4 | 3/4 | 4/4 | 476 / 323 / 142 |
+| Sourcing: payouts | 10/11 | 9/11 | 9/11 | 678 / 1593 / 655 |
+| Sourcing: specialist review | 4/4 | 2/4 | 4/4 | 629 / 776 / 211 |
 
-- **No invented numbers.** In five of six pairs the baseline fabricated figures a leader could repeat in a meeting and be wrong about: team cost ranges, licence prices, auto-match percentages, contractor and salary ranges, FX spreads, "20 to 50 percent change orders", "three to five months to hire". The with-skill outputs contained none, and labeled their own estimates as assumptions.
-- **Correct arithmetic against the artifacts.** On the portal review, every count and story-point total in the with-skill output re-derived correctly from the CSV. The baseline miscounted twice and placed an unsupported judgment inside its evidence table.
-- **Unknowns the baseline missed.** On the claims-triage case the skill asked whether the raw inbound emails and attachments are actually retained and linked to claim records, without which four years of "labeled history" is unusable. The baseline assumed the data existed. It also grounded accuracy targets in an inter-rater agreement test rather than asserted percentages.
-- **Neutrality applied mechanically.** On both sourcing cases the skill checked its four conditions for recommending external help, set an end date, named the receiving owner, specified knowledge transfer, and on the payments case barred external engineers from production banking data. The baseline recommended contractors with "time-box it to the program" and never constrained data access.
-- **Structure a leader can execute.** The skill produced a stated confidence level, at most five owned actions for the week, and a "do not change" list. The baseline produced nine actions plus five asks with implicit ownership and no confidence statement, and its "what not to do" list was mostly further demands for change.
-- **Decisions reserved for the leader.** The baseline issued directives ("open the search this month"); the skill presented hiring and contract decisions as the leader's.
+[Exact outputs](evaluation/2026-09-16/README.md), [raw grades](evaluation/2026-09-16/comparison-grading.json), [frozen assertions](evaluation/2026-09-16/comparison-rubric.json) and [rubric corrections](evaluation/2026-09-16/rubric-review.md) are retained. Counts are not equally weighted measures of decision usefulness. No significance test or variance estimate is justified by these single trials.
 
-**Where the skill made things worse**
+### What changed and what failed
 
-- **Length and template rigidity.** Every with-skill output was roughly twice as long. Dimension tables were printed in full even when most rows were Unknown; on the one-paragraph slip question, nine of seventeen rows said Unknown and carried no information. A CTO would skim these.
-- **Buried arguments.** On the pricing-engine case the decisive rebuttal ("an attractive price and codebase familiarity are not sufficient reasons") sat in a table row; the baseline gave it a crisp section a leader would quote.
-- **Deferred decisiveness.** The with-skill memos sometimes left thresholds as open questions for the sponsor where the baseline proposed a concrete target. Not inventing numbers is right; refusing to propose any is a different failure.
-- **Meta-commentary.** One memo explained which decision rules had fired. That belongs in the transcript, not the deliverable.
+- The old health output explicitly said “Amber only because none of it has been independently verified.” The revised output separates provisional Green from low confidence. The no-skill baseline already avoided that mistake.
+- The revised AI bank-change answer covers final-state and permission verification, evaluation leakage, independent judging and ineffective review. All arms reject rollout; the difference is the completeness of the evidence plan, not the headline recommendation.
+- The old portal answer inferred historical scope inflow from snapshot fields. The revised answer names those limits and computes the five scope-added rows correctly. This remains development evidence because the method includes the fixture example.
+- The old sourcing answers explicitly use the arbitrary two-condition external-help rule. Revised and baseline answers both recommend a specialist where appropriate. The baseline is considerably more concise on that simple question.
+- Revised output totals were lower than original totals, but higher than the baseline. The first revised portal memo was 761 words and failed the length check. A focused trim instruction produced a 694-word rerun without losing the decisive findings. A grader still noted that calling the revised date “plausible” is weakly supported; the memo does not establish a forecast.
+- A further proportionality change removed the implicit 400-word minimum. Narrow-question reruns are retained in `rerun/`; they reduce padding without changing the recommendation. These are targeted development reruns, not a fresh full-suite benchmark.
+- Some raw failures reflect weak assertions: demanding literal labels, several do-not-change items, or boilerplate reserving decisions to humans. Current fixtures check the substantive safeguard instead. Old grades remain unchanged; revised wording was not used to inflate the comparison scores.
 
-**Non-discriminating assertions.** Between five and nine assertions per scenario passed in both configurations: a strong model reaches the right headline recommendation on all six scenarios unaided. The skills' value is in the evidence discipline, the unknowns surfaced, the neutrality mechanism, and the executable structure, not in reaching a different conclusion. We kept those assertions because they guard against regression, but they do not measure the skill.
+## Additional development coverage
 
-### Changes made after iteration 1
+The remaining 22 cases test deterministic reconciliation, vague executive pressure, pilot expansion, time leakage, denied data use, net review burden, contradictory status, historical evidence, injected vendor instructions, technical debt, sourcing bias, common-horizon costs, short projects with durable demand, no-op choices and outside expertise on core systems.
 
-Applied to all three skills, as generalizable rules rather than fixes for the specific scenarios:
+[AI and health grades](evaluation/2026-09-16/additional-grading.json) record 64/66 assertions passed across 14 outputs. Two failures were narrow: the reconciliation memo did not explicitly rate error cost as high, and the mobile-project memo requested integrated demos without explicitly prioritizing the riskiest features. Grading ambiguity is recorded; neither was silently converted into a pass. See [sourcing and portal rerun grades](evaluation/2026-09-16/sourcing-additional-grading.json) for the remaining cases and the partner exit-condition gap. That file records 49/50 checks across eight sourcing outputs plus the portal rerun (35/36 for sourcing and 14/14 for the rerun).
 
-1. A proportionality rule in the output step: match length to the evidence supplied; collapse Unknown or not-applicable sections to a single line; produce a short form when the leader supplied only their own account.
-2. A prohibition on narrating the method or naming decision rules in the deliverable.
-3. An instruction to propose concrete thresholds and targets as recommendations for confirmation rather than leaving them as open questions.
-4. For the sourcing skill, a named prose section on the option the leader arrived with.
-5. For the project-health skill, a phrasing rule for the "nothing negative, but unverified" case so an Amber rating reads as a request for evidence rather than an alarm.
-6. Three assertions were reworded to be less ambiguous or to check the thing that actually separated the runs (counts matching the CSV).
+## Independent held-out check
 
-## Iteration 2: spot check of the proportionality change
+After the skills were frozen, a separate fresh agent wrote three new cases without reading the skills, existing fixtures or outputs. Fresh response agents ran the same prompts with and without explicitly loaded skills; a separate blinded grader applied the four prewritten assertions per case. No skill was tuned afterward. Exact prompts, outputs, grades and instruction hashes are in the [artifact index](evaluation/2026-09-16/README.md).
 
-We reran the one-paragraph slip scenario with the revised project-health skill. The output fell from 19.4k to 9.7k characters, opened with "Nothing in your account indicates trouble; Amber only because none of it has been verified", rated only the six dimensions the account supports and listed the rest as not assessable, kept the five owned actions and the "do not change" list, and still recommended against the consultant and contractors. The change generalizes: it is a rule about matching output to evidence, not about this scenario.
+| Held-out decision | Revised | No explicit skill | Words: revised / baseline |
+|---|---:|---:|---:|
+| Warranty assistant economics and biased demo | 3/4 | 4/4 | 560 / 635 |
+| Reconciliation cutover with count/value mismatch | 4/4 | 4/4 | 659 / 599 |
+| Sample routing with capacity and handover constraints | 4/4 | 4/4 | 654 / 729 |
 
-## Trigger tests
+**No held-out advantage was demonstrated.** The revised AI answer omitted the explicit $4,800 monthly recurring net value, although its correct payback and annual calculations imply it; this narrow failure is retained with the grader's ambiguity note. The baseline AI answer separately blurred capacity redeployment with cash savings; this concern is recorded even though its assertions passed. Both configurations handled the project and sourcing decisions well. Three single trials cannot establish parity, superiority or reliability.
 
-Each skill ships eighteen trigger queries (eight that should activate it, ten near misses that should not) in `evals/trigger-evals.json`. We attempted to run them with the `skill-creator` trigger harness through `claude -p`. The results were inconclusive: the harness detected zero activations on every query, positive and negative alike, across two runs and two model configurations, which indicates the detection mechanism did not work in the installed CLI version rather than that the descriptions failed. We are recording this as **not measured** rather than reporting the numbers. The descriptions were written to the agentskills.io guidance (intent-focused, explicit near-miss exclusions, under 1024 characters) and were reviewed by hand against every trigger query; measured trigger rates are the first thing we want from contributors running a current Claude Code, Codex, or Copilot.
+Across all batches there are 49 retained responses: 40 development/comparison responses, three targeted reruns and six held-out responses. Narrow reruns reduced the health answer from 476 to 242 words and the specialist answer from 629 to 264 words, preserving the recommendation. These length reductions do not themselves prove better decision usefulness.
 
-## How to reproduce
+## What is not measured
 
-Anthropic's `skill-creator` skill in Claude Code automates the loop: it runs each eval prompt with and without the skill in subagents, grades against the assertions, and aggregates a benchmark. The agentskills.io [evaluation guide](https://agentskills.io/skill-creation/evaluating-skills) describes the same workflow for other agents. Trigger tests use the [description optimization guide](https://agentskills.io/skill-creation/optimizing-descriptions) format, which is what `evals/trigger-evals.json` follows.
+Automatic triggering, full installation compatibility, repeated-run stability, cross-model performance, and usefulness in real leadership decisions remain unmeasured. The 60 trigger queries were checked as fixtures and reviewed for routing intent; no observed activation rate is claimed. Previous zero-activation reports cannot distinguish broken detection from actual routing failure without a positive control.
 
-Note for anyone rerunning the trigger tests through `claude -p`: check that the CLI version supports the model you pass and that the harness actually observes a `Skill` tool call on at least one positive query before trusting a full run. A run that reports zero activations everywhere is a broken harness, not a result.
+The first implementation reported strong Claude comparison results but kept no raw outputs or exact model identity in the repository. Those numbers have been retired as unverifiable historical claims; the original document remains in Git history. No new evaluation inherits its performance or compatibility claims.
+
+## Reproduce and extend
+
+Use the recorded prompts and matching fixtures from the repository root. Start fresh contexts for each case/configuration, pin the model/settings and skill revision, and conceal grading criteria from response generators. Compare the same inputs with the skill, previous revision and no skill; retain actual outputs and traces. Grade independently with evidence and a human reader, including arithmetic and concision. Repeat before reporting variability. [CONTRIBUTING.md](../CONTRIBUTING.md) describes the protocol and actual activation testing.
+
+Structural verification is separate: `scripts/validate_skills.py --require-reference` plus validator regression tests. CI does not call an AI model or claim that parsed fixture JSON means the skill passed its scenarios.

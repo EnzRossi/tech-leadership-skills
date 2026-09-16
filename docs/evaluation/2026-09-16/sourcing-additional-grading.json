@@ -1,0 +1,368 @@
+{
+  "with_skill/build-buy-hire-augment-2.md": {
+    "expectations": [
+      {
+        "text": "The output does not endorse the nearshore team on the evidence given and asks what the capacity is for",
+        "passed": true,
+        "evidence": "Do not commit to five or six agency developers yet; asks what sustained skill/duration gap exists and maps backlog to skills and ready work."
+      },
+      {
+        "text": "The output questions whether slipping is caused by capacity rather than prioritization, decision latency, or quality",
+        "passed": true,
+        "evidence": "Explicitly questions blocked review, excess work in progress, unplanned support, rework and decision latency; slipping is pressure, not proof of a developer shortage."
+      },
+      {
+        "text": "The output identifies who would direct, review, and receive knowledge from external developers as a requirement, noting the load on the stretched team",
+        "passed": true,
+        "evidence": "Requires allocated internal technical lead and maintainers; says adding developers can deepen the constraint and includes direction, review, acceptance and independently changing/deploying/recovering work."
+      },
+      {
+        "text": "Most dimensions are rated Unknown or the output states the information still needed",
+        "passed": true,
+        "evidence": "States work readiness, receiving capacity, component evidence, hiring speed and management evidence are unknown or needed; does not pretend a complete diagnosis."
+      },
+      {
+        "text": "The output gives conditions under which augmentation would fit (bounded duration, reviewable work, internal lead) and conditions under which hiring or reprioritization is more likely right",
+        "passed": true,
+        "evidence": "A temporary demand spike, ready backlog and allocated lead favor augmentation; durable demand favors hiring and reprioritization is the strongest immediate alternative."
+      },
+      {
+        "text": "No headcount costs, rates, or productivity gains are invented",
+        "passed": true,
+        "evidence": "Lists cost drivers only; the 15-person team and proposed five/six are supplied, with no rates or projected productivity gains."
+      }
+    ],
+    "summary": {
+      "passed": 6,
+      "failed": 0,
+      "total": 6
+    },
+    "word_count": 510,
+    "additional_concerns": []
+  },
+  "with_skill/build-buy-hire-augment-3.md": {
+    "expectations": [
+      {
+        "text": "The recommendation is not to accept the fixed-price outsourced rebuild as the sole approach",
+        "passed": true,
+        "evidence": "Explicitly says not to accept the fixed-price rebuild as the complete answer; establish an internal team with bounded delivery support."
+      },
+      {
+        "text": "The engine is identified as core differentiation with ongoing duration, continuous iteration, and a knowledge-retention requirement",
+        "passed": true,
+        "evidence": "Cites customer differentiation, weekly evolution after a 12–18-month rebuild, sole-expert bottleneck and durable ownership/knowledge transfer."
+      },
+      {
+        "text": "Explains why evolving core work and absent receiving capacity undermine this particular sole-partner plan, without banning external implementation of all core IP",
+        "passed": true,
+        "evidence": "Says outside work is eligible, including specialist implementation; an unavailable CTO cannot provide acceptance and fixed price does not remove uncertainty over weekly change."
+      },
+      {
+        "text": "Hiring and building internally is recommended for the differentiating core, with knowledge transfer from the CTO addressed",
+        "passed": true,
+        "evidence": "Recommends a durable internal team through hiring or reassignment and freeing CTO time for structured knowledge extraction and review."
+      },
+      {
+        "text": "If any role for the services firm is proposed, it is bounded with an end date, internal owner, and knowledge transfer, or limited to commodity components",
+        "passed": false,
+        "evidence": "Partial: proposes bounded migration slices, internal technical/product owners, knowledge transfer and reviews at accepted capability boundaries. It supplies neither an end date nor an explicit engagement termination trigger; review is not clearly termination."
+      },
+      {
+        "text": "The output states that an attractive price and codebase familiarity are not sufficient reasons on their own",
+        "passed": true,
+        "evidence": "Says the offer does not solve ownership and knowledge bottlenecks and attractive price/codebase familiarity do not establish sustainable change ownership."
+      },
+      {
+        "text": "Conditions under which the recommendation would change are stated, such as failure to hire within a period",
+        "passed": true,
+        "evidence": "Verified receiving capacity plus iterative agreement could favor partner implementation; available internal team with no partner time advantage favors internal delivery."
+      }
+    ],
+    "summary": {
+      "passed": 6,
+      "failed": 1,
+      "total": 7
+    },
+    "word_count": 528,
+    "additional_concerns": [
+      "Ambiguous assertion: “end date” may be overly literal for an exploratory recommendation. Bounded increments and capability-boundary review are meaningful safeguards, but the output does not state when partner support actually ends. This failure is limited to the exit requirement, not the defensible internal/partner sourcing mix."
+    ]
+  },
+  "with_skill/build-buy-hire-augment-4.md": {
+    "expectations": [
+      {
+        "text": "Recommends testing a buy alternative against real requirements and transition costs; does not assume a commodity label alone proves replacement worthwhile",
+        "passed": true,
+        "evidence": "Buy-first assessment is conditional on must-have fit, migration economics and benefits exceeding a constrained internal roadmap."
+      },
+      {
+        "text": "The capability is classified as commodity with a mature product market",
+        "passed": true,
+        "evidence": "Calls flags/experimentation utility capabilities and proposes an established product; semantically recognizes a commodity alternative rather than claiming uniqueness."
+      },
+      {
+        "text": "The ongoing maintenance cost of two full-time engineers and the opportunity cost of their time is identified",
+        "passed": true,
+        "evidence": "Identifies two engineers nearly full-time on maintenance and foregone platform work; distinguishes released effort from cash savings."
+      },
+      {
+        "text": "The lock-in argument is addressed directly, noting that the internal system also creates lock-in and framing the question as switching cost versus unique value",
+        "passed": true,
+        "evidence": "Internal maintainers/custom SDKs also create dependence; assess switching costs symmetrically and test exports/replacement interfaces against unusual requirements."
+      },
+      {
+        "text": "A transition strategy is described, including evaluating products against actual requirements and a sunset plan for the internal system",
+        "passed": true,
+        "evidence": "Inventories actual requirements, pilots a representative integration, cuts over incrementally with rollback and retires internal system after migration and operational parity."
+      },
+      {
+        "text": "Conditions that would change the recommendation are stated",
+        "passed": true,
+        "evidence": "Unusual requirements, unsafe/costly workarounds, actual workload product cost and migration effort can change the decision."
+      },
+      {
+        "text": "No product prices or engineer salaries are invented",
+        "passed": true,
+        "evidence": "No license prices or salaries are fabricated; states no reliable monetary comparison is possible."
+      }
+    ],
+    "summary": {
+      "passed": 7,
+      "failed": 0,
+      "total": 7
+    },
+    "word_count": 497,
+    "additional_concerns": [
+      "Assertion wording mentions a mature product market; the output says established product and utility capability rather than documenting market maturity. Passed as a defensible semantic equivalent, while the recommendation appropriately remains conditional on actual fit."
+    ]
+  },
+  "with_skill/build-buy-hire-augment-5.md": {
+    "expectations": [
+      {
+        "text": "Does not change the recommendation to sell services",
+        "passed": true,
+        "evidence": "Explicitly refuses to recommend augmentation merely to sell EnzRossi’s team and separates commercial preference from evidence."
+      },
+      {
+        "text": "Recommends buy/configure or existing capacity based on supplied fit",
+        "passed": true,
+        "evidence": "Recommends approved SaaS configured by existing IT, using supplied requirements and capacity."
+      },
+      {
+        "text": "Does not invent a capacity or expertise gap",
+        "passed": true,
+        "evidence": "Calls any integration/expertise gap hypothetical and says none is reported; no invented staffing need."
+      }
+    ],
+    "summary": {
+      "passed": 3,
+      "failed": 0,
+      "total": 3
+    },
+    "word_count": 423,
+    "additional_concerns": [
+      "The 400–526 word template is disproportionately long for the short factual decision; no explicit length assertion applies to this sourcing output."
+    ]
+  },
+  "with_skill/build-buy-hire-augment-7.md": {
+    "expectations": [
+      {
+        "text": "Computes partner total 170k and 20k more than internal on supplied costs",
+        "passed": true,
+        "evidence": "Table and prose compute 120k + 30k + 20k = 170k, versus 150k internal: 20k more. Derived 13.3% is arithmetically correct."
+      },
+      {
+        "text": "Separates unknown operations from known comparison",
+        "passed": true,
+        "evidence": "Calls this a six-month comparison, explicitly excludes unknown subsequent operations for both and asks for common-horizon estimates."
+      },
+      {
+        "text": "Does not choose only on price without considering outcome/time risk",
+        "passed": true,
+        "evidence": "Internal preference is conditional on credible capacity/outcomes; partner may justify premium through demonstrated speed, expertise or avoidance of a valuable delay."
+      },
+      {
+        "text": "Does not claim ramp or maintenance universally dominates costs",
+        "passed": true,
+        "evidence": "No universal dominance claim about ramp or maintenance; acknowledges scope, cash classification, operational uncertainty and acceptance costs."
+      }
+    ],
+    "summary": {
+      "passed": 4,
+      "failed": 0,
+      "total": 4
+    },
+    "word_count": 468,
+    "additional_concerns": [
+      "The 400–526 word template is disproportionately long for the short factual decision; no explicit length assertion applies to this sourcing output."
+    ]
+  },
+  "with_skill/build-buy-hire-augment-8.md": {
+    "expectations": [
+      {
+        "text": "Does not rule out hiring based only on eight-week initial project",
+        "passed": true,
+        "evidence": "Rejects mandatory contracting based on eight-week first assignment; recommends the accepted candidate for a durable role."
+      },
+      {
+        "text": "Evaluates durable demand, candidate readiness and onboarding on equal terms",
+        "passed": true,
+        "evidence": "Uses funded two-year backlog, available manager and identical next-week starts; compares experience, familiarity, access and ramp without assuming equal productivity."
+      },
+      {
+        "text": "Does not invent contractor or salary costs",
+        "passed": true,
+        "evidence": "Cost drivers are listed and rate absence is explicit; no salary or contractor costs invented."
+      }
+    ],
+    "summary": {
+      "passed": 3,
+      "failed": 0,
+      "total": 3
+    },
+    "word_count": 488,
+    "additional_concerns": [
+      "The 400–526 word template is disproportionately long for the short factual decision; no explicit length assertion applies to this sourcing output."
+    ]
+  },
+  "with_skill/build-buy-hire-augment-9.md": {
+    "expectations": [
+      {
+        "text": "Recommends retain existing workflow or do nothing rather than build/hire/partner",
+        "passed": true,
+        "evidence": "Recommends keeping the existing export and closing the sourcing proposal absent a distinct unmet valuable outcome."
+      },
+      {
+        "text": "Uses supplied effort without fabricating ROI",
+        "passed": true,
+        "evidence": "Derives 20 minutes × 12 = 240 minutes/four hours annually and explicitly says this is not a cash savings estimate or automation business case."
+      },
+      {
+        "text": "Gives a demand or requirement trigger to revisit",
+        "passed": true,
+        "evidence": "Revisit triggers include expanded requirements, material workload growth, unreliable export or changed consequences of error."
+      }
+    ],
+    "summary": {
+      "passed": 3,
+      "failed": 0,
+      "total": 3
+    },
+    "word_count": 421,
+    "additional_concerns": [
+      "The 400–526 word template is disproportionately long for the short factual decision; no explicit length assertion applies to this sourcing output."
+    ]
+  },
+  "with_skill/build-buy-hire-augment-10.md": {
+    "expectations": [
+      {
+        "text": "Does not exclude partner merely because the engine is core",
+        "passed": true,
+        "evidence": "Approves bounded specialist help conditionally and explicitly states core IP does not require every contributor to be an employee."
+      },
+      {
+        "text": "Separates internal ownership from who implements",
+        "passed": true,
+        "evidence": "Separates specialist implementation from retained internal integration, roadmap, business outcome and operational accountability."
+      },
+      {
+        "text": "Checks acceptance, transfer and management capability without fabricated constraints",
+        "passed": true,
+        "evidence": "Uses already-allocated internal review and agreed tests/transfer; validates technical fit, access, acceptance and demonstrated transfer without arbitrary condition counts."
+      }
+    ],
+    "summary": {
+      "passed": 3,
+      "failed": 0,
+      "total": 3
+    },
+    "word_count": 526,
+    "additional_concerns": [
+      "The 400–526 word template is disproportionately long for the short factual decision; no explicit length assertion applies to this sourcing output."
+    ]
+  },
+  "rerun/software-project-health-review-1.md": {
+    "expectations": [
+      {
+        "text": "Overall health is rated Red or Amber, not Green, and a separate confidence level is stated",
+        "passed": true,
+        "evidence": "Rates Amber for reported 30 November commitment and states Confidence: Medium separately."
+      },
+      {
+        "text": "The assessment notes that the steering status remained Green while the launch date moved from 15 October to 30 November and scope was added",
+        "passed": true,
+        "evidence": "Calls for replacing Green, notes original 15 October slip, and attributes the 7 August move to 30 November to vendor dependency and added scope. It conveys the coexistence of Green, slip and growth, although does not enumerate all three Green reports."
+      },
+      {
+        "text": "Identifies the persistent unresolved SSO dependency using dated notes and issue evidence, without inferring continuous blockage from sprint associations alone",
+        "passed": true,
+        "evidence": "Uses CP-101/102 and Priya’s dated 28 July and 8 August reports of sandbox nonavailability; explicitly rejects inferring continuous blockage from sprint associations."
+      },
+      {
+        "text": "The stalled payment webhook design decision is identified as a decision-latency problem",
+        "passed": true,
+        "evidence": "Uses CP-122 and dated Diego reports of unresolved webhook decision involving Raj; prioritizes a leadership design decision with owner and deadline."
+      },
+      {
+        "text": "Scope added after the plan (live chat, knowledge base, bulk download, dashboard personalization, or the 'scope-added' label) is identified as scope instability",
+        "passed": true,
+        "evidence": "Notes additional scope in the 7 August report and disputed live chat inclusion/launch definition, identifying acceptance and decision instability."
+      },
+      {
+        "text": "Missing operational readiness is identified: production environment, monitoring, or load testing are unassigned and not started",
+        "passed": true,
+        "evidence": "Explicitly identifies CP-152–154 production provisioning, monitoring and load testing as unassigned/To Do."
+      },
+      {
+        "text": "Claims are explicitly labeled as fact, inference, assumption, or unknown (or equivalent explicit separation)",
+        "passed": true,
+        "evidence": "Table explicitly separates evidence/source from implication and confidence/competing explanation; unknowns and conditional blocker inferences are labeled in prose."
+      },
+      {
+        "text": "The output lists information that is missing, such as the original brief or success metrics, test evidence for Done items, or team allocation",
+        "passed": true,
+        "evidence": "Lists missing approved scope, export timestamp/filtering, sponsor rebaseline approval, dependencies/durations, release plan, test evidence and realistic allocation; integrated rather than a separate unknowns list."
+      },
+      {
+        "text": "The output names decisions leadership must make, including defining what 'launch' means or owning the vendor escalation",
+        "passed": true,
+        "evidence": "Leadership decisions include signed launch acceptance/rebaseline, customer commitment reconciliation, CTO-backed SSO escalation and webhook retry ownership."
+      },
+      {
+        "text": "The output contains no more than five actions for the next seven days, each with an owner",
+        "passed": true,
+        "evidence": "Four rows cover this week, with owners and deadlines: scope acceptance, SSO escalation, webhook decision and release plan. Multiple deliverables in a row are coherent workstreams, not hidden independent action lists."
+      },
+      {
+        "text": "Names at least one tempting intervention the evidence does not justify, with a reason",
+        "passed": true,
+        "evidence": "Do not add engineers or replace supplier: neither demonstrates a route to removing current decision/dependency constraints."
+      },
+      {
+        "text": "Every count, story-point total, and date in the output matches the supplied CSV and notes (or is derivable from them by counting), and no velocity, completion percentage, or headcount appears that cannot be derived from the inputs",
+        "passed": true,
+        "evidence": "Checked all reported dates/counts/issue ranges against supplied CSV and notes. 15 October, 30 November, 1 December, two accounts, 7/8/11 August and the cited report spans are supported. Proposed action deadlines are explicitly marked as proposed. No invented throughput, completion percentage or headcount."
+      },
+      {
+        "text": "Does not infer cycle time, historical scope inflow or missing tests from snapshot fields, and treats the review as historical",
+        "passed": true,
+        "evidence": "Historical August 2026 assessment is explicit; refuses snapshot-derived continuous blockage/velocity and absent-test inference from missing PR links. No cycle-time or historical scope-inflow estimate."
+      },
+      {
+        "text": "The output contains no more than 700 words.",
+        "passed": true,
+        "evidence": "694 whitespace-delimited words, including Markdown table syntax, headings and proposed actions."
+      }
+    ],
+    "summary": {
+      "passed": 14,
+      "failed": 0,
+      "total": 14
+    },
+    "word_count": 694,
+    "additional_concerns": [
+      "“The revised date remains plausible” lacks a supplied feasible remaining-work plan. The surrounding caveat and later statement that no delivery forecast is justified limit this, but “not shown unachievable” would be more precise. Amber versus Red is defensible given missing scope and rebaseline approval.",
+      "The output does not enumerate five scope-added issues, seven sprint associations, payments not-started totals, or the unchanged SSO risk owner across three steering reports. These are richer expected-output details, not current assertion failures; avoid falsely failing the output for omitting exact wording not required by current assertions."
+    ]
+  }
+}

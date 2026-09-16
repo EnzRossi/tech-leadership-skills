@@ -1,0 +1,20 @@
+[
+  {
+    "skill": "ai-initiative-evaluator",
+    "id": 101,
+    "prompt": "Our regional equipment distributor wants an AI assistant to interpret emailed warranty claims and prepare decisions for an adjuster. We receive 2,400 claims monthly; adjusters spend 12 minutes on each at a loaded $45/hour. The proposed service costs $6,000 monthly plus $36,000 implementation. A vendor demo on 80 historical claims achieved 94% agreement with final decisions, but our operations manager selected the examples and removed missing-document cases. About 30% of live claims lack documents, and final decisions sometimes change after inspection. The vendor predicts 50% less handling time; nobody has measured review or correction time. Incorrect approvals average $900; incorrect denials can cost distributor relationships. We can also introduce a structured claim form for $12,000, with unknown adoption by small dealers. We have one adjuster available for a six-week experiment, but no approved budget beyond that. Should we invest, and what evidence should we collect before committing?",
+    "files": []
+  },
+  {
+    "skill": "software-project-health-review",
+    "id": 101,
+    "prompt": "I inherited a payments reconciliation replacement scheduled to cut over in five weeks. The dashboard says 92% complete: 92 of 100 tickets closed. Eight remaining tickets include production bank-file ingestion, recovery after partial posting, and finance sign-off. During the last two weeks the team closed 18 tickets, but 12 were documentation or UI changes; tickets have no size estimates. A rehearsal reconciled 99.7% of 200,000 transactions by count. The unmatched 600 transactions represent $4.8 million of $60 million processed, and nobody has classified the causes. A platform engineer says recovery works locally; there is no recorded recovery drill. Finance can provide two days of testing next week, then its lead is unavailable until cutover. The old system contract permits a one-month extension for $25,000 if requested within ten days. Engineering wants me to keep the date because postponement might not fix the data issues. Give me a health assessment and the decisions we need this week.",
+    "files": []
+  },
+  {
+    "skill": "build-buy-hire-augment",
+    "id": 101,
+    "prompt": "We operate a specialist laboratory network and must replace a sample-routing spreadsheet before a new site opens in 14 weeks. A commercial product costs $120,000 annually plus $40,000 implementation, offers an eight-week deployment, and supports our routine workflow. Twenty percent of samples require a proprietary routing rule; the vendor says an API can support it but has not demonstrated that. An agency offers a custom system for $210,000 in 12 weeks, excluding hosting and maintenance; source-code ownership is included, but operational handover is unspecified. Our two engineers estimate 24 engineer-weeks for an internal build and currently spend half their capacity maintaining integrations. Recruiting another engineer takes an estimated four months. Operations can use the spreadsheet at the new site for six additional weeks with two temporary coordinators costing $18,000 total, though error rates are unknown. We have $250,000 available this year and need a recommendation that accounts for delivery and ongoing ownership, not just purchase price.",
+    "files": []
+  }
+]

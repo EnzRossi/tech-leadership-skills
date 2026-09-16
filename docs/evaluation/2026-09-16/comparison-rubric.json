@@ -1,0 +1,194 @@
+{
+  "with_skill/ai-initiative-evaluator-1.md": [
+    "A technology-neutral statement of the business problem exists, using the supplied volume and time figures, separate from the discussion of the LLM solution",
+    "The output explicitly considers whether deterministic or simpler approaches could handle part of the task (such as extraction from structured attachments or rules for routing)",
+    "The initiative is classified as augmentation or human-reviewed routing rather than fully automated routing for the initial stage",
+    "Cost of being wrong is assessed as at least medium, with misrouted severe claims and personal health information cited",
+    "Regulatory or privacy obligations related to health data or insurance decisions are identified as a risk or approval point",
+    "User desirability is rated Unknown or Weak because adjusters were not consulted, and a specific step to consult them is proposed",
+    "Data readiness discussion asks for a data sample or confirms rights to use the data for this purpose rather than rating it Strong on description alone",
+    "Historical assignments are treated as candidate labels requiring validation, not as automatic ground truth; raw input linkage and reviewer agreement are checked",
+    "The recommendation is Prototype or Research further, not Proceed toward production and not an unconditional Buy",
+    "A next step has a baseline, judging method, proposed measurable gate with rationale or a named threshold decision, and a stop rule; no unexplained universal accuracy target",
+    "Human approval points are listed, including use of personal health data and any automated routing without review",
+    "No cost figures, accuracy figures, or vendor prices are invented",
+    "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix"
+  ],
+  "old_skill/ai-initiative-evaluator-1.md": [
+    "A technology-neutral statement of the business problem exists, using the supplied volume and time figures, separate from the discussion of the LLM solution",
+    "The output explicitly considers whether deterministic or simpler approaches could handle part of the task (such as extraction from structured attachments or rules for routing)",
+    "The initiative is classified as augmentation or human-reviewed routing rather than fully automated routing for the initial stage",
+    "Cost of being wrong is assessed as at least medium, with misrouted severe claims and personal health information cited",
+    "Regulatory or privacy obligations related to health data or insurance decisions are identified as a risk or approval point",
+    "User desirability is rated Unknown or Weak because adjusters were not consulted, and a specific step to consult them is proposed",
+    "Data readiness discussion asks for a data sample or confirms rights to use the data for this purpose rather than rating it Strong on description alone",
+    "Historical assignments are treated as candidate labels requiring validation, not as automatic ground truth; raw input linkage and reviewer agreement are checked",
+    "The recommendation is Prototype or Research further, not Proceed toward production and not an unconditional Buy",
+    "A next step has a baseline, judging method, proposed measurable gate with rationale or a named threshold decision, and a stop rule; no unexplained universal accuracy target",
+    "Human approval points are listed, including use of personal health data and any automated routing without review",
+    "No cost figures, accuracy figures, or vendor prices are invented",
+    "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix"
+  ],
+  "without_skill/ai-initiative-evaluator-1.md": [
+    "A technology-neutral statement of the business problem exists, using the supplied volume and time figures, separate from the discussion of the LLM solution",
+    "The output explicitly considers whether deterministic or simpler approaches could handle part of the task (such as extraction from structured attachments or rules for routing)",
+    "The initiative is classified as augmentation or human-reviewed routing rather than fully automated routing for the initial stage",
+    "Cost of being wrong is assessed as at least medium, with misrouted severe claims and personal health information cited",
+    "Regulatory or privacy obligations related to health data or insurance decisions are identified as a risk or approval point",
+    "User desirability is rated Unknown or Weak because adjusters were not consulted, and a specific step to consult them is proposed",
+    "Data readiness discussion asks for a data sample or confirms rights to use the data for this purpose rather than rating it Strong on description alone",
+    "Historical assignments are treated as candidate labels requiring validation, not as automatic ground truth; raw input linkage and reviewer agreement are checked",
+    "The recommendation is Prototype or Research further, not Proceed toward production and not an unconditional Buy",
+    "A next step has a baseline, judging method, proposed measurable gate with rationale or a named threshold decision, and a stop rule; no unexplained universal accuracy target",
+    "Human approval points are listed, including use of personal health data and any automated routing without review",
+    "No cost figures, accuracy figures, or vendor prices are invented",
+    "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix"
+  ],
+  "with_skill/ai-initiative-evaluator-5.md": [
+    "Does not treat zero errors on 200 reused cases as evidence of rare-error safety",
+    "Identifies tuning/test leakage and self-judging as separate limitations",
+    "Tests authorization and final state, not only answer quality",
+    "Identifies inability of reviewers to inspect source evidence as a safeguard failure",
+    "Proposes held-out representative and adversarial cases with independent judging before live exposure",
+    "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix"
+  ],
+  "old_skill/ai-initiative-evaluator-5.md": [
+    "Does not treat zero errors on 200 reused cases as evidence of rare-error safety",
+    "Identifies tuning/test leakage and self-judging as separate limitations",
+    "Tests authorization and final state, not only answer quality",
+    "Identifies inability of reviewers to inspect source evidence as a safeguard failure",
+    "Proposes held-out representative and adversarial cases with independent judging before live exposure",
+    "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix"
+  ],
+  "without_skill/ai-initiative-evaluator-5.md": [
+    "Does not treat zero errors on 200 reused cases as evidence of rare-error safety",
+    "Identifies tuning/test leakage and self-judging as separate limitations",
+    "Tests authorization and final state, not only answer quality",
+    "Identifies inability of reviewers to inspect source evidence as a safeguard failure",
+    "Proposes held-out representative and adversarial cases with independent judging before live exposure",
+    "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix"
+  ],
+  "with_skill/software-project-health-review-1.md": [
+    "Overall health is rated Red or Amber, not Green, and a separate confidence level is stated",
+    "The assessment notes that the steering status remained Green while the launch date moved from 15 October to 30 November and scope was added",
+    "The SSO vendor sandbox dependency is identified as unresolved across multiple sprints and multiple steering reports with an unchanged owner and mitigation",
+    "The stalled payment webhook design decision is identified as a decision-latency problem",
+    "Scope added after the plan (live chat, knowledge base, bulk download, dashboard personalization, or the 'scope-added' label) is identified as scope instability",
+    "Missing operational readiness is identified: production environment, monitoring, or load testing are unassigned and not started",
+    "Claims are explicitly labeled as fact, inference, assumption, or unknown (or equivalent explicit separation)",
+    "The output lists information that is missing, such as the original brief or success metrics, test evidence for Done items, or team allocation",
+    "The output names decisions leadership must make, including defining what 'launch' means or owning the vendor escalation",
+    "The output contains no more than five actions for the next seven days, each with an owner",
+    "The output includes a list of things that should not be changed right now",
+    "Every count, story-point total, and date in the output matches the supplied CSV and notes (or is derivable from them by counting), and no velocity, completion percentage, or headcount appears that cannot be derived from the inputs",
+    "Does not infer cycle time, historical scope inflow or missing tests from snapshot fields, and treats the review as historical",
+    "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix"
+  ],
+  "old_skill/software-project-health-review-1.md": [
+    "Overall health is rated Red or Amber, not Green, and a separate confidence level is stated",
+    "The assessment notes that the steering status remained Green while the launch date moved from 15 October to 30 November and scope was added",
+    "The SSO vendor sandbox dependency is identified as unresolved across multiple sprints and multiple steering reports with an unchanged owner and mitigation",
+    "The stalled payment webhook design decision is identified as a decision-latency problem",
+    "Scope added after the plan (live chat, knowledge base, bulk download, dashboard personalization, or the 'scope-added' label) is identified as scope instability",
+    "Missing operational readiness is identified: production environment, monitoring, or load testing are unassigned and not started",
+    "Claims are explicitly labeled as fact, inference, assumption, or unknown (or equivalent explicit separation)",
+    "The output lists information that is missing, such as the original brief or success metrics, test evidence for Done items, or team allocation",
+    "The output names decisions leadership must make, including defining what 'launch' means or owning the vendor escalation",
+    "The output contains no more than five actions for the next seven days, each with an owner",
+    "The output includes a list of things that should not be changed right now",
+    "Every count, story-point total, and date in the output matches the supplied CSV and notes (or is derivable from them by counting), and no velocity, completion percentage, or headcount appears that cannot be derived from the inputs",
+    "Does not infer cycle time, historical scope inflow or missing tests from snapshot fields, and treats the review as historical",
+    "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix"
+  ],
+  "without_skill/software-project-health-review-1.md": [
+    "Overall health is rated Red or Amber, not Green, and a separate confidence level is stated",
+    "The assessment notes that the steering status remained Green while the launch date moved from 15 October to 30 November and scope was added",
+    "The SSO vendor sandbox dependency is identified as unresolved across multiple sprints and multiple steering reports with an unchanged owner and mitigation",
+    "The stalled payment webhook design decision is identified as a decision-latency problem",
+    "Scope added after the plan (live chat, knowledge base, bulk download, dashboard personalization, or the 'scope-added' label) is identified as scope instability",
+    "Missing operational readiness is identified: production environment, monitoring, or load testing are unassigned and not started",
+    "Claims are explicitly labeled as fact, inference, assumption, or unknown (or equivalent explicit separation)",
+    "The output lists information that is missing, such as the original brief or success metrics, test evidence for Done items, or team allocation",
+    "The output names decisions leadership must make, including defining what 'launch' means or owning the vendor escalation",
+    "The output contains no more than five actions for the next seven days, each with an owner",
+    "The output includes a list of things that should not be changed right now",
+    "Every count, story-point total, and date in the output matches the supplied CSV and notes (or is derivable from them by counting), and no velocity, completion percentage, or headcount appears that cannot be derived from the inputs",
+    "Does not infer cycle time, historical scope inflow or missing tests from snapshot fields, and treats the review as historical",
+    "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix"
+  ],
+  "with_skill/software-project-health-review-5.md": [
+    "Does not downgrade health to Amber solely because the account is unverified",
+    "Separates reported facts from confidence and identifies a targeted verification",
+    "Does not recommend structural intervention without a binding constraint",
+    "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix"
+  ],
+  "old_skill/software-project-health-review-5.md": [
+    "Does not downgrade health to Amber solely because the account is unverified",
+    "Separates reported facts from confidence and identifies a targeted verification",
+    "Does not recommend structural intervention without a binding constraint",
+    "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix"
+  ],
+  "without_skill/software-project-health-review-5.md": [
+    "Does not downgrade health to Amber solely because the account is unverified",
+    "Separates reported facts from confidence and identifies a targeted verification",
+    "Does not recommend structural intervention without a binding constraint",
+    "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix"
+  ],
+  "with_skill/build-buy-hire-augment-1.md": [
+    "The capability is decomposed into at least two components with different sourcing answers, distinguishing commodity payout rails or compliance from differentiating integration or seller experience",
+    "Considers buying commodity rails conditionally on resolving the banking-data constraint; does not recommend a provider unconditionally",
+    "Hiring alone is ruled out or deprioritized as the route to the 5-month date, citing the company's own 4-6 month hiring history",
+    "If outside help is recommended, explains its evidence-based fit and internal ownership/receiving capacity, knowledge transfer and review/end trigger, without an arbitrary condition count",
+    "The compliance requirement that banking data stay in-house is applied as a constraint on external parties' data access",
+    "Alternatives considered are listed with the reason each lost",
+    "Cost drivers are listed without inventing salaries, rates, or provider fees",
+    "An exit strategy is described for the provider and for any external help",
+    "Conditions under which the recommendation would change are stated",
+    "Hiring and contract signing are explicitly reserved as decisions for the leader",
+    "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix"
+  ],
+  "old_skill/build-buy-hire-augment-1.md": [
+    "The capability is decomposed into at least two components with different sourcing answers, distinguishing commodity payout rails or compliance from differentiating integration or seller experience",
+    "Considers buying commodity rails conditionally on resolving the banking-data constraint; does not recommend a provider unconditionally",
+    "Hiring alone is ruled out or deprioritized as the route to the 5-month date, citing the company's own 4-6 month hiring history",
+    "If outside help is recommended, explains its evidence-based fit and internal ownership/receiving capacity, knowledge transfer and review/end trigger, without an arbitrary condition count",
+    "The compliance requirement that banking data stay in-house is applied as a constraint on external parties' data access",
+    "Alternatives considered are listed with the reason each lost",
+    "Cost drivers are listed without inventing salaries, rates, or provider fees",
+    "An exit strategy is described for the provider and for any external help",
+    "Conditions under which the recommendation would change are stated",
+    "Hiring and contract signing are explicitly reserved as decisions for the leader",
+    "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix"
+  ],
+  "without_skill/build-buy-hire-augment-1.md": [
+    "The capability is decomposed into at least two components with different sourcing answers, distinguishing commodity payout rails or compliance from differentiating integration or seller experience",
+    "Considers buying commodity rails conditionally on resolving the banking-data constraint; does not recommend a provider unconditionally",
+    "Hiring alone is ruled out or deprioritized as the route to the 5-month date, citing the company's own 4-6 month hiring history",
+    "If outside help is recommended, explains its evidence-based fit and internal ownership/receiving capacity, knowledge transfer and review/end trigger, without an arbitrary condition count",
+    "The compliance requirement that banking data stay in-house is applied as a constraint on external parties' data access",
+    "Alternatives considered are listed with the reason each lost",
+    "Cost drivers are listed without inventing salaries, rates, or provider fees",
+    "An exit strategy is described for the provider and for any external help",
+    "Conditions under which the recommendation would change are stated",
+    "Hiring and contract signing are explicitly reserved as decisions for the leader",
+    "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix"
+  ],
+  "with_skill/build-buy-hire-augment-6.md": [
+    "Can recommend a bounded specialist consultant based on the expertise gap",
+    "Does not require two external-sourcing conditions or use an internal tie-break",
+    "Names the internal recipient and a concrete review deliverable",
+    "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix"
+  ],
+  "old_skill/build-buy-hire-augment-6.md": [
+    "Can recommend a bounded specialist consultant based on the expertise gap",
+    "Does not require two external-sourcing conditions or use an internal tie-break",
+    "Names the internal recipient and a concrete review deliverable",
+    "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix"
+  ],
+  "without_skill/build-buy-hire-augment-6.md": [
+    "Can recommend a bounded specialist consultant based on the expertise gap",
+    "Does not require two external-sourcing conditions or use an internal tie-break",
+    "Names the internal recipient and a concrete review deliverable",
+    "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix"
+  ]
+}

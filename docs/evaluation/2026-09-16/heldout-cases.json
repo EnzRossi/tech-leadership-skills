@@ -1,0 +1,38 @@
+[
+  {
+    "skill": "ai-initiative-evaluator",
+    "id": 101,
+    "prompt": "Our regional equipment distributor wants an AI assistant to interpret emailed warranty claims and prepare decisions for an adjuster. We receive 2,400 claims monthly; adjusters spend 12 minutes on each at a loaded $45/hour. The proposed service costs $6,000 monthly plus $36,000 implementation. A vendor demo on 80 historical claims achieved 94% agreement with final decisions, but our operations manager selected the examples and removed missing-document cases. About 30% of live claims lack documents, and final decisions sometimes change after inspection. The vendor predicts 50% less handling time; nobody has measured review or correction time. Incorrect approvals average $900; incorrect denials can cost distributor relationships. We can also introduce a structured claim form for $12,000, with unknown adoption by small dealers. We have one adjuster available for a six-week experiment, but no approved budget beyond that. Should we invest, and what evidence should we collect before committing?",
+    "files": [],
+    "assertions": [
+      "Calculates current monthly handling cost as $21,600 and, conditional on genuine 50% time savings, gross monthly capacity value as $10,800 and net recurring value before other costs as $4,800; does not label capacity savings guaranteed cash savings.",
+      "Identifies selection bias and exclusion of missing-document claims in the 80-case demo, and does not treat 94% agreement with historical decisions as validated live accuracy or correctness.",
+      "Proposes an evaluation that includes missing-document cases and measures total adjuster review/correction time plus approval and denial errors separately, retaining human decision authority during the experiment.",
+      "Makes any larger investment conditional on measured results and compares the structured-form alternative or a combined approach without assuming its adoption or declaring AI categorically required or unsuitable."
+    ]
+  },
+  {
+    "skill": "software-project-health-review",
+    "id": 101,
+    "prompt": "I inherited a payments reconciliation replacement scheduled to cut over in five weeks. The dashboard says 92% complete: 92 of 100 tickets closed. Eight remaining tickets include production bank-file ingestion, recovery after partial posting, and finance sign-off. During the last two weeks the team closed 18 tickets, but 12 were documentation or UI changes; tickets have no size estimates. A rehearsal reconciled 99.7% of 200,000 transactions by count. The unmatched 600 transactions represent $4.8 million of $60 million processed, and nobody has classified the causes. A platform engineer says recovery works locally; there is no recorded recovery drill. Finance can provide two days of testing next week, then its lead is unavailable until cutover. The old system contract permits a one-month extension for $25,000 if requested within ten days. Engineering wants me to keep the date because postponement might not fix the data issues. Give me a health assessment and the decisions we need this week.",
+    "files": [],
+    "assertions": [
+      "Distinguishes 92% ticket closure from release readiness and rejects extrapolating mixed, unsized ticket throughput into a reliable completion forecast.",
+      "Calculates that unmatched transactions are 0.3% by count but 8% by value, and does not assume the $4.8 million is a realized loss or a tolerable discrepancy.",
+      "Treats production ingestion, demonstrated partial-posting recovery, reconciliation cause analysis, and finance acceptance as unresolved release evidence rather than accepting a local recovery claim or rehearsal percentage as sufficient.",
+      "Addresses the ten-day extension decision and two-day finance window with explicit near-term owners or decision gates; presents extension or cutover as conditional on evidence rather than claiming either date outcome is certain."
+    ]
+  },
+  {
+    "skill": "build-buy-hire-augment",
+    "id": 101,
+    "prompt": "We operate a specialist laboratory network and must replace a sample-routing spreadsheet before a new site opens in 14 weeks. A commercial product costs $120,000 annually plus $40,000 implementation, offers an eight-week deployment, and supports our routine workflow. Twenty percent of samples require a proprietary routing rule; the vendor says an API can support it but has not demonstrated that. An agency offers a custom system for $210,000 in 12 weeks, excluding hosting and maintenance; source-code ownership is included, but operational handover is unspecified. Our two engineers estimate 24 engineer-weeks for an internal build and currently spend half their capacity maintaining integrations. Recruiting another engineer takes an estimated four months. Operations can use the spreadsheet at the new site for six additional weeks with two temporary coordinators costing $18,000 total, though error rates are unknown. We have $250,000 available this year and need a recommendation that accounts for delivery and ongoing ownership, not just purchase price.",
+    "files": [],
+    "assertions": [
+      "Calculates effective internal delivery capacity as one engineer-week per calendar week and the estimated build duration as 24 weeks under current allocation; does not assume two engineers make it a 12-week plan.",
+      "Recognizes that the vendor's $160,000 first-year stated fees exclude the unproven proprietary-rule integration, while the agency's $210,000 quote excludes specified operating costs; does not present either as complete total cost of ownership.",
+      "Makes vendor suitability contingent on demonstrating the proprietary routing rule through the API and makes any agency option contingent on credible operational handover and maintenance ownership.",
+      "Addresses hiring's four-month lead time and the six-week operational bridge, including its $18,000 cost and unknown error risk, without claiming the bridge alone makes the 24-week internal build meet a 20-week extended deadline."
+    ]
+  }
+]

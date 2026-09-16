@@ -1,0 +1,47 @@
+[
+  {
+    "skill": "ai-initiative-evaluator",
+    "id": 1,
+    "name": "claims-triage-normal-case",
+    "prompt": "I'm CTO at a mid-size insurance company (about 900 employees). Our claims team wants to use an LLM to triage incoming claims emails and attachments: read them, extract the key fields, classify severity, and route to the right adjuster queue. Today 14 people do this manually, roughly 3,000 claims a week, and it takes about 6 minutes each. We have 4 years of historical claims with the final adjuster assignments and outcomes in our claims system. Data is on-prem and contains personal health information. The head of claims is enthusiastic; the adjusters haven't been consulted yet. Board is asking for our AI strategy next month. Is this worth doing and what should we do next?",
+    "files": []
+  },
+  {
+    "skill": "ai-initiative-evaluator",
+    "id": 5,
+    "name": "rare-harm-and-leakage",
+    "prompt": "We want to approve an agent that changes bank payout details from supplier emails. Our 200-case test had zero wrong changes. All cases came from the prompt-development set, and the same LLM judged its own answers. Staff will glance at its summary before approval; they cannot see the original email in that screen. CEO says zero errors means it is safe. Can we roll out?",
+    "files": []
+  },
+  {
+    "skill": "software-project-health-review",
+    "id": 1,
+    "name": "portal-rebuild-with-artifacts",
+    "prompt": "I'm the CTO. Our customer portal rebuild has been reported green for three months straight but the launch date just moved six weeks and Sales is nervous. Attached are the Jira export and the steering notes plus a Slack digest from the eng channel. Tell me how healthy this project actually is and what I should do this week. Steering committee is Thursday. Assess as of the supplied August 2026 evidence, not today.",
+    "files": [
+      "skills/software-project-health-review/evals/files/jira-export.csv",
+      "skills/software-project-health-review/evals/files/steering-notes.md"
+    ]
+  },
+  {
+    "skill": "software-project-health-review",
+    "id": 5,
+    "name": "healthy-but-thin",
+    "prompt": "The only material is my report: six milestones met, a source export issue caused a two-week slip, fix tested, sponsor accepted the revised date, remaining work unchanged and no new blockers. Do we need a recovery intervention?",
+    "files": []
+  },
+  {
+    "skill": "build-buy-hire-augment",
+    "id": 1,
+    "name": "payments-platform-mixed-capability",
+    "prompt": "I'm CTO of a 120-person marketplace startup. We need to add seller payouts in 14 countries by end of Q1 (about 5 months) because two large enterprise sellers signed on the condition. Today we only pay out in the US via a single processor. Our platform team is 6 engineers, fully loaded on a reliability program the board asked for. We have never hired a payments specialist; our last two senior hires took 4 and 6 months. Compliance says seller banking data must stay within our own systems. Options on the table: hire a payments team, use a payout provider like a global payments platform, or bring in an agency that has done marketplace payouts before. What should we do?",
+    "files": []
+  },
+  {
+    "skill": "build-buy-hire-augment",
+    "id": 6,
+    "name": "specialist-not-internal-tiebreak",
+    "prompt": "We need a one-week independent review of a novel storage consistency design before implementation. An internal technical owner can brief and act on findings; nobody internal has this specialist expertise. No production data access needed. No deadline pressure and no hiring plan. Should we use a specialist consultant?",
+    "files": []
+  }
+]

@@ -1,0 +1,1026 @@
+{
+  "with_skill/ai-initiative-evaluator-1.md": {
+    "expectations": [
+      {
+        "text": "A technology-neutral statement of the business problem exists, using the supplied volume and time figures, separate from the discussion of the LLM solution",
+        "passed": true,
+        "evidence": "\u201c3,000 claims/week \u00d7 6 minutes = 18,000 minutes, or 300 staff-hours/week of reported triage effort.\u201d This business workload is separated from the later technology alternatives."
+      },
+      {
+        "text": "The output explicitly considers whether deterministic or simpler approaches could handle part of the task (such as extraction from structured attachments or rules for routing)",
+        "passed": true,
+        "evidence": "\u201cstructured intake plus deterministic extraction, field validation and routing rules, with manual exceptions.\u201d"
+      },
+      {
+        "text": "The initiative is classified as augmentation or human-reviewed routing rather than fully automated routing for the initial stage",
+        "passed": true,
+        "evidence": "\u201cA fixed assistive workflow is the initial candidate\u201d; \u201cReviewers need original evidence, time and authority to reject suggestions.\u201d"
+      },
+      {
+        "text": "Cost of being wrong is assessed as at least medium, with misrouted severe claims and personal health information cited",
+        "passed": true,
+        "evidence": "\u201cUnder-triage can delay urgent handling; wrong routing can delay service or expose information to an inappropriate queue.\u201d Health information is identified earlier; these are consequential harms, although no ordinal rating is supplied."
+      },
+      {
+        "text": "Regulatory or privacy obligations related to health data or insurance decisions are identified as a risk or approval point",
+        "passed": true,
+        "evidence": "\u201cOn-premises health information makes permitted access, processing, logs and retention binding design questions.\u201d"
+      },
+      {
+        "text": "User desirability is rated Unknown or Weak because adjusters were not consulted, and a specific step to consult them is proposed",
+        "passed": true,
+        "evidence": "\u201cAdjuster participation ... remain unknown\u201d; discovery includes \u201cadjuster representatives\u201d and begins \u201cwith claims staff and adjusters\u201d."
+      },
+      {
+        "text": "Data readiness discussion asks for a data sample or confirms rights to use the data for this purpose rather than rating it Strong on description alone",
+        "passed": true,
+        "evidence": "\u201ca data-access check\u201d; discovery produces \u201cadjudicated label sample, permitted data path\u201d."
+      },
+      {
+        "text": "Historical assignments are treated as candidate labels requiring validation, not as automatic ground truth; raw input linkage and reviewer agreement are checked",
+        "passed": true,
+        "evidence": "\u201ccandidate labels\u201d; original inputs must be \u201caccessible and linked\u201d; \u201cQualified adjusters should independently label and adjudicate disputed cases\u201d."
+      },
+      {
+        "text": "The recommendation is Prototype or Research further, not Proceed toward production and not an unconditional Buy",
+        "passed": true,
+        "evidence": "\u201cbounded investigation, with an offline prototype conditional on usable, permitted data. Do not approve a live pilot yet.\u201d"
+      },
+      {
+        "text": "A next step has a baseline, judging method, proposed measurable gate with rationale or a named threshold decision, and a stop rule; no unexplained universal accuracy target",
+        "passed": true,
+        "evidence": "Compares \u201chuman-only triage, the simpler workflow and human-plus-candidate\u201d; independent adjuster judging; \u201cClaims leadership should set\u201d unagreed thresholds from incumbent errors/consequences/capacity; \u201cRework or stop if permissions, labels, reviewer capacity or incremental value are inadequate.\u201d"
+      },
+      {
+        "text": "Human approval points are listed, including use of personal health data and any automated routing without review",
+        "passed": false,
+        "evidence": "\u201cAdvance to an offline prototype only if these support a testable advantage\u201d and \u201cexpansion requires measured evidence and operating ownership\u201d provide gates, but no explicit human approval list for PHI use and removal of routing review."
+      },
+      {
+        "text": "No cost figures, accuracy figures, or vendor prices are invented",
+        "passed": true,
+        "evidence": "Only workload arithmetic is quantified as a factual result; \u201cAcceptance thresholds remain unagreed.\u201d No cost, achieved accuracy or vendor-price claim."
+      },
+      {
+        "text": "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix",
+        "passed": true,
+        "evidence": "Python len(text.split()) = 626 whitespace-delimited words; no requested appendix."
+      }
+    ],
+    "summary": {
+      "passed": 12,
+      "failed": 1,
+      "total": 13
+    },
+    "additional_concerns": [],
+    "eval_critique": [
+      "The cost-of-error assertion should clarify whether an explicit ordinal Medium/High rating is necessary or evidenced consequential harms suffice.",
+      "The desirability assertion should allow equivalent explicit unknown participation plus actual consultation, without requiring a rating-table label."
+    ]
+  },
+  "old_skill/ai-initiative-evaluator-1.md": {
+    "expectations": [
+      {
+        "text": "A technology-neutral statement of the business problem exists, using the supplied volume and time figures, separate from the discussion of the LLM solution",
+        "passed": true,
+        "evidence": "\u201c3,000 claims weekly at six minutes each\u201d and separate \u201cThe problem, stated without the technology\u201d describe manual intake."
+      },
+      {
+        "text": "The output explicitly considers whether deterministic or simpler approaches could handle part of the task (such as extraction from structured attachments or rules for routing)",
+        "passed": true,
+        "evidence": "\u201cstructured intake ... OCR/template extraction, required-field checks, and a claims-owned routing decision table.\u201d"
+      },
+      {
+        "text": "The initiative is classified as augmentation or human-reviewed routing rather than fully automated routing for the initial stage",
+        "passed": true,
+        "evidence": "\u201cRecommended variant augments intake staff and adjusters, with source-visible review before action.\u201d"
+      },
+      {
+        "text": "Cost of being wrong is assessed as at least medium, with misrouted severe claims and personal health information cited",
+        "passed": true,
+        "evidence": "\u201cCost of being wrong | High\u201d; \u201cUrgent cases under-triaged\u201d; PHI leakage risk."
+      },
+      {
+        "text": "Regulatory or privacy obligations related to health data or insurance decisions are identified as a risk or approval point",
+        "passed": true,
+        "evidence": "\u201cSecurity/privacy owner approves data access, runtime boundary, logs, retention and any vendor use before real-data work.\u201d"
+      },
+      {
+        "text": "User desirability is rated Unknown or Weak because adjusters were not consulted, and a specific step to consult them is proposed",
+        "passed": true,
+        "evidence": "\u201cUser desirability | Unknown ... adjusters unconsulted. Interview intake users and adjusters.\u201d"
+      },
+      {
+        "text": "Data readiness discussion asks for a data sample or confirms rights to use the data for this purpose rather than rating it Strong on description alone",
+        "passed": true,
+        "evidence": "\u201cData readiness | Unknown\u201d; \u201cinspect a permitted sample and approve access\u201d."
+      },
+      {
+        "text": "Historical assignments are treated as candidate labels requiring validation, not as automatic ground truth; raw input linkage and reviewer agreement are checked",
+        "passed": true,
+        "evidence": "\u201cHistorical outcomes are candidates for labels\u201d; \u201cHave two adjusters independently judge the same cases\u201d; \u201cCan historical inputs be joined reliably to valid intake labels\u201d."
+      },
+      {
+        "text": "The recommendation is Prototype or Research further, not Proceed toward production and not an unconditional Buy",
+        "passed": true,
+        "evidence": "\u201cRecommendation: Research further for a human-assisted workflow\u201d."
+      },
+      {
+        "text": "A next step has a baseline, judging method, proposed measurable gate with rationale or a named threshold decision, and a stop rule; no unexplained universal accuracy target",
+        "passed": false,
+        "evidence": "Proposes \u201cat least 90% initial expert agreement\u201d, \u201cat least 95% routing agreement\u201d and \u201cat least 99% recall for urgent claims\u201d without rationale for those numeric levels. Calling these sponsor-review proposals does not explain their selection, despite otherwise sound baseline/judging/stop rules."
+      },
+      {
+        "text": "Human approval points are listed, including use of personal health data and any automated routing without review",
+        "passed": true,
+        "evidence": "\u201cPrivacy/security approves regulated-data use\u201d; \u201cclaims leadership approves any customer-impacting exposure or reduction in review.\u201d"
+      },
+      {
+        "text": "No cost figures, accuracy figures, or vendor prices are invented",
+        "passed": true,
+        "evidence": "Numerical targets are explicitly \u201csponsor-review proposals, not proof of safety\u201d; no achieved accuracy, cost or vendor-price figure is claimed."
+      },
+      {
+        "text": "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix",
+        "passed": false,
+        "evidence": "Python len(text.split()) = 1015 whitespace-delimited words; no requested appendix."
+      }
+    ],
+    "summary": {
+      "passed": 11,
+      "failed": 2,
+      "total": 13
+    },
+    "additional_concerns": [
+      "The 30%, 90%, 95% and 99% suggested gates are not tied to measured operational tolerances."
+    ],
+    "eval_critique": [
+      "\u201cNo ... accuracy figures ... invented\u201d is ambiguous about openly proposed gates versus fabricated observed performance. Grade factual invention separately from unjustified proposed thresholds (covered by the gate assertion)."
+    ]
+  },
+  "without_skill/ai-initiative-evaluator-1.md": {
+    "expectations": [
+      {
+        "text": "A technology-neutral statement of the business problem exists, using the supplied volume and time figures, separate from the discussion of the LLM solution",
+        "passed": false,
+        "evidence": "\u201cYour baseline implies 18,000 minutes, or 300 staff-hours, per week\u201d quantifies workload, but no technology-neutral problem statement explicitly uses the supplied 3,000 claims/week and six-minute figures; opening begins with \u201cExtraction and routing are plausible uses\u201d."
+      },
+      {
+        "text": "The output explicitly considers whether deterministic or simpler approaches could handle part of the task (such as extraction from structured attachments or rules for routing)",
+        "passed": true,
+        "evidence": "\u201cexisting manual work, OCR plus rules or conventional classification, and an LLM-assisted workflow.\u201d"
+      },
+      {
+        "text": "The initiative is classified as augmentation or human-reviewed routing rather than fully automated routing for the initial stage",
+        "passed": true,
+        "evidence": "\u201cLLM-assisted workflow\u201d; \u201cproposed routing, showing source passages and allowing corrections\u201d; later \u201cshadow mode without changing queues\u201d."
+      },
+      {
+        "text": "Cost of being wrong is assessed as at least medium, with misrouted severe claims and personal health information cited",
+        "passed": true,
+        "evidence": "\u201ca missed urgent claim can matter far more than a wrong queue\u201d; health information and approved data controls are discussed."
+      },
+      {
+        "text": "Regulatory or privacy obligations related to health data or insurance decisions are identified as a risk or approval point",
+        "passed": true,
+        "evidence": "\u201cConfirm approved processing locations, access, retention, logging, and model deployment options before exposing any records to a service.\u201d"
+      },
+      {
+        "text": "User desirability is rated Unknown or Weak because adjusters were not consulted, and a specific step to consult them is proposed",
+        "passed": false,
+        "evidence": "\u201cInterview and observe the people doing triage, including adjusters\u201d is specific consultation, but user desirability is never rated Unknown/Weak or explicitly described as unestablished."
+      },
+      {
+        "text": "Data readiness discussion asks for a data sample or confirms rights to use the data for this purpose rather than rating it Strong on description alone",
+        "passed": true,
+        "evidence": "\u201cCheck historical attachments, OCR quality, missing fields, languages, label consistency, and retention permissions before assuming the data are usable.\u201d"
+      },
+      {
+        "text": "Historical assignments are treated as candidate labels requiring validation, not as automatic ground truth; raw input linkage and reviewer agreement are checked",
+        "passed": false,
+        "evidence": "\u201cnot automatically reliable labels\u201d and \u201cindependently label and adjudicate ambiguous cases\u201d cover label validation; no explicit check that original intake inputs link to final assignments/outcomes."
+      },
+      {
+        "text": "The recommendation is Prototype or Research further, not Proceed toward production and not an unconditional Buy",
+        "passed": true,
+        "evidence": "\u201cworth a bounded feasibility pilot\u201d; \u201cnot ready for a production commitment\u201d."
+      },
+      {
+        "text": "A next step has a baseline, judging method, proposed measurable gate with rationale or a named threshold decision, and a stop rule; no unexplained universal accuracy target",
+        "passed": true,
+        "evidence": "Manual/rules/LLM comparison on same representative data; independent adjuster judging; \u201cAgree acceptable thresholds with claims leadership before evaluating\u201d; \u201cStop or redesign if urgent cases are missed beyond the agreed tolerance, review eliminates the savings\u201d."
+      },
+      {
+        "text": "Human approval points are listed, including use of personal health data and any automated routing without review",
+        "passed": false,
+        "evidence": "\u201cConfirm approved processing locations\u201d and \u201cKeep urgency decisions under meaningful human review until evidence supports changing that boundary\u201d do not explicitly list human authorization for regulated-data use and automated routing without review."
+      },
+      {
+        "text": "No cost figures, accuracy figures, or vendor prices are invented",
+        "passed": true,
+        "evidence": "Workload calculations are derived; \u201cA hypothetical 50% net time saving\u201d is marked hypothetical, not achieved accuracy/cost; no vendor prices."
+      },
+      {
+        "text": "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix",
+        "passed": true,
+        "evidence": "Python len(text.split()) = 562 whitespace-delimited words; no requested appendix."
+      }
+    ],
+    "summary": {
+      "passed": 9,
+      "failed": 4,
+      "total": 13
+    },
+    "additional_concerns": [],
+    "eval_critique": [
+      "The neutral-problem assertion bundles substantive business framing with exact reuse of numbers; derived workload can be useful without restating both inputs.",
+      "Define whether Unknown/Weak must be verbatim versus clear discovery needs."
+    ]
+  },
+  "with_skill/ai-initiative-evaluator-5.md": {
+    "expectations": [
+      {
+        "text": "Does not treat zero errors on 200 reused cases as evidence of rare-error safety",
+        "passed": true,
+        "evidence": "\u201cEven zero independently verified errors in a representative small sample would not prove the absence of rare harms.\u201d"
+      },
+      {
+        "text": "Identifies tuning/test leakage and self-judging as separate limitations",
+        "passed": true,
+        "evidence": "\u201ctwo known weaknesses: contamination of the test set and uncalibrated self-judgment.\u201d"
+      },
+      {
+        "text": "Tests authorization and final state, not only answer quality",
+        "passed": true,
+        "evidence": "\u201ccorrect, authorized final bank-detail state\u201d; \u201cExact state checks must confirm account details, permissions and absence of duplicate writes.\u201d"
+      },
+      {
+        "text": "Identifies inability of reviewers to inspect source evidence as a safeguard failure",
+        "passed": true,
+        "evidence": "\u201creviewers see only an agent summary ... cannot reliably detect omitted warnings, altered account numbers or a misleading source\u201d."
+      },
+      {
+        "text": "Proposes held-out representative and adversarial cases with independent judging before live exposure",
+        "passed": true,
+        "evidence": "\u201cnew untouched set of representative requests\u201d plus spoofing/embedded instructions/duplicates; \u201cqualified payment-control staff establish and adjudicate expected authorization decisions independently\u201d."
+      },
+      {
+        "text": "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix",
+        "passed": true,
+        "evidence": "Python len(text.split()) = 623 whitespace-delimited words; no requested appendix."
+      }
+    ],
+    "summary": {
+      "passed": 6,
+      "failed": 0,
+      "total": 6
+    },
+    "additional_concerns": [],
+    "eval_critique": []
+  },
+  "old_skill/ai-initiative-evaluator-5.md": {
+    "expectations": [
+      {
+        "text": "Does not treat zero errors on 200 reused cases as evidence of rare-error safety",
+        "passed": true,
+        "evidence": "\u201cDo not infer a rollout error rate from this result.\u201d"
+      },
+      {
+        "text": "Identifies tuning/test leakage and self-judging as separate limitations",
+        "passed": true,
+        "evidence": "\u201cEvaluation leakage and correlated judging errors can hide failures\u201d; \u201cseparated from prompt development\u201d; domain reviewers judge."
+      },
+      {
+        "text": "Tests authorization and final state, not only answer quality",
+        "passed": false,
+        "evidence": "\u201cEvery proposed change requires verifiable authorization\u201d and \u201cunauthorized or ambiguous requests produce no change\u201d test authorization/no-write behavior, but there is no explicit test of the correct final bank-account state after an authorized execution. \u201cNo tool gets bank-detail write permission in this exercise.\u201d"
+      },
+      {
+        "text": "Identifies inability of reviewers to inspect source evidence as a safeguard failure",
+        "passed": true,
+        "evidence": "\u201creviewers cannot see the original; effective oversight is absent\u201d; proposed screen shows source and before/after values."
+      },
+      {
+        "text": "Proposes held-out representative and adversarial cases with independent judging before live exposure",
+        "passed": false,
+        "evidence": "\u201cindependently labeled held-out evaluation ... separated from prompt development\u201d; impersonation/compromised email/conflicting instructions; \u201cDomain reviewers ... determine correctness\u201d. However, there is no explicit inclusion of routine representative cases or sampling of the real request distribution; the listed cases are adversarial/unusual only, so the full compound assertion is not established."
+      },
+      {
+        "text": "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix",
+        "passed": false,
+        "evidence": "Python len(text.split()) = 731 whitespace-delimited words; no requested appendix."
+      }
+    ],
+    "summary": {
+      "passed": 3,
+      "failed": 3,
+      "total": 6
+    },
+    "additional_concerns": [],
+    "eval_critique": [
+      "\u201cTests authorization and final state\u201d should explicitly require expected-versus-actual persisted state for authorized writes, including failures/retries, to distinguish from proposal accuracy and no-write controls."
+    ]
+  },
+  "without_skill/ai-initiative-evaluator-5.md": {
+    "expectations": [
+      {
+        "text": "Does not treat zero errors on 200 reused cases as evidence of rare-error safety",
+        "passed": true,
+        "evidence": "\u201cThose statistical assumptions do not hold for your current test\u201d; \u201caggregate accuracy can hide rare, severe failures.\u201d"
+      },
+      {
+        "text": "Identifies tuning/test leakage and self-judging as separate limitations",
+        "passed": true,
+        "evidence": "\u201cdevelopment-set leakage\u201d; \u201csame LLM evaluating itself adds correlated judgment errors and is not independent verification.\u201d"
+      },
+      {
+        "text": "Tests authorization and final state, not only answer quality",
+        "passed": false,
+        "evidence": "\u201cTest the entire approval workflow ... not just extraction accuracy\u201d and \u201cMeasure unauthorized-change attempts\u201d do not explicitly verify the final persisted bank details or state after authorized execution."
+      },
+      {
+        "text": "Identifies inability of reviewers to inspect source evidence as a safeguard failure",
+        "passed": true,
+        "evidence": "\u201cproposed review screen prevents staff from verifying the underlying request\u201d; \u201ca glance at an AI summary is insufficient.\u201d"
+      },
+      {
+        "text": "Proposes held-out representative and adversarial cases with independent judging before live exposure",
+        "passed": false,
+        "evidence": "\u201cuntouched evaluation set with independently adjudicated ground truth\u201d; adversarial impersonation/attachments/account formats and \u201cunusual account formats\u201d. This is contextual workflow coverage, although representative prevalence sampling is not explicit. However, there is no explicit inclusion of routine representative cases or sampling of the real request distribution; the listed cases are adversarial/unusual only, so the full compound assertion is not established."
+      },
+      {
+        "text": "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix",
+        "passed": true,
+        "evidence": "Python len(text.split()) = 376 whitespace-delimited words; no requested appendix."
+      }
+    ],
+    "summary": {
+      "passed": 4,
+      "failed": 2,
+      "total": 6
+    },
+    "additional_concerns": [],
+    "eval_critique": [
+      "Clarify whether representative sampling must be explicit: a held-out set containing attack and unusual cases alone does not establish prevalence or routine-case coverage. The output covers full workflow but does not specify distribution matching."
+    ]
+  },
+  "with_skill/software-project-health-review-1.md": {
+    "expectations": [
+      {
+        "text": "Overall health is rated Red or Amber, not Green, and a separate confidence level is stated",
+        "passed": true,
+        "evidence": "\u201cHealth: Amber ... Confidence: Medium.\u201d"
+      },
+      {
+        "text": "The assessment notes that the steering status remained Green while the launch date moved from 15 October to 30 November and scope was added",
+        "passed": true,
+        "evidence": "\u201cGreen is unsupported\u201d; notes \u201cmove launch from 15 October to 30 November and cite vendor dependency plus Sales requests\u201d."
+      },
+      {
+        "text": "The SSO vendor sandbox dependency is identified as unresolved across multiple sprints and multiple steering reports with an unchanged owner and mitigation",
+        "passed": false,
+        "evidence": "\u201cSandbox absence recurs in June\u2013August PMO notes and Priya's July\u2013August digest\u201d and unchanged chasing mitigation are identified, but no repeated sprint associations or explicitly unchanged owner are stated."
+      },
+      {
+        "text": "The stalled payment webhook design decision is identified as a decision-latency problem",
+        "passed": true,
+        "evidence": "\u201cDiego reports unresolved webhook design on 23 July through 6 August\u201d; action \u201cResolve webhook retries and ownership\u201d."
+      },
+      {
+        "text": "Scope added after the plan (live chat, knowledge base, bulk download, dashboard personalization, or the 'scope-added' label) is identified as scope instability",
+        "passed": true,
+        "evidence": "\u201cfive scope-added rows ... totaling 34 estimated points\u201d; \u201cunsettled acceptance boundary\u201d."
+      },
+      {
+        "text": "Missing operational readiness is identified: production environment, monitoring, or load testing are unassigned and not started",
+        "passed": true,
+        "evidence": "\u201cCP-152\u2013154 record unassigned production provisioning, monitoring and load testing\u201d; asks acceptance-to-release plan; status not explicitly repeated but readiness gap clearly identified."
+      },
+      {
+        "text": "Claims are explicitly labeled as fact, inference, assumption, or unknown (or equivalent explicit separation)",
+        "passed": true,
+        "evidence": "Table explicitly separates \u201cEvidence and source\u201d, \u201cImplication\u201d, \u201cConfidence / competing explanation\u201d."
+      },
+      {
+        "text": "The output lists information that is missing, such as the original brief or success metrics, test evidence for Done items, or team allocation",
+        "passed": true,
+        "evidence": "\u201cdependencies, durations, severity decisions and any separate release plan are missing\u201d; export timestamp/completeness unknown."
+      },
+      {
+        "text": "The output names decisions leadership must make, including defining what 'launch' means or owning the vendor escalation",
+        "passed": true,
+        "evidence": "\u201cDecide launch scope and acceptance\u201d; \u201cEscalate sandbox to obtain a committed usable date\u201d."
+      },
+      {
+        "text": "The output contains no more than five actions for the next seven days, each with an owner",
+        "passed": true,
+        "evidence": "Five action-table rows with named proposed owners and Thursday/within-seven-days deadlines."
+      },
+      {
+        "text": "The output includes a list of things that should not be changed right now",
+        "passed": false,
+        "evidence": "Only \u201cAdding engineers is not yet justified\u201d appears as a do-not-change item; no list of things to preserve or avoid changing."
+      },
+      {
+        "text": "Every count, story-point total, and date in the output matches the supplied CSV and notes (or is derivable from them by counting), and no velocity, completion percentage, or headcount appears that cannot be derived from the inputs",
+        "passed": true,
+        "evidence": "32 unique issues = 13 Done + 4 In Progress + 14 To Do + 1 Reopened; five scope-added items sum to 34 points. Dates match fixture cutoffs and notes."
+      },
+      {
+        "text": "Does not infer cycle time, historical scope inflow or missing tests from snapshot fields, and treats the review as historical",
+        "passed": true,
+        "evidence": "\u201cSprint associations do not establish carry-over history\u201d; \u201cCreated/Updated fields do not establish time-in-status or velocity\u201d; \u201cMissing PR links do not prove missing review or tests\u201d; historical August review explicit."
+      },
+      {
+        "text": "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix",
+        "passed": false,
+        "evidence": "Python len(text.split()) = 761 whitespace-delimited words; no requested appendix."
+      }
+    ],
+    "summary": {
+      "passed": 11,
+      "failed": 3,
+      "total": 14
+    },
+    "additional_concerns": [],
+    "eval_critique": [
+      "The SSO assertion must distinguish observable sprint memberships from inferred historical carryover. Asking for unresolved status across multiple sprints risks encouraging exactly the unsupported history inference another assertion prohibits.",
+      "\u201cList of things\u201d lacks a minimum count or required substance; a single justified avoid-change decision is penalized under the plural wording."
+    ]
+  },
+  "old_skill/software-project-health-review-1.md": {
+    "expectations": [
+      {
+        "text": "Overall health is rated Red or Amber, not Green, and a separate confidence level is stated",
+        "passed": true,
+        "evidence": "\u201cRed \u00b7 Low confidence in the full assessment.\u201d"
+      },
+      {
+        "text": "The assessment notes that the steering status remained Green while the launch date moved from 15 October to 30 November and scope was added",
+        "passed": true,
+        "evidence": "\u201cSteering changed 15 October to 30 November, a 46-day slip, while retaining Green and adding scope\u201d."
+      },
+      {
+        "text": "The SSO vendor sandbox dependency is identified as unresolved across multiple sprints and multiple steering reports with an unchanged owner and mitigation",
+        "passed": false,
+        "evidence": "\u201csame SSO sandbox risk and mitigation ... all three steering reports\u201d; \u201cSix records span at least three listed sprints\u201d, but no explicit unchanged owner and no direct SSO-to-multiple-sprints linkage."
+      },
+      {
+        "text": "The stalled payment webhook design decision is identified as a decision-latency problem",
+        "passed": true,
+        "evidence": "\u201cDecision latency | At risk\u201d; \u201cwebhook decision repeatedly requested 23 July\u20136 August\u201d."
+      },
+      {
+        "text": "Scope added after the plan (live chat, knowledge base, bulk download, dashboard personalization, or the 'scope-added' label) is identified as scope instability",
+        "passed": true,
+        "evidence": "\u201cScope stability | At risk ... five scope-added records\u201d."
+      },
+      {
+        "text": "Missing operational readiness is identified: production environment, monitoring, or load testing are unassigned and not started",
+        "passed": true,
+        "evidence": "\u201cproduction and monitoring tasks CP-152\u2013153 unassigned, monitoring unscheduled\u201d; \u201cload test CP-154 unscheduled\u201d."
+      },
+      {
+        "text": "Claims are explicitly labeled as fact, inference, assumption, or unknown (or equivalent explicit separation)",
+        "passed": true,
+        "evidence": "Explicit FACT, INFERENCE, UNKNOWN, ASSUMPTION and Hypothesis labels throughout."
+      },
+      {
+        "text": "The output lists information that is missing, such as the original brief or success metrics, test evidence for Done items, or team allocation",
+        "passed": true,
+        "evidence": "\u201cObtain the sponsor's outcome/metrics brief, integrated dependency/release plan, actual allocation and skill coverage, QA/test/acceptance evidence\u201d."
+      },
+      {
+        "text": "The output names decisions leadership must make, including defining what 'launch' means or owning the vendor escalation",
+        "passed": true,
+        "evidence": "Leadership decisions include \u201cRelease scope and promise\u201d, \u201cVendor dependency\u201d, \u201cPayment design authority\u201d."
+      },
+      {
+        "text": "The output contains no more than five actions for the next seven days, each with an owner",
+        "passed": true,
+        "evidence": "Five Next-seven-days rows, each proposed owner and due date; other sections reiterate these decisions rather than adding separate action commitments."
+      },
+      {
+        "text": "The output includes a list of things that should not be changed right now",
+        "passed": true,
+        "evidence": "\u201cDo not add engineers, reorganize, or replace tooling on this evidence.\u201d"
+      },
+      {
+        "text": "Every count, story-point total, and date in the output matches the supplied CSV and notes (or is derivable from them by counting), and no velocity, completion percentage, or headcount appears that cannot be derived from the inputs",
+        "passed": true,
+        "evidence": "CSV verifies 32 rows, 13 Done, 5 Done without PR, 6 records with \u22653 sprint memberships, 11 created and 4 resolved during 6 July\u201311 August, 5 scope-added rows. Table has 8 Unknown ratings. 46-day slip and 52 days from 20 June to 11 August are correct."
+      },
+      {
+        "text": "Does not infer cycle time, historical scope inflow or missing tests from snapshot fields, and treats the review as historical",
+        "passed": false,
+        "evidence": "\u201cScope/defect inflow is outpacing closure within this export\u201d infers historical scope inflow from Created/Resolved snapshot fields; creation does not establish admission to scope. Also refers to \u201ccarry-over\u201d despite absent snapshots. Historical assessment and test uncertainty are otherwise respected."
+      },
+      {
+        "text": "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix",
+        "passed": false,
+        "evidence": "Python len(text.split()) = 1428 whitespace-delimited words; no requested appendix."
+      }
+    ],
+    "summary": {
+      "passed": 11,
+      "failed": 3,
+      "total": 14
+    },
+    "additional_concerns": [
+      "\u201cRed\u201d is based on material risks without showing the revised commitment is unachievable; Amber versus Red should depend on explicit status criteria.",
+      "\u201cindependent team/PMO accounts agree\u201d overstates provenance independence: one notes document embeds attributed digest accounts and no independently sourced originals are available."
+    ],
+    "eval_critique": [
+      "Counts can all be correct while the temporal conclusion is invalid; keep the snapshot-history assertion separate from arithmetic.",
+      "Red-or-Amber acceptance alone cannot catch an overly severe Red rating unsupported by revised-date feasibility evidence."
+    ]
+  },
+  "without_skill/software-project-health-review-1.md": {
+    "expectations": [
+      {
+        "text": "Overall health is rated Red or Amber, not Green, and a separate confidence level is stated",
+        "passed": true,
+        "evidence": "\u201cdelivery confidence red\u201d; separately \u201cConfidence in that assessment is moderate to high\u201d."
+      },
+      {
+        "text": "The assessment notes that the steering status remained Green while the launch date moved from 15 October to 30 November and scope was added",
+        "passed": true,
+        "evidence": "\u201cmoved launch from 15 October to 30 November, a 46-day slip, while retaining green\u201d; table notes added scope."
+      },
+      {
+        "text": "The SSO vendor sandbox dependency is identified as unresolved across multiple sprints and multiple steering reports with an unchanged owner and mitigation",
+        "passed": false,
+        "evidence": "\u201cCP-101 and CP-102 carry across Sprint 3 through Sprint 9\u201d; \u201csame sandbox risk and mitigation\u201d across reports, but unchanged owner is not explicitly identified."
+      },
+      {
+        "text": "The stalled payment webhook design decision is identified as a decision-latency problem",
+        "passed": true,
+        "evidence": "\u201cunresolved webhook decision from 21 July through 6 August\u201d; \u201cinternal decision bottleneck\u201d."
+      },
+      {
+        "text": "Scope added after the plan (live chat, knowledge base, bulk download, dashboard personalization, or the 'scope-added' label) is identified as scope instability",
+        "passed": true,
+        "evidence": "\u201cCP-115, CP-123, CP-133, CP-134, and CP-143 ... scope-added\u201d; \u201ccannot reliably forecast or prioritize an undefined release\u201d."
+      },
+      {
+        "text": "Missing operational readiness is identified: production environment, monitoring, or load testing are unassigned and not started",
+        "passed": true,
+        "evidence": "\u201cMonitoring CP-153 and load testing CP-154 are To Do, unassigned, and unsprinted\u201d; production likewise To Do/unassigned."
+      },
+      {
+        "text": "Claims are explicitly labeled as fact, inference, assumption, or unknown (or equivalent explicit separation)",
+        "passed": true,
+        "evidence": "Evidence and Implication columns explicitly distinguish recorded observations from interpretation; opening separates rating and forecast confidence."
+      },
+      {
+        "text": "The output lists information that is missing, such as the original brief or success metrics, test evidence for Done items, or team allocation",
+        "passed": true,
+        "evidence": "\u201cscope, dependency dates, integration progress, and release acceptance evidence are missing\u201d."
+      },
+      {
+        "text": "The output names decisions leadership must make, including defining what 'launch' means or owning the vendor escalation",
+        "passed": true,
+        "evidence": "\u201cCTO, Product, and Sales: define the release\u201d; \u201cCTO and Priya: escalate SSO at executive level\u201d."
+      },
+      {
+        "text": "The output contains no more than five actions for the next seven days, each with an owner",
+        "passed": false,
+        "evidence": "The \u201cThis week\u201d numbered list contains six actions (1\u20136), exceeding five."
+      },
+      {
+        "text": "The output includes a list of things that should not be changed right now",
+        "passed": true,
+        "evidence": "\u201creplacing the team or commissioning a wholesale rewrite is not supported by this evidence\u201d names two changes to avoid, though in prose rather than bullets."
+      },
+      {
+        "text": "Every count, story-point total, and date in the output matches the supplied CSV and notes (or is derivable from them by counting), and no velocity, completion percentage, or headcount appears that cannot be derived from the inputs",
+        "passed": true,
+        "evidence": "46 days between 15 October and 30 November; two accounts/1 December and one-day interval match notes. Sprint membership and issue dates match CSV; proposed two-working-day decision deadline is clearly a recommendation."
+      },
+      {
+        "text": "Does not infer cycle time, historical scope inflow or missing tests from snapshot fields, and treats the review as historical",
+        "passed": true,
+        "evidence": "Historical August framing explicit; no numerical cycle time, scope-inflow history, or assertion of absent tests; \u201cMissing PR links ... warrant verification\u201d."
+      },
+      {
+        "text": "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix",
+        "passed": false,
+        "evidence": "Python len(text.split()) = 850 whitespace-delimited words; no requested appendix."
+      }
+    ],
+    "summary": {
+      "passed": 11,
+      "failed": 3,
+      "total": 14
+    },
+    "additional_concerns": [
+      "\u201cMulti-sprint listings show repeated carryover\u201d is an unsupported inference from membership fields without sprint snapshots.",
+      "Red and moderate-to-high confidence may overstate inability to meet revised date; no feasibility forecast establishes that date is untenable."
+    ],
+    "eval_critique": [
+      "The snapshot assertion names cycle time, scope inflow and missing tests but misses unsupported carryover history, observed here.",
+      "\u201cEvery ... date ... matches\u201d should exclude clearly proposed future action deadlines and dates of the review itself."
+    ]
+  },
+  "with_skill/software-project-health-review-5.md": {
+    "expectations": [
+      {
+        "text": "Does not downgrade health to Amber solely because the account is unverified",
+        "passed": true,
+        "evidence": "\u201cProvisional Green ... Confidence: Low\u201d separates health and corroboration."
+      },
+      {
+        "text": "Separates reported facts from confidence and identifies a targeted verification",
+        "passed": true,
+        "evidence": "\u201cThis is a reported cause and test result, not independently confirmed\u201d; verify test covers \u201coriginal export failure\u201d at routine update."
+      },
+      {
+        "text": "Does not recommend structural intervention without a binding constraint",
+        "passed": true,
+        "evidence": "\u201cDo not add staff, impose daily recovery reporting or launch a broad audit solely because ... evidence is thin.\u201d"
+      },
+      {
+        "text": "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix",
+        "passed": true,
+        "evidence": "Python len(text.split()) = 476 whitespace-delimited words; no requested appendix."
+      }
+    ],
+    "summary": {
+      "passed": 4,
+      "failed": 0,
+      "total": 4
+    },
+    "additional_concerns": [],
+    "eval_critique": []
+  },
+  "old_skill/software-project-health-review-5.md": {
+    "expectations": [
+      {
+        "text": "Does not downgrade health to Amber solely because the account is unverified",
+        "passed": false,
+        "evidence": "\u201cAmber only because none of it has been independently verified\u201d directly violates the assertion."
+      },
+      {
+        "text": "Separates reported facts from confidence and identifies a targeted verification",
+        "passed": true,
+        "evidence": "\u201cFACT \u2014 your report ... facts about what you reported\u201d; Low confidence; collect \u201cfix's test result, updated milestone plan and sponsor acceptance\u201d."
+      },
+      {
+        "text": "Does not recommend structural intervention without a binding constraint",
+        "passed": true,
+        "evidence": "\u201cA full recovery program would consume time without an evidenced problem\u201d; \u201cDo not add people, reorganize, switch tools\u201d."
+      },
+      {
+        "text": "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix",
+        "passed": true,
+        "evidence": "Python len(text.split()) = 323 whitespace-delimited words; no requested appendix."
+      }
+    ],
+    "summary": {
+      "passed": 3,
+      "failed": 1,
+      "total": 4
+    },
+    "additional_concerns": [
+      "Opening Amber rating contradicts its statement \u201cMissing evidence is not a demonstrated failure.\u201d"
+    ],
+    "eval_critique": []
+  },
+  "without_skill/software-project-health-review-5.md": {
+    "expectations": [
+      {
+        "text": "Does not downgrade health to Amber solely because the account is unverified",
+        "passed": true,
+        "evidence": "\u201cNo recovery intervention is warranted\u201d; \u201cprovisional judgment based solely on your report\u201d with no Amber downgrade."
+      },
+      {
+        "text": "Separates reported facts from confidence and identifies a targeted verification",
+        "passed": true,
+        "evidence": "\u201cnot independent verification\u201d; \u201cbrief look at the fix result and updated milestone plan\u201d."
+      },
+      {
+        "text": "Does not recommend structural intervention without a binding constraint",
+        "passed": true,
+        "evidence": "\u201ca broad audit or recovery program would be disproportionate\u201d; continue normal monitoring."
+      },
+      {
+        "text": "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix",
+        "passed": true,
+        "evidence": "Python len(text.split()) = 142 whitespace-delimited words; no requested appendix."
+      }
+    ],
+    "summary": {
+      "passed": 4,
+      "failed": 0,
+      "total": 4
+    },
+    "additional_concerns": [],
+    "eval_critique": []
+  },
+  "with_skill/build-buy-hire-augment-1.md": {
+    "expectations": [
+      {
+        "text": "The capability is decomposed into at least two components with different sourcing answers, distinguishing commodity payout rails or compliance from differentiating integration or seller experience",
+        "passed": true,
+        "evidence": "Country payout execution: \u201cConditionally buy provider capability\u201d; marketplace control/reconciliation: \u201cRetain/build integration ... internal technical owner\u201d."
+      },
+      {
+        "text": "Considers buying commodity rails conditionally on resolving the banking-data constraint; does not recommend a provider unconditionally",
+        "passed": true,
+        "evidence": "\u201cA provider needing prohibited data access is ineligible in that form.\u201d"
+      },
+      {
+        "text": "Hiring alone is ruled out or deprioritized as the route to the 5-month date, citing the company's own 4-6 month hiring history",
+        "passed": true,
+        "evidence": "\u201cfour- and six-month senior hiring cycles consume most or all of the five-month window before ramp-up\u201d."
+      },
+      {
+        "text": "If outside help is recommended, explains its evidence-based fit and internal ownership/receiving capacity, knowledge transfer and review/end trigger, without an arbitrary condition count",
+        "passed": true,
+        "evidence": "Specialist capacity versus loaded team; \u201cFree a named internal receiver\u201d; transition requires independently modify/deploy/recover; \u201creview or end partner delivery at accepted handover\u201d."
+      },
+      {
+        "text": "The compliance requirement that banking data stay in-house is applied as a constraint on external parties' data access",
+        "passed": true,
+        "evidence": "Clarifies storage/transmission/processing permissions; \u201cnor that tokenization or controlled access automatically complies\u201d."
+      },
+      {
+        "text": "Alternatives considered are listed with the reason each lost",
+        "passed": true,
+        "evidence": "Direct internal integration loses on allocation/expertise; hiring on timing; status quo fails expansion; renegotiation acknowledged."
+      },
+      {
+        "text": "Cost drivers are listed without inventing salaries, rates, or provider fees",
+        "passed": true,
+        "evidence": "\u201cprovider transaction/FX and support costs, integration and reconciliation, partner fees, internal review ... migration and replacement\u201d; no cash total."
+      },
+      {
+        "text": "An exit strategy is described for the provider and for any external help",
+        "passed": true,
+        "evidence": "\u201cTest provider data exports and replacement interfaces\u201d; partner end at accepted handover with independent operation."
+      },
+      {
+        "text": "Conditions under which the recommendation would change are stated",
+        "passed": true,
+        "evidence": "No owner \u2192 revisit commitment; prohibition \u2192 provider ineligible; existing-processor path + internal expertise \u2192 direct integration."
+      },
+      {
+        "text": "Hiring and contract signing are explicitly reserved as decisions for the leader",
+        "passed": false,
+        "evidence": "\u201cno supplier selection or contract is implied here\u201d and \u201cHiring could support durable operations later\u201d do not explicitly reserve hiring and contract-signing decisions to the leader."
+      },
+      {
+        "text": "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix",
+        "passed": true,
+        "evidence": "Python len(text.split()) = 678 whitespace-delimited words; no requested appendix."
+      }
+    ],
+    "summary": {
+      "passed": 10,
+      "failed": 1,
+      "total": 11
+    },
+    "additional_concerns": [
+      "\u201cthe team lacks reported payments expertise\u201d is carefully qualified; never hiring a specialist does not prove no team member has payments experience."
+    ],
+    "eval_critique": [
+      "Requiring explicit leader reservation for hiring/contracting checks wording rather than whether unauthorized action occurred. Useful only if the skill contract truly requires that disclaimer."
+    ]
+  },
+  "old_skill/build-buy-hire-augment-1.md": {
+    "expectations": [
+      {
+        "text": "The capability is decomposed into at least two components with different sourcing answers, distinguishing commodity payout rails or compliance from differentiating integration or seller experience",
+        "passed": true,
+        "evidence": "Table distinguishes commodity payout rails from internally owned seller experience, banking data, reconciliation and integration."
+      },
+      {
+        "text": "Considers buying commodity rails conditionally on resolving the banking-data constraint; does not recommend a provider unconditionally",
+        "passed": true,
+        "evidence": "\u201cEvaluate buying a provider only if Compliance confirms the data flow satisfies the restriction\u201d."
+      },
+      {
+        "text": "Hiring alone is ruled out or deprioritized as the route to the 5-month date, citing the company's own 4-6 month hiring history",
+        "passed": true,
+        "evidence": "\u201chistorical hiring consumes most or all of five months, before ramp\u201d."
+      },
+      {
+        "text": "If outside help is recommended, explains its evidence-based fit and internal ownership/receiving capacity, knowledge transfer and review/end trigger, without an arbitrary condition count",
+        "passed": false,
+        "evidence": "Internal receiver, handover and review/end are specified, but \u201ctwo external-use conditions hold: duration is limited and internal capacity is blocked\u201d explicitly bases recommendation on an arbitrary condition count."
+      },
+      {
+        "text": "The compliance requirement that banking data stay in-house is applied as a constraint on external parties' data access",
+        "passed": true,
+        "evidence": "\u201cExternal implementer with prohibited data/system access | Removed ... unless an approved access model exists\u201d."
+      },
+      {
+        "text": "Alternatives considered are listed with the reason each lost",
+        "passed": true,
+        "evidence": "Options removed/conditional and Alternatives explain internal/hire/provider/agency/augmentation/consultant/wait treatments."
+      },
+      {
+        "text": "Cost drivers are listed without inventing salaries, rates, or provider fees",
+        "passed": true,
+        "evidence": "Lists fees, compensation, ramp, acceptance, migration and opportunity costs as inputs, without salaries/rates/provider numbers."
+      },
+      {
+        "text": "An exit strategy is described for the provider and for any external help",
+        "passed": true,
+        "evidence": "Exit table: provider \u201cTested data export, mapping and replaceable adapter\u201d; partner \u201cOwned code, tests, runbooks and internal ability to operate\u201d."
+      },
+      {
+        "text": "Conditions under which the recommendation would change are stated",
+        "passed": true,
+        "evidence": "\u201cIf a compliant provider cannot serve the exact countries, reopen sourcing\u201d; free internal capacity replaces partner; no owner blocks help."
+      },
+      {
+        "text": "Hiring and contract signing are explicitly reserved as decisions for the leader",
+        "passed": true,
+        "evidence": "\u201cLeadership retains budget, vendor contracting, hiring and changes to enterprise commitments.\u201d"
+      },
+      {
+        "text": "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix",
+        "passed": false,
+        "evidence": "Python len(text.split()) = 1593 whitespace-delimited words; no requested appendix."
+      }
+    ],
+    "summary": {
+      "passed": 9,
+      "failed": 2,
+      "total": 11
+    },
+    "additional_concerns": [
+      "\u201cInternal skills ... Domain expertise absent ... FACT: no payments specialist hired\u201d overstates the evidence. Absence of a hired specialist does not establish absence of relevant expertise.",
+      "\u201cmaintenance and operations dominate the lifetime cost\u201d and \u201cramp and time-to-fill dominate ... first-year delivery economics\u201d are unsupported generalizations for this company, despite being called qualitative."
+    ],
+    "eval_critique": [
+      "The no-invented-figures assertion misses unsupported categorical cost-dominance claims."
+    ]
+  },
+  "without_skill/build-buy-hire-augment-1.md": {
+    "expectations": [
+      {
+        "text": "The capability is decomposed into at least two components with different sourcing answers, distinguishing commodity payout rails or compliance from differentiating integration or seller experience",
+        "passed": true,
+        "evidence": "Provider payout rails; internally owned marketplace/seller/reconciliation integration; retained architecture/operations."
+      },
+      {
+        "text": "Considers buying commodity rails conditionally on resolving the banking-data constraint; does not recommend a provider unconditionally",
+        "passed": true,
+        "evidence": "\u201cUse a hybrid approach if the data constraint permits it\u201d; \u201cGet an approved data-flow interpretation before selecting a vendor.\u201d"
+      },
+      {
+        "text": "Hiring alone is ruled out or deprioritized as the route to the 5-month date, citing the company's own 4-6 month hiring history",
+        "passed": true,
+        "evidence": "\u201cnot a credible primary delivery plan for a five-month commitment given your four- and six-month hiring history\u201d."
+      },
+      {
+        "text": "If outside help is recommended, explains its evidence-based fit and internal ownership/receiving capacity, knowledge transfer and review/end trigger, without an arbitrary condition count",
+        "passed": true,
+        "evidence": "Agency evaluated for relevant experience and named specialists; reserved internal review/operations time; documentation/tests/runbooks/knowledge transfer and \u201cexit/handover milestone\u201d."
+      },
+      {
+        "text": "The compliance requirement that banking data stay in-house is applied as a constraint on external parties' data access",
+        "passed": true,
+        "evidence": "Restriction \u201cmay also affect the current processor and any agency arrangement\u201d; no token/API assumption."
+      },
+      {
+        "text": "Alternatives considered are listed with the reason each lost",
+        "passed": true,
+        "evidence": "Hiring loses on timing; agency alone cannot replace rails; internal rebuild not credible fallback on deadline; gated hybrid or renegotiate."
+      },
+      {
+        "text": "Cost drivers are listed without inventing salaries, rates, or provider fees",
+        "passed": true,
+        "evidence": "\u201cimplementation, provider and FX fees, ongoing support and reconciliation, internal opportunity cost, and switching cost\u201d; numerical ranking explicitly unsupported."
+      },
+      {
+        "text": "An exit strategy is described for the provider and for any external help",
+        "passed": false,
+        "evidence": "Partner handover is described, but provider \u201cexit options\u201d and \u201cswitching cost\u201d merely request assessment; no concrete provider replacement/data export/portability strategy."
+      },
+      {
+        "text": "Conditions under which the recommendation would change are stated",
+        "passed": true,
+        "evidence": "\u201cIf those gates pass ... staged delivery\u201d; \u201cIf they fail, renegotiate scope or dates\u201d."
+      },
+      {
+        "text": "Hiring and contract signing are explicitly reserved as decisions for the leader",
+        "passed": false,
+        "evidence": "\u201cBegin a targeted senior hire in parallel if ... workload justifies it\u201d and \u201cIf those gates pass, contract for staged delivery\u201d are advice, but no explicit reservation of hiring/contract decisions for leader."
+      },
+      {
+        "text": "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix",
+        "passed": true,
+        "evidence": "Python len(text.split()) = 655 whitespace-delimited words; no requested appendix."
+      }
+    ],
+    "summary": {
+      "passed": 9,
+      "failed": 2,
+      "total": 11
+    },
+    "additional_concerns": [],
+    "eval_critique": [
+      "An exit-options assessment is not an actual provider exit strategy; require data portability and replaceable integration or equivalent transition mechanism."
+    ]
+  },
+  "with_skill/build-buy-hire-augment-6.md": {
+    "expectations": [
+      {
+        "text": "Can recommend a bounded specialist consultant based on the expertise gap",
+        "passed": true,
+        "evidence": "\u201cA one-week independent specialist review fits ... a specific expertise gap\u201d."
+      },
+      {
+        "text": "Does not require two external-sourcing conditions or use an internal tie-break",
+        "passed": true,
+        "evidence": "\u201cDeadline pressure and a hiring plan are not prerequisites\u201d; \u201cno reason to apply an automatic internal tie-break.\u201d"
+      },
+      {
+        "text": "Names the internal recipient and a concrete review deliverable",
+        "passed": true,
+        "evidence": "\u201cexisting technical owner owns the decision and follow-through\u201d; deliverable includes consistency claims, failure scenarios, tradeoffs and reproducible test plan."
+      },
+      {
+        "text": "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix",
+        "passed": true,
+        "evidence": "Python len(text.split()) = 629 whitespace-delimited words; no requested appendix."
+      }
+    ],
+    "summary": {
+      "passed": 4,
+      "failed": 0,
+      "total": 4
+    },
+    "additional_concerns": [],
+    "eval_critique": []
+  },
+  "old_skill/build-buy-hire-augment-6.md": {
+    "expectations": [
+      {
+        "text": "Can recommend a bounded specialist consultant based on the expertise gap",
+        "passed": true,
+        "evidence": "\u201cUse a specialist consultant for the one-week review\u201d; expertise absent and owner can act."
+      },
+      {
+        "text": "Does not require two external-sourcing conditions or use an internal tie-break",
+        "passed": false,
+        "evidence": "\u201cThe external recommendation rests on two supported conditions: bounded duration, and absent expertise ...\u201d explicitly uses a two-condition justification, although it rejects internal tie-break."
+      },
+      {
+        "text": "Names the internal recipient and a concrete review deliverable",
+        "passed": true,
+        "evidence": "\u201cinternal technical owner retaining ... decisions\u201d; concrete counterexamples, unresolved questions, prioritized recommendations and walkthrough/disposition."
+      },
+      {
+        "text": "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix",
+        "passed": false,
+        "evidence": "Python len(text.split()) = 776 whitespace-delimited words; no requested appendix."
+      }
+    ],
+    "summary": {
+      "passed": 2,
+      "failed": 2,
+      "total": 4
+    },
+    "additional_concerns": [
+      "\u201cThe skill publisher sells engineering services\u201d is not verifiable from the permitted prompt/outputs/fixtures; provenance of this claim is unavailable."
+    ],
+    "eval_critique": [
+      "The two-condition assertion should distinguish merely mentioning two relevant facts from requiring a minimum count. Here \u201crests on two supported conditions\u201d is count-based framing, but no literal minimum rule is stated."
+    ]
+  },
+  "without_skill/build-buy-hire-augment-6.md": {
+    "expectations": [
+      {
+        "text": "Can recommend a bounded specialist consultant based on the expertise gap",
+        "passed": true,
+        "evidence": "\u201cA specialist consultant is a good fit ... expertise is missing internally ... need lasts one week\u201d."
+      },
+      {
+        "text": "Does not require two external-sourcing conditions or use an internal tie-break",
+        "passed": true,
+        "evidence": "\u201cIndependence and scarce expertise justify the consultant here; deadline pressure is unnecessary.\u201d No count or internal tie-break."
+      },
+      {
+        "text": "Names the internal recipient and a concrete review deliverable",
+        "passed": true,
+        "evidence": "\u201cinternal owner records which findings are accepted\u201d; written assessment of guarantees, counterexamples, ranked risks, design changes and verification plan."
+      },
+      {
+        "text": "The answer is at most 700 whitespace-delimited words, excluding any explicitly requested appendix",
+        "passed": true,
+        "evidence": "Python len(text.split()) = 211 whitespace-delimited words; no requested appendix."
+      }
+    ],
+    "summary": {
+      "passed": 4,
+      "failed": 0,
+      "total": 4
+    },
+    "additional_concerns": [],
+    "eval_critique": []
+  }
+}
