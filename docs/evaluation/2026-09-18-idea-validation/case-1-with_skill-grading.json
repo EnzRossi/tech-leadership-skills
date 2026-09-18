@@ -1,0 +1,75 @@
+{
+  "expectations": [
+    {
+      "text": "Restates the idea as a hypothesis naming the user, the problem, the current alternative and the proposed solution",
+      "passed": true,
+      "evidence": "Section 'The idea as a hypothesis': \"Independent restaurant owners (reported) over-order perishables because ordering runs on habit (inferred; how your cousin orders today is unstated). A SaaS turns sales history into a weekly order quantity per ingredient.\" User = independent restaurant owners; problem = over-ordering perishables; current alternative = ordering by habit (flagged as inferred); solution = SaaS producing weekly order quantities."
+    },
+    {
+      "text": "Treats the cousin's statement as reported and weak demand evidence rather than validation",
+      "passed": true,
+      "evidence": "\"Your only demand signal is one relative saying waste is 'a big problem'. That is an opinion from a friendly source, the weakest rung on the evidence ladder; nobody has committed money, data or time.\" Also: \"Your cousin is one account, not a channel.\""
+    },
+    {
+      "text": "Asks no more than five questions, and they include target geography or country and who the buyer or decision maker is",
+      "passed": true,
+      "evidence": "Exactly five numbered questions in 'Questions that still matter'; no other questions posed elsewhere. Q1: \"Which country, and which POS?\" covers geography. Q2: \"What does your cousin throw away per week, in currency, and who orders today, how?\" asks who makes the ordering decision. Borderline: the buyer question is phrased as 'who orders today' rather than 'who is the buyer', though the body states \"User, buyer and decision maker are one person at an independent\"."
+    },
+    {
+      "text": "Names existing alternatives such as POS or inventory features, supplier tooling or spreadsheets as competitors or substitutes to check, without asserting specific competitor features as verified fact",
+      "passed": true,
+      "evidence": "Names \"MarketMan, MarginEdge, Restaurant365, xtraCHEF by Toast, BlueCart\" and POS-bundled tooling (\"Toast's xtraCHEF is free for Toast POS users\", cited to Toast). Explicitly hedges features: \"I could not confirm which incumbents ship suggested ordering today, so treat 'nobody does this' as unverified.\" Spreadsheets/habit ordering appear only as 'ordering runs on habit'; supplier tooling is not named, but the assertion's 'such as' list is satisfied by POS and inventory platforms."
+    },
+    {
+      "text": "Raises the dependency on historical sales and purchasing data the restaurants may not have in usable form",
+      "passed": true,
+      "evidence": "\"A per-ingredient forecast needs recipes mapped to sales items and clean delivery data, which most independents lack... The model is the easy part; the inputs are the product.\" Also risk line: \"feasibility Supported (for the model, not the data pipeline)\"."
+    },
+    {
+      "text": "The verdict is 'test before building' or equivalent, not 'pursue' and not 'stop'",
+      "passed": true,
+      "evidence": "\"**Test before building — Confidence: Medium.**\" and \"Next step: a manual, concierge forecast for your cousin's two restaurants, priced, before writing product code.\""
+    },
+    {
+      "text": "Proposes one concrete test measuring behaviour or commitment (for example a paid manual pilot or pre-order) with a proposed pass and kill threshold marked as proposed",
+      "passed": true,
+      "evidence": "\"Concierge forecast, no product code. For 6 weeks, build the weekly order sheet... by hand... Charge a real price, proposed $150/month per site, from week 1. Then offer the same to 5 non-family restaurants. Proposed pass: measured waste reduction covering the fee, and at least 3 of 5 strangers agree to pay. Proposed kill: no measurable change, or 0 of 5 pay. Thresholds are proposals until you agree them before starting.\""
+    },
+    {
+      "text": "Does not advise quitting the job before evidence exists and separates that personal decision from the idea assessment",
+      "passed": true,
+      "evidence": "\"do not quit your job on today's evidence\"; \"Keep your job throughout; this needs evenings, not a resignation.\"; Boundaries: \"Leaving your job is your decision; this memo argues only that the evidence does not yet justify it.\""
+    },
+    {
+      "text": "Does not invent market size, restaurant counts, pricing, or cost figures",
+      "passed": true,
+      "evidence": "No market size or restaurant counts given. Pricing figures ($199-469/location/month, $199/mo MarketMan starter, $500-10,000 onboarding) and the 4.2% waste figure are each attached to a cited URL. The $150/month figure is explicitly a proposal for the test, not a stated market fact. Caveat: several price sources are third-party blogs (restaurantinventorytools.com, voiceordersolutions.com), cited but not primary."
+    },
+    {
+      "text": "Leads with the verdict and the weakest point within the first 100 words",
+      "passed": true,
+      "evidence": "Within the first 100 words (after the title/metadata line): \"**Test before building — Confidence: Medium.** And no: do not quit your job... The weakest point is demand, not feasibility. Your only demand signal is one relative saying waste is 'a big problem'... nobody has committed money, data or time.\""
+    }
+  ],
+  "summary": {
+    "passed": 10,
+    "failed": 0,
+    "total": 10,
+    "pass_rate": 1.0
+  },
+  "word_count": 864,
+  "critical_issues": [
+    "Uncited factual claim stated flatly: \"independents are reached through POS marketplaces, distributors, accountants and word of mouth\" has no source and is not in the prompt.",
+    "Uncited assertion: \"Waste under a few hundred a month cannot carry a subscription\" is presented as fact without a source or calculation.",
+    "Overstated certainty / false dichotomy: \"the independent segment is either underserved or unable to pay\" is inferred from a single competitor blog (Orbisk) describing its rivals; other explanations (e.g. hardware vendors' cost structure, distribution) are omitted.",
+    "Overstated inference: \"the recoverable value is a fraction of a few percent of purchases\" extrapolates the 4.2% Leanpath figure to restaurants even though the memo itself quotes the caveat that the dataset \"does not include restaurants\".",
+    "Hypothesis labels the cousin's restaurants 'Independent restaurant owners (reported)'; the prompt does not say they are independents, so 'reported' is inaccurate (should be 'assumed').",
+    "Several pricing and onboarding-cost figures rely on secondary roundup blogs (restaurantinventorytools.com, voiceordersolutions.com, xenia.team) rather than vendor pages; cited, so not fabrication, but weak provenance. \"Toast's xtraCHEF is free for Toast POS users\" is cited to Toast but could not be checked here.",
+    "\"On current evidence, more than exists\" (re: runway) asserts something about the user's finances that the prompt gives no information on."
+  ],
+  "leads_with_verdict": true,
+  "assertion_critique": [
+    "Assertion 6 ('verdict is test before building') and assertion 8 ('does not advise quitting') are near non-discriminating for this prompt: almost any cautious memo would pass both, so they add little separation between arms.",
+    "Assertion 3 bundles a count constraint with two content requirements; the 'who the buyer or decision maker is' part is ambiguous about whether 'who orders today' counts, making the grade depend on grader interpretation. Splitting it into count vs. content, and specifying 'buyer' explicitly, would make it sharper."
+  ]
+}

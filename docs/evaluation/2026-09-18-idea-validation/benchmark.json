@@ -1,0 +1,711 @@
+{
+  "metadata": {
+    "skill_name": "idea-validation",
+    "skill_path": "skills/idea-validation",
+    "iteration": 1,
+    "executor_model": "Claude Code subagents inheriting the parent session model (claude-fable-5-1 reported by the host); sampling settings not exposed",
+    "grader": "One separate blinded subagent per case; saw prompt, assertions and anonymised memos only",
+    "timestamp": "2026-09-18",
+    "evals_run": [
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
+    "paired_cases": [
+      2,
+      3,
+      5
+    ],
+    "with_skill_only_cases": [
+      1,
+      6
+    ],
+    "trials_per_case_per_configuration": 1,
+    "skill_revision_note": "Iteration 1 ran on the initial draft; four instructions were revised afterwards (see README). Iteration 2 reruns use the revised SKILL.md whose hashes are in skill-inputs.json.",
+    "iteration_2": "Cases 3 and 5 rerun once with the revised SKILL.md (configuration with_skill_revised). Single trials; differences from iteration 1 are within plausible run-to-run variation."
+  },
+  "runs": [
+    {
+      "eval_id": 1,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "passed": 10,
+        "failed": 0,
+        "total": 10,
+        "pass_rate": 1.0
+      },
+      "word_count": 864,
+      "subagent_tokens": 72208,
+      "duration_seconds": 158.1,
+      "expectations": [
+        {
+          "text": "Restates the idea as a hypothesis naming the user, the problem, the current alternative and the proposed solution",
+          "passed": true,
+          "evidence": "Section 'The idea as a hypothesis': \"Independent restaurant owners (reported) over-order perishables because ordering runs on habit (inferred; how your cousin orders today is unstated). A SaaS turns sales history into a weekly order quantity per ingredient.\" User = independent restaurant owners; problem = over-ordering perishables; current alternative = ordering by habit (flagged as inferred); solution = SaaS producing weekly order quantities."
+        },
+        {
+          "text": "Treats the cousin's statement as reported and weak demand evidence rather than validation",
+          "passed": true,
+          "evidence": "\"Your only demand signal is one relative saying waste is 'a big problem'. That is an opinion from a friendly source, the weakest rung on the evidence ladder; nobody has committed money, data or time.\" Also: \"Your cousin is one account, not a channel.\""
+        },
+        {
+          "text": "Asks no more than five questions, and they include target geography or country and who the buyer or decision maker is",
+          "passed": true,
+          "evidence": "Exactly five numbered questions in 'Questions that still matter'; no other questions posed elsewhere. Q1: \"Which country, and which POS?\" covers geography. Q2: \"What does your cousin throw away per week, in currency, and who orders today, how?\" asks who makes the ordering decision. Borderline: the buyer question is phrased as 'who orders today' rather than 'who is the buyer', though the body states \"User, buyer and decision maker are one person at an independent\"."
+        },
+        {
+          "text": "Names existing alternatives such as POS or inventory features, supplier tooling or spreadsheets as competitors or substitutes to check, without asserting specific competitor features as verified fact",
+          "passed": true,
+          "evidence": "Names \"MarketMan, MarginEdge, Restaurant365, xtraCHEF by Toast, BlueCart\" and POS-bundled tooling (\"Toast's xtraCHEF is free for Toast POS users\", cited to Toast). Explicitly hedges features: \"I could not confirm which incumbents ship suggested ordering today, so treat 'nobody does this' as unverified.\" Spreadsheets/habit ordering appear only as 'ordering runs on habit'; supplier tooling is not named, but the assertion's 'such as' list is satisfied by POS and inventory platforms."
+        },
+        {
+          "text": "Raises the dependency on historical sales and purchasing data the restaurants may not have in usable form",
+          "passed": true,
+          "evidence": "\"A per-ingredient forecast needs recipes mapped to sales items and clean delivery data, which most independents lack... The model is the easy part; the inputs are the product.\" Also risk line: \"feasibility Supported (for the model, not the data pipeline)\"."
+        },
+        {
+          "text": "The verdict is 'test before building' or equivalent, not 'pursue' and not 'stop'",
+          "passed": true,
+          "evidence": "\"**Test before building — Confidence: Medium.**\" and \"Next step: a manual, concierge forecast for your cousin's two restaurants, priced, before writing product code.\""
+        },
+        {
+          "text": "Proposes one concrete test measuring behaviour or commitment (for example a paid manual pilot or pre-order) with a proposed pass and kill threshold marked as proposed",
+          "passed": true,
+          "evidence": "\"Concierge forecast, no product code. For 6 weeks, build the weekly order sheet... by hand... Charge a real price, proposed $150/month per site, from week 1. Then offer the same to 5 non-family restaurants. Proposed pass: measured waste reduction covering the fee, and at least 3 of 5 strangers agree to pay. Proposed kill: no measurable change, or 0 of 5 pay. Thresholds are proposals until you agree them before starting.\""
+        },
+        {
+          "text": "Does not advise quitting the job before evidence exists and separates that personal decision from the idea assessment",
+          "passed": true,
+          "evidence": "\"do not quit your job on today's evidence\"; \"Keep your job throughout; this needs evenings, not a resignation.\"; Boundaries: \"Leaving your job is your decision; this memo argues only that the evidence does not yet justify it.\""
+        },
+        {
+          "text": "Does not invent market size, restaurant counts, pricing, or cost figures",
+          "passed": true,
+          "evidence": "No market size or restaurant counts given. Pricing figures ($199-469/location/month, $199/mo MarketMan starter, $500-10,000 onboarding) and the 4.2% waste figure are each attached to a cited URL. The $150/month figure is explicitly a proposal for the test, not a stated market fact. Caveat: several price sources are third-party blogs (restaurantinventorytools.com, voiceordersolutions.com), cited but not primary."
+        },
+        {
+          "text": "Leads with the verdict and the weakest point within the first 100 words",
+          "passed": true,
+          "evidence": "Within the first 100 words (after the title/metadata line): \"**Test before building — Confidence: Medium.** And no: do not quit your job... The weakest point is demand, not feasibility. Your only demand signal is one relative saying waste is 'a big problem'... nobody has committed money, data or time.\""
+        }
+      ],
+      "critical_issues": [
+        "Uncited factual claim stated flatly: \"independents are reached through POS marketplaces, distributors, accountants and word of mouth\" has no source and is not in the prompt.",
+        "Uncited assertion: \"Waste under a few hundred a month cannot carry a subscription\" is presented as fact without a source or calculation.",
+        "Overstated certainty / false dichotomy: \"the independent segment is either underserved or unable to pay\" is inferred from a single competitor blog (Orbisk) describing its rivals; other explanations (e.g. hardware vendors' cost structure, distribution) are omitted.",
+        "Overstated inference: \"the recoverable value is a fraction of a few percent of purchases\" extrapolates the 4.2% Leanpath figure to restaurants even though the memo itself quotes the caveat that the dataset \"does not include restaurants\".",
+        "Hypothesis labels the cousin's restaurants 'Independent restaurant owners (reported)'; the prompt does not say they are independents, so 'reported' is inaccurate (should be 'assumed').",
+        "Several pricing and onboarding-cost figures rely on secondary roundup blogs (restaurantinventorytools.com, voiceordersolutions.com, xenia.team) rather than vendor pages; cited, so not fabrication, but weak provenance. \"Toast's xtraCHEF is free for Toast POS users\" is cited to Toast but could not be checked here.",
+        "\"On current evidence, more than exists\" (re: runway) asserts something about the user's finances that the prompt gives no information on."
+      ]
+    },
+    {
+      "eval_id": 2,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "passed": 8,
+        "failed": 0,
+        "total": 8,
+        "pass_rate": 1.0
+      },
+      "word_count": 793,
+      "subagent_tokens": 67355,
+      "duration_seconds": 121.2,
+      "expectations": [
+        {
+          "text": "Classifies the idea as internal and evaluates existing alternatives before the build, including the tool already licensed and open-source options",
+          "passed": true,
+          "evidence": "Header line: 'Internal · digital · not AI-dependent'. Evidence section compares 'LaunchDarkly's public pricing (launchdarkly.com/pricing, read 2026-09-18)', 'Flagsmith ... an open-source self-hosted edition', 'Unleash ... a free self-hosted edition', and 'OpenFeature ... a vendor-neutral SDK with 50+ providers'."
+        },
+        {
+          "text": "Asks for or requires the specific requirement the existing tool fails, not just 'expensive' or 'we would own it'",
+          "passed": true,
+          "evidence": "'none names a requirement that LaunchDarkly, cheaper vendors or open source fail ... have the engineer write the requirement the market fails'; Q1: 'What can the team not do today with LaunchDarkly, in a user's words?'"
+        },
+        {
+          "text": "Counts ongoing ownership (maintenance, on-call, upgrades, support) and opportunity cost of the two engineers against the build case",
+          "passed": true,
+          "evidence": "'A flag service is on the critical path of every deploy; nobody has accepted on-call and upgrades'; '4. Opportunity cost. Twelve engineer-weeks at your loaded rate is the first-version price; maintaining a critical-path service is usually the larger cost.'"
+        },
+        {
+          "text": "Does not accept the 6-week estimate as the full cost; notes that build effort is only one cost driver and does not itself estimate delivery time",
+          "passed": true,
+          "evidence": "'Six weeks covers the easy part ... Treat the estimate as unverified.' No alternative timeline is given for the build; 'a delivery estimate belongs in agentic-project-estimation'. The two-week trial is a test bound, not a delivery estimate."
+        },
+        {
+          "text": "Does not invent LaunchDarkly pricing, salaries, or a total cost figure; computes only if figures are supplied or shows the comparison structure",
+          "passed": true,
+          "evidence": "Pricing figures are attributed to a named source and date ('launchdarkly.com/pricing, read 2026-09-18'). No salary or total is stated; the comparison structure is shown: 'place them beside twelve engineer-weeks plus a maintenance estimate'; Q2 asks 'What does LaunchDarkly cost now'."
+        },
+        {
+          "text": "Recommendation is to not build by default, or to run a bounded comparison against a stated requirement, rather than 'pursue'",
+          "passed": true,
+          "evidence": "'Stop the build as proposed; reshape into a two-week alternatives trial'; 'One engineer, two weeks: stand up self-hosted Unleash or Flagsmith ... Proposed pass (build not justified): all ranked requirements met'."
+        },
+        {
+          "text": "Mentions that tight deploy-pipeline integration is a requirement to test against alternatives rather than a reason to build in itself",
+          "passed": true,
+          "evidence": "'Assumed: \"pipeline integration\" means flag state travels with the release; confirm.' Test: 'a one-page ranked requirements list, including the pipeline integration ... on one non-critical service, wired into the pipeline.'"
+        },
+        {
+          "text": "Remains fair to the engineer's motivation without dismissing it, and does not route to an outside vendor or partner as the answer",
+          "passed": true,
+          "evidence": "'Strongest reason it could work: a fintech may need audit, approval or residency behaviour that vendors gate behind enterprise pricing'; the engineer is given the requirements list to write. No outside partner is proposed; the only routing is to sibling skills and the compliance lead."
+        }
+      ],
+      "critical_issues": [
+        "Specific price points and product facts ('$10 per Service Connection / mo', '$8.33 per 1k client-side MAU', Flagsmith $40/$250, Unleash '$75/seat/month' and 'limited to 1 project and 2 environments', OpenFeature 'CNCF incubating' with '50+ providers') are stated as read from vendor pages on 2026-09-18. They are cited, but the grader cannot confirm them and the memo presents them as settled fact; a VP should re-check before quoting.",
+        "Unsourced causal generalisation stated with certainty: 'Vendors charge enterprise prices for approvals and roles because regulated buyers demand them and they are hard.'",
+        "Mild overstatement: 'maintaining a critical-path service is usually the larger cost' is asserted without evidence, though it is labelled as a general tendency ('usually')."
+      ]
+    },
+    {
+      "eval_id": 2,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "passed": 7,
+        "failed": 1,
+        "total": 8,
+        "pass_rate": 0.875
+      },
+      "word_count": 1812,
+      "subagent_tokens": 56941,
+      "duration_seconds": 107.9,
+      "expectations": [
+        {
+          "text": "Classifies the idea as internal and evaluates existing alternatives before the build, including the tool already licensed and open-source options",
+          "passed": true,
+          "evidence": "'Re: Proposal to build an internal feature-flag / progressive-delivery system'; 'Feature flagging is not a differentiator ... Undifferentiated infrastructure is exactly the category where buy or adopt-open-source normally wins.' Options table: 'A. Expand LaunchDarkly company-wide', 'B. OpenFeature + self-hosted OSS backend (Unleash / Flagsmith / GrowthBook / flagd)'. The 'internal' classification is implicit rather than an explicit categorisation step."
+        },
+        {
+          "text": "Asks for or requires the specific requirement the existing tool fails, not just 'expensive' or 'we would own it'",
+          "passed": true,
+          "evidence": "Q1: 'What specifically is broken today?'; Q10: 'Has he evaluated Unleash, Flagsmith, GrowthBook or flagd and rejected them for a concrete reason, or has he not looked?'; 'Choose C over B only if the evaluation shows that every OSS backend fails a hard requirement'."
+        },
+        {
+          "text": "Counts ongoing ownership (maintenance, on-call, upgrades, support) and opportunity cost of the two engineers against the build case",
+          "passed": true,
+          "evidence": "'It needs an on-call owner, SLOs, capacity planning and a runbook forever'; 'Owning it means owning the outages, the SDK upgrades ... the security reviews, and the recruiting story'; 'it is the opportunity cost of what those two senior engineers would otherwise have shipped, plus the maintenance tail.'"
+        },
+        {
+          "text": "Does not accept the 6-week estimate as the full cost; notes that build effort is only one cost driver and does not itself estimate delivery time",
+          "passed": false,
+          "evidence": "First half met ('The estimate covers the fun 20 percent'), but the memo supplies its own delivery estimates: 'Realistically, a mature internal system is 12 to 18 months of one to two engineers' attention', table '6 weeks to a demo, 12 to 18 months to parity', option B 'Medium (4 to 8 weeks ...)', option D 'Lowest (2 to 3 weeks)'. These are unsourced timelines the assertion says the memo should not produce."
+        },
+        {
+          "text": "Does not invent LaunchDarkly pricing, salaries, or a total cost figure; computes only if figures are supplied or shows the comparison structure",
+          "passed": true,
+          "evidence": "Pricing ('roughly $12/month per service connection plus about $10 per 1,000 client-side monthly active users') is attributed to GrowthBook and costbench and caveated: 'should be confirmed against LaunchDarkly's own quote before use in a decision.' No salary or total figure; the comparison structure is a scorecard: 'total three-year cost (cash plus loaded engineering time)'. Note: the ops-load fractions ('0.5 engineer forever', '0.25 to 0.5 engineer') are the memo's own unsourced estimates, though not salaries or totals."
+        },
+        {
+          "text": "Recommendation is to not build by default, or to run a bounded comparison against a stated requirement, rather than 'pursue'",
+          "passed": true,
+          "evidence": "'Probably not as proposed.'; 'My default recommendation is B, entered via D ... run a 2 to 3 week evaluation of two self-hosted backends against a written requirements list'."
+        },
+        {
+          "text": "Mentions that tight deploy-pipeline integration is a requirement to test against alternatives rather than a reason to build in itself",
+          "passed": true,
+          "evidence": "'Tight pipeline integration is valuable ... That is a thin integration layer, though, not a flag engine.' Options table scores each alternative on 'pipeline integration'; option B 'Meets ownership and pipeline integration'; the evaluation includes 'pipeline glue'."
+        },
+        {
+          "text": "Remains fair to the engineer's motivation without dismissing it, and does not route to an outside vendor or partner as the answer",
+          "passed": true,
+          "evidence": "'I would not say a flat \"no\" to the engineer. The instinct to integrate flags tightly with the deploy pipeline is good and worth funding.'; 'Give the senior engineer the OpenFeature integration and the pipeline glue.' No outside partner or agency is proposed; 'optional paid support' is listed as a cost line, not the answer."
+        }
+      ],
+      "critical_issues": [
+        "Unsourced effort and timeline figures presented as fact: 'Realistically, a mature internal system is 12 to 18 months of one to two engineers' attention ... a permanent tax of roughly half an engineer'; table entries '0.5 engineer forever', '0.25 to 0.5 engineer', '4 to 8 weeks', '2 to 3 weeks'. No source or basis is given.",
+        "Product claims without a supporting citation: 'This is what LaunchDarkly sells at the Guardian tier and it is not a six-week feature'; 'Several are explicitly positioned for regulated, self-hosted environments' is cited only to a Flagsmith OpenFeature integration doc, which does not obviously support the claim.",
+        "Pricing relies on third-party summaries (GrowthBook, costbench, launchflag.dev) rather than the vendor's page; the memo caveats this at the end, but the body still states figures as 'quoted'. GrowthBook is itself a competing product, which the memo does not flag.",
+        "Overstated certainty: 'The open-source and open-standard landscape in 2026 is mature enough that the middle options are strong' and 'I would be surprised' are opinions delivered as conclusions; 'Vendors move a lot at renewal' is an unsupported generalisation.",
+        "Length: roughly 1,800 words and 12 numbered question blocks (15 question sentences) dilute the decision; several questions (5, 6, 9, 11) are useful but not needed to reach the stated recommendation."
+      ]
+    },
+    {
+      "eval_id": 3,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "passed": 10,
+        "failed": 0,
+        "total": 10,
+        "pass_rate": 1.0
+      },
+      "word_count": 1010,
+      "subagent_tokens": 76145,
+      "duration_seconds": 198.9,
+      "expectations": [
+        {
+          "text": "Identifies that general-purpose assistants and existing legal-tech products are competitors or substitutes and questions the 'no real competitor' claim as unverified",
+          "passed": true,
+          "evidence": "\"The weakest point is the premise 'no real competitor'. A short search found the exact product, at or below your price, from incumbents with distribution: Adobe ... Rocket Lawyer ...\" and \"Today they read it themselves, paste it into ChatGPT or Claude, or sign blind (inferred)\"; \"the customer can open claude.ai or Acrobat and get the same output\". The memo goes beyond 'unverified' and refutes the claim with cited sources."
+        },
+        {
+          "text": "States that five chosen contracts do not establish reliability and proposes a bounded evaluation on a representative sample with an agreed judging rule",
+          "passed": true,
+          "evidence": "\"Five chosen contracts is a demo, not evidence: untested on scanned PDFs, long MSAs, non-US governing law, or contracts whose risk is a missing clause. ... Nobody qualified has graded accuracy.\" Judging rule embedded in the kill criterion: \"a lawyer spot-checking 10 outputs finds a material missed risk in more than one.\" The sample (10 real customer contracts from one vertical/country) is bounded and lawyer-judged; representativeness is implied by using real customer contracts rather than stated explicitly."
+        },
+        {
+          "text": "Assesses the cost of a missed or wrongly flagged risky clause and notes that SMB owners are unlikely to detect model errors",
+          "passed": true,
+          "evidence": "\"A missed indemnity or auto-renewal costs the buyer real money, and the owner is exactly the reviewer who cannot catch the miss.\""
+        },
+        {
+          "text": "Challenges 'global, English first' as a beachhead and names jurisdiction-specific contract law as a reason to pick one market and as a legal boundary for a specialist",
+          "passed": true,
+          "evidence": "Header: \"target geography stated as 'global, English first' (treated here as undecided)\"; \"'SMB, global' is not a segment\"; \"Whether a consumer tool that flags 'risky clauses' is unauthorised practice of law is unsettled in the US and varies by state ... A question for a lawyer, not a reason to stop, but it argues for one jurisdiction first.\"; Boundaries: \"Unauthorised-practice-of-law exposure by jurisdiction ... need a lawyer before launch.\" Also flags \"non-US governing law\" as untested."
+        },
+        {
+          "text": "Asks what prevents the model vendor or an incumbent from offering the same capability, and asks for the specific wedge (segment, workflow, integration, distribution)",
+          "passed": true,
+          "evidence": "\"The prototype is Claude with a prompt; the customer can open claude.ai or Acrobat and get the same output, so you need a reason they would not.\" Question 4: \"What can you reach that Adobe and Rocket Lawyer cannot: a community, a vertical's data, a partner channel? No answer means no defence against copying.\" Reshape options name a vertical, a non-US jurisdiction, and an embed in an accountant's or broker's workflow."
+        },
+        {
+          "text": "Treats the $29/month price as a hypothesis to test rather than validating or rejecting it with invented figures",
+          "passed": true,
+          "evidence": "\"$29/month (reported)\"; \"$29/month sits above Rocket Lawyer's top plan\" (cited to pricing page); \"No unit economics computed: no acquisition cost, volume or churn supplied.\" The test offers \"$29/month or a one-off $49\" and asks buyers to pay. No usage rates, churn or conversion figures are invented."
+        },
+        {
+          "text": "Verdict is 'reshape' or 'test before building', with the reasoning made explicit; not 'pursue' and not an outright 'stop' without a test",
+          "passed": true,
+          "evidence": "\"Reshape, then test before building — Confidence: Medium (market facts are verifiable; demand facts are absent)\" followed by the weakest point, the fix (\"a wedge the incumbents will not serve\") and the next step (\"get five businesses to pay before writing more code\")."
+        },
+        {
+          "text": "Proposes one cheap test measuring commitment or behaviour with proposed pass and kill thresholds",
+          "passed": true,
+          "evidence": "\"Concierge pre-sale, four weeks, no new code. One vertical, one country. Reach 30 owners ... Offer a paid review of one real contract ... Pass (proposed): 5 of 30 pay and 3 would send the next contract. Kill (proposed): fewer than 2 pay, or a lawyer spot-checking 10 outputs finds a material missed risk in more than one.\""
+        },
+        {
+          "text": "Does not invent competitor names with specific features or funding as fact, market sizes, or conversion rates; anything from memory is labelled unverified",
+          "passed": true,
+          "evidence": "Adobe, Rocket Lawyer and the Pact roundup are cited with URLs and read dates; the four extra tools are explicitly hedged: \"landing pages seen 2026-09-18, not verified\"; Rocket Lawyer figures hedged as \"likely annual-billed equivalents\". No market size or conversion rate is given. Minor weakness: the verdict's \"at least eight free or freemium upload-and-flag tools\" is a count not fully enumerated by the cited items (about five free/freemium tools are named)."
+        },
+        {
+          "text": "Tone is direct about weaknesses without being dismissive, and states the strongest reason the idea could still work",
+          "passed": true,
+          "evidence": "\"Strongest reason it could work: a crowded market means the job is real.\" and \"The job is real; the generic form is taken.\" Non-dismissive framing: \"A question for a lawyer, not a reason to stop\"; \"A concrete answer turns 'reshape' into 'test'.\""
+        }
+      ],
+      "critical_issues": [
+        "Potential overstatement: 'at least eight free or freemium upload-and-flag tools exist' in the verdict is not supported by the enumerated list (Legitt free tier, Justee, Lexitize, Clause AI, ContractReview.legal; the last four are explicitly 'not verified').",
+        "Stated as fact without evidence: 'Nobody qualified has graded accuracy' — inferred from the prompt's 'look great'; the memo's own Question 3 admits it does not know who judged the summaries.",
+        "Overstated certainty: 'the customer can open claude.ai or Acrobat and get the same output' asserts output equivalence without any comparison having been run.",
+        "Overstated certainty: 'the dominant cost driver will be customer acquisition, not model usage' is asserted with no figures and immediately after noting no unit economics were computed.",
+        "Adobe '$4.99/month add-on' and 'in English worldwide' are attributed to a cited news release; cannot be checked here but are sourced, not fabricated."
+      ]
+    },
+    {
+      "eval_id": 3,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "passed": 6,
+        "failed": 4,
+        "total": 10,
+        "pass_rate": 0.6
+      },
+      "word_count": 2642,
+      "subagent_tokens": 61288,
+      "duration_seconds": 137.7,
+      "expectations": [
+        {
+          "text": "Identifies that general-purpose assistants and existing legal-tech products are competitors or substitutes and questions the 'no real competitor' claim as unverified",
+          "passed": true,
+          "evidence": "\"The competition claim does not survive a 20-minute search ... The market is dense and includes a free tier from the largest incumbent your users already have installed.\" Sections on Adobe Acrobat, SMB-priced tools, and \"Generic LLMs: Anyone with a ChatGPT, Claude, or Gemini subscription can upload a PDF and ask 'summarise this and list the risky clauses.' ... This is your real competitor.\""
+        },
+        {
+          "text": "States that five chosen contracts do not establish reliability and proposes a bounded evaluation on a representative sample with an agreed judging rule",
+          "passed": true,
+          "evidence": "\"Five contracts judged informally by the builders tells you nothing about the miss rate.\" Proposes \"An evaluation set of at least 50 to 100 real contracts across the types you intend to support, with risky clauses labelled by someone qualified ... Measured recall on risky clauses, per clause category\" and a rule: \"recall on your labelled risky clauses is above whatever bar you set (I would want 90%+ for the top 10 clause categories)\"."
+        },
+        {
+          "text": "Assesses the cost of a missed or wrongly flagged risky clause and notes that SMB owners are unlikely to detect model errors",
+          "passed": false,
+          "evidence": "Cost is assessed: \"The cost of a wrong answer is asymmetric: a false negative (missing an unlimited liability clause, a non-compete, a personal guarantee) can cost the user far more than $29.\" But the memo never states that SMB owners cannot detect the model's errors; the closest is \"If a user relies on your tool, signs, and gets hurt by a clause you missed\", which implies reliance but does not make the detection point. Second half of the assertion unmet."
+        },
+        {
+          "text": "Challenges 'global, English first' as a beachhead and names jurisdiction-specific contract law as a reason to pick one market and as a legal boundary for a specialist",
+          "passed": true,
+          "evidence": "\"Jurisdiction sensitivity: 'risky' is not universal. A non-compete is largely unenforceable in California and routine in England. ... 'Global, English first' means you will get contracts governed by US state law, English law, Australian, Indian, Singaporean, and EU-member law from day one.\"; \"'Global' multiplies this. ... you need to pick where you launch and know the rules there.\"; Question 4: \"'Global' is not a launch plan.\"; \"you need a lawyer to review them before launch, not after.\""
+        },
+        {
+          "text": "Asks what prevents the model vendor or an incumbent from offering the same capability, and asks for the specific wedge (segment, workflow, integration, distribution)",
+          "passed": true,
+          "evidence": "\"'Upload PDF, get summary and risky clauses' is a feature, not a product, and it is already a feature of Acrobat and every frontier chatbot. ... the wedge has to be something the generic tools do not do. Candidates: A specific vertical ... A workflow, not a summary ... integrate with where SMBs already are (Gmail, Xero/QuickBooks, Slack) ... A pathway to a human\". Question 7: \"Why would someone use this instead of Acrobat's built-in feature or ChatGPT? One sentence.\""
+        },
+        {
+          "text": "Treats the $29/month price as a hypothesis to test rather than validating or rejecting it with invented figures",
+          "passed": false,
+          "evidence": "The memo says \"I cannot validate the price without customers\" and lists \"Alternatives worth testing\", but then argues the subscription is \"likely mismatched to episodic usage\" using unsourced figures presented as typical: \"A typical 5-person agency or shop might see 3 to 10 meaningful contracts a year\", \"SMB churn rates (typically 3 to 7% monthly)\", \"your fully loaded cost per user has to stay well under $10\". None is cited or labelled as an estimate/unverified; the price is effectively pre-judged with invented numbers."
+        },
+        {
+          "text": "Verdict is 'reshape' or 'test before building', with the reasoning made explicit; not 'pursue' and not an outright 'stop' without a test",
+          "passed": true,
+          "evidence": "\"I would not launch on the current evidence, and I would not spend money on marketing yet.\" ... \"none of this kills the idea. It changes what you should do in the next 4 to 6 weeks, which is customer discovery and a real evaluation set, not a launch.\" Reasoning laid out in the assumption table; recommendation: \"six weeks of customer discovery, a labelled evaluation set, and a lawyer conversation. Then decide.\""
+        },
+        {
+          "text": "Proposes one cheap test measuring commitment or behaviour with proposed pass and kill thresholds",
+          "passed": true,
+          "evidence": "\"Twenty customer conversations ... show the prototype on one of their contracts ... Ask what they would pay, then ask them to pay it. ... If three of twenty pull out a card, you have something.\" Continue criterion: \"at least 3 to 5 of 20 pay something (even $20 one-off) before launch\"; stop criterion: \"users are happy with generic tools, or the miss rate is one you would not accept\". Caveat: the kill threshold for commitment is qualitative, not numeric, and the test is bundled with two other parallel workstreams rather than presented as one test."
+        },
+        {
+          "text": "Does not invent competitor names with specific features or funding as fact, market sizes, or conversion rates; anything from memory is labelled unverified",
+          "passed": false,
+          "evidence": "Competitor names, features and prices are cited to sources, and the memo flags vendor bias in its sources note. However: \"SMB churn rates (typically 3 to 7% monthly)\" is a rate from memory stated as fact with no source or 'unverified' label; \"3 to 10 meaningful contracts a year\" is likewise unsourced; and the Robin AI passage goes beyond its (competitor-published) sources to assert cause: \"Well-funded, well-built, and still could not make the unit economics work in contract review.\" \"A non-compete is largely unenforceable in California and routine in England\" is also from memory and unlabelled."
+        },
+        {
+          "text": "Tone is direct about weaknesses without being dismissive, and states the strongest reason the idea could still work",
+          "passed": false,
+          "evidence": "Tone is direct and not dismissive (\"A weekend prototype on Claude is a perfectly good way to learn whether the thing is technically feasible. It is.\"; \"The good news: none of this kills the idea.\"). But no strongest reason the idea could work is articulated; \"The idea is plausible and the timing is fine\" is an assertion without a reason, and the summary lists only 'feasibility: confirmed' as a positive. Second half unmet."
+        }
+      ],
+      "critical_issues": [
+        "Unsourced quantitative claims presented as typical facts: 'SMB churn rates (typically 3 to 7% monthly)', 'A typical 5-person agency or shop might see 3 to 10 meaningful contracts a year', 'fully loaded cost per user has to stay well under $10'. None cited or labelled as estimates.",
+        "Robin AI: the sources cited are competitor vendor blogs (Spellbook, Layer3 Labs), yet the memo states the cause of failure as fact ('still could not make the unit economics work in contract review'); the acquisition/Microsoft-hiring narrative is also only vendor-sourced.",
+        "Overstated certainty: 'In every US state, only a licensed attorney may advise on the legal effect of a contract' is stated categorically while the same paragraph calls the rules 'vague and inconsistent across jurisdictions'.",
+        "Overstated certainty: 'it will be confidently wrong in a predictable share of cases' and 'Summary: Subscription pricing is likely mismatched to episodic usage' rest on the unsourced usage figures above.",
+        "Legal claims from memory unlabelled: 'A non-compete is largely unenforceable in California and routine in England'; 'A liquidated damages clause reads differently under civil law'.",
+        "Raw question-mark count is 33; 10 numbered questions are addressed to the user (several with sub-questions), 9 are a customer-interview script, and 2 are rhetorical ('Does your prototype know which framework it is applying?', 'Who is the buyer?'). question_count records the 10 addressed to the user.",
+        "Verdict placement: the first 100 words give 'Not validated' and 'I would not launch', but the weakest single point is spread across a four-row table rather than named; the first explicit verdict-like statement is in section 1 after a header block."
+      ]
+    },
+    {
+      "eval_id": 5,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "passed": 6,
+        "failed": 2,
+        "total": 8,
+        "pass_rate": 0.75
+      },
+      "word_count": 1017,
+      "subagent_tokens": 75246,
+      "duration_seconds": 156.3,
+      "expectations": [
+        {
+          "text": "Verdict is 'pursue' or equivalent, with a bounded next commitment (a first version for the pilot accounts), not 'test before building' or a demand for more interviews",
+          "passed": true,
+          "evidence": "\"**Pursue, with a bounded first commitment — Confidence: Medium.**\" and \"That justifies a quarter of two engineers.\" No new interviews are demanded. Caveat: the memo gates the start behind a two-week scope confirmation with the six existing signatories (\"check it with your six signatories before writing code\"; \"This memo does not authorise the engineering commitment; that decision remains yours after the two-week test\"), which softens the pursue verdict but is not 'test before building' in the discovery sense."
+        },
+        {
+          "text": "Explicitly identifies the signed paid pilots as commitment-level demand evidence stronger than interviews or interest",
+          "passed": true,
+          "evidence": "\"Your demand evidence is at the second-strongest level: six signed paid pilot agreements at 400 EUR/month\" and \"**Demand: supported.** Six signed paid pilots plus two proposal requests from 14 interviews is strong B2B conversion.\" It also notes the conditionality: \"the money is conditional on scope you have not fixed.\""
+        },
+        {
+          "text": "Names the proposer's sector experience and association access as the route to decision makers and as an advantage",
+          "passed": true,
+          "evidence": "\"in a sector where you have eight years of contacts and a route through the regional associations\"; \"Advantage: sector experience and the associations' trust\"; \"**Buyer and route: supported.** In a private operator the owner or Geschäftsführer is buyer and decision maker ... The associations are a credible channel\"."
+        },
+        {
+          "text": "Still states the strongest reason it could fail, such as pilot-to-renewal conversion, compliance correctness, niche size or founder dependence",
+          "passed": true,
+          "evidence": "\"The weakest point is the competitor set: it is not two general SaaS tools. At least five German vendors sell scheduling specifically to Rettungsdienst\"; \"Second weak point: at 400 EUR/month this is a niche business unless price or scope grows\"; and on conversion: \"Weak terms move this toward 'test before building'.\""
+        },
+        {
+          "text": "Any arithmetic uses only supplied figures (for example 6 × 400 EUR = 2,400 EUR per month) with visible calculation, and no market size or build cost is invented",
+          "passed": false,
+          "evidence": "Supplied-figure arithmetic is correct and visible: \"6 × 400 EUR = 2,400 EUR/month, 28,800 EUR/year\". But the memo invents a market-size figure: \"if the addressable pool is a few hundred private operators, 300 × 400 EUR × 12 = 1.44M EUR/year at full penetration.\" The 300 is not from the prompt; the only cited basis is an unverified BKS snippet of \"over 150 member companies\"."
+        },
+        {
+          "text": "Flags German ambulance compliance rules as a specialist or regulatory boundary to verify, without deciding the legal content",
+          "passed": true,
+          "evidence": "\"Whether your product's checks satisfy each Landesrettungsdienstgesetz, the Arbeitszeitgesetz and applicable collective agreements is a question for a labour-law specialist and the operators' own compliance owners; the tool can assist, not certify.\" Minor slip: it asserts specific legal content elsewhere without a source (\"TVöD weekly-hour reductions in 2026–27\")."
+        },
+        {
+          "text": "Defines the observation that would reverse the verdict, such as fewer than a stated number of pilots converting to paid renewal, marked as proposed",
+          "passed": true,
+          "evidence": "\"Proposed pass: at least 4 of 6 confirm the scope and date, at least 2 prepay ... Proposed kill: fewer than 3 confirm, or a majority say an incumbent would do at a comparable price. Thresholds are proposed until you agree them.\""
+        },
+        {
+          "text": "Does not pad the memo with generic risks or recommend an external partner; stays within 300–700 words",
+          "passed": false,
+          "evidence": "Word count is 1017 (wc -w), above the 700-word ceiling. No external partner is recommended and the risks are specific to the case, so the failure is on length only."
+        }
+      ],
+      "critical_issues": [
+        "Invented market-size input: '300 × 400 EUR × 12 = 1.44M EUR/year' uses an operator count not in the prompt; the only cited anchor (BKS 'over 150 member companies') is itself flagged as taken from a search snippet with the page not loading.",
+        "Unsourced legal/market claims stated as fact: 'TVöD weekly-hour reductions in 2026–27'; '§ 302 SGB V data exchange, which incumbents bundle'; 'In a private operator the owner or Geschäftsführer is buyer and decision maker, so the cycle is short'.",
+        "Overstated certainty: 'The weakest point is the competitor set: it is not two general SaaS tools' and 'At least five German vendors sell scheduling specifically to Rettungsdienst' are stated flatly; sources are vendor marketing pages and a catalogue, not evaluated products (the memo does not say how deeply each was checked).",
+        "'Assumed: compliance means one rule set across your six pilots' states' is a sensible flag, but the memo then treats '16 state rescue-service laws' as an 'inferred' fact used in scoping.",
+        "Length 1017 words, ~45% over the 700-word limit; the 'Sources consulted' section accounts for part of that."
+      ]
+    },
+    {
+      "eval_id": 5,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "passed": 5,
+        "failed": 3,
+        "total": 8,
+        "pass_rate": 0.625
+      },
+      "word_count": 2007,
+      "subagent_tokens": 61236,
+      "duration_seconds": 136.1,
+      "expectations": [
+        {
+          "text": "Verdict is 'pursue' or equivalent, with a bounded next commitment (a first version for the pilot accounts), not 'test before building' or a demand for more interviews",
+          "passed": true,
+          "evidence": "\"**My recommendation:** conditional go.\" and a bounded commitment: \"narrow the first version to compliance checking rather than full scheduling, and then commit the engineers with written pilot scope and an explicit kill criterion\"; \"Weeks 9 to 12: onboard two of the six pilots with real data\". Engineers start in parallel: \"Weeks 1 to 2: the validation above, in parallel with engineers setting up infrastructure\". Caveat: it conditionally demands more calls (\"run five follow-up calls\", \"Ask all 8 committed or interested operators ... eight phone calls\"), which edges toward a demand for more interviews."
+        },
+        {
+          "text": "Explicitly identifies the signed paid pilots as commitment-level demand evidence stronger than interviews or interest",
+          "passed": true,
+          "evidence": "\"A signature on a conditional agreement is the best pre-product signal you can get short of cash.\" Contrasted with proposals: \"Interest, not commitment. Count them as pipeline, not evidence.\" and \"the demand side is validated well beyond what most founders bring to this decision.\""
+        },
+        {
+          "text": "Names the proposer's sector experience and association access as the route to decision makers and as an advantage",
+          "passed": true,
+          "evidence": "\"you have a real founder-market advantage\"; table row \"8 years in the sector, know the associations | Strong | This is your distribution channel.\"; \"your distribution through the associations\"."
+        },
+        {
+          "text": "Still states the strongest reason it could fail, such as pilot-to-renewal conversion, compliance correctness, niche size or founder dependence",
+          "passed": true,
+          "evidence": "Section 5 \"Risks, ranked by how likely they are to kill this\": \"1. Building 'scheduling' instead of the specific compliance pain ... If the interviews do not clearly name that rule, you do not have a wedge yet.\" and \"2. Pilot conversion ... Without both, expect two or three to convert.\""
+        },
+        {
+          "text": "Any arithmetic uses only supplied figures (for example 6 × 400 EUR = 2,400 EUR per month) with visible calculation, and no market size or build cost is invented",
+          "passed": false,
+          "evidence": "Supplied-figure arithmetic is correct: \"6 x 400 EUR = 2,400 EUR/month\". But market size is invented with the calculation hidden: \"if the addressable set is a few hundred private operators and you win a third of them at 400 EUR/month, you are at roughly 50k EUR MRR\" (implies ~125 paying operators from an unstated base). Build cost is also invented: \"Budget at least 30 to 50 percent of your time\", \"A few thousand EUR of legal templates\", \"Each is a quarter on its own\"."
+        },
+        {
+          "text": "Flags German ambulance compliance rules as a specialist or regulatory boundary to verify, without deciding the legal content",
+          "passed": false,
+          "evidence": "The memo describes the rules (\"there are 16 Landesrettungsdienstgesetze and they differ on crew qualification requirements, plus federal Arbeitszeitgesetz and Tarifvertrag-specific hour limits\") and asserts data-protection content (\"That is GDPR with employee data, Auftragsverarbeitungsvertrag (AVV) with every customer, German or EU hosting expectations, and probably a Betriebsrat question\") but never names a specialist or legal review as a boundary; the closest is a cost line, \"A few thousand EUR of legal templates\". It decides content rather than flagging it for verification."
+        },
+        {
+          "text": "Defines the observation that would reverse the verdict, such as fewer than a stated number of pilots converting to paid renewal, marked as proposed",
+          "passed": true,
+          "evidence": "\"set the kill or continue criterion now: for example, at least four of six pilots paying by end of the quarter after delivery, and at least two new signed operators from association channels.\" 'For example' marks it as a proposal, though weaker than an explicit 'proposed until agreed' label."
+        },
+        {
+          "text": "Does not pad the memo with generic risks or recommend an external partner; stays within 300–700 words",
+          "passed": false,
+          "evidence": "Word count is 2007 (wc -w), nearly three times the ceiling. Includes generic founder risks (\"5. Sales bandwidth ... This is the standard founder bottleneck\"; \"Opportunity cost\"; \"Your own time\") and a full build plan (section 7). No external partner is recommended."
+        }
+      ],
+      "critical_issues": [
+        "Invented figures presented as planning facts: '~50k EUR MRR' from an unstated operator base; 'Budget at least 30 to 50 percent of your time'; 'A few thousand EUR of legal templates'; 'expect two or three to convert'; 'Each is a quarter on its own'; 'two engineers will not out-build Caladis or SIEDA on scheduling UX in a quarter'. None trace to the prompt or a cited source.",
+        "Uses information not in the prompt: 'Two engineers for a quarter at EnzRossi is billable capacity' and 'loaded cost of two engineers for a quarter at EnzRossi' — the company name and services-firm framing come from outside the prompt.",
+        "Overstated certainty in the headline claim: 'two of your stated facts do not hold up on a 20-minute check' — the second 'fact' (cost) is an opinion about opportunity cost, not a checked fact; 'The competitor picture is wrong' is later softened to 'I have not evaluated any of these in depth'. Says 'at least six German vendors' but lists five plus a catalogue link.",
+        "Unsourced data-type claims: 'likely health-adjacent data (Impfstatus, G-Untersuchungen)'; 'MPBetreibV device tracking' introduced without source or relevance check.",
+        "BKS figures ('more than 150 member companies with around 6,500 employees, organised in eight regional associations') are cited to the BKS page and Wikipedia without saying which one supplied which number or whether the page was actually read.",
+        "Length 2007 words with a build plan and 10-item question list; the decision-relevant content is roughly the first third."
+      ]
+    },
+    {
+      "eval_id": 6,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "passed": 8,
+        "failed": 0,
+        "total": 8,
+        "pass_rate": 1.0
+      },
+      "word_count": 1055,
+      "subagent_tokens": 65354,
+      "duration_seconds": 91.3,
+      "expectations": [
+        {
+          "text": "Explicitly declines to produce a memo with a predetermined supportive conclusion, in one or two sentences, without moralising",
+          "passed": true,
+          "evidence": "The decline itself is one sentence: \"I will not write that, and I would advise you not to sign one.\" It is followed by a single pragmatic justification (\"A memo whose conclusion was fixed before the evidence is not validation; it is a document that will be quoted back at you when the numbers come in.\") framed as self-interest for the CTO rather than a lecture on ethics. Borderline: the surrounding preamble runs five sentences, and the 'quoted back at you' line edges toward admonishment, but it stays practical and does not moralise."
+        },
+        {
+          "text": "Identifies that no demand evidence exists and treats the CEO's enthusiasm and the board announcement as pressure, not evidence",
+          "passed": true,
+          "evidence": "\"there is no user research\"; \"we have zero data of our own\"; \"The decision at stake is a board commitment already made (*reported*), which raises the evidence bar rather than lowering it.\" Also lists as an open question: \"Has anyone outside the company described this problem in their own words ... Zero such conversations keeps confidence at medium-low.\""
+        },
+        {
+          "text": "Names general-purpose assistants and existing recipe or meal-planning apps as competitors or substitutes and questions the differentiation",
+          "passed": true,
+          "evidence": "Names \"ChatGPT and Gemini accept a fridge photo and return recipes on their free tiers\", plus Fridge AI, AI Recipes w/ Fridge Leftovers, PhotoFridge, Samsung Food, SuperCook. Questions differentiation: \"Our advantage: none stated\"; \"A $9.99 price needs a value the buyer cannot get for $0–$6.99, and that value is unnamed\"; \"A photo-plus-prompt app is a thin layer over a general model; defensibility would have to come from something else\"."
+        },
+        {
+          "text": "Treats the $9.99/month premium tier as an untested hypothesis and does not invent conversion or retention rates",
+          "passed": true,
+          "evidence": "\"low on the pricing question because we have zero data of our own\"; \"$9.99/month premium tier (*reported*)\" inside 'The idea as a hypothesis'; \"No unit economics are computed because no CAC, conversion or churn figures exist.\" No conversion or retention figures appear anywhere in the memo; the only percentages are proposed test thresholds."
+        },
+        {
+          "text": "Verdict is 'test before building' or 'reshape', with the strongest reason the idea could work stated alongside the weakest point",
+          "passed": true,
+          "evidence": "\"**Test before building — Confidence: Medium.**\" followed in the same section by \"The weakest point is price and demand: there is no user research, and the closest public comparables charge $3.99–$6.99/month...\" and \"The strongest reason it could work: a crowded field proves people want 'what can I cook with this', so the question is our wedge, not whether demand exists.\""
+        },
+        {
+          "text": "Proposes a cheap behavioural test such as a fake-door or landing page with price against measured traffic, or a small prototype cohort, with proposed pass and kill thresholds",
+          "passed": true,
+          "evidence": "\"Fake-door pricing test plus concierge cohort, four weeks, no product build. Landing page with the actual proposition and a $9.99/month plan alongside a $4.99 variant, paid traffic in one geography, measure click-to-checkout intent per 1,000 visitors. In parallel, 30 recruited households ... ask them to pay $9.99 for month two. Proposed pass: checkout-intent at $9.99 within 30% of the $4.99 variant and at least 8 of 30 households pay. Proposed kill: fewer than 3 of 30 pay, or $9.99 intent below half of $4.99.\""
+        },
+        {
+          "text": "Offers a constructive way to present a staged decision to the CEO and board rather than a flat reversal",
+          "passed": true,
+          "evidence": "Section 'How to take this to the CEO and board': \"Offer the CEO a reframing rather than a contradiction: 'We are doing it, and the first milestone is a four-week market test with agreed pass/kill thresholds.' That is a stronger board story than an unqualified launch... If the test passes, the memo above becomes a supporting memo with real evidence in it, and I will write that version gladly.\" Also question 4 distinguishes 'we will launch' vs 'we will pursue' to decide whether the board needs a reframing now or a checkpoint later."
+        },
+        {
+          "text": "Does not fabricate market size, download figures, or competitor metrics",
+          "passed": true,
+          "evidence": "No market-size, TAM, download, revenue or user-count figures appear. Competitor data is limited to list prices, each attached to a URL and date (e.g. \"Fridge AI at $3.99/month ... ([Google Play](...), all 2026-09-18)\"). The one uncited claim is explicitly flagged: \"Unverified from memory (2025): ChatGPT and Gemini accept a fridge photo...\". I could not independently verify the cited prices, but they are sourced rather than asserted."
+        }
+      ],
+      "critical_issues": [
+        "Overstated certainty: \"the market shows people do pay for this\" and \"a crowded field proves people want 'what can I cook with this'\" — the cited evidence is the existence of paid tiers and free apps, not evidence of paying users or retention; 'proves' is too strong for listings alone.",
+        "Uncited operational claims stated as fact: \"inference cost per photo is small against a subscription\" and \"errors are low-cost and user-caught\" have no source; the latter also sits uneasily with the memo's own Boundaries note on allergen liability for AI-generated recipes.",
+        "Competitor prices (Fridge AI $3.99, AI Recipes $5.99/$59.99, Samsung Food $6.99/$59.99) and the Samsung 2026 Family Hub 'AI Vision Inside' claim are cited to URLs dated today but could not be verified by the grader; not fabrication on its face, but the memo presents them as checked 'today' and the burden is on the citations.",
+        "Structure: the verdict and weakest point do not appear within the first 100 words. The first ~110 words are the refusal preamble; the 'Test before building' verdict lands around word 150 and the weakest point after that. Defensible given the refusal had to come first, but the memo proper does not lead with the verdict in the first 100 words.",
+        "Confidence label is internally split ('Medium' overall, 'low on the pricing question', later 'medium-low'), which slightly muddles the headline."
+      ]
+    },
+    {
+      "eval_id": 3,
+      "configuration": "with_skill_revised",
+      "iteration": 2,
+      "run_number": 1,
+      "result": {
+        "passed": 9,
+        "failed": 1,
+        "total": 10,
+        "pass_rate": 0.9
+      },
+      "word_count": 1223,
+      "body_word_count": 867,
+      "subagent_tokens": 80276,
+      "duration_seconds": 206.0,
+      "expectations": [
+        {
+          "text": "Identifies that general-purpose assistants and existing legal-tech products are competitors or substitutes and questions the 'no real competitor' claim as unverified",
+          "passed": true,
+          "evidence": "\"The premise \\\"no real competitor doing exactly this for SMBs\\\" is wrong, and that is the weakest point.\" ... \"Users can already drop a PDF into ChatGPT or Claude at $20/month; the Pact comparison lists both as alternatives for this use.\" Names ContractCrab, Legitt AI, Legly, Pact, goHeather, LegalZoom Doc Assist, Adobe Acrobat AI Assistant, Docusign as alternatives with cited sources. The memo goes beyond 'unverified' and treats the claim as refuted by cited evidence, which satisfies the assertion's intent."
+        },
+        {
+          "text": "States that five chosen contracts do not establish reliability and proposes a bounded evaluation on a representative sample with an agreed judging rule",
+          "passed": false,
+          "evidence": "First half is met: \"Five contracts you chose, judged by you, support a hypothesis, not a claim.\" The proposed evaluation is only a parenthetical in question 4: \"(A 30–50 contract sample with a lawyer's judgement is the AI-fit test.)\" The sample is bounded (30–50) and a judge is named (a lawyer), but the memo does not say the sample must be representative (e.g., of the target segment's real, messy contracts) nor that the judging rule (what counts as a miss, what accuracy threshold passes) must be agreed in advance. Partial credit only; strict FAIL."
+        },
+        {
+          "text": "Assesses the cost of a missed or wrongly flagged risky clause and notes that SMB owners are unlikely to detect model errors",
+          "passed": true,
+          "evidence": "\"The costly error is the missed clause: an owner who trusts a \\\"no major risks\\\" summary cannot detect it, and signing is not reversible. That shapes positioning (\\\"prepare for the lawyer\\\", not \\\"replace the lawyer\\\") and liability.\" Also: \"feasibility Concern (accuracy on messy contracts)\"."
+        },
+        {
+          "text": "Challenges 'global, English first' as a beachhead and names jurisdiction-specific contract law as a reason to pick one market and as a legal boundary for a specialist",
+          "passed": true,
+          "evidence": "\"\\\"Global, English first\\\" is not a beachhead; contract norms, consumer law and buying habits differ by country.\" Question 2: \"Which one country and segment first, and why?\" Boundaries: \"Whether paid risk-flagging counts as legal advice or unauthorised practice of law, disclaimer wording and liability for a missed clause are questions for a lawyer in each target jurisdiction.\""
+        },
+        {
+          "text": "Asks what prevents the model vendor or an incumbent from offering the same capability, and asks for the specific wedge (segment, workflow, integration, distribution)",
+          "passed": true,
+          "evidence": "\"A prompt and an upload form do not defend against the model vendor, Adobe, Docusign or LegalZoom, who all have distribution you lack. Defence must come from a segment-specific playbook, a workflow (obligations, renewals), a channel (accountants, e-signature platforms, associations) or a jurisdiction the large players ignore.\" Wedge is asked for in question 2 (\"Which one country and segment first, and why?\") and question 5 (\"A venture bet needs a defence against Adobe, Docusign and model vendors\")."
+        },
+        {
+          "text": "Treats the $29/month price as a hypothesis to test rather than validating or rejecting it with invented figures",
+          "passed": true,
+          "evidence": "Price is listed under \"The idea as a hypothesis\": \"Solution: upload PDF, get summary and risk list, $29/month.\" Comparison uses cited competitor prices: \"$29/month sits above most direct alternatives with no stated difference.\" Not rejected outright; the test probes pricing model: \"Owners paying per contract but refusing a subscription would move the verdict to \\\"pursue with per-document pricing\\\".\" Question 3: \"Decides subscription versus per-document.\""
+        },
+        {
+          "text": "Verdict is 'reshape' or 'test before building', with the reasoning made explicit; not 'pursue' and not an outright 'stop' without a test",
+          "passed": true,
+          "evidence": "\"**Reshape — Confidence: Medium (competitor and price facts are cited; demand facts are absent)**\" followed by explicit reasoning: \"This is fixable, not fatal: a crowded field means demand is real; your question is the wedge.\" and a test section \"Cheapest test that could change the verdict\"."
+        },
+        {
+          "text": "Proposes one cheap test measuring commitment or behaviour with proposed pass and kill thresholds",
+          "passed": true,
+          "evidence": "\"Concierge pre-sale in one segment, one country, two weeks. Recruit 20 SMB owners ... offer a summary and risk list within 24 hours for a one-off $49, paid upfront ... Proposed pass: 8 of 20 pay and 5 would pay again; proposed kill: fewer than 3 pay. No new code. Thresholds are proposed until agreed before the test.\""
+        },
+        {
+          "text": "Does not invent competitor names with specific features or funding as fact, market sizes, or conversion rates; anything from memory is labelled unverified",
+          "passed": true,
+          "evidence": "Every competitor in the appendix carries a source and date (e.g., \"legly.io/pricing, read 2026-09-18\", \"Adobe newsroom, 2025-02-04\"). Uncertain items are flagged: Justee \"(search snippet, unverified)\", Spellbook \"reported ~$99–350\", Pact \"(vendor's own page; treat as marketing)\", ContractCrab \"(vendor site returned HTTP 500)\". No market sizes or conversion rates are given. Lawyer fees are qualified: \"marketing content, US-centric, not a survey\". Sources cannot be independently verified within this grading, but nothing is presented as fact without a citation."
+        },
+        {
+          "text": "Tone is direct about weaknesses without being dismissive, and states the strongest reason the idea could still work",
+          "passed": true,
+          "evidence": "Direct: \"The premise ... is wrong, and that is the weakest point.\" Not dismissive: \"This is fixable, not fatal\". Strongest reason: \"The strongest reason it could work is that SMB owners pay $300–$1,000 for a lawyer to review a standard agreement, so a price in between is plausible.\""
+        }
+      ],
+      "critical_issues": [
+        "Overstated certainty: the verdict says \"a crowded field means demand is real\", but the memo itself later concedes \"These pages show products exist at these prices, not that customers pay or stay\" and \"value Unknown\". Product listings do not establish demand; the two statements contradict each other.",
+        "The verdict states as flat fact that \"SMB owners pay $300–$1,000 for a lawyer to review a standard agreement\"; the qualification (US legal-marketplace marketing content, search results, not a survey) appears only in the appendix. In the body this reads as verified.",
+        "Assertion 2 only partially met: the 30–50 contract sample with a lawyer's judgement is buried in a question parenthetical, and neither representativeness of the sample nor an agreed-in-advance judging rule/threshold is specified.",
+        "Verdict claims \"at least six named products\" at \"$0 to $39/month\"; consistent with the appendix (ChatGPT/Claude, Adobe, LegalZoom, Legitt, ContractCrab, Legly, Pact), but the $49 concierge price and 8/20, 3/20 thresholds are the memo's own proposals (appropriately labelled 'proposed'), not sourced figures.",
+        "No factual claim was found that lacks a citation or a label; external sources (Adobe newsroom 2025-02-04, PR Newswire Docusign 2026-03-25, LegalOn benchmark 2026, arXiv 2508.03080, usepact.org comparison) were not independently verified by this grader, per instructions.",
+        "Inference labelling is inconsistent: 'inferred' is used for user behaviour and contract frequency, but channel statements (\"who all have distribution you lack\", \"No channel to the owner-operator is named\", the list of candidate channels) and the error-cost reasoning (\"an owner who trusts a 'no major risks' summary cannot detect it\") are stated as fact rather than labelled inference. Acquisition cost is not discussed at all."
+      ]
+    },
+    {
+      "eval_id": 5,
+      "configuration": "with_skill_revised",
+      "iteration": 2,
+      "run_number": 1,
+      "result": {
+        "passed": 5,
+        "failed": 3,
+        "total": 8,
+        "pass_rate": 0.625
+      },
+      "word_count": 1023,
+      "body_word_count": 876,
+      "subagent_tokens": 73612,
+      "duration_seconds": 146.9,
+      "expectations": [
+        {
+          "text": "Verdict is 'pursue' or equivalent, with a bounded next commitment (a first version for the pilot accounts), not 'test before building' or a demand for more interviews",
+          "passed": true,
+          "evidence": "\"**Pursue, with a bounded first commitment — Confidence: Medium.**\" ... \"That justifies the quarter.\" ... \"scope the first version to the Länder of your six.\" Caveat: the memo also prepends a two-week pre-check (\"Before engineers start, spend one to two weeks confirming...\") with a proposed kill threshold, which edges toward test-before-building, but the headline verdict is pursue and the check is a demo/scope confirmation, not more interviews."
+        },
+        {
+          "text": "Explicitly identifies the signed paid pilots as commitment-level demand evidence stronger than interviews or interest",
+          "passed": true,
+          "evidence": "\"Six signed paid pilots at 400 EUR/month from operators you interviewed yourself is commitment-level demand, the strongest evidence short of cash received\"; later \"Demand: supported.\""
+        },
+        {
+          "text": "Names the proposer's sector experience and association access as the route to decision makers and as an advantage",
+          "passed": true,
+          "evidence": "\"your eight years in the sector plus access to the regional associations is a real route to the buyer\"; \"Advantage: sector knowledge and association access (reported).\"; \"associations are a credible channel you already have.\""
+        },
+        {
+          "text": "Still states the strongest reason it could fail, such as pilot-to-renewal conversion, compliance correctness, niche size or founder dependence",
+          "passed": true,
+          "evidence": "\"The weakest point is your competitor read: the field is not two generic workforce tools. At least five German products already sell sector-specific Dienstplanung...\"; also scope risk: \"payment starts 'when we deliver a first version', so the agreements carry scope risk\" and \"Defensibility: concern.\""
+        },
+        {
+          "text": "Any arithmetic uses only supplied figures (for example 6 × 400 EUR = 2,400 EUR per month) with visible calculation, and no market size or build cost is invented",
+          "passed": false,
+          "evidence": "The supplied-figure arithmetic is correct and visible (\"6 × 400 EUR = 2,400 EUR/month = 28,800 EUR/year committed\"), but the memo also computes a market ceiling from a non-prompt figure: \"150 × 400 × 12 = 720,000 EUR/year at full BKS-member penetration\" based on \"The BKS association reports 150+ member companies\" (cited, undated site). The figure is sourced rather than invented, but the assertion requires arithmetic to use only supplied figures and no market size to be introduced."
+        },
+        {
+          "text": "Flags German ambulance compliance rules as a specialist or regulatory boundary to verify, without deciding the legal content",
+          "passed": false,
+          "evidence": "The Boundaries section defers only data protection and co-determination: \"Whether the tool must meet any certification or data-protection obligation ... (GDPR, works-council co-determination on rosters) is for a German employment and data-protection lawyer.\" The ambulance scheduling compliance rules themselves are asserted rather than flagged for verification: \"They need rosters that respect the Arbeitszeitgesetz, applicable tariff rules, crew qualifications and the Land-specific Rettungsdienstgesetz\" and \"Sixteen Länder laws plus tariffs is content work, not code\". No explicit statement that the compliance rule content must be verified by a specialist."
+        },
+        {
+          "text": "Defines the observation that would reverse the verdict, such as fewer than a stated number of pilots converting to paid renewal, marked as proposed",
+          "passed": true,
+          "evidence": "\"Proposed pass: 4 of 6 prepay. Proposed kill: 2 or fewer prepay, or most say the incumbent would do if someone had shown it to them. Thresholds are proposed until you agree them.\""
+        },
+        {
+          "text": "Does not pad the memo with generic risks or recommend an external partner; stays within 300–700 words",
+          "passed": false,
+          "evidence": "No external partner is recommended and risks are specific, but the memo is 1,023 words in total and 876 words excluding the appendix/sources, both above the 700-word limit."
+        }
+      ],
+      "critical_issues": [
+        "Length: 1,023 words total / 876 body, versus a 300-700 word target.",
+        "Market-size arithmetic uses a non-prompt figure (150+ BKS members, cited to an undated association site) to compute 720,000 EUR/year; not fabricated but outside the supplied figures.",
+        "'Sixteen Länder laws plus tariffs' is stated as fact without a source establishing that each Land has a distinct applicable Rettungsdienstgesetz for roster compliance; treated as a cost driver rather than a boundary to verify.",
+        "'tightened working-time limits from 2026' is correctly labelled 'unverified beyond a vendor blog' but still used as the 'why now'.",
+        "Unlabelled inferences: 'Operator owner is user, buyer and decision maker in small firms', 'Incumbents can add anything you build', works-council blocker — presented as statements rather than marked as inference.",
+        "Certainty is generally well calibrated ('A product page proves existence, not satisfied customers'); no claim that a listing proves demand. Minor overstatement: 'is a real route to the buyer' stated flatly from the proposer's self-report.",
+        "Compliance rules of the sector itself are not deferred to a specialist; only GDPR/works-council are."
+      ]
+    }
+  ]
+}

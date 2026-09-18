@@ -1,0 +1,64 @@
+{
+  "expectations": [
+    {
+      "text": "Verdict is 'pursue' or equivalent, with a bounded next commitment (a first version for the pilot accounts), not 'test before building' or a demand for more interviews",
+      "passed": true,
+      "evidence": "\"**Pursue, with a bounded first commitment — Confidence: Medium.**\" ... \"That justifies the quarter.\" ... \"scope the first version to the Länder of your six.\" Caveat: the memo also prepends a two-week pre-check (\"Before engineers start, spend one to two weeks confirming...\") with a proposed kill threshold, which edges toward test-before-building, but the headline verdict is pursue and the check is a demo/scope confirmation, not more interviews."
+    },
+    {
+      "text": "Explicitly identifies the signed paid pilots as commitment-level demand evidence stronger than interviews or interest",
+      "passed": true,
+      "evidence": "\"Six signed paid pilots at 400 EUR/month from operators you interviewed yourself is commitment-level demand, the strongest evidence short of cash received\"; later \"Demand: supported.\""
+    },
+    {
+      "text": "Names the proposer's sector experience and association access as the route to decision makers and as an advantage",
+      "passed": true,
+      "evidence": "\"your eight years in the sector plus access to the regional associations is a real route to the buyer\"; \"Advantage: sector knowledge and association access (reported).\"; \"associations are a credible channel you already have.\""
+    },
+    {
+      "text": "Still states the strongest reason it could fail, such as pilot-to-renewal conversion, compliance correctness, niche size or founder dependence",
+      "passed": true,
+      "evidence": "\"The weakest point is your competitor read: the field is not two generic workforce tools. At least five German products already sell sector-specific Dienstplanung...\"; also scope risk: \"payment starts 'when we deliver a first version', so the agreements carry scope risk\" and \"Defensibility: concern.\""
+    },
+    {
+      "text": "Any arithmetic uses only supplied figures (for example 6 × 400 EUR = 2,400 EUR per month) with visible calculation, and no market size or build cost is invented",
+      "passed": false,
+      "evidence": "The supplied-figure arithmetic is correct and visible (\"6 × 400 EUR = 2,400 EUR/month = 28,800 EUR/year committed\"), but the memo also computes a market ceiling from a non-prompt figure: \"150 × 400 × 12 = 720,000 EUR/year at full BKS-member penetration\" based on \"The BKS association reports 150+ member companies\" (cited, undated site). The figure is sourced rather than invented, but the assertion requires arithmetic to use only supplied figures and no market size to be introduced."
+    },
+    {
+      "text": "Flags German ambulance compliance rules as a specialist or regulatory boundary to verify, without deciding the legal content",
+      "passed": false,
+      "evidence": "The Boundaries section defers only data protection and co-determination: \"Whether the tool must meet any certification or data-protection obligation ... (GDPR, works-council co-determination on rosters) is for a German employment and data-protection lawyer.\" The ambulance scheduling compliance rules themselves are asserted rather than flagged for verification: \"They need rosters that respect the Arbeitszeitgesetz, applicable tariff rules, crew qualifications and the Land-specific Rettungsdienstgesetz\" and \"Sixteen Länder laws plus tariffs is content work, not code\". No explicit statement that the compliance rule content must be verified by a specialist."
+    },
+    {
+      "text": "Defines the observation that would reverse the verdict, such as fewer than a stated number of pilots converting to paid renewal, marked as proposed",
+      "passed": true,
+      "evidence": "\"Proposed pass: 4 of 6 prepay. Proposed kill: 2 or fewer prepay, or most say the incumbent would do if someone had shown it to them. Thresholds are proposed until you agree them.\""
+    },
+    {
+      "text": "Does not pad the memo with generic risks or recommend an external partner; stays within 300–700 words",
+      "passed": false,
+      "evidence": "No external partner is recommended and risks are specific, but the memo is 1,023 words in total and 876 words excluding the appendix/sources, both above the 700-word limit."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 3,
+    "total": 8,
+    "pass_rate": 0.625
+  },
+  "word_count": 1023,
+  "body_word_count": 876,
+  "question_count": 5,
+  "critical_issues": [
+    "Length: 1,023 words total / 876 body, versus a 300-700 word target.",
+    "Market-size arithmetic uses a non-prompt figure (150+ BKS members, cited to an undated association site) to compute 720,000 EUR/year; not fabricated but outside the supplied figures.",
+    "'Sixteen Länder laws plus tariffs' is stated as fact without a source establishing that each Land has a distinct applicable Rettungsdienstgesetz for roster compliance; treated as a cost driver rather than a boundary to verify.",
+    "'tightened working-time limits from 2026' is correctly labelled 'unverified beyond a vendor blog' but still used as the 'why now'.",
+    "Unlabelled inferences: 'Operator owner is user, buyer and decision maker in small firms', 'Incumbents can add anything you build', works-council blocker — presented as statements rather than marked as inference.",
+    "Certainty is generally well calibrated ('A product page proves existence, not satisfied customers'); no claim that a listing proves demand. Minor overstatement: 'is a real route to the buyer' stated flatly from the proposer's self-report.",
+    "Compliance rules of the sector itself are not deferred to a specialist; only GDPR/works-council are."
+  ],
+  "leads_with_verdict": true,
+  "inferences_labelled": false
+}

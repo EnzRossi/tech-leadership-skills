@@ -1,0 +1,76 @@
+{
+  "expectations": [
+    {
+      "text": "Identifies that general-purpose assistants and existing legal-tech products are competitors or substitutes and questions the 'no real competitor' claim as unverified",
+      "passed": true,
+      "evidence": "\"The competition claim does not survive a 20-minute search ... The market is dense and includes a free tier from the largest incumbent your users already have installed.\" Sections on Adobe Acrobat, SMB-priced tools, and \"Generic LLMs: Anyone with a ChatGPT, Claude, or Gemini subscription can upload a PDF and ask 'summarise this and list the risky clauses.' ... This is your real competitor.\""
+    },
+    {
+      "text": "States that five chosen contracts do not establish reliability and proposes a bounded evaluation on a representative sample with an agreed judging rule",
+      "passed": true,
+      "evidence": "\"Five contracts judged informally by the builders tells you nothing about the miss rate.\" Proposes \"An evaluation set of at least 50 to 100 real contracts across the types you intend to support, with risky clauses labelled by someone qualified ... Measured recall on risky clauses, per clause category\" and a rule: \"recall on your labelled risky clauses is above whatever bar you set (I would want 90%+ for the top 10 clause categories)\"."
+    },
+    {
+      "text": "Assesses the cost of a missed or wrongly flagged risky clause and notes that SMB owners are unlikely to detect model errors",
+      "passed": false,
+      "evidence": "Cost is assessed: \"The cost of a wrong answer is asymmetric: a false negative (missing an unlimited liability clause, a non-compete, a personal guarantee) can cost the user far more than $29.\" But the memo never states that SMB owners cannot detect the model's errors; the closest is \"If a user relies on your tool, signs, and gets hurt by a clause you missed\", which implies reliance but does not make the detection point. Second half of the assertion unmet."
+    },
+    {
+      "text": "Challenges 'global, English first' as a beachhead and names jurisdiction-specific contract law as a reason to pick one market and as a legal boundary for a specialist",
+      "passed": true,
+      "evidence": "\"Jurisdiction sensitivity: 'risky' is not universal. A non-compete is largely unenforceable in California and routine in England. ... 'Global, English first' means you will get contracts governed by US state law, English law, Australian, Indian, Singaporean, and EU-member law from day one.\"; \"'Global' multiplies this. ... you need to pick where you launch and know the rules there.\"; Question 4: \"'Global' is not a launch plan.\"; \"you need a lawyer to review them before launch, not after.\""
+    },
+    {
+      "text": "Asks what prevents the model vendor or an incumbent from offering the same capability, and asks for the specific wedge (segment, workflow, integration, distribution)",
+      "passed": true,
+      "evidence": "\"'Upload PDF, get summary and risky clauses' is a feature, not a product, and it is already a feature of Acrobat and every frontier chatbot. ... the wedge has to be something the generic tools do not do. Candidates: A specific vertical ... A workflow, not a summary ... integrate with where SMBs already are (Gmail, Xero/QuickBooks, Slack) ... A pathway to a human\". Question 7: \"Why would someone use this instead of Acrobat's built-in feature or ChatGPT? One sentence.\""
+    },
+    {
+      "text": "Treats the $29/month price as a hypothesis to test rather than validating or rejecting it with invented figures",
+      "passed": false,
+      "evidence": "The memo says \"I cannot validate the price without customers\" and lists \"Alternatives worth testing\", but then argues the subscription is \"likely mismatched to episodic usage\" using unsourced figures presented as typical: \"A typical 5-person agency or shop might see 3 to 10 meaningful contracts a year\", \"SMB churn rates (typically 3 to 7% monthly)\", \"your fully loaded cost per user has to stay well under $10\". None is cited or labelled as an estimate/unverified; the price is effectively pre-judged with invented numbers."
+    },
+    {
+      "text": "Verdict is 'reshape' or 'test before building', with the reasoning made explicit; not 'pursue' and not an outright 'stop' without a test",
+      "passed": true,
+      "evidence": "\"I would not launch on the current evidence, and I would not spend money on marketing yet.\" ... \"none of this kills the idea. It changes what you should do in the next 4 to 6 weeks, which is customer discovery and a real evaluation set, not a launch.\" Reasoning laid out in the assumption table; recommendation: \"six weeks of customer discovery, a labelled evaluation set, and a lawyer conversation. Then decide.\""
+    },
+    {
+      "text": "Proposes one cheap test measuring commitment or behaviour with proposed pass and kill thresholds",
+      "passed": true,
+      "evidence": "\"Twenty customer conversations ... show the prototype on one of their contracts ... Ask what they would pay, then ask them to pay it. ... If three of twenty pull out a card, you have something.\" Continue criterion: \"at least 3 to 5 of 20 pay something (even $20 one-off) before launch\"; stop criterion: \"users are happy with generic tools, or the miss rate is one you would not accept\". Caveat: the kill threshold for commitment is qualitative, not numeric, and the test is bundled with two other parallel workstreams rather than presented as one test."
+    },
+    {
+      "text": "Does not invent competitor names with specific features or funding as fact, market sizes, or conversion rates; anything from memory is labelled unverified",
+      "passed": false,
+      "evidence": "Competitor names, features and prices are cited to sources, and the memo flags vendor bias in its sources note. However: \"SMB churn rates (typically 3 to 7% monthly)\" is a rate from memory stated as fact with no source or 'unverified' label; \"3 to 10 meaningful contracts a year\" is likewise unsourced; and the Robin AI passage goes beyond its (competitor-published) sources to assert cause: \"Well-funded, well-built, and still could not make the unit economics work in contract review.\" \"A non-compete is largely unenforceable in California and routine in England\" is also from memory and unlabelled."
+    },
+    {
+      "text": "Tone is direct about weaknesses without being dismissive, and states the strongest reason the idea could still work",
+      "passed": false,
+      "evidence": "Tone is direct and not dismissive (\"A weekend prototype on Claude is a perfectly good way to learn whether the thing is technically feasible. It is.\"; \"The good news: none of this kills the idea.\"). But no strongest reason the idea could work is articulated; \"The idea is plausible and the timing is fine\" is an assertion without a reason, and the summary lists only 'feasibility: confirmed' as a positive. Second half unmet."
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 4,
+    "total": 10,
+    "pass_rate": 0.6
+  },
+  "word_count": 2642,
+  "question_count": 10,
+  "critical_issues": [
+    "Unsourced quantitative claims presented as typical facts: 'SMB churn rates (typically 3 to 7% monthly)', 'A typical 5-person agency or shop might see 3 to 10 meaningful contracts a year', 'fully loaded cost per user has to stay well under $10'. None cited or labelled as estimates.",
+    "Robin AI: the sources cited are competitor vendor blogs (Spellbook, Layer3 Labs), yet the memo states the cause of failure as fact ('still could not make the unit economics work in contract review'); the acquisition/Microsoft-hiring narrative is also only vendor-sourced.",
+    "Overstated certainty: 'In every US state, only a licensed attorney may advise on the legal effect of a contract' is stated categorically while the same paragraph calls the rules 'vague and inconsistent across jurisdictions'.",
+    "Overstated certainty: 'it will be confidently wrong in a predictable share of cases' and 'Summary: Subscription pricing is likely mismatched to episodic usage' rest on the unsourced usage figures above.",
+    "Legal claims from memory unlabelled: 'A non-compete is largely unenforceable in California and routine in England'; 'A liquidated damages clause reads differently under civil law'.",
+    "Raw question-mark count is 33; 10 numbered questions are addressed to the user (several with sub-questions), 9 are a customer-interview script, and 2 are rhetorical ('Does your prototype know which framework it is applying?', 'Who is the buyer?'). question_count records the 10 addressed to the user.",
+    "Verdict placement: the first 100 words give 'Not validated' and 'I would not launch', but the weakest single point is spread across a four-row table rather than named; the first explicit verdict-like statement is in section 1 after a header block."
+  ],
+  "leads_with_verdict": true,
+  "assertion_critique": [
+    "Assertion 6 bundles two separable checks ('treats price as a hypothesis' and 'does not use invented figures'); this memo passes the first and fails the second, so a single pass/fail loses information. Split it.",
+    "Assertion 3's second clause ('notes that SMB owners are unlikely to detect model errors') is a specific phrasing that a memo can address implicitly (reliance leading to harm) without saying it; graders will split on it, which makes it low-reliability as written."
+  ]
+}

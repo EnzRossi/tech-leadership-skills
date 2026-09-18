@@ -1,0 +1,65 @@
+{
+  "expectations": [
+    {
+      "text": "Verdict is 'pursue' or equivalent, with a bounded next commitment (a first version for the pilot accounts), not 'test before building' or a demand for more interviews",
+      "passed": true,
+      "evidence": "\"**My recommendation:** conditional go.\" and a bounded commitment: \"narrow the first version to compliance checking rather than full scheduling, and then commit the engineers with written pilot scope and an explicit kill criterion\"; \"Weeks 9 to 12: onboard two of the six pilots with real data\". Engineers start in parallel: \"Weeks 1 to 2: the validation above, in parallel with engineers setting up infrastructure\". Caveat: it conditionally demands more calls (\"run five follow-up calls\", \"Ask all 8 committed or interested operators ... eight phone calls\"), which edges toward a demand for more interviews."
+    },
+    {
+      "text": "Explicitly identifies the signed paid pilots as commitment-level demand evidence stronger than interviews or interest",
+      "passed": true,
+      "evidence": "\"A signature on a conditional agreement is the best pre-product signal you can get short of cash.\" Contrasted with proposals: \"Interest, not commitment. Count them as pipeline, not evidence.\" and \"the demand side is validated well beyond what most founders bring to this decision.\""
+    },
+    {
+      "text": "Names the proposer's sector experience and association access as the route to decision makers and as an advantage",
+      "passed": true,
+      "evidence": "\"you have a real founder-market advantage\"; table row \"8 years in the sector, know the associations | Strong | This is your distribution channel.\"; \"your distribution through the associations\"."
+    },
+    {
+      "text": "Still states the strongest reason it could fail, such as pilot-to-renewal conversion, compliance correctness, niche size or founder dependence",
+      "passed": true,
+      "evidence": "Section 5 \"Risks, ranked by how likely they are to kill this\": \"1. Building 'scheduling' instead of the specific compliance pain ... If the interviews do not clearly name that rule, you do not have a wedge yet.\" and \"2. Pilot conversion ... Without both, expect two or three to convert.\""
+    },
+    {
+      "text": "Any arithmetic uses only supplied figures (for example 6 × 400 EUR = 2,400 EUR per month) with visible calculation, and no market size or build cost is invented",
+      "passed": false,
+      "evidence": "Supplied-figure arithmetic is correct: \"6 x 400 EUR = 2,400 EUR/month\". But market size is invented with the calculation hidden: \"if the addressable set is a few hundred private operators and you win a third of them at 400 EUR/month, you are at roughly 50k EUR MRR\" (implies ~125 paying operators from an unstated base). Build cost is also invented: \"Budget at least 30 to 50 percent of your time\", \"A few thousand EUR of legal templates\", \"Each is a quarter on its own\"."
+    },
+    {
+      "text": "Flags German ambulance compliance rules as a specialist or regulatory boundary to verify, without deciding the legal content",
+      "passed": false,
+      "evidence": "The memo describes the rules (\"there are 16 Landesrettungsdienstgesetze and they differ on crew qualification requirements, plus federal Arbeitszeitgesetz and Tarifvertrag-specific hour limits\") and asserts data-protection content (\"That is GDPR with employee data, Auftragsverarbeitungsvertrag (AVV) with every customer, German or EU hosting expectations, and probably a Betriebsrat question\") but never names a specialist or legal review as a boundary; the closest is a cost line, \"A few thousand EUR of legal templates\". It decides content rather than flagging it for verification."
+    },
+    {
+      "text": "Defines the observation that would reverse the verdict, such as fewer than a stated number of pilots converting to paid renewal, marked as proposed",
+      "passed": true,
+      "evidence": "\"set the kill or continue criterion now: for example, at least four of six pilots paying by end of the quarter after delivery, and at least two new signed operators from association channels.\" 'For example' marks it as a proposal, though weaker than an explicit 'proposed until agreed' label."
+    },
+    {
+      "text": "Does not pad the memo with generic risks or recommend an external partner; stays within 300–700 words",
+      "passed": false,
+      "evidence": "Word count is 2007 (wc -w), nearly three times the ceiling. Includes generic founder risks (\"5. Sales bandwidth ... This is the standard founder bottleneck\"; \"Opportunity cost\"; \"Your own time\") and a full build plan (section 7). No external partner is recommended."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 3,
+    "total": 8,
+    "pass_rate": 0.625
+  },
+  "word_count": 2007,
+  "question_count": 15,
+  "critical_issues": [
+    "Invented figures presented as planning facts: '~50k EUR MRR' from an unstated operator base; 'Budget at least 30 to 50 percent of your time'; 'A few thousand EUR of legal templates'; 'expect two or three to convert'; 'Each is a quarter on its own'; 'two engineers will not out-build Caladis or SIEDA on scheduling UX in a quarter'. None trace to the prompt or a cited source.",
+    "Uses information not in the prompt: 'Two engineers for a quarter at EnzRossi is billable capacity' and 'loaded cost of two engineers for a quarter at EnzRossi' — the company name and services-firm framing come from outside the prompt.",
+    "Overstated certainty in the headline claim: 'two of your stated facts do not hold up on a 20-minute check' — the second 'fact' (cost) is an opinion about opportunity cost, not a checked fact; 'The competitor picture is wrong' is later softened to 'I have not evaluated any of these in depth'. Says 'at least six German vendors' but lists five plus a catalogue link.",
+    "Unsourced data-type claims: 'likely health-adjacent data (Impfstatus, G-Untersuchungen)'; 'MPBetreibV device tracking' introduced without source or relevance check.",
+    "BKS figures ('more than 150 member companies with around 6,500 employees, organised in eight regional associations') are cited to the BKS page and Wikipedia without saying which one supplied which number or whether the page was actually read.",
+    "Length 2007 words with a build plan and 10-item question list; the decision-relevant content is roughly the first third."
+  ],
+  "leads_with_verdict": true,
+  "assertion_critique": [
+    "Assertion 3 (names sector experience and association access) is non-discriminating: the prompt supplies the fact and any memo will repeat it.",
+    "Assertion 4 (states the strongest reason it could fail) passes any memo with a risks section; it does not test whether the stated reason is the strongest or is evidenced. A sharper version would require the failure reason to be tied to a specific gap in the supplied evidence."
+  ]
+}

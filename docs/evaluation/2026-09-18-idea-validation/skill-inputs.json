@@ -1,0 +1,19 @@
+{
+  "SKILL.md": {
+    "sha256": "ca0b74b75907387388004ab08cce14700cb61c253acf841a9ba46c9998b17068",
+    "bytes": 9743
+  },
+  "references/methodology.md": {
+    "sha256": "c85fb31fadfa7fff446753ae521521436a2d4d55e67647c8e620fcfde66fa52b",
+    "bytes": 12907
+  },
+  "references/sources.md": {
+    "sha256": "b0e9f376e0f441685b348b6b4447c657dad91c095affdb9d783a2b1b1f3cda73",
+    "bytes": 3653
+  },
+  "assets/output-template.md": {
+    "sha256": "b0f2ef16feee71701ed16bc795a8d1bb270d63b84fdbfc1226aa781c43e2a667",
+    "bytes": 1819
+  },
+  "_note": "Hashes of the final committed revision. Iteration 1 ran on the initial draft (differences listed in README.md); iteration 2 ran on a revision that differed from the final only by the softened 'crowded market' sentence in SKILL.md and methodology.md."
+}

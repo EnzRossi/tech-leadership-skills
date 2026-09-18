@@ -1,0 +1,64 @@
+{
+  "expectations": [
+    {
+      "text": "Verdict is 'pursue' or equivalent, with a bounded next commitment (a first version for the pilot accounts), not 'test before building' or a demand for more interviews",
+      "passed": true,
+      "evidence": "\"**Pursue, with a bounded first commitment — Confidence: Medium.**\" and \"That justifies a quarter of two engineers.\" No new interviews are demanded. Caveat: the memo gates the start behind a two-week scope confirmation with the six existing signatories (\"check it with your six signatories before writing code\"; \"This memo does not authorise the engineering commitment; that decision remains yours after the two-week test\"), which softens the pursue verdict but is not 'test before building' in the discovery sense."
+    },
+    {
+      "text": "Explicitly identifies the signed paid pilots as commitment-level demand evidence stronger than interviews or interest",
+      "passed": true,
+      "evidence": "\"Your demand evidence is at the second-strongest level: six signed paid pilot agreements at 400 EUR/month\" and \"**Demand: supported.** Six signed paid pilots plus two proposal requests from 14 interviews is strong B2B conversion.\" It also notes the conditionality: \"the money is conditional on scope you have not fixed.\""
+    },
+    {
+      "text": "Names the proposer's sector experience and association access as the route to decision makers and as an advantage",
+      "passed": true,
+      "evidence": "\"in a sector where you have eight years of contacts and a route through the regional associations\"; \"Advantage: sector experience and the associations' trust\"; \"**Buyer and route: supported.** In a private operator the owner or Geschäftsführer is buyer and decision maker ... The associations are a credible channel\"."
+    },
+    {
+      "text": "Still states the strongest reason it could fail, such as pilot-to-renewal conversion, compliance correctness, niche size or founder dependence",
+      "passed": true,
+      "evidence": "\"The weakest point is the competitor set: it is not two general SaaS tools. At least five German vendors sell scheduling specifically to Rettungsdienst\"; \"Second weak point: at 400 EUR/month this is a niche business unless price or scope grows\"; and on conversion: \"Weak terms move this toward 'test before building'.\""
+    },
+    {
+      "text": "Any arithmetic uses only supplied figures (for example 6 × 400 EUR = 2,400 EUR per month) with visible calculation, and no market size or build cost is invented",
+      "passed": false,
+      "evidence": "Supplied-figure arithmetic is correct and visible: \"6 × 400 EUR = 2,400 EUR/month, 28,800 EUR/year\". But the memo invents a market-size figure: \"if the addressable pool is a few hundred private operators, 300 × 400 EUR × 12 = 1.44M EUR/year at full penetration.\" The 300 is not from the prompt; the only cited basis is an unverified BKS snippet of \"over 150 member companies\"."
+    },
+    {
+      "text": "Flags German ambulance compliance rules as a specialist or regulatory boundary to verify, without deciding the legal content",
+      "passed": true,
+      "evidence": "\"Whether your product's checks satisfy each Landesrettungsdienstgesetz, the Arbeitszeitgesetz and applicable collective agreements is a question for a labour-law specialist and the operators' own compliance owners; the tool can assist, not certify.\" Minor slip: it asserts specific legal content elsewhere without a source (\"TVöD weekly-hour reductions in 2026–27\")."
+    },
+    {
+      "text": "Defines the observation that would reverse the verdict, such as fewer than a stated number of pilots converting to paid renewal, marked as proposed",
+      "passed": true,
+      "evidence": "\"Proposed pass: at least 4 of 6 confirm the scope and date, at least 2 prepay ... Proposed kill: fewer than 3 confirm, or a majority say an incumbent would do at a comparable price. Thresholds are proposed until you agree them.\""
+    },
+    {
+      "text": "Does not pad the memo with generic risks or recommend an external partner; stays within 300–700 words",
+      "passed": false,
+      "evidence": "Word count is 1017 (wc -w), above the 700-word ceiling. No external partner is recommended and the risks are specific to the case, so the failure is on length only."
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 2,
+    "total": 8,
+    "pass_rate": 0.75
+  },
+  "word_count": 1017,
+  "question_count": 6,
+  "critical_issues": [
+    "Invented market-size input: '300 × 400 EUR × 12 = 1.44M EUR/year' uses an operator count not in the prompt; the only cited anchor (BKS 'over 150 member companies') is itself flagged as taken from a search snippet with the page not loading.",
+    "Unsourced legal/market claims stated as fact: 'TVöD weekly-hour reductions in 2026–27'; '§ 302 SGB V data exchange, which incumbents bundle'; 'In a private operator the owner or Geschäftsführer is buyer and decision maker, so the cycle is short'.",
+    "Overstated certainty: 'The weakest point is the competitor set: it is not two general SaaS tools' and 'At least five German vendors sell scheduling specifically to Rettungsdienst' are stated flatly; sources are vendor marketing pages and a catalogue, not evaluated products (the memo does not say how deeply each was checked).",
+    "'Assumed: compliance means one rule set across your six pilots' states' is a sensible flag, but the memo then treats '16 state rescue-service laws' as an 'inferred' fact used in scoping.",
+    "Length 1017 words, ~45% over the 700-word limit; the 'Sources consulted' section accounts for part of that."
+  ],
+  "leads_with_verdict": true,
+  "assertion_critique": [
+    "Assertion 3 (names sector experience and association access as an advantage) is non-discriminating: the prompt hands the memo this fact and almost any competent response will echo it.",
+    "Assertion 8 bundles three independent checks (generic-risk padding, external partner, word count); a memo can fail one while passing the others, so a single pass/fail loses information. Suggest splitting the word-count check out."
+  ]
+}

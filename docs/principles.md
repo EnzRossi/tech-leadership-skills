@@ -16,7 +16,7 @@ Unknown means the evidence is missing. Concern means evidence indicates a proble
 
 ## Recommend the smallest justified commitment
 
-Be useful before asking questions. Ask at most three facts likely to change the decision. Make a recommendation where evidence permits; specify the observation that would reverse it. Match certainty and commitment to evidence. Do not force a score, a sample size or a numerical threshold that cannot be defended.
+Be useful before asking questions. Ask at most three facts likely to change the decision; idea validation may ask up to five because the idea itself is usually still undefined, and it must still give a provisional read first. Make a recommendation where evidence permits; specify the observation that would reverse it. Match certainty and commitment to evidence. Do not force a score, a sample size or a numerical threshold that cannot be defended.
 
 ## Keep accountable decisions with people
 

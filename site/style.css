@@ -284,6 +284,10 @@ h1 span {
 .skill:nth-child(even) {
   border-left: 1px solid var(--line);
 }
+.skill:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  border-top: 1px solid var(--line);
+}
 .skill:nth-child(n + 3) {
   border-top: 1px solid var(--line);
 }

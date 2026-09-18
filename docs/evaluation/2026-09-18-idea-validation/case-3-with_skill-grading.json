@@ -1,0 +1,74 @@
+{
+  "expectations": [
+    {
+      "text": "Identifies that general-purpose assistants and existing legal-tech products are competitors or substitutes and questions the 'no real competitor' claim as unverified",
+      "passed": true,
+      "evidence": "\"The weakest point is the premise 'no real competitor'. A short search found the exact product, at or below your price, from incumbents with distribution: Adobe ... Rocket Lawyer ...\" and \"Today they read it themselves, paste it into ChatGPT or Claude, or sign blind (inferred)\"; \"the customer can open claude.ai or Acrobat and get the same output\". The memo goes beyond 'unverified' and refutes the claim with cited sources."
+    },
+    {
+      "text": "States that five chosen contracts do not establish reliability and proposes a bounded evaluation on a representative sample with an agreed judging rule",
+      "passed": true,
+      "evidence": "\"Five chosen contracts is a demo, not evidence: untested on scanned PDFs, long MSAs, non-US governing law, or contracts whose risk is a missing clause. ... Nobody qualified has graded accuracy.\" Judging rule embedded in the kill criterion: \"a lawyer spot-checking 10 outputs finds a material missed risk in more than one.\" The sample (10 real customer contracts from one vertical/country) is bounded and lawyer-judged; representativeness is implied by using real customer contracts rather than stated explicitly."
+    },
+    {
+      "text": "Assesses the cost of a missed or wrongly flagged risky clause and notes that SMB owners are unlikely to detect model errors",
+      "passed": true,
+      "evidence": "\"A missed indemnity or auto-renewal costs the buyer real money, and the owner is exactly the reviewer who cannot catch the miss.\""
+    },
+    {
+      "text": "Challenges 'global, English first' as a beachhead and names jurisdiction-specific contract law as a reason to pick one market and as a legal boundary for a specialist",
+      "passed": true,
+      "evidence": "Header: \"target geography stated as 'global, English first' (treated here as undecided)\"; \"'SMB, global' is not a segment\"; \"Whether a consumer tool that flags 'risky clauses' is unauthorised practice of law is unsettled in the US and varies by state ... A question for a lawyer, not a reason to stop, but it argues for one jurisdiction first.\"; Boundaries: \"Unauthorised-practice-of-law exposure by jurisdiction ... need a lawyer before launch.\" Also flags \"non-US governing law\" as untested."
+    },
+    {
+      "text": "Asks what prevents the model vendor or an incumbent from offering the same capability, and asks for the specific wedge (segment, workflow, integration, distribution)",
+      "passed": true,
+      "evidence": "\"The prototype is Claude with a prompt; the customer can open claude.ai or Acrobat and get the same output, so you need a reason they would not.\" Question 4: \"What can you reach that Adobe and Rocket Lawyer cannot: a community, a vertical's data, a partner channel? No answer means no defence against copying.\" Reshape options name a vertical, a non-US jurisdiction, and an embed in an accountant's or broker's workflow."
+    },
+    {
+      "text": "Treats the $29/month price as a hypothesis to test rather than validating or rejecting it with invented figures",
+      "passed": true,
+      "evidence": "\"$29/month (reported)\"; \"$29/month sits above Rocket Lawyer's top plan\" (cited to pricing page); \"No unit economics computed: no acquisition cost, volume or churn supplied.\" The test offers \"$29/month or a one-off $49\" and asks buyers to pay. No usage rates, churn or conversion figures are invented."
+    },
+    {
+      "text": "Verdict is 'reshape' or 'test before building', with the reasoning made explicit; not 'pursue' and not an outright 'stop' without a test",
+      "passed": true,
+      "evidence": "\"Reshape, then test before building — Confidence: Medium (market facts are verifiable; demand facts are absent)\" followed by the weakest point, the fix (\"a wedge the incumbents will not serve\") and the next step (\"get five businesses to pay before writing more code\")."
+    },
+    {
+      "text": "Proposes one cheap test measuring commitment or behaviour with proposed pass and kill thresholds",
+      "passed": true,
+      "evidence": "\"Concierge pre-sale, four weeks, no new code. One vertical, one country. Reach 30 owners ... Offer a paid review of one real contract ... Pass (proposed): 5 of 30 pay and 3 would send the next contract. Kill (proposed): fewer than 2 pay, or a lawyer spot-checking 10 outputs finds a material missed risk in more than one.\""
+    },
+    {
+      "text": "Does not invent competitor names with specific features or funding as fact, market sizes, or conversion rates; anything from memory is labelled unverified",
+      "passed": true,
+      "evidence": "Adobe, Rocket Lawyer and the Pact roundup are cited with URLs and read dates; the four extra tools are explicitly hedged: \"landing pages seen 2026-09-18, not verified\"; Rocket Lawyer figures hedged as \"likely annual-billed equivalents\". No market size or conversion rate is given. Minor weakness: the verdict's \"at least eight free or freemium upload-and-flag tools\" is a count not fully enumerated by the cited items (about five free/freemium tools are named)."
+    },
+    {
+      "text": "Tone is direct about weaknesses without being dismissive, and states the strongest reason the idea could still work",
+      "passed": true,
+      "evidence": "\"Strongest reason it could work: a crowded market means the job is real.\" and \"The job is real; the generic form is taken.\" Non-dismissive framing: \"A question for a lawyer, not a reason to stop\"; \"A concrete answer turns 'reshape' into 'test'.\""
+    }
+  ],
+  "summary": {
+    "passed": 10,
+    "failed": 0,
+    "total": 10,
+    "pass_rate": 1.0
+  },
+  "word_count": 1010,
+  "question_count": 5,
+  "critical_issues": [
+    "Potential overstatement: 'at least eight free or freemium upload-and-flag tools exist' in the verdict is not supported by the enumerated list (Legitt free tier, Justee, Lexitize, Clause AI, ContractReview.legal; the last four are explicitly 'not verified').",
+    "Stated as fact without evidence: 'Nobody qualified has graded accuracy' — inferred from the prompt's 'look great'; the memo's own Question 3 admits it does not know who judged the summaries.",
+    "Overstated certainty: 'the customer can open claude.ai or Acrobat and get the same output' asserts output equivalence without any comparison having been run.",
+    "Overstated certainty: 'the dominant cost driver will be customer acquisition, not model usage' is asserted with no figures and immediately after noting no unit economics were computed.",
+    "Adobe '$4.99/month add-on' and 'in English worldwide' are attributed to a cited news release; cannot be checked here but are sourced, not fabricated."
+  ],
+  "leads_with_verdict": true,
+  "assertion_critique": [
+    "Assertion 1 asks that the 'no competitor' claim be treated as 'unverified', but a memo that positively refutes it with sources (as this one does) is better than one that merely flags it unverified; the wording should reward refutation, not just hedging.",
+    "Assertion 8 ('one cheap test') is weakly discriminating: almost any validation memo proposes some form of customer conversation or pre-sale, so the pass depends on whether numeric thresholds are present, which the assertion should state as the deciding criterion."
+  ]
+}
