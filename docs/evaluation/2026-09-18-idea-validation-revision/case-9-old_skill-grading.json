@@ -1,0 +1,52 @@
+{
+  "label": "case-9-A",
+  "expectations": [
+    {
+      "text": "Recommends proceeding with the bounded release or gives a specific evidence-based blocker, not generic demands for more validation",
+      "passed": true,
+      "evidence": "\u201cPursue the limited internal release\u201d; \u201cjustify proceeding within the approved effort cap.\u201d"
+    },
+    {
+      "text": "Uses internal task outcomes, adoption, alternatives and ownership instead of requiring paying external customers",
+      "passed": true,
+      "evidence": "\u201c10 staff chose the helper ... completed all eligible tasks\u201d; \u201clicensed suite and two evaluated alternatives fail a specific requirement\u201d; \u201cIT\u2019s acceptance of maintenance, access and rollback ownership.\u201d No external paying customers required."
+    },
+    {
+      "text": "Distinguishes time/capacity benefit from realized cash savings",
+      "passed": true,
+      "evidence": "\u201cThe benefit is staff capacity, not demonstrated cash savings: no layoffs or reduced external spending are planned.\u201d"
+    },
+    {
+      "text": "Does not multiply a median difference into a claimed exact total saving",
+      "passed": true,
+      "evidence": "\u201cMedian handling time fell from 20 to 8 minutes\u201d; \u201cMedians alone cannot establish aggregate hours saved.\u201d No total is calculated."
+    },
+    {
+      "text": "Names monitoring or rollback criteria proportionate to a limited release rather than treating it as broad validation",
+      "passed": true,
+      "evidence": "\u201csame cohort and eligibility scope for four weeks, within the existing cap\u201d; proposed criteria cover median time, checked errors and cap; \u201cpause and use IT\u2019s rollback process if any threshold fails.\u201d"
+    },
+    {
+      "text": "Does not invent costs or require market sizing and stays within 700 body words",
+      "passed": true,
+      "evidence": "\u201congoing support effort remains unquantified\u201d; scope is the approved limited release. No invented costs or market-sizing demand. Supplied body count: 307, below 700."
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 0,
+    "total": 6,
+    "pass_rate": 1.0
+  },
+  "critical_failures": [],
+  "unsupported_claims": [],
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "reason": "Monitoring passes, but the proposed median-under-20 rule would allow most observed benefit to disappear and any sampled error rise triggers rollback without a materiality/comparability condition. A stronger criterion would ask for proportionate, preagreed review triggers."
+      }
+    ],
+    "overall": "Judged only the anonymized memo and frozen case facts. No execution trace was supplied, so tool use or absence of browsing cannot be verified. All six assertions graded separately; compound requirements require every component."
+  },
+  "body_words": 307
+}

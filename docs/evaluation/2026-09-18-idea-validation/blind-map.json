@@ -1,0 +1,20 @@
+{
+  "eval-1": {
+    "B": "with_skill"
+  },
+  "eval-2": {
+    "A": "with_skill",
+    "B": "without_skill"
+  },
+  "eval-3": {
+    "A": "with_skill",
+    "B": "without_skill"
+  },
+  "eval-5": {
+    "A": "with_skill",
+    "B": "without_skill"
+  },
+  "eval-6": {
+    "A": "with_skill"
+  }
+}

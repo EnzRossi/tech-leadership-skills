@@ -1,0 +1,98 @@
+[
+  {
+    "query": "I have an idea for a SaaS that helps dental clinics reduce no-shows with automated reminders and a waitlist. My sister is a dentist and says it's a huge problem. Is this worth building? I could do it in a month with coding agents.",
+    "should_trigger": true
+  },
+  {
+    "query": "ok so hear me out: an AI that reads our customers' support emails and writes the reply. we'd sell it to small e-commerce shops for like $49/mo. we built a demo over the weekend and it works great. validate this before I pitch it to investors",
+    "should_trigger": true
+  },
+  {
+    "query": "One of my engineers wants to build our own internal analytics dashboard tool instead of using Metabase. Says it will take 4 weeks. Is this a good idea or should I push back?",
+    "should_trigger": true
+  },
+  {
+    "query": "Who would even buy this? We're thinking of a compliance-tracking app for food trucks in Mexico. How do we figure out if there's a market and who the decision maker is?",
+    "should_trigger": true
+  },
+  {
+    "query": "We want to build a hardware device plus app for monitoring beehives, sold to commercial beekeepers in Spain and Portugal. We're a software team. Tell me honestly whether this makes sense and what would kill it.",
+    "should_trigger": true
+  },
+  {
+    "query": "My CEO wants a validation memo that supports launching our new consumer meal-planning app. We have no user research. What should the memo say?",
+    "should_trigger": true
+  },
+  {
+    "query": "Hackathon project: a Slack bot that turns meeting notes into Jira tickets. Product wants to turn it into a real feature and sell it as an add-on. Is there a real market or is this a toy? Could someone copy it in a week?",
+    "should_trigger": true
+  },
+  {
+    "query": "Startup idea check: marketplace connecting freelance nurses with private clinics in Colombia. Two clinics signed paid pilots, 20 nurses on a waitlist. Should we go all in or is there something we're missing?",
+    "should_trigger": true
+  },
+  {
+    "query": "Is there any point building a competitor to Notion for law firms? Every lawyer I know complains about their document tools but I'm worried it's a crowded market.",
+    "should_trigger": true
+  },
+  {
+    "query": "Use idea-validation on this: a browser extension that flags dark patterns on checkout pages, free for users, we'd sell aggregated data to consumer-protection NGOs.",
+    "should_trigger": true
+  },
+  {
+    "query": "We've validated our fintech idea and have 12 paying customers. Estimate how long a team of three using coding agents would need to build the v2 with multi-currency support.",
+    "should_trigger": false
+  },
+  {
+    "query": "Should we build our own payments integration or buy Stripe Billing? Also, should we hire two backend engineers or bring in a contractor for six months?",
+    "should_trigger": false
+  },
+  {
+    "query": "Our claims department wants to use an LLM to triage 3,000 emails a week. We have historical data. Is this AI initiative worth funding and what's the next step?",
+    "should_trigger": false
+  },
+  {
+    "query": "Our new marketplace app launched 4 months ago and the project keeps slipping. Here are the sprint reports and the Jira export. Is it in trouble?",
+    "should_trigger": false
+  },
+  {
+    "query": "Write the landing page copy and three ad variants for our new inventory-forecasting SaaS for restaurants.",
+    "should_trigger": false
+  },
+  {
+    "query": "Build a competitor comparison table for our existing CRM product versus HubSpot and Pipedrive for the sales team's battlecard.",
+    "should_trigger": false
+  },
+  {
+    "query": "Help me structure the seed round for my startup: how much to raise, at what valuation, and what should the SAFE terms look like?",
+    "should_trigger": false
+  },
+  {
+    "query": "What's the best way to incorporate a company in Delaware versus Estonia for a SaaS startup, and what are the tax implications?",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a system prompt for our contract-summarisation assistant that flags risky clauses and asks clarifying questions.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design the database schema and API for a buy-now-pay-later platform for e-commerce merchants.",
+    "should_trigger": false
+  },
+  {
+    "query": "We got 50 refundable reservations and three nonbinding LOIs for our salon scheduler. Is that enough validation to fund the build?",
+    "should_trigger": true
+  },
+  {
+    "query": "Should we launch this internal non-AI tool? The pilot reduced rework and staff kept using it, but it has no paying customers.",
+    "should_trigger": true
+  },
+  {
+    "query": "We already decided to run the pricing experiment. Implement its event tracking in our React app.",
+    "should_trigger": false
+  },
+  {
+    "query": "Our internal LLM pilot has an evaluation dataset and an executive sponsor. Review readiness and whether to fund production rollout.",
+    "should_trigger": false
+  }
+]

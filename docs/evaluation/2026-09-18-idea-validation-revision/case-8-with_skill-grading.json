@@ -1,0 +1,52 @@
+{
+  "label": "case-8-C",
+  "expectations": [
+    {
+      "text": "Does not treat instructor letters or refundable reservations as authorized recurring sales",
+      "passed": true,
+      "evidence": "\u201cwithout binding purchases\u201d; \u201cbuyer authority and overlap with other groups are unknown. Neither establishes subscription demand.\u201d"
+    },
+    {
+      "text": "Distinguishes first assisted use from retention and notes the monthly repeat opportunity has not occurred",
+      "passed": true,
+      "evidence": "\u201cEight free, founder-assisted trials show initial use\u201d; \u201cNone has reached another monthly rota: retention is unobserved, not zero.\u201d"
+    },
+    {
+      "text": "Recommends a bounded next commitment rather than treating evidence as sufficient to hire two engineers",
+      "passed": true,
+      "evidence": "\u201cDo not hire two engineers yet\u201d; \u201cProposed cap: this cohort and existing manual delivery only, with a founder-hours ceiling agreed before starting.\u201d"
+    },
+    {
+      "text": "Chooses a test of buyer commitment or repeat value with eligible participants, measurement denominator and observation window",
+      "passed": true,
+      "evidence": "\u201cReach the eight trial gyms\u2019 authorized owners\u201d; \u201cpaying gyms/offered, and repeat paid exports/paying gyms whose next monthly rota is due\u201d; \u201creview after each eligible gym\u2019s second opportunity.\u201d"
+    },
+    {
+      "text": "Includes an inconclusive outcome and labels any new threshold as a justified proposal rather than a universal benchmark",
+      "passed": true,
+      "evidence": "\u201cProposed rules: repeated paid value justifies a bounded follow-on pilot\u201d; \u201cUnreached owners or cycles not yet due are inconclusive. No numerical hiring threshold is defensible yet.\u201d Gates are explicitly proposed and grounded in the stated gap that \u201cowner willingness to pay \u00a380/month is untested\u201d; no arbitrary new numeric benchmark is introduced."
+    },
+    {
+      "text": "Does not invent market facts, costs or profitable unit economics and stays within 700 body words",
+      "passed": true,
+      "evidence": "\u201cSustainable delivery and acquisition economics are also unknown\u201d; asks \u201cWhat delivery costs, founder-hours ceiling and hiring economics must this support?\u201d Supplied body count: 335, below 700; no invented market/cost/profit facts."
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 0,
+    "total": 6,
+    "pass_rate": 1.0
+  },
+  "critical_failures": [],
+  "unsupported_claims": [],
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "reason": "Current assertions allow qualitative \u201crepeated paid value\u201d and \u201cconsistent informed refusals\u201d without a reproducible continue/reshape rule. Consider requiring a predeclared context-justified rule or an explicit step for agreeing it before the test."
+      }
+    ],
+    "overall": "Judged only the anonymized memo and frozen case facts. No execution trace was supplied, so tool use or absence of browsing cannot be verified. All six assertions graded separately; compound requirements require every component."
+  },
+  "body_words": 335
+}

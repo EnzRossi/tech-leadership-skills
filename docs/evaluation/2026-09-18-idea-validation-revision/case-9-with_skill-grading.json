@@ -1,0 +1,48 @@
+{
+  "label": "case-9-B",
+  "expectations": [
+    {
+      "text": "Recommends proceeding with the bounded release or gives a specific evidence-based blocker, not generic demands for more validation",
+      "passed": true,
+      "evidence": "\u201cPursue the limited internal release\u201d; uncertainty is \u201cnot a reason to require another prototype trial.\u201d"
+    },
+    {
+      "text": "Uses internal task outcomes, adoption, alternatives and ownership instead of requiring paying external customers",
+      "passed": true,
+      "evidence": "\u201c10 staff chose the prototype ... all 200 eligible tasks\u201d; documented \u201cexport-format gap in the licensed suite and two evaluated alternatives\u201d; \u201cIT\u2019s accepted maintenance, access and rollback ownership\u201d. No paying external customers required."
+    },
+    {
+      "text": "Distinguishes time/capacity benefit from realized cash savings",
+      "passed": true,
+      "evidence": "\u201cThe benefit is released staff capacity, not cash savings: no layoffs or reduced external spending are planned.\u201d"
+    },
+    {
+      "text": "Does not multiply a median difference into a claimed exact total saving",
+      "passed": true,
+      "evidence": "\u201cMedian times alone cannot establish aggregate hours saved.\u201d No exact aggregate saving claimed."
+    },
+    {
+      "text": "Names monitoring or rollback criteria proportionate to a limited release rather than treating it as broad validation",
+      "passed": true,
+      "evidence": "\u201cFinance and IT should assess the next four weeks: helper completions divided by all eligible tasks ... checked errors divided by checked tasks, and support effort\u201d; \u201cuse rollback if material regressions appear\u201d; \u201climited release only\u201d."
+    },
+    {
+      "text": "Does not invent costs or require market sizing and stays within 700 body words",
+      "passed": true,
+      "evidence": "\u201cFull ownership cost remains unquantified\u201d; \u201cProceed within the approved cap and eligible workflow.\u201d No invented costs or market-sizing demand. Supplied body count: 297, below 700."
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 0,
+    "total": 6,
+    "pass_rate": 1.0
+  },
+  "critical_failures": [],
+  "unsupported_claims": [],
+  "eval_feedback": {
+    "suggestions": [],
+    "overall": "Judged only the anonymized memo and frozen case facts. No execution trace was supplied, so tool use or absence of browsing cannot be verified. All six assertions graded separately; compound requirements require every component."
+  },
+  "body_words": 297
+}

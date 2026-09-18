@@ -1,0 +1,62 @@
+{
+  "expectations": [
+    {
+      "text": "Classifies the idea as internal and evaluates existing alternatives before the build, including the tool already licensed and open-source options",
+      "passed": true,
+      "evidence": "Header line: 'Internal · digital · not AI-dependent'. Evidence section compares 'LaunchDarkly's public pricing (launchdarkly.com/pricing, read 2026-09-18)', 'Flagsmith ... an open-source self-hosted edition', 'Unleash ... a free self-hosted edition', and 'OpenFeature ... a vendor-neutral SDK with 50+ providers'."
+    },
+    {
+      "text": "Asks for or requires the specific requirement the existing tool fails, not just 'expensive' or 'we would own it'",
+      "passed": true,
+      "evidence": "'none names a requirement that LaunchDarkly, cheaper vendors or open source fail ... have the engineer write the requirement the market fails'; Q1: 'What can the team not do today with LaunchDarkly, in a user's words?'"
+    },
+    {
+      "text": "Counts ongoing ownership (maintenance, on-call, upgrades, support) and opportunity cost of the two engineers against the build case",
+      "passed": true,
+      "evidence": "'A flag service is on the critical path of every deploy; nobody has accepted on-call and upgrades'; '4. Opportunity cost. Twelve engineer-weeks at your loaded rate is the first-version price; maintaining a critical-path service is usually the larger cost.'"
+    },
+    {
+      "text": "Does not accept the 6-week estimate as the full cost; notes that build effort is only one cost driver and does not itself estimate delivery time",
+      "passed": true,
+      "evidence": "'Six weeks covers the easy part ... Treat the estimate as unverified.' No alternative timeline is given for the build; 'a delivery estimate belongs in agentic-project-estimation'. The two-week trial is a test bound, not a delivery estimate."
+    },
+    {
+      "text": "Does not invent LaunchDarkly pricing, salaries, or a total cost figure; computes only if figures are supplied or shows the comparison structure",
+      "passed": true,
+      "evidence": "Pricing figures are attributed to a named source and date ('launchdarkly.com/pricing, read 2026-09-18'). No salary or total is stated; the comparison structure is shown: 'place them beside twelve engineer-weeks plus a maintenance estimate'; Q2 asks 'What does LaunchDarkly cost now'."
+    },
+    {
+      "text": "Recommendation is to not build by default, or to run a bounded comparison against a stated requirement, rather than 'pursue'",
+      "passed": true,
+      "evidence": "'Stop the build as proposed; reshape into a two-week alternatives trial'; 'One engineer, two weeks: stand up self-hosted Unleash or Flagsmith ... Proposed pass (build not justified): all ranked requirements met'."
+    },
+    {
+      "text": "Mentions that tight deploy-pipeline integration is a requirement to test against alternatives rather than a reason to build in itself",
+      "passed": true,
+      "evidence": "'Assumed: \"pipeline integration\" means flag state travels with the release; confirm.' Test: 'a one-page ranked requirements list, including the pipeline integration ... on one non-critical service, wired into the pipeline.'"
+    },
+    {
+      "text": "Remains fair to the engineer's motivation without dismissing it, and does not route to an outside vendor or partner as the answer",
+      "passed": true,
+      "evidence": "'Strongest reason it could work: a fintech may need audit, approval or residency behaviour that vendors gate behind enterprise pricing'; the engineer is given the requirements list to write. No outside partner is proposed; the only routing is to sibling skills and the compliance lead."
+    }
+  ],
+  "summary": {
+    "passed": 8,
+    "failed": 0,
+    "total": 8,
+    "pass_rate": 1.0
+  },
+  "word_count": 793,
+  "question_count": 5,
+  "critical_issues": [
+    "Specific price points and product facts ('$10 per Service Connection / mo', '$8.33 per 1k client-side MAU', Flagsmith $40/$250, Unleash '$75/seat/month' and 'limited to 1 project and 2 environments', OpenFeature 'CNCF incubating' with '50+ providers') are stated as read from vendor pages on 2026-09-18. They are cited, but the grader cannot confirm them and the memo presents them as settled fact; a VP should re-check before quoting.",
+    "Unsourced causal generalisation stated with certainty: 'Vendors charge enterprise prices for approvals and roles because regulated buyers demand them and they are hard.'",
+    "Mild overstatement: 'maintaining a critical-path service is usually the larger cost' is asserted without evidence, though it is labelled as a general tendency ('usually')."
+  ],
+  "leads_with_verdict": true,
+  "assertion_critique": [
+    "Assertion 6 ('not build by default, or run a bounded comparison') and assertion 8 ('fair to the engineer, no outside vendor') are near non-discriminating: almost any competent memo on this prompt passes both.",
+    "Assertion 4's clause 'does not itself estimate delivery time' sits in tension with assertion 3 (count ongoing ownership cost), since giving a maintenance magnitude is close to estimating effort; the two should be reconciled so a memo is not penalised for doing one while doing the other."
+  ]
+}

@@ -1,0 +1,41 @@
+[
+  {
+    "eval_id": 8,
+    "eval_name": "conditional-demand-and-repeat-value",
+    "prompt": "Validate our rota-export add-on for independent UK gyms before we hire two engineers. We have 12 signed nonbinding letters from gym instructors saying they'd try it if their owners approve; no owner has agreed to pay. We collected 20 fully refundable \u00a35 reservations at a fitness meetup. Eight gyms tried a founder-assisted export once for free; none has reached its next monthly rota yet. We want to charge \u00a380/month. We have no ongoing cost or acquisition data. Use only these supplied facts; no web research. What should we do next?",
+    "assertions": [
+      "Does not treat instructor letters or refundable reservations as authorized recurring sales",
+      "Distinguishes first assisted use from retention and notes the monthly repeat opportunity has not occurred",
+      "Recommends a bounded next commitment rather than treating evidence as sufficient to hire two engineers",
+      "Chooses a test of buyer commitment or repeat value with eligible participants, measurement denominator and observation window",
+      "Includes an inconclusive outcome and labels any new threshold as a justified proposal rather than a universal benchmark",
+      "Does not invent market facts, costs or profitable unit economics and stays within 700 body words"
+    ]
+  },
+  {
+    "eval_id": 10,
+    "eval_name": "failed-exposure-is-inconclusive",
+    "prompt": "Should we kill our proposed project-handoff app for small German design agencies? We said beforehand that at least 3 of 30 eligible agency owners needed to book a paid trial, otherwise we'd stop that offer. The landing page got 400 visits from a general design newsletter. Only 4 visitors were verified eligible owners; 2 clicked book, but the booking form was broken for the entire test. Zero bookings were completed. We spent our agreed \u20ac150 cap. A colleague wants to call this proof of zero demand; another wants to keep buying traffic until we get three bookings. Use only these facts, no web research. Give us a decision and one next step.",
+    "assertions": [
+      "Calls this test inconclusive or invalid rather than evidence of zero demand",
+      "Distinguishes 400 visits, 4 eligible owners, 2 clicks and zero completed bookings without reporting clicks as paid demand",
+      "Identifies both unmet eligible-exposure requirement and broken booking form",
+      "Preserves the original rule and rejects indefinite spending or moving thresholds to get a pass",
+      "Proposes fixing instrumentation and agreeing a new bounded eligible-cohort test before more spend",
+      "Does not invent conversion benchmarks and stays within 300 body words"
+    ]
+  },
+  {
+    "eval_id": 9,
+    "eval_name": "internal-evidence-supports-bounded-pursue",
+    "prompt": "Should we proceed with a limited internal release of our non-AI reconciliation helper? We are a Portuguese software company. In four weeks, 10 finance staff completed all 200 eligible tasks with the prototype, choosing it over the existing workflow. Median handling time was 8 minutes versus 20 before, with the same checked error rate. Finance documented that our licensed suite and two evaluated alternatives fail the required legacy export format. IT accepted maintenance, access and rollback ownership; the finance head approved the next release's effort cap. No layoffs or reduced external spend are planned. We only need a verdict on that bounded release, not a company-wide rollout. Use supplied facts only; no web research.",
+    "assertions": [
+      "Recommends proceeding with the bounded release or gives a specific evidence-based blocker, not generic demands for more validation",
+      "Uses internal task outcomes, adoption, alternatives and ownership instead of requiring paying external customers",
+      "Distinguishes time/capacity benefit from realized cash savings",
+      "Does not multiply a median difference into a claimed exact total saving",
+      "Names monitoring or rollback criteria proportionate to a limited release rather than treating it as broad validation",
+      "Does not invent costs or require market sizing and stays within 700 body words"
+    ]
+  }
+]

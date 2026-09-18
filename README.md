@@ -2,11 +2,11 @@
 
 ![EnzRossi Tech Leadership Skills: a blue origami rocket with a paper checklist anchored to a desk](site/assets/social-preview.png)
 
-Open-source Agent Skills for technology leaders making software, delivery, resourcing, and AI decisions.
+Open-source Agent Skills for technology leaders making software, delivery, resourcing, AI and new-idea decisions.
 
 [Explore the project website and installation guide](https://enzrossi.github.io/tech-leadership-skills/).
 
-Four workflows for turning incomplete evidence into a decision memo: whether an AI initiative deserves investment, whether a project needs intervention, how to obtain an engineering capability, and when an agent-assisted project can realistically ship.
+Five workflows for turning incomplete evidence into a decision memo: whether an AI initiative deserves investment, whether a project needs intervention, how to obtain an engineering capability, when an agent-assisted project can realistically ship, and whether a product or internal-tool idea deserves the next commitment.
 
 [![Validate skills](https://github.com/EnzRossi/tech-leadership-skills/actions/workflows/validate-skills.yml/badge.svg)](https://github.com/EnzRossi/tech-leadership-skills/actions/workflows/validate-skills.yml)
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
@@ -21,8 +21,9 @@ For CTOs, VPs and Directors of Engineering, technical founders, Product leaders 
 | [Software Project Health Review](skills/software-project-health-review/SKILL.md) | Status reports and delivery evidence disagree | Trace threats to a dated commitment; distinguish missing evidence from poor health; identify the intervention that can affect delivery |
 | [Build / Buy / Hire / Augment](skills/build-buy-hire-augment/SKILL.md) | A capability needs a sourcing decision | Separate solution from delivery and long-term ownership; compare internal, product, partner and hybrid options on the same terms |
 | [Agentic Project Estimation](skills/agentic-project-estimation/SKILL.md) | A software estimate needs to reflect coding agents, team capacity and company constraints | Compare staffing scenarios using accepted work, review/testing effort and release dependencies; assess deadline and project viability |
+| [Idea Validation](skills/idea-validation/SKILL.md) | A product, startup, feature or internal-tool idea needs an honest go, test, reshape or stop answer | Check alternatives, market, buyer, AI fit and economics; distinguish interest from commitment and repeat value; recommend the next bounded step with pass, fail and inconclusive test outcomes |
 
-Default output: a short memo, usually 250–600 words (350–700 for an estimation comparison), with 100–250 often enough for a narrow question, with the recommendation first and deeper evidence only when useful. These workflows can conclude that no AI, no intervention, or no outside help is warranted. They can also support proceeding when evidence justifies it.
+Default output: a short memo, usually 250–600 words (350–700 for an estimation comparison or a full idea validation), with 100–250 often enough for a narrow question, with the recommendation first and deeper evidence only when useful. These workflows can conclude that no AI, no intervention, no outside help, or no new product is warranted. They can also support proceeding when evidence justifies it.
 
 ## What is an Agent Skill?
 
@@ -65,6 +66,8 @@ For a shared project, use its `.agents/skills/` (Codex) or `.claude/skills/` (Cl
 > We need multi-country payouts in five months. Our team is occupied, hiring takes four to six months, and banking data has access constraints. Use build-buy-hire-augment to compare buying rails, internal integration and outside expertise.
 
 > Use agentic-project-estimation to estimate this customer portal for one, two and four engineers using coding agents. We have an existing platform, one part-time reviewer and a fixed security-review window. Compare accepted delivery dates, not just coding effort.
+
+> I want to build a scheduling tool for private ambulance operators in Germany. Six operators signed paid pilots and the incumbent desktop tool is unmaintained. Use idea-validation to tell me honestly whether to commit two engineers for a quarter and what would change that answer.
 
 The [scenario fixtures](skills/software-project-health-review/evals/files/steering-notes.md) are fictional. Use material permitted in your agent environment; the skills do not require uploading it to another service.
 

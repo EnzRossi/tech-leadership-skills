@@ -1,0 +1,73 @@
+{
+  "expectations": [
+    {
+      "text": "Identifies that general-purpose assistants and existing legal-tech products are competitors or substitutes and questions the 'no real competitor' claim as unverified",
+      "passed": true,
+      "evidence": "\"The premise \\\"no real competitor doing exactly this for SMBs\\\" is wrong, and that is the weakest point.\" ... \"Users can already drop a PDF into ChatGPT or Claude at $20/month; the Pact comparison lists both as alternatives for this use.\" Names ContractCrab, Legitt AI, Legly, Pact, goHeather, LegalZoom Doc Assist, Adobe Acrobat AI Assistant, Docusign as alternatives with cited sources. The memo goes beyond 'unverified' and treats the claim as refuted by cited evidence, which satisfies the assertion's intent."
+    },
+    {
+      "text": "States that five chosen contracts do not establish reliability and proposes a bounded evaluation on a representative sample with an agreed judging rule",
+      "passed": false,
+      "evidence": "First half is met: \"Five contracts you chose, judged by you, support a hypothesis, not a claim.\" The proposed evaluation is only a parenthetical in question 4: \"(A 30–50 contract sample with a lawyer's judgement is the AI-fit test.)\" The sample is bounded (30–50) and a judge is named (a lawyer), but the memo does not say the sample must be representative (e.g., of the target segment's real, messy contracts) nor that the judging rule (what counts as a miss, what accuracy threshold passes) must be agreed in advance. Partial credit only; strict FAIL."
+    },
+    {
+      "text": "Assesses the cost of a missed or wrongly flagged risky clause and notes that SMB owners are unlikely to detect model errors",
+      "passed": true,
+      "evidence": "\"The costly error is the missed clause: an owner who trusts a \\\"no major risks\\\" summary cannot detect it, and signing is not reversible. That shapes positioning (\\\"prepare for the lawyer\\\", not \\\"replace the lawyer\\\") and liability.\" Also: \"feasibility Concern (accuracy on messy contracts)\"."
+    },
+    {
+      "text": "Challenges 'global, English first' as a beachhead and names jurisdiction-specific contract law as a reason to pick one market and as a legal boundary for a specialist",
+      "passed": true,
+      "evidence": "\"\\\"Global, English first\\\" is not a beachhead; contract norms, consumer law and buying habits differ by country.\" Question 2: \"Which one country and segment first, and why?\" Boundaries: \"Whether paid risk-flagging counts as legal advice or unauthorised practice of law, disclaimer wording and liability for a missed clause are questions for a lawyer in each target jurisdiction.\""
+    },
+    {
+      "text": "Asks what prevents the model vendor or an incumbent from offering the same capability, and asks for the specific wedge (segment, workflow, integration, distribution)",
+      "passed": true,
+      "evidence": "\"A prompt and an upload form do not defend against the model vendor, Adobe, Docusign or LegalZoom, who all have distribution you lack. Defence must come from a segment-specific playbook, a workflow (obligations, renewals), a channel (accountants, e-signature platforms, associations) or a jurisdiction the large players ignore.\" Wedge is asked for in question 2 (\"Which one country and segment first, and why?\") and question 5 (\"A venture bet needs a defence against Adobe, Docusign and model vendors\")."
+    },
+    {
+      "text": "Treats the $29/month price as a hypothesis to test rather than validating or rejecting it with invented figures",
+      "passed": true,
+      "evidence": "Price is listed under \"The idea as a hypothesis\": \"Solution: upload PDF, get summary and risk list, $29/month.\" Comparison uses cited competitor prices: \"$29/month sits above most direct alternatives with no stated difference.\" Not rejected outright; the test probes pricing model: \"Owners paying per contract but refusing a subscription would move the verdict to \\\"pursue with per-document pricing\\\".\" Question 3: \"Decides subscription versus per-document.\""
+    },
+    {
+      "text": "Verdict is 'reshape' or 'test before building', with the reasoning made explicit; not 'pursue' and not an outright 'stop' without a test",
+      "passed": true,
+      "evidence": "\"**Reshape — Confidence: Medium (competitor and price facts are cited; demand facts are absent)**\" followed by explicit reasoning: \"This is fixable, not fatal: a crowded field means demand is real; your question is the wedge.\" and a test section \"Cheapest test that could change the verdict\"."
+    },
+    {
+      "text": "Proposes one cheap test measuring commitment or behaviour with proposed pass and kill thresholds",
+      "passed": true,
+      "evidence": "\"Concierge pre-sale in one segment, one country, two weeks. Recruit 20 SMB owners ... offer a summary and risk list within 24 hours for a one-off $49, paid upfront ... Proposed pass: 8 of 20 pay and 5 would pay again; proposed kill: fewer than 3 pay. No new code. Thresholds are proposed until agreed before the test.\""
+    },
+    {
+      "text": "Does not invent competitor names with specific features or funding as fact, market sizes, or conversion rates; anything from memory is labelled unverified",
+      "passed": true,
+      "evidence": "Every competitor in the appendix carries a source and date (e.g., \"legly.io/pricing, read 2026-09-18\", \"Adobe newsroom, 2025-02-04\"). Uncertain items are flagged: Justee \"(search snippet, unverified)\", Spellbook \"reported ~$99–350\", Pact \"(vendor's own page; treat as marketing)\", ContractCrab \"(vendor site returned HTTP 500)\". No market sizes or conversion rates are given. Lawyer fees are qualified: \"marketing content, US-centric, not a survey\". Sources cannot be independently verified within this grading, but nothing is presented as fact without a citation."
+    },
+    {
+      "text": "Tone is direct about weaknesses without being dismissive, and states the strongest reason the idea could still work",
+      "passed": true,
+      "evidence": "Direct: \"The premise ... is wrong, and that is the weakest point.\" Not dismissive: \"This is fixable, not fatal\". Strongest reason: \"The strongest reason it could work is that SMB owners pay $300–$1,000 for a lawyer to review a standard agreement, so a price in between is plausible.\""
+    }
+  ],
+  "summary": {
+    "passed": 9,
+    "failed": 1,
+    "total": 10,
+    "pass_rate": 0.9
+  },
+  "word_count": 1223,
+  "body_word_count": 867,
+  "question_count": 5,
+  "critical_issues": [
+    "Overstated certainty: the verdict says \"a crowded field means demand is real\", but the memo itself later concedes \"These pages show products exist at these prices, not that customers pay or stay\" and \"value Unknown\". Product listings do not establish demand; the two statements contradict each other.",
+    "The verdict states as flat fact that \"SMB owners pay $300–$1,000 for a lawyer to review a standard agreement\"; the qualification (US legal-marketplace marketing content, search results, not a survey) appears only in the appendix. In the body this reads as verified.",
+    "Assertion 2 only partially met: the 30–50 contract sample with a lawyer's judgement is buried in a question parenthetical, and neither representativeness of the sample nor an agreed-in-advance judging rule/threshold is specified.",
+    "Verdict claims \"at least six named products\" at \"$0 to $39/month\"; consistent with the appendix (ChatGPT/Claude, Adobe, LegalZoom, Legitt, ContractCrab, Legly, Pact), but the $49 concierge price and 8/20, 3/20 thresholds are the memo's own proposals (appropriately labelled 'proposed'), not sourced figures.",
+    "No factual claim was found that lacks a citation or a label; external sources (Adobe newsroom 2025-02-04, PR Newswire Docusign 2026-03-25, LegalOn benchmark 2026, arXiv 2508.03080, usepact.org comparison) were not independently verified by this grader, per instructions.",
+    "Inference labelling is inconsistent: 'inferred' is used for user behaviour and contract frequency, but channel statements (\"who all have distribution you lack\", \"No channel to the owner-operator is named\", the list of candidate channels) and the error-cost reasoning (\"an owner who trusts a 'no major risks' summary cannot detect it\") are stated as fact rather than labelled inference. Acquisition cost is not discussed at all."
+  ],
+  "leads_with_verdict": true,
+  "inferences_labelled": false
+}

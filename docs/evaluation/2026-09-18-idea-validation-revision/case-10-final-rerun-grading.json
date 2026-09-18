@@ -1,0 +1,55 @@
+{
+  "evaluation_scope": "Unblinded targeted follow-up smoke test; excluded from the original nine-memo blind comparison.",
+  "expectations": [
+    {
+      "text": "Calls this test inconclusive or invalid rather than evidence of zero demand",
+      "passed": true,
+      "evidence": "“this test is inconclusive; demand remains unknown”; “Do not kill the app on this result.”"
+    },
+    {
+      "text": "Distinguishes 400 visits, 4 eligible owners, 2 clicks and zero completed bookings without reporting clicks as paid demand",
+      "passed": true,
+      "evidence": "“only four were verified against the planned 30”; “The 400 general-newsletter visits are not that denominator”; “Zero completed bookings”; “Two booking clicks ... establish neither bookings nor willingness to pay.”"
+    },
+    {
+      "text": "Identifies both unmet eligible-exposure requirement and broken booking form",
+      "passed": true,
+      "evidence": "“eligible owners never had a functioning booking route, and only four were verified against the planned 30”; “a form broken throughout the test”."
+    },
+    {
+      "text": "Preserves the original rule and rejects indefinite spending or moving thresholds to get a pass",
+      "passed": true,
+      "evidence": "“Stop buying traffic now: the agreed €150 cap is exhausted”; “Preserve the same offer and original rule: three or more completed paid-trial bookings”; “without automatically extending”."
+    },
+    {
+      "text": "Proposes fixing instrumentation and agreeing a new bounded eligible-cohort test before more spend",
+      "passed": true,
+      "evidence": "“separate, capped retest proposal before committing more money”; “verify the booking flow end to end”; “30 verified eligible owners, a fixed observation window, and a newly agreed money and effort cap”."
+    },
+    {
+      "text": "Does not invent conversion benchmarks and stays within 300 body words",
+      "passed": true,
+      "evidence": "“Preserve ... original rule” uses the supplied three-of-30 requirement, with no invented conversion benchmark. Parent-supplied programmatic body count: 278, below 300."
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 0,
+    "total": 6,
+    "pass_rate": 1.0
+  },
+  "critical_failures": [],
+  "unsupported_claims": [],
+  "body_words": 278,
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "reason": "The 300-word requirement is absent from the displayed original prompt. Verify that it was actually communicated to the executor; keep this targeted follow-up distinct from the original blinded results."
+      },
+      {
+        "reason": "Separate word-count compliance from benchmark fabrication, which are substantively different requirements."
+      }
+    ],
+    "overall": "All six frozen case-10 assertions pass for this targeted revised memo. No execution trace was supplied; tool-use claims were not inferred. This single unblinded follow-up does not establish general performance."
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "label": "case-10-B",
+  "expectations": [
+    {
+      "text": "Calls this test inconclusive or invalid rather than evidence of zero demand",
+      "passed": true,
+      "evidence": "\u201cstop spending and mark this test inconclusive; do not kill the app on this evidence.\u201d"
+    },
+    {
+      "text": "Distinguishes 400 visits, 4 eligible owners, 2 clicks and zero completed bookings without reporting clicks as paid demand",
+      "passed": false,
+      "evidence": "\u201cOnly four were verified eligible\u201d; \u201cZero completed bookings\u201d; \u201cThe two booking clicks show interest, but do not count as paid-trial bookings.\u201d These three stages are accurately distinguished, but the 400 general-newsletter visits are never mentioned, so the full four-stage assertion is not satisfied."
+    },
+    {
+      "text": "Identifies both unmet eligible-exposure requirement and broken booking form",
+      "passed": true,
+      "evidence": "\u201cYour rule required 30 eligible owners\u201d; \u201cOnly four were verified eligible, and the broken form prevented every booking.\u201d"
+    },
+    {
+      "text": "Preserves the original rule and rejects indefinite spending or moving thresholds to get a pass",
+      "passed": true,
+      "evidence": "\u201cbuying traffic until three people book would abandon the agreed spending limit and stopping rule\u201d; \u201cretain the threshold of at least three paid-trial bookings\u201d."
+    },
+    {
+      "text": "Proposes fixing instrumentation and agreeing a new bounded eligible-cohort test before more spend",
+      "passed": true,
+      "evidence": "\u201cagree on a bounded replacement test before spending again: verify the repaired booking flow, expose the same offer to 30 verified eligible owners ... with a new explicit budget and deadline.\u201d"
+    },
+    {
+      "text": "Does not invent conversion benchmarks and stays within 300 body words",
+      "passed": true,
+      "evidence": "\u201cretain the threshold of at least three paid-trial bookings\u201d reuses the supplied rule without inventing benchmarks. Supplied body count: 159, below 300."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 1,
+    "total": 6,
+    "pass_rate": 0.8333333333333334
+  },
+  "critical_failures": [],
+  "unsupported_claims": [],
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "Distinguishes 400 visits, 4 eligible owners, 2 clicks and zero completed bookings without reporting clicks as paid demand",
+        "reason": "Requiring all four numbers creates a literal-recall failure in an otherwise correct concise decision. If the intended outcome is denominator discipline, test whether the eligible cohort and completed bookings govern the decision; if full funnel reporting is necessary, explicitly request it."
+      },
+      {
+        "reason": "The frozen 300-word requirement is absent from the displayed prompt; ensure it was actually communicated."
+      }
+    ],
+    "overall": "Judged only the anonymized memo and frozen case facts. No execution trace was supplied, so tool use or absence of browsing cannot be verified. All six assertions graded separately; compound requirements require every component."
+  },
+  "body_words": 159
+}

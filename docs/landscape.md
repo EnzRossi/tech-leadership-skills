@@ -36,3 +36,7 @@ Generic management advice, executive personas, universal scorecards and arbitrar
 ## Agentic estimation addition
 
 [ZhangHanDong/agent-estimation](https://github.com/ZhangHanDong/agent-estimation) already addresses human-time anchoring using agent tool-call rounds. The new workflow focuses on accepted project delivery: human attention, calibrated agent execution, verification, resource constraints and organizational gates. It does not adopt fixed minutes-per-round or company/AI multipliers. See the [research and limitations](../skills/agentic-project-estimation/references/sources.md). Prospective forecast accuracy remains unmeasured.
+
+## Idea validation addition
+
+Idea and startup validation is a well-populated field: customer-discovery books, lean-startup experiment guides, accelerator curricula and many prompt collections already cover interviews, market sizing and pitch review. The new workflow does not claim novelty there. Its contribution is the decision procedure a technology leader needs when an engineer, founder or executive brings an idea: separate internal from external ideas, check alternatives before building, read the market from a named geography and buyer, test AI-dependent ideas against simpler means and against who else can ship them, and end with a verdict plus the cheapest discriminating test. See the [attributed sources](../skills/idea-validation/references/sources.md). Whether its verdicts correlate with real outcomes is unmeasured.

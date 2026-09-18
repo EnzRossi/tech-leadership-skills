@@ -1,0 +1,64 @@
+{
+  "expectations": [
+    {
+      "text": "Classifies the idea as internal and evaluates existing alternatives before the build, including the tool already licensed and open-source options",
+      "passed": true,
+      "evidence": "'Re: Proposal to build an internal feature-flag / progressive-delivery system'; 'Feature flagging is not a differentiator ... Undifferentiated infrastructure is exactly the category where buy or adopt-open-source normally wins.' Options table: 'A. Expand LaunchDarkly company-wide', 'B. OpenFeature + self-hosted OSS backend (Unleash / Flagsmith / GrowthBook / flagd)'. The 'internal' classification is implicit rather than an explicit categorisation step."
+    },
+    {
+      "text": "Asks for or requires the specific requirement the existing tool fails, not just 'expensive' or 'we would own it'",
+      "passed": true,
+      "evidence": "Q1: 'What specifically is broken today?'; Q10: 'Has he evaluated Unleash, Flagsmith, GrowthBook or flagd and rejected them for a concrete reason, or has he not looked?'; 'Choose C over B only if the evaluation shows that every OSS backend fails a hard requirement'."
+    },
+    {
+      "text": "Counts ongoing ownership (maintenance, on-call, upgrades, support) and opportunity cost of the two engineers against the build case",
+      "passed": true,
+      "evidence": "'It needs an on-call owner, SLOs, capacity planning and a runbook forever'; 'Owning it means owning the outages, the SDK upgrades ... the security reviews, and the recruiting story'; 'it is the opportunity cost of what those two senior engineers would otherwise have shipped, plus the maintenance tail.'"
+    },
+    {
+      "text": "Does not accept the 6-week estimate as the full cost; notes that build effort is only one cost driver and does not itself estimate delivery time",
+      "passed": false,
+      "evidence": "First half met ('The estimate covers the fun 20 percent'), but the memo supplies its own delivery estimates: 'Realistically, a mature internal system is 12 to 18 months of one to two engineers' attention', table '6 weeks to a demo, 12 to 18 months to parity', option B 'Medium (4 to 8 weeks ...)', option D 'Lowest (2 to 3 weeks)'. These are unsourced timelines the assertion says the memo should not produce."
+    },
+    {
+      "text": "Does not invent LaunchDarkly pricing, salaries, or a total cost figure; computes only if figures are supplied or shows the comparison structure",
+      "passed": true,
+      "evidence": "Pricing ('roughly $12/month per service connection plus about $10 per 1,000 client-side monthly active users') is attributed to GrowthBook and costbench and caveated: 'should be confirmed against LaunchDarkly's own quote before use in a decision.' No salary or total figure; the comparison structure is a scorecard: 'total three-year cost (cash plus loaded engineering time)'. Note: the ops-load fractions ('0.5 engineer forever', '0.25 to 0.5 engineer') are the memo's own unsourced estimates, though not salaries or totals."
+    },
+    {
+      "text": "Recommendation is to not build by default, or to run a bounded comparison against a stated requirement, rather than 'pursue'",
+      "passed": true,
+      "evidence": "'Probably not as proposed.'; 'My default recommendation is B, entered via D ... run a 2 to 3 week evaluation of two self-hosted backends against a written requirements list'."
+    },
+    {
+      "text": "Mentions that tight deploy-pipeline integration is a requirement to test against alternatives rather than a reason to build in itself",
+      "passed": true,
+      "evidence": "'Tight pipeline integration is valuable ... That is a thin integration layer, though, not a flag engine.' Options table scores each alternative on 'pipeline integration'; option B 'Meets ownership and pipeline integration'; the evaluation includes 'pipeline glue'."
+    },
+    {
+      "text": "Remains fair to the engineer's motivation without dismissing it, and does not route to an outside vendor or partner as the answer",
+      "passed": true,
+      "evidence": "'I would not say a flat \"no\" to the engineer. The instinct to integrate flags tightly with the deploy pipeline is good and worth funding.'; 'Give the senior engineer the OpenFeature integration and the pipeline glue.' No outside partner or agency is proposed; 'optional paid support' is listed as a cost line, not the answer."
+    }
+  ],
+  "summary": {
+    "passed": 7,
+    "failed": 1,
+    "total": 8,
+    "pass_rate": 0.875
+  },
+  "word_count": 1812,
+  "question_count": 15,
+  "critical_issues": [
+    "Unsourced effort and timeline figures presented as fact: 'Realistically, a mature internal system is 12 to 18 months of one to two engineers' attention ... a permanent tax of roughly half an engineer'; table entries '0.5 engineer forever', '0.25 to 0.5 engineer', '4 to 8 weeks', '2 to 3 weeks'. No source or basis is given.",
+    "Product claims without a supporting citation: 'This is what LaunchDarkly sells at the Guardian tier and it is not a six-week feature'; 'Several are explicitly positioned for regulated, self-hosted environments' is cited only to a Flagsmith OpenFeature integration doc, which does not obviously support the claim.",
+    "Pricing relies on third-party summaries (GrowthBook, costbench, launchflag.dev) rather than the vendor's page; the memo caveats this at the end, but the body still states figures as 'quoted'. GrowthBook is itself a competing product, which the memo does not flag.",
+    "Overstated certainty: 'The open-source and open-standard landscape in 2026 is mature enough that the middle options are strong' and 'I would be surprised' are opinions delivered as conclusions; 'Vendors move a lot at renewal' is an unsupported generalisation.",
+    "Length: roughly 1,800 words and 12 numbered question blocks (15 question sentences) dilute the decision; several questions (5, 6, 9, 11) are useful but not needed to reach the stated recommendation."
+  ],
+  "leads_with_verdict": true,
+  "assertion_critique": [
+    "Assertion 6 and assertion 8 are near non-discriminating for this prompt; both memos pass them trivially.",
+    "Assertion 4's 'does not itself estimate delivery time' is the only clause that separated the memos, but it can be read as penalising the memo for sizing the maintenance tail that assertion 3 asks it to count; the intended line (no build-timeline claims vs. no effort magnitudes at all) should be stated explicitly."
+  ]
+}

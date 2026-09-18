@@ -1,0 +1,62 @@
+{
+  "label": "case-8-A",
+  "expectations": [
+    {
+      "text": "Does not treat instructor letters or refundable reservations as authorized recurring sales",
+      "passed": true,
+      "evidence": "\u201cThey are nonbinding and depend on owner approval; they do not establish purchasing authority or budget commitment.\u201d Reservations \u201cdo not validate an \u00a380 monthly subscription.\u201d"
+    },
+    {
+      "text": "Distinguishes first assisted use from retention and notes the monthly repeat opportunity has not occurred",
+      "passed": true,
+      "evidence": "\u201cRepeat use is not yet observable: no gym has reached its next monthly rota. This is neither retention nor churn evidence.\u201d"
+    },
+    {
+      "text": "Recommends a bounded next commitment rather than treating evidence as sufficient to hire two engineers",
+      "passed": true,
+      "evidence": "\u201cDefer the two engineering hires\u201d and \u201cCap delivery at these eight gyms, with no engineering hires\u201d."
+    },
+    {
+      "text": "Chooses a test of buyer commitment or repeat value with eligible participants, measurement denominator and observation window",
+      "passed": true,
+      "evidence": "\u201cone founder-led paid concierge cohort with the eight trial gyms\u201d; \u201cconfirm who controls the budget\u201d; \u201cthrough each gym's next two monthly rota opportunities\u201d. The eight-gyms cohort is the stated denominator, with payment and repeated paid use recorded."
+    },
+    {
+      "text": "Includes an inconclusive outcome and labels any new threshold as a justified proposal rather than a universal benchmark",
+      "passed": false,
+      "evidence": "\u201cProposed thresholds, to agree before running: pass if at least three distinct owners pay \u00a380\u201d; \u201cIntermediate results remain inconclusive\u201d. The proposal and inconclusive state are explicit, but no rationale is supplied for selecting three of eight or requiring all three to repeat; the assertion requires a justified proposal."
+    },
+    {
+      "text": "Does not invent market facts, costs or profitable unit economics and stays within 700 body words",
+      "passed": true,
+      "evidence": "\u201cAcquisition effort, ongoing support and operating costs must be measured before judging margins\u201d; \u201cNo market-size or cost estimate is justified.\u201d Supplied body count: 513, below 700."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 1,
+    "total": 6,
+    "pass_rate": 0.8333333333333334
+  },
+  "critical_failures": [],
+  "unsupported_claims": [
+    {
+      "claim": "\u201cusability is a concern because assistance was required\u201d",
+      "evidence": "The prompt says \u201cfounder-assisted export\u201d, which establishes assistance was provided, not required. Independent usability is unknown; necessity was not established.",
+      "materiality": "Potentially material to the usability assessment, but does not overturn the justified decision to defer hiring."
+    }
+  ],
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "Includes an inconclusive outcome and labels any new threshold as a justified proposal rather than a universal benchmark",
+        "reason": "Separate an explicit inconclusive branch from justified threshold selection. Three of eight plus complete repeat use is called proposed but has no rationale; current compound wording conceals which element failed."
+      },
+      {
+        "reason": "Add a fidelity check that distinguishes assistance provided from assistance required; the latter is asserted without evidence."
+      }
+    ],
+    "overall": "Judged only the anonymized memo and frozen case facts. No execution trace was supplied, so tool use or absence of browsing cannot be verified. All six assertions graded separately; compound requirements require every component."
+  },
+  "body_words": 513
+}
