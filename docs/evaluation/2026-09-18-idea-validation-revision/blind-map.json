@@ -1,0 +1,11 @@
+{
+  "case-8-A": "conditional-demand-and-repeat-value/old_skill/outputs/memo.md",
+  "case-8-B": "conditional-demand-and-repeat-value/without_skill/outputs/memo.md",
+  "case-8-C": "conditional-demand-and-repeat-value/with_skill/outputs/memo.md",
+  "case-10-A": "failed-exposure-is-inconclusive/with_skill/outputs/memo.md",
+  "case-10-B": "failed-exposure-is-inconclusive/without_skill/outputs/memo.md",
+  "case-10-C": "failed-exposure-is-inconclusive/old_skill/outputs/memo.md",
+  "case-9-A": "internal-evidence-supports-bounded-pursue/old_skill/outputs/memo.md",
+  "case-9-B": "internal-evidence-supports-bounded-pursue/with_skill/outputs/memo.md",
+  "case-9-C": "internal-evidence-supports-bounded-pursue/without_skill/outputs/memo.md"
+}

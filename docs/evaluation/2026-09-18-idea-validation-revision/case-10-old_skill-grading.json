@@ -1,0 +1,52 @@
+{
+  "label": "case-10-C",
+  "expectations": [
+    {
+      "text": "Calls this test inconclusive or invalid rather than evidence of zero demand",
+      "passed": true,
+      "evidence": "\u201cthis test is inconclusive; demand remains unknown\u201d; \u201cDo not kill the app on this evidence.\u201d"
+    },
+    {
+      "text": "Distinguishes 400 visits, 4 eligible owners, 2 clicks and zero completed bookings without reporting clicks as paid demand",
+      "passed": true,
+      "evidence": "\u201cThe 400 general-newsletter visits ... only four visitors were verified eligible\u201d; \u201cZero completed bookings\u201d; \u201ctwo clicks [cannot] establish willingness to pay.\u201d"
+    },
+    {
+      "text": "Identifies both unmet eligible-exposure requirement and broken booking form",
+      "passed": true,
+      "evidence": "\u201cdo not establish exposure to 30 eligible owners\u201d; \u201cThe broken form also prevented the required behaviour throughout the test.\u201d"
+    },
+    {
+      "text": "Preserves the original rule and rejects indefinite spending or moving thresholds to get a pass",
+      "passed": true,
+      "evidence": "\u201cThe spending limit ... remains binding\u201d; \u201cBuying traffic until three bookings appear would replace a fixed test with an open-ended search for success\u201d; \u201cRetain the original outcome rule\u201d."
+    },
+    {
+      "text": "Proposes fixing instrumentation and agreeing a new bounded eligible-cohort test before more spend",
+      "passed": true,
+      "evidence": "\u201cagree a replacement test contract before any further spending\u201d; \u201ca booking path verified end to end, 30 verified eligible owners ... a fixed deadline plus fresh cash and effort caps.\u201d"
+    },
+    {
+      "text": "Does not invent conversion benchmarks and stays within 300 body words",
+      "passed": false,
+      "evidence": "No invented conversion benchmarks: \u201cRetain the original outcome rule: at least three completed paid-trial bookings passes\u201d. However, supplied body count is 308, exceeding the 300-word ceiling by eight words."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 1,
+    "total": 6,
+    "pass_rate": 0.8333333333333334
+  },
+  "critical_failures": [],
+  "unsupported_claims": [],
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "reason": "The 300-word cap is present in the frozen assertion but absent from the displayed prompt. Keep it only if clearly supplied to the executor; otherwise this is a grading-only constraint. Separate word limit from benchmark fabrication."
+      }
+    ],
+    "overall": "Judged only the anonymized memo and frozen case facts. No execution trace was supplied, so tool use or absence of browsing cannot be verified. All six assertions graded separately; compound requirements require every component."
+  },
+  "body_words": 308
+}

@@ -2,7 +2,7 @@
 
 Development review, 2026-09-16. These results are evidence about the recorded cases, not a claim that the skills consistently outperform a strong model or are validated in real organizations.
 
-The later [Agentic Project Estimation evaluation](evaluation/2026-09-16-estimation/README.md) and [Idea Validation evaluation](evaluation/2026-09-18-idea-validation/README.md) are recorded separately. The three-skill results below remain unchanged.
+The later [Agentic Project Estimation evaluation](evaluation/2026-09-16-estimation/README.md) and [Idea Validation evaluation](evaluation/2026-09-18-idea-validation/README.md) are recorded separately. The [Idea Validation revision comparison](evaluation/2026-09-18-idea-validation-revision/README.md) adds supplied-facts-only checks of the revised skill, its previous version and no explicit skill. The three-skill results below remain unchanged.
 
 ## What ran
 

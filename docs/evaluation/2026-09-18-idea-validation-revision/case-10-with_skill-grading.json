@@ -1,0 +1,52 @@
+{
+  "label": "case-10-A",
+  "expectations": [
+    {
+      "text": "Calls this test inconclusive or invalid rather than evidence of zero demand",
+      "passed": true,
+      "evidence": "\u201chigh confidence that this test is inconclusive\u201d; \u201cdemand remains unknown\u201d."
+    },
+    {
+      "text": "Distinguishes 400 visits, 4 eligible owners, 2 clicks and zero completed bookings without reporting clicks as paid demand",
+      "passed": true,
+      "evidence": "\u201conly four eligible owners among 400 visits\u201d; \u201cZero completed bookings\u201d; \u201cTwo eligible owners clicking \u2018book\u2019 ... establishes interest, not paid-trial commitment.\u201d"
+    },
+    {
+      "text": "Identifies both unmet eligible-exposure requirement and broken booking form",
+      "passed": true,
+      "evidence": "\u201cYour rule required at least three bookings from 30 eligible agency owners. You verified only four eligible owners among 400 visits, and the form was broken throughout.\u201d"
+    },
+    {
+      "text": "Preserves the original rule and rejects indefinite spending or moving thresholds to get a pass",
+      "passed": true,
+      "evidence": "\u201cPreserve the original three-of-30 rule\u201d; \u201cdo not ... keep buying traffic until three bookings appear\u201d; \u201cStop spending under the exhausted \u20ac150 cap\u201d."
+    },
+    {
+      "text": "Proposes fixing instrumentation and agreeing a new bounded eligible-cohort test before more spend",
+      "passed": true,
+      "evidence": "\u201crepair and verify the booking flow end to end\u201d; \u201c30 verified owners\u201d; \u201ca two-week window, with a fresh money and staff-time cap agreed before launch.\u201d"
+    },
+    {
+      "text": "Does not invent conversion benchmarks and stays within 300 body words",
+      "passed": false,
+      "evidence": "No invented conversion benchmark: \u201cPreserve the original three-of-30 rule.\u201d However, supplied body count is 314, exceeding the 300-word ceiling by 14 words."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 1,
+    "total": 6,
+    "pass_rate": 0.8333333333333334
+  },
+  "critical_failures": [],
+  "unsupported_claims": [],
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "reason": "The 300-word cap is present in the frozen assertion but absent from the displayed prompt. Keep it only if clearly supplied to the executor; otherwise this is a grading-only constraint. Separate word limit from benchmark fabrication."
+      }
+    ],
+    "overall": "Judged only the anonymized memo and frozen case facts. No execution trace was supplied, so tool use or absence of browsing cannot be verified. All six assertions graded separately; compound requirements require every component."
+  },
+  "body_words": 314
+}

@@ -1,0 +1,488 @@
+{
+  "metadata": {
+    "skill_name": "idea-validation",
+    "timestamp": "2026-09-18",
+    "executor_model": "GPT-6 family; exact build/settings unavailable",
+    "evals_run": [
+      8,
+      9,
+      10
+    ],
+    "runs_per_configuration": 3,
+    "repeats_per_case_configuration": 1
+  },
+  "runs": [
+    {
+      "eval_id": 8,
+      "eval_name": "conditional-demand-and-repeat-value",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "passed": 6,
+        "failed": 0,
+        "total": 6,
+        "pass_rate": 1.0,
+        "time_seconds": null,
+        "tokens": null,
+        "body_words": 335
+      },
+      "expectations": [
+        {
+          "text": "Does not treat instructor letters or refundable reservations as authorized recurring sales",
+          "passed": true,
+          "evidence": "\u201cwithout binding purchases\u201d; \u201cbuyer authority and overlap with other groups are unknown. Neither establishes subscription demand.\u201d"
+        },
+        {
+          "text": "Distinguishes first assisted use from retention and notes the monthly repeat opportunity has not occurred",
+          "passed": true,
+          "evidence": "\u201cEight free, founder-assisted trials show initial use\u201d; \u201cNone has reached another monthly rota: retention is unobserved, not zero.\u201d"
+        },
+        {
+          "text": "Recommends a bounded next commitment rather than treating evidence as sufficient to hire two engineers",
+          "passed": true,
+          "evidence": "\u201cDo not hire two engineers yet\u201d; \u201cProposed cap: this cohort and existing manual delivery only, with a founder-hours ceiling agreed before starting.\u201d"
+        },
+        {
+          "text": "Chooses a test of buyer commitment or repeat value with eligible participants, measurement denominator and observation window",
+          "passed": true,
+          "evidence": "\u201cReach the eight trial gyms\u2019 authorized owners\u201d; \u201cpaying gyms/offered, and repeat paid exports/paying gyms whose next monthly rota is due\u201d; \u201creview after each eligible gym\u2019s second opportunity.\u201d"
+        },
+        {
+          "text": "Includes an inconclusive outcome and labels any new threshold as a justified proposal rather than a universal benchmark",
+          "passed": true,
+          "evidence": "\u201cProposed rules: repeated paid value justifies a bounded follow-on pilot\u201d; \u201cUnreached owners or cycles not yet due are inconclusive. No numerical hiring threshold is defensible yet.\u201d Gates are explicitly proposed and grounded in the stated gap that \u201cowner willingness to pay \u00a380/month is untested\u201d; no arbitrary new numeric benchmark is introduced."
+        },
+        {
+          "text": "Does not invent market facts, costs or profitable unit economics and stays within 700 body words",
+          "passed": true,
+          "evidence": "\u201cSustainable delivery and acquisition economics are also unknown\u201d; asks \u201cWhat delivery costs, founder-hours ceiling and hiring economics must this support?\u201d Supplied body count: 335, below 700; no invented market/cost/profit facts."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 8,
+      "eval_name": "conditional-demand-and-repeat-value",
+      "configuration": "old_skill",
+      "run_number": 1,
+      "result": {
+        "passed": 5,
+        "failed": 1,
+        "total": 6,
+        "pass_rate": 0.8333333333333334,
+        "time_seconds": null,
+        "tokens": null,
+        "body_words": 513
+      },
+      "expectations": [
+        {
+          "text": "Does not treat instructor letters or refundable reservations as authorized recurring sales",
+          "passed": true,
+          "evidence": "\u201cThey are nonbinding and depend on owner approval; they do not establish purchasing authority or budget commitment.\u201d Reservations \u201cdo not validate an \u00a380 monthly subscription.\u201d"
+        },
+        {
+          "text": "Distinguishes first assisted use from retention and notes the monthly repeat opportunity has not occurred",
+          "passed": true,
+          "evidence": "\u201cRepeat use is not yet observable: no gym has reached its next monthly rota. This is neither retention nor churn evidence.\u201d"
+        },
+        {
+          "text": "Recommends a bounded next commitment rather than treating evidence as sufficient to hire two engineers",
+          "passed": true,
+          "evidence": "\u201cDefer the two engineering hires\u201d and \u201cCap delivery at these eight gyms, with no engineering hires\u201d."
+        },
+        {
+          "text": "Chooses a test of buyer commitment or repeat value with eligible participants, measurement denominator and observation window",
+          "passed": true,
+          "evidence": "\u201cone founder-led paid concierge cohort with the eight trial gyms\u201d; \u201cconfirm who controls the budget\u201d; \u201cthrough each gym's next two monthly rota opportunities\u201d. The eight-gyms cohort is the stated denominator, with payment and repeated paid use recorded."
+        },
+        {
+          "text": "Includes an inconclusive outcome and labels any new threshold as a justified proposal rather than a universal benchmark",
+          "passed": false,
+          "evidence": "\u201cProposed thresholds, to agree before running: pass if at least three distinct owners pay \u00a380\u201d; \u201cIntermediate results remain inconclusive\u201d. The proposal and inconclusive state are explicit, but no rationale is supplied for selecting three of eight or requiring all three to repeat; the assertion requires a justified proposal."
+        },
+        {
+          "text": "Does not invent market facts, costs or profitable unit economics and stays within 700 body words",
+          "passed": true,
+          "evidence": "\u201cAcquisition effort, ongoing support and operating costs must be measured before judging margins\u201d; \u201cNo market-size or cost estimate is justified.\u201d Supplied body count: 513, below 700."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 8,
+      "eval_name": "conditional-demand-and-repeat-value",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "passed": 5,
+        "failed": 1,
+        "total": 6,
+        "pass_rate": 0.8333333333333334,
+        "time_seconds": null,
+        "tokens": null,
+        "body_words": 554
+      },
+      "expectations": [
+        {
+          "text": "Does not treat instructor letters or refundable reservations as authorized recurring sales",
+          "passed": true,
+          "evidence": "\u201cThey are nonbinding and establish no willingness to pay\u201d; reservations are \u201cweak evidence for an \u00a380 monthly purchase\u201d; \u201coverlap and buyer authority are unknown.\u201d"
+        },
+        {
+          "text": "Distinguishes first assisted use from retention and notes the monthly repeat opportunity has not occurred",
+          "passed": true,
+          "evidence": "\u201cNone has reached its next monthly rota, so repeat use is untested\u2014not a retention failure.\u201d"
+        },
+        {
+          "text": "Recommends a bounded next commitment rather than treating evidence as sufficient to hire two engineers",
+          "passed": true,
+          "evidence": "\u201cDelay hiring the two engineers\u201d; \u201cset a small fixed test budget\u201d; \u201cpositive pilot results should lead first to the smallest justified build\u201d."
+        },
+        {
+          "text": "Chooses a test of buyer commitment or repeat value with eligible participants, measurement denominator and observation window",
+          "passed": true,
+          "evidence": "\u201cTrack all eight gyms through their next due date, including declines and nonresponses\u201d; \u201cFor gyms that pay, observe the following monthly rota cycle.\u201d Owners controlling spending receive the \u00a380/month offer, and both the initial cohort and repeat eligible cohort are identified."
+        },
+        {
+          "text": "Includes an inconclusive outcome and labels any new threshold as a justified proposal rather than a universal benchmark",
+          "passed": false,
+          "evidence": "\u201cThese are proposed gates, not results already demonstrated; the supplied facts do not justify a precise conversion target or a hiring budget.\u201d This appropriately qualifies gates, but no inconclusive outcome or treatment of unreached owners/not-yet-due cycles in the proposed decision rules is given. Conditional failure and success branches alone do not establish the requested third outcome."
+        },
+        {
+          "text": "Does not invent market facts, costs or profitable unit economics and stays within 700 body words",
+          "passed": true,
+          "evidence": "\u201cCheck whether \u00a380 can cover realistic ongoing delivery and support\u201d; \u201cA warm pilot cohort cannot establish the cost of acquiring customers beyond the founder\u2019s network\u201d. No costs or profitable economics are asserted; supplied body count: 554, below 700."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 10,
+      "eval_name": "failed-exposure-is-inconclusive",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "passed": 5,
+        "failed": 1,
+        "total": 6,
+        "pass_rate": 0.8333333333333334,
+        "time_seconds": null,
+        "tokens": null,
+        "body_words": 314
+      },
+      "expectations": [
+        {
+          "text": "Calls this test inconclusive or invalid rather than evidence of zero demand",
+          "passed": true,
+          "evidence": "\u201chigh confidence that this test is inconclusive\u201d; \u201cdemand remains unknown\u201d."
+        },
+        {
+          "text": "Distinguishes 400 visits, 4 eligible owners, 2 clicks and zero completed bookings without reporting clicks as paid demand",
+          "passed": true,
+          "evidence": "\u201conly four eligible owners among 400 visits\u201d; \u201cZero completed bookings\u201d; \u201cTwo eligible owners clicking \u2018book\u2019 ... establishes interest, not paid-trial commitment.\u201d"
+        },
+        {
+          "text": "Identifies both unmet eligible-exposure requirement and broken booking form",
+          "passed": true,
+          "evidence": "\u201cYour rule required at least three bookings from 30 eligible agency owners. You verified only four eligible owners among 400 visits, and the form was broken throughout.\u201d"
+        },
+        {
+          "text": "Preserves the original rule and rejects indefinite spending or moving thresholds to get a pass",
+          "passed": true,
+          "evidence": "\u201cPreserve the original three-of-30 rule\u201d; \u201cdo not ... keep buying traffic until three bookings appear\u201d; \u201cStop spending under the exhausted \u20ac150 cap\u201d."
+        },
+        {
+          "text": "Proposes fixing instrumentation and agreeing a new bounded eligible-cohort test before more spend",
+          "passed": true,
+          "evidence": "\u201crepair and verify the booking flow end to end\u201d; \u201c30 verified owners\u201d; \u201ca two-week window, with a fresh money and staff-time cap agreed before launch.\u201d"
+        },
+        {
+          "text": "Does not invent conversion benchmarks and stays within 300 body words",
+          "passed": false,
+          "evidence": "No invented conversion benchmark: \u201cPreserve the original three-of-30 rule.\u201d However, supplied body count is 314, exceeding the 300-word ceiling by 14 words."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 10,
+      "eval_name": "failed-exposure-is-inconclusive",
+      "configuration": "old_skill",
+      "run_number": 1,
+      "result": {
+        "passed": 5,
+        "failed": 1,
+        "total": 6,
+        "pass_rate": 0.8333333333333334,
+        "time_seconds": null,
+        "tokens": null,
+        "body_words": 308
+      },
+      "expectations": [
+        {
+          "text": "Calls this test inconclusive or invalid rather than evidence of zero demand",
+          "passed": true,
+          "evidence": "\u201cthis test is inconclusive; demand remains unknown\u201d; \u201cDo not kill the app on this evidence.\u201d"
+        },
+        {
+          "text": "Distinguishes 400 visits, 4 eligible owners, 2 clicks and zero completed bookings without reporting clicks as paid demand",
+          "passed": true,
+          "evidence": "\u201cThe 400 general-newsletter visits ... only four visitors were verified eligible\u201d; \u201cZero completed bookings\u201d; \u201ctwo clicks [cannot] establish willingness to pay.\u201d"
+        },
+        {
+          "text": "Identifies both unmet eligible-exposure requirement and broken booking form",
+          "passed": true,
+          "evidence": "\u201cdo not establish exposure to 30 eligible owners\u201d; \u201cThe broken form also prevented the required behaviour throughout the test.\u201d"
+        },
+        {
+          "text": "Preserves the original rule and rejects indefinite spending or moving thresholds to get a pass",
+          "passed": true,
+          "evidence": "\u201cThe spending limit ... remains binding\u201d; \u201cBuying traffic until three bookings appear would replace a fixed test with an open-ended search for success\u201d; \u201cRetain the original outcome rule\u201d."
+        },
+        {
+          "text": "Proposes fixing instrumentation and agreeing a new bounded eligible-cohort test before more spend",
+          "passed": true,
+          "evidence": "\u201cagree a replacement test contract before any further spending\u201d; \u201ca booking path verified end to end, 30 verified eligible owners ... a fixed deadline plus fresh cash and effort caps.\u201d"
+        },
+        {
+          "text": "Does not invent conversion benchmarks and stays within 300 body words",
+          "passed": false,
+          "evidence": "No invented conversion benchmarks: \u201cRetain the original outcome rule: at least three completed paid-trial bookings passes\u201d. However, supplied body count is 308, exceeding the 300-word ceiling by eight words."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 10,
+      "eval_name": "failed-exposure-is-inconclusive",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "passed": 5,
+        "failed": 1,
+        "total": 6,
+        "pass_rate": 0.8333333333333334,
+        "time_seconds": null,
+        "tokens": null,
+        "body_words": 159
+      },
+      "expectations": [
+        {
+          "text": "Calls this test inconclusive or invalid rather than evidence of zero demand",
+          "passed": true,
+          "evidence": "\u201cstop spending and mark this test inconclusive; do not kill the app on this evidence.\u201d"
+        },
+        {
+          "text": "Distinguishes 400 visits, 4 eligible owners, 2 clicks and zero completed bookings without reporting clicks as paid demand",
+          "passed": false,
+          "evidence": "\u201cOnly four were verified eligible\u201d; \u201cZero completed bookings\u201d; \u201cThe two booking clicks show interest, but do not count as paid-trial bookings.\u201d These three stages are accurately distinguished, but the 400 general-newsletter visits are never mentioned, so the full four-stage assertion is not satisfied."
+        },
+        {
+          "text": "Identifies both unmet eligible-exposure requirement and broken booking form",
+          "passed": true,
+          "evidence": "\u201cYour rule required 30 eligible owners\u201d; \u201cOnly four were verified eligible, and the broken form prevented every booking.\u201d"
+        },
+        {
+          "text": "Preserves the original rule and rejects indefinite spending or moving thresholds to get a pass",
+          "passed": true,
+          "evidence": "\u201cbuying traffic until three people book would abandon the agreed spending limit and stopping rule\u201d; \u201cretain the threshold of at least three paid-trial bookings\u201d."
+        },
+        {
+          "text": "Proposes fixing instrumentation and agreeing a new bounded eligible-cohort test before more spend",
+          "passed": true,
+          "evidence": "\u201cagree on a bounded replacement test before spending again: verify the repaired booking flow, expose the same offer to 30 verified eligible owners ... with a new explicit budget and deadline.\u201d"
+        },
+        {
+          "text": "Does not invent conversion benchmarks and stays within 300 body words",
+          "passed": true,
+          "evidence": "\u201cretain the threshold of at least three paid-trial bookings\u201d reuses the supplied rule without inventing benchmarks. Supplied body count: 159, below 300."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 9,
+      "eval_name": "internal-evidence-supports-bounded-pursue",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "passed": 6,
+        "failed": 0,
+        "total": 6,
+        "pass_rate": 1.0,
+        "time_seconds": null,
+        "tokens": null,
+        "body_words": 297
+      },
+      "expectations": [
+        {
+          "text": "Recommends proceeding with the bounded release or gives a specific evidence-based blocker, not generic demands for more validation",
+          "passed": true,
+          "evidence": "\u201cPursue the limited internal release\u201d; uncertainty is \u201cnot a reason to require another prototype trial.\u201d"
+        },
+        {
+          "text": "Uses internal task outcomes, adoption, alternatives and ownership instead of requiring paying external customers",
+          "passed": true,
+          "evidence": "\u201c10 staff chose the prototype ... all 200 eligible tasks\u201d; documented \u201cexport-format gap in the licensed suite and two evaluated alternatives\u201d; \u201cIT\u2019s accepted maintenance, access and rollback ownership\u201d. No paying external customers required."
+        },
+        {
+          "text": "Distinguishes time/capacity benefit from realized cash savings",
+          "passed": true,
+          "evidence": "\u201cThe benefit is released staff capacity, not cash savings: no layoffs or reduced external spending are planned.\u201d"
+        },
+        {
+          "text": "Does not multiply a median difference into a claimed exact total saving",
+          "passed": true,
+          "evidence": "\u201cMedian times alone cannot establish aggregate hours saved.\u201d No exact aggregate saving claimed."
+        },
+        {
+          "text": "Names monitoring or rollback criteria proportionate to a limited release rather than treating it as broad validation",
+          "passed": true,
+          "evidence": "\u201cFinance and IT should assess the next four weeks: helper completions divided by all eligible tasks ... checked errors divided by checked tasks, and support effort\u201d; \u201cuse rollback if material regressions appear\u201d; \u201climited release only\u201d."
+        },
+        {
+          "text": "Does not invent costs or require market sizing and stays within 700 body words",
+          "passed": true,
+          "evidence": "\u201cFull ownership cost remains unquantified\u201d; \u201cProceed within the approved cap and eligible workflow.\u201d No invented costs or market-sizing demand. Supplied body count: 297, below 700."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 9,
+      "eval_name": "internal-evidence-supports-bounded-pursue",
+      "configuration": "old_skill",
+      "run_number": 1,
+      "result": {
+        "passed": 6,
+        "failed": 0,
+        "total": 6,
+        "pass_rate": 1.0,
+        "time_seconds": null,
+        "tokens": null,
+        "body_words": 307
+      },
+      "expectations": [
+        {
+          "text": "Recommends proceeding with the bounded release or gives a specific evidence-based blocker, not generic demands for more validation",
+          "passed": true,
+          "evidence": "\u201cPursue the limited internal release\u201d; \u201cjustify proceeding within the approved effort cap.\u201d"
+        },
+        {
+          "text": "Uses internal task outcomes, adoption, alternatives and ownership instead of requiring paying external customers",
+          "passed": true,
+          "evidence": "\u201c10 staff chose the helper ... completed all eligible tasks\u201d; \u201clicensed suite and two evaluated alternatives fail a specific requirement\u201d; \u201cIT\u2019s acceptance of maintenance, access and rollback ownership.\u201d No external paying customers required."
+        },
+        {
+          "text": "Distinguishes time/capacity benefit from realized cash savings",
+          "passed": true,
+          "evidence": "\u201cThe benefit is staff capacity, not demonstrated cash savings: no layoffs or reduced external spending are planned.\u201d"
+        },
+        {
+          "text": "Does not multiply a median difference into a claimed exact total saving",
+          "passed": true,
+          "evidence": "\u201cMedian handling time fell from 20 to 8 minutes\u201d; \u201cMedians alone cannot establish aggregate hours saved.\u201d No total is calculated."
+        },
+        {
+          "text": "Names monitoring or rollback criteria proportionate to a limited release rather than treating it as broad validation",
+          "passed": true,
+          "evidence": "\u201csame cohort and eligibility scope for four weeks, within the existing cap\u201d; proposed criteria cover median time, checked errors and cap; \u201cpause and use IT\u2019s rollback process if any threshold fails.\u201d"
+        },
+        {
+          "text": "Does not invent costs or require market sizing and stays within 700 body words",
+          "passed": true,
+          "evidence": "\u201congoing support effort remains unquantified\u201d; scope is the approved limited release. No invented costs or market-sizing demand. Supplied body count: 307, below 700."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 9,
+      "eval_name": "internal-evidence-supports-bounded-pursue",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "passed": 6,
+        "failed": 0,
+        "total": 6,
+        "pass_rate": 1.0,
+        "time_seconds": null,
+        "tokens": null,
+        "body_words": 245
+      },
+      "expectations": [
+        {
+          "text": "Recommends proceeding with the bounded release or gives a specific evidence-based blocker, not generic demands for more validation",
+          "passed": true,
+          "evidence": "\u201cProceed with the limited internal release within the approved effort cap.\u201d"
+        },
+        {
+          "text": "Uses internal task outcomes, adoption, alternatives and ownership instead of requiring paying external customers",
+          "passed": true,
+          "evidence": "\u201cTen finance staff chose the prototype ... all 200 eligible tasks\u201d; \u201clicensed suite and two evaluated alternatives cannot produce the required legacy export format\u201d; \u201cIT has accepted maintenance, access and rollback ownership\u201d. No external paid demand required."
+        },
+        {
+          "text": "Distinguishes time/capacity benefit from realized cash savings",
+          "passed": true,
+          "evidence": "\u201cTreat the benefit as released staff capacity, not cash savings: no layoffs or reduced external spending are planned.\u201d"
+        },
+        {
+          "text": "Does not multiply a median difference into a claimed exact total saving",
+          "passed": true,
+          "evidence": "\u201cMedian handling time fell from 20 to 8 minutes\u2014a 60% reduction\u201d; \u201cmedian time reduction alone also does not establish total hours saved or financial ROI.\u201d The relative reduction is arithmetically correct, not a claimed exact total saving."
+        },
+        {
+          "text": "Names monitoring or rollback criteria proportionate to a limited release rather than treating it as broad validation",
+          "passed": true,
+          "evidence": "\u201cKeep the release within the tested use case and approved cap\u201d; \u201cContinue recording usage, handling time and checked errors\u201d; rollback for reconciliation quality/export reliability; reassess scope/effort beyond approved boundary."
+        },
+        {
+          "text": "Does not invent costs or require market sizing and stays within 700 body words",
+          "passed": true,
+          "evidence": "\u201cThe supplied evidence supports that bounded decision\u201d; \u201cThis approval applies only to the limited internal release.\u201d No cost or market-size invention. Supplied body count: 245, below 700."
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 0.9444444444444444,
+        "stddev": 0.0962250448649376,
+        "min": 0.8333333333333334,
+        "max": 1.0
+      },
+      "time_seconds": null,
+      "tokens": null
+    },
+    "old_skill": {
+      "pass_rate": {
+        "mean": 0.888888888888889,
+        "stddev": 0.0962250448649376,
+        "min": 0.8333333333333334,
+        "max": 1.0
+      },
+      "time_seconds": null,
+      "tokens": null
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 0.888888888888889,
+        "stddev": 0.0962250448649376,
+        "min": 0.8333333333333334,
+        "max": 1.0
+      },
+      "time_seconds": null,
+      "tokens": null
+    }
+  },
+  "notes": [
+    "One trial per case/configuration; standard deviation is across three different cases, not repeat-run variability.",
+    "with_skill is the first 0.2 revision; old_skill is 09d79e5; without_skill means no explicitly loaded skill body.",
+    "All configurations reached sound headline decisions. Assertion counts do not show general superiority.",
+    "The missing 400-visit count in the unaided answer is a strict completeness failure, not an incorrect business decision.",
+    "The final narrow rerun is excluded from this comparison; its 278-word response is recorded separately.",
+    "Token and timing data unavailable. The viewer summary compares revised and old; all three configurations appear in per-case results."
+  ]
+}

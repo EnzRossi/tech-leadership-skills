@@ -1,0 +1,61 @@
+{
+  "label": "case-8-B",
+  "expectations": [
+    {
+      "text": "Does not treat instructor letters or refundable reservations as authorized recurring sales",
+      "passed": true,
+      "evidence": "\u201cThey are nonbinding and establish no willingness to pay\u201d; reservations are \u201cweak evidence for an \u00a380 monthly purchase\u201d; \u201coverlap and buyer authority are unknown.\u201d"
+    },
+    {
+      "text": "Distinguishes first assisted use from retention and notes the monthly repeat opportunity has not occurred",
+      "passed": true,
+      "evidence": "\u201cNone has reached its next monthly rota, so repeat use is untested\u2014not a retention failure.\u201d"
+    },
+    {
+      "text": "Recommends a bounded next commitment rather than treating evidence as sufficient to hire two engineers",
+      "passed": true,
+      "evidence": "\u201cDelay hiring the two engineers\u201d; \u201cset a small fixed test budget\u201d; \u201cpositive pilot results should lead first to the smallest justified build\u201d."
+    },
+    {
+      "text": "Chooses a test of buyer commitment or repeat value with eligible participants, measurement denominator and observation window",
+      "passed": true,
+      "evidence": "\u201cTrack all eight gyms through their next due date, including declines and nonresponses\u201d; \u201cFor gyms that pay, observe the following monthly rota cycle.\u201d Owners controlling spending receive the \u00a380/month offer, and both the initial cohort and repeat eligible cohort are identified."
+    },
+    {
+      "text": "Includes an inconclusive outcome and labels any new threshold as a justified proposal rather than a universal benchmark",
+      "passed": false,
+      "evidence": "\u201cThese are proposed gates, not results already demonstrated; the supplied facts do not justify a precise conversion target or a hiring budget.\u201d This appropriately qualifies gates, but no inconclusive outcome or treatment of unreached owners/not-yet-due cycles in the proposed decision rules is given. Conditional failure and success branches alone do not establish the requested third outcome."
+    },
+    {
+      "text": "Does not invent market facts, costs or profitable unit economics and stays within 700 body words",
+      "passed": true,
+      "evidence": "\u201cCheck whether \u00a380 can cover realistic ongoing delivery and support\u201d; \u201cA warm pilot cohort cannot establish the cost of acquiring customers beyond the founder\u2019s network\u201d. No costs or profitable economics are asserted; supplied body count: 554, below 700."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 1,
+    "total": 6,
+    "pass_rate": 0.8333333333333334
+  },
+  "critical_failures": [],
+  "unsupported_claims": [
+    {
+      "claim": "\u201conce with substantial help\u201d",
+      "evidence": "The prompt establishes founder assistance but provides no amount or intensity. \u201cSubstantial\u201d amplifies the supplied fact without support.",
+      "materiality": "Potentially material to usability/support burden interpretation; the recommendation still correctly treats recurring paid value as untested."
+    }
+  ],
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "reason": "Require decision rules to cover owners not reached, cycles not yet due, mixed conversion and incomplete observation, alongside a fixed resource/window cap. This memo has good measurement but no explicit inconclusive branch."
+      },
+      {
+        "reason": "Add a check against invented intensity or necessity of assistance, which can mischaracterize feasibility and usability."
+      }
+    ],
+    "overall": "Judged only the anonymized memo and frozen case facts. No execution trace was supplied, so tool use or absence of browsing cannot be verified. All six assertions graded separately; compound requirements require every component."
+  },
+  "body_words": 554
+}

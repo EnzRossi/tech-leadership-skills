@@ -78,5 +78,21 @@
   {
     "query": "Design the database schema and API for a buy-now-pay-later platform for e-commerce merchants.",
     "should_trigger": false
+  },
+  {
+    "query": "We got 50 refundable reservations and three nonbinding LOIs for our salon scheduler. Is that enough validation to fund the build?",
+    "should_trigger": true
+  },
+  {
+    "query": "Should we launch this internal non-AI tool? The pilot reduced rework and staff kept using it, but it has no paying customers.",
+    "should_trigger": true
+  },
+  {
+    "query": "We already decided to run the pricing experiment. Implement its event tracking in our React app.",
+    "should_trigger": false
+  },
+  {
+    "query": "Our internal LLM pilot has an evaluation dataset and an executive sponsor. Review readiness and whether to fund production rollout.",
+    "should_trigger": false
   }
 ]

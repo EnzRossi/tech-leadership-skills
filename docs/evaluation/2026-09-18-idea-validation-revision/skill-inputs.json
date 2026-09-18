@@ -1,0 +1,21 @@
+{
+  "baseline_commit": "09d79e5",
+  "date": "2026-09-18",
+  "revised_files": {
+    "SKILL.md": "7ef1bc4cbc6a470577ab16efa60bd3084dd51cb1a5d4b8e3c8341bb77524c228",
+    "assets/output-template.md": "a4af1d27f526a21f10af0a11b987350c310926ee2e547c53d38422f5d83cc724",
+    "evals/evals.json": "8869d4a0e9002f851234552507ea9bb124e7b8ba6dc71d73ac6747fe508d5330",
+    "evals/trigger-evals.json": "b228acad787fa2347519eb68eddf7b18f0304cad15766787532106a70da88aaf",
+    "references/experiments.md": "0f1a13eb91a97dae327beac7263f9541b35901de6fd98b2423c6e122f5d43b8b",
+    "references/methodology.md": "2ab6b8ce505e9b8cefcf4af2ead8f21cc807bca84df7185ba4080634229e104c",
+    "references/sources.md": "6f250695ec1e598907af3aea2c6225b99edff5febf510875d1faf8b9d7df938e"
+  },
+  "baseline_files": {
+    "SKILL.md": "ca0b74b75907387388004ab08cce14700cb61c253acf841a9ba46c9998b17068",
+    "assets/output-template.md": "b0f2ef16feee71701ed16bc795a8d1bb270d63b84fdbfc1226aa781c43e2a667",
+    "evals/evals.json": "b0340e84f95374c255b74b1ae622866258a4e2d678ddbff4180ca314e4533aeb",
+    "evals/trigger-evals.json": "8c309a93e868a2f4b44daa7f05deac4164ce7bc1d91984288b43260f77041c75",
+    "references/methodology.md": "c85fb31fadfa7fff446753ae521521436a2d4d55e67647c8e620fcfde66fa52b",
+    "references/sources.md": "b0e9f376e0f441685b348b6b4447c657dad91c095affdb9d783a2b1b1f3cda73"
+  }
+}

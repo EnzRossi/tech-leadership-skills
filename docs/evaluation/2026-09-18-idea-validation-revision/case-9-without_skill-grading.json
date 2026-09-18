@@ -1,0 +1,48 @@
+{
+  "label": "case-9-C",
+  "expectations": [
+    {
+      "text": "Recommends proceeding with the bounded release or gives a specific evidence-based blocker, not generic demands for more validation",
+      "passed": true,
+      "evidence": "\u201cProceed with the limited internal release within the approved effort cap.\u201d"
+    },
+    {
+      "text": "Uses internal task outcomes, adoption, alternatives and ownership instead of requiring paying external customers",
+      "passed": true,
+      "evidence": "\u201cTen finance staff chose the prototype ... all 200 eligible tasks\u201d; \u201clicensed suite and two evaluated alternatives cannot produce the required legacy export format\u201d; \u201cIT has accepted maintenance, access and rollback ownership\u201d. No external paid demand required."
+    },
+    {
+      "text": "Distinguishes time/capacity benefit from realized cash savings",
+      "passed": true,
+      "evidence": "\u201cTreat the benefit as released staff capacity, not cash savings: no layoffs or reduced external spending are planned.\u201d"
+    },
+    {
+      "text": "Does not multiply a median difference into a claimed exact total saving",
+      "passed": true,
+      "evidence": "\u201cMedian handling time fell from 20 to 8 minutes\u2014a 60% reduction\u201d; \u201cmedian time reduction alone also does not establish total hours saved or financial ROI.\u201d The relative reduction is arithmetically correct, not a claimed exact total saving."
+    },
+    {
+      "text": "Names monitoring or rollback criteria proportionate to a limited release rather than treating it as broad validation",
+      "passed": true,
+      "evidence": "\u201cKeep the release within the tested use case and approved cap\u201d; \u201cContinue recording usage, handling time and checked errors\u201d; rollback for reconciliation quality/export reliability; reassess scope/effort beyond approved boundary."
+    },
+    {
+      "text": "Does not invent costs or require market sizing and stays within 700 body words",
+      "passed": true,
+      "evidence": "\u201cThe supplied evidence supports that bounded decision\u201d; \u201cThis approval applies only to the limited internal release.\u201d No cost or market-size invention. Supplied body count: 245, below 700."
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 0,
+    "total": 6,
+    "pass_rate": 1.0
+  },
+  "critical_failures": [],
+  "unsupported_claims": [],
+  "eval_feedback": {
+    "suggestions": [],
+    "overall": "Judged only the anonymized memo and frozen case facts. No execution trace was supplied, so tool use or absence of browsing cannot be verified. All six assertions graded separately; compound requirements require every component."
+  },
+  "body_words": 245
+}

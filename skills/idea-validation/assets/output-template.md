@@ -1,31 +1,25 @@
 # Idea validation: [name]
 
-[Proposer / decision maker] · [Evidence as of date, if known] · [Internal or external · digital, physical or hybrid · AI-dependent or not · target geography]
+[Decision and evidence date, if known] · [Relevant classification and geography]
 
 ## Verdict
 
-**[Pursue / Test before building / Reshape / Park / Stop] — Confidence: [High / Medium / Low, with reason]**
+**[Pursue / Test before building / Reshape / Park / Stop] — Confidence in this next-step recommendation: [High / Medium / Low, with evidence-based reason; not a success probability]**
 
-[First 100 words: the verdict, the weakest point and whether it is fatal or fixable, the strongest reason it could work, and the next step. Aim for 300–700 words in total; 150–300 for a narrow question or when essential facts are missing. Remove drafting instructions and empty sections.]
+[Within the first 100 words: the next commitment, weakest point and whether fatal/fixable/unknown, strongest reason it could work. Full memo body at most 700 words; narrow or missing-evidence answers usually 150–300, shorter when sufficient. Remove drafting instructions and empty sections.]
 
-## The idea as a hypothesis
+## Hypothesis and decisive evidence
 
-[Who has the problem, what they do today, the proposed solution, why now, the proposer's advantage. Mark which parts are observed, reported, inferred or assumed.]
+[State who has the problem, current alternative and proposed solution. Select two to four decision-changing findings. Distinguish supplied observation, report, inference and unknown without mechanically labeling every sentence. Name the assumption most likely to change the decision. Check value, usability, feasibility and viability but print only decisive findings.]
 
-## What the evidence shows
+[Qualify commitments by buyer authority and terms, and distinguish initial interest/purchase from repeat value. For internal ideas use workflow outcomes, adoption and ownership. Cite live facts with source/date; identify material contradictory evidence.]
 
-[Two to four findings that decide the verdict, each tied to a source or to a stated gap: alternatives (internal) or market, competitors and geography (external); buyer, decision maker and route; defensibility and copyability; AI fit where relevant; viability and dominant cost driver. Cite research with page and date; label memory as unverified.]
+## Next test or bounded commitment
 
-## Cheapest test that could change the verdict
+[One test or justified next step: hypothesis; eligible participants and recruitment; action and baseline; metric with denominator; window and effort cap; proposed pass/fail/inconclusive rules with rationale and next actions; proposed owner and review date. Use references/experiments.md for details. Do not invent a numeric threshold where the basis is missing.]
 
-[One test: what is measured, on whom, bounded effort, proposed pass threshold and kill threshold, who runs it and by when. Mark thresholds as proposed until agreed.]
+## Questions that could change the decision
 
-## Questions that still matter
+[Only material gaps, at most five questions; omit if none. Briefly name any specialist boundary that blocks the next step.]
 
-[Up to five, ordered by how much each could change the verdict; say what answer would move it which way.]
-
-## Boundaries
-
-[Legal, tax, regulatory, hardware or financing questions named for a specialist; decisions that remain with the proposer.]
-
-<!-- Optional appendix: competitor table with sources and dates, unit-economics arithmetic, buyer map, only if decision-relevant or requested. -->
+<!-- Optional appendix: sources and dates, competitor evidence, unit-economics arithmetic or detailed experiment card. Keep decisive reasoning in the body; the appendix is not a place to hide the verdict's limitations. -->

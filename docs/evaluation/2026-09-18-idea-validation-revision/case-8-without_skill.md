@@ -1,0 +1,18 @@
+Delay hiring the two engineers. The evidence supports a small paid validation test; it does not yet support committing to a team.
+
+The 12 instructor letters show conditional interest from potential users, with owner approval still unresolved. They are nonbinding and establish no willingness to pay. The 20 fully refundable £5 reservations show some interest, but their refundability, small amount, and meetup setting make them weak evidence for an £80 monthly purchase. Do not add these counts together as distinct customers: overlap and buyer authority are unknown.
+
+The eight free, founder-assisted exports show that gyms were willing to try the service once with substantial help. They do not establish independent usability or recurring demand. None has reached its next monthly rota, so repeat use is untested—not a retention failure.
+
+Run the next test around actual monthly rota deadlines:
+
+1. **Get the buying decision.** Ask the eight pilot gyms and the instructors for introductions to the owners who control spending. Establish who benefits, who approves, how the rota is exported today, and what problem warrants £80 every month. Present a concrete £80/month offer with a clear scope and start date. Record owner decisions, objections, invoices paid, and any conditions. Keep instructor interest separate from owner commitment.
+2. **Deliver a paid next cycle manually.** Offer the existing pilot gyms their next export at the intended price. Keep founder assistance available, but log every minute of setup, delivery, correction, and support. Avoid hiring or building a full product to run this test. Track all eight gyms through their next due date, including declines and nonresponses, rather than reporting only successful users.
+3. **Test recurrence separately.** For gyms that pay, observe the following monthly rota cycle. Track whether they return, receive a useful export, and pay again; also record how much prompting and help they need. A first paid export validates a purchase, while a second paid cycle begins to test the monthly subscription. If value is occasional, test a per-export offer rather than assuming a subscription fits.
+4. **Measure delivery and acquisition costs.** Track cash delivery costs and founder labor separately, plus outreach time, acquisition source, owner conversations, and paid conversions. Check whether £80 can cover realistic ongoing delivery and support with room to recover acquisition costs. A warm pilot cohort cannot establish the cost of acquiring customers beyond the founder’s network; test that separately before scaling.
+
+Before starting, set a small fixed test budget and write down decision rules. Require multiple independent owners paying the full £80 and renewing across actual monthly cycles, together with a credible route to profitable delivery, before considering expansion. These are proposed gates, not results already demonstrated; the supplied facts do not justify a precise conversion target or a hiring budget.
+
+If owners will not pay, investigate the objections and change the offer or stop. If they pay once but do not return when their next rota is due, investigate recurring value and pricing. If they renew but delivery remains too expensive, test whether a narrow automation can remove the measured bottleneck. Even positive pilot results should lead first to the smallest justified build; hiring two engineers requires evidence that their cost and capacity are warranted.
+
+The immediate milestone is an owner paying £80 for a real upcoming rota. The next milestone is that owner paying again when the need recurs.
